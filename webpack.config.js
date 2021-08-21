@@ -28,7 +28,7 @@ module.exports = (env) => {
       }),
     ],
     entry: {
-      "big-deals": "./src/js/index.js",
+      "big-deals": "./src/index.js",
     },
     output: {
       filename: "[contenthash].js",
