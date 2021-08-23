@@ -1,7 +1,14 @@
-export const getAllProduct = ({ page, search }) => {
+export const searchAllProducts = ({ page, search }) => {
     return {
-        url: `/big-yay-deals/api/products/?s=${search}&page=${page}&limit=${6}`,
+        url: `/big-yay-deals/api/products/?page=${page}&s=${search}`,
         method: "GET",
-        onSuccess: "products/itemsReceived",
+        onSuccess: "products/itemsReceivedAfterSearch",
+    };
+};
+export const browseAllProducts = ({ page, search }) => {
+    return {
+        url: `/big-yay-deals/api/products/?page=${page}&s=${search}`,
+        method: "GET",
+        onSuccess: "products/itemsReceivedAfterBrowse",
     };
 };

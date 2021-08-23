@@ -1,12 +1,15 @@
-import React,{useEffect, useState, useCallback, useRef} from "react";
-import {http_client} from '../utils/http';
+import React,{useEffect, useCallback, useRef} from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { apiCallStarted } from "../store/actions/API.js";
+import { searchAllProducts, browseAllProducts } from "../store/config/products.js";
 
 //paginator
-//1- url for get request
-//3- searchStr the search string value
+//1- searchStr the search string value
 //2- item component to render item
-const Paginator = ({url, searchStr, ItemComponent}) => {
-    const [list, setList] = useState([]);
+const Paginator = ({searchStr, ItemComponent}) => {
+    const dispatch = useDispatch();
+    const {items, canPaginate} = useSelector(state=>state.products);
     const page = useRef(1);
     const currentSearchStr = useRef(searchStr);
     //window scrolling function
@@ -17,38 +20,39 @@ const Paginator = ({url, searchStr, ItemComponent}) => {
         }
     }, []);
     //do search if search string is not empty
-    //1- get items
-    //2- update list
-    //3- inc page num
+    //1- dispatch apiCallStarted with searchAllProducts config
+    //2- inc page num
     const doSearch = async() => {
         if(searchStr.length === 0) return;
-        let res = await http_client.get(`${url}/?page=${page.current}&s=${currentSearchStr.current}`);
-        setList(lastValue=>lastValue.concat(res.data));
+        dispatch({
+            type: apiCallStarted.type,
+            payload: searchAllProducts({ page: page.current, search: currentSearchStr.current }),
+        });
         page.current = page.current +1;
     }
     //do paginate
-    //1- get items 
-    //2- check if no more items then remove scroll event
-    //3- update list
-    //4- inc page num
+    //1- dispatch apiCallStarted with browseAllProducts config
+    //2- inc page num
     const doPaginate = async() => {
-        let res = await http_client.get(`${url}/?page=${page.current}&s=${currentSearchStr.current}`);
-        if(res.data.length === 0) {
-            window.removeEventListener("scroll", scrolling);
-            return;
-        }
-        setList(lastValue=>lastValue.concat(res.data));
+        dispatch({
+            type: apiCallStarted.type,
+            payload: browseAllProducts({ page: page.current, search: currentSearchStr.current }),
+        });
         page.current = page.current +1;
     };
-    //when searchStr change
-    //1- reset search results list
-    //2- reset page number to 1
-    //3- set currentSearchStr to new search str
-    //4- removeEventListener scroll just in case
-    //5- addEventListener scroll
-    //6- start search
+    //when canPaginate changes to false remove scrolling listener
     useEffect(()=>{
-        setList([]);
+        if(!canPaginate) {
+            window.removeEventListener("scroll", scrolling);
+        }
+    }, [canPaginate]);
+    //when searchStr changes
+    //1- reset page number to 1
+    //2- set currentSearchStr to new search str
+    //3- removeEventListener scroll just in case
+    //4- addEventListener scroll
+    //5- start search
+    useEffect(()=>{
         page.current = 1;
         currentSearchStr.current = searchStr;
         window.removeEventListener("scroll", scrolling);
@@ -58,7 +62,7 @@ const Paginator = ({url, searchStr, ItemComponent}) => {
     return (
         <>
             {
-                list.length && list.map((item)=>{
+                items.map((item)=>{
                     return (
                         <ItemComponent key={item._id} itemData={item} />
                     )

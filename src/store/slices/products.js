@@ -4,10 +4,21 @@ export const productsSlice = createSlice({
   name: "products",
   initialState: {
     items: [],
+    canPaginate: true
   },
   reducers: {
-    itemsReceived: (state, action) => {
-      state.items = state.items.concat(action.payload.data);
+    itemsReceivedAfterSearch: (state, action) => {
+      return {
+        ...state,
+        items:action.payload.data
+      };
+    },
+    itemsReceivedAfterBrowse: (state, action) => {
+      return {
+        ...state,
+        items:state.items.concat(action.payload.data),
+        canPaginate:action.payload.data.length > 0?true:false
+      };
     },
   },
 });
