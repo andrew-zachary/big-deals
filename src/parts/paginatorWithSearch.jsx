@@ -3,9 +3,9 @@ import {http_client} from '../utils/http';
 
 //paginator
 //1- url for get request
+//3- searchStr the search string value
 //2- item component to render item
 const Paginator = ({url, searchStr, ItemComponent}) => {
-    console.log(searchStr);
     const [list, setList] = useState([]);
     const page = useRef(1);
     const currentSearchStr = useRef(searchStr);
@@ -40,16 +40,13 @@ const Paginator = ({url, searchStr, ItemComponent}) => {
         setList(lastValue=>lastValue.concat(res.data));
         page.current = page.current +1;
     };
-    //after mount
-    //1- addEventListener scroll after mount
-    //2- removeEventListener scroll after unmount
-    useEffect(()=>{
-        window.addEventListener("scroll", scrolling);
-        return () => window.removeEventListener("scroll", scrolling);
-    }, []);
     //when searchStr change
     //1- reset search results list
     //2- reset page number to 1
+    //3- set currentSearchStr to new search str
+    //4- removeEventListener scroll just in case
+    //5- addEventListener scroll
+    //6- start search
     useEffect(()=>{
         setList([]);
         page.current = 1;
