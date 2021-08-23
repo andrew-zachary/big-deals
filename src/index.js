@@ -10,6 +10,7 @@ import store from "./store/index";
 
 import HomePage from "./pages/home.jsx";
 import ProductsPage from "./pages/products.jsx";
+import SingleProduct from "./pages/single-product.jsx";
 import SearchPage from "./pages/search.jsx";
 
 import "./index.scss";
@@ -20,8 +21,9 @@ const App = () => {
         <Router>
             <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route path="/products" component={ProductsPage} />
+                <Route exact path="/products" component={ProductsPage} />
                 <Route path="/search" component={SearchPage} />
+                <Route path="/products/:id" component={SingleProduct} />
             </Switch>
         </Router>
     </Provider> );
