@@ -1,8 +1,8 @@
 import React,{useEffect, useCallback, useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { apiCallStarted } from "../store/actions/API.js";
-import { searchAllProducts, browseAllProducts } from "../store/config/products.js";
+import { apiCallStarted } from "../../store/actions/API.js";
+import { searchAllProducts, browseAllProducts } from "../../store/config/products.js";
 
 //paginator
 //1- searchStr the search string value

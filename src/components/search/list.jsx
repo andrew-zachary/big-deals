@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import PaginatorWithSearch from "../../parts/paginatorWithSearch.jsx";
+import Paginator from "./paginator.jsx";
 import ListItem from "./list-item.jsx";
 import SearchInput from "../../parts/search-input.jsx";
 
@@ -9,7 +9,7 @@ const List = () => {
         <div id="list">
             <SearchInput setSearchStr={setSearchStr} />
             <ul>
-                <PaginatorWithSearch url="/big-yay-deals/api/products" searchStr={searchStr} ItemComponent={ListItem} />
+                <Paginator url="/big-yay-deals/api/products" searchStr={searchStr} ItemComponent={ListItem} />
             </ul>
         </div>
     );
