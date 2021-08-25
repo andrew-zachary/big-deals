@@ -1,48 +1,50 @@
-import React,{useEffect, useState, useCallback, useRef} from "react";
+import React,{useEffect, useCallback, useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { apiCallStarted } from "../../store/actions/API.js";
 import { browseAllProducts } from "../../store/config/products.js";
 
-//paginator
-//1- url for get request
-//2- item component to render item
-const Paginator = ({url, ItemComponent}) => {
+//products browsing paginator
+//1- item component to render item
+const Paginator = ({ItemComponent}) => {
     const dispatch = useDispatch();
-    const {items, canPaginate} = useSelector(state=>state.products);
-    const page = useRef(1);
+    const {items, canPaginate, currentPage} = useSelector(state=>state.products.browsing);
+    const page = useRef(currentPage);
     //window scrolling function
-    const scrolling = useCallback((ev) => {
-        ev.stopImmediatePropagation();
+    const scrolling = useCallback((e) => {
+        e.stopImmediatePropagation();
         if (Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight) {
             doPaginate();
         }
     }, []);
     //do paginate
-    //1- dispatch apiCallStarted with browseAllProducts config
-    //2- inc page num
     const doPaginate = async() => {
         dispatch({
             type: apiCallStarted.type,
             payload: browseAllProducts({ page: page.current, search: "" }),
         });
-        page.current = page.current +1;
     };
-    //when canPaginate changes to false remove scrolling listener
+    //first mount
+    //1- if no items do init paginate
+    //2- removeEventListener scroll after unmount
+    useEffect(()=>{
+        if(items.length === 0) {
+            doPaginate();
+        }
+        return () => window.removeEventListener("scroll", scrolling);
+    }, []);
+    //update component current page value
+    useEffect(()=>{
+        page.current = currentPage;
+    }, [currentPage]);
+    //when canPaginate changes to false remove scrolling listener or add it if canPaginate true
     useEffect(()=>{
         if(!canPaginate) {
             window.removeEventListener("scroll", scrolling);
+        } else {
+            window.addEventListener("scroll", scrolling);
         }
     }, [canPaginate]);
-    //first mount
-    //1- addEventListener scroll after mount
-    //2- do init paginate
-    //3- removeEventListener scroll after unmount
-    useEffect(()=>{
-        window.addEventListener("scroll", scrolling);
-        doPaginate();
-        return () => window.removeEventListener("scroll", scrolling);
-    }, []);
     return (
         <>
             {

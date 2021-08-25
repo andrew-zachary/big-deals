@@ -4,11 +4,9 @@ import ListItem from "./list-item.jsx";
 
 const List = () => {
     return (
-        <div id="list">
-            <ul>
-                <Paginator url="/big-yay-deals/api/products" ItemComponent={ListItem} />
-            </ul>
-        </div>
+        <ul id="productsPageList">
+            <Paginator url="/big-yay-deals/api/products" ItemComponent={ListItem} />
+        </ul>
     );
 };
 

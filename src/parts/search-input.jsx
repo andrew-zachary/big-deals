@@ -1,15 +1,24 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
-const SearchInput = ({setSearchStr}) => {
+import {newSearchStarted} from "../store/slices/products";
+
+const SearchInput = () => {
+    const dispatch = useDispatch();
+    const {searchingStr} = useSelector(state=>state.products.searching);
+    const inputEle = useRef(null);
     let bounce = null;
     const inputHandler = (e)=>{
         clearTimeout(bounce);
         bounce = setTimeout(()=>{
-            setSearchStr(e.target.value);
+            dispatch({type:newSearchStarted.type, payload:{searchingStr:e.target.value}});
         }, 2000);
     };
+    useEffect(()=>{
+        inputEle.current.value = searchingStr;
+    }, []);
     return (
-        <input type="text" onChange={(e)=>inputHandler(e)} />
+        <input type="text" ref={inputEle} onChange={(e)=>inputHandler(e)} />
     );
 };
 

@@ -3,7 +3,7 @@ import "core-js/stable";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import store from "./store/index";
@@ -19,6 +19,17 @@ const App = () => {
     return (
     <Provider store={store}>
         <Router>
+            <ul>
+                <li>
+                    <Link to="/">home</Link>
+                </li>
+                <li>
+                    <Link to="/products">products</Link>
+                </li>
+                <li>
+                    <Link to="/search">search</Link>
+                </li>
+            </ul>
             <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/products" component={ProductsPage} />

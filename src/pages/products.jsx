@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useRef} from "react";
 
 import List from '../components/products/list.jsx';
 
 const ProductsPage = () => {
   return (
-    <div id="products-page">
+    <div id="productsPage">
       <List />
     </div>
   );

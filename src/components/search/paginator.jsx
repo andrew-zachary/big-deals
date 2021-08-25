@@ -1,17 +1,16 @@
-import React,{useEffect, useCallback, useRef} from "react";
+import React, {useEffect, useCallback, useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { apiCallStarted } from "../../store/actions/API.js";
-import { searchAllProducts, browseAllProducts } from "../../store/config/products.js";
+import { searchAllProducts } from "../../store/config/products.js";
 
 //paginator
-//1- searchStr the search string value
-//2- item component to render item
-const Paginator = ({searchStr, ItemComponent}) => {
+//1- item component template to render item
+const Paginator = ({ItemComponent}) => {
     const dispatch = useDispatch();
-    const {items, canPaginate} = useSelector(state=>state.products);
-    const page = useRef(1);
-    const currentSearchStr = useRef(searchStr);
+    const {items, canPaginate, currentPage, searchingStr, newSearch} = useSelector(state=>state.products.searching);
+    const page = useRef(currentPage);
+    const currentSearchStr = useRef(searchingStr);
     //window scrolling function
     const scrolling = useCallback((ev) => {
         ev.stopImmediatePropagation();
@@ -19,46 +18,47 @@ const Paginator = ({searchStr, ItemComponent}) => {
             doPaginate();
         }
     }, []);
-    //do search if search string is not empty
-    //1- dispatch apiCallStarted with searchAllProducts config
-    //2- inc page num
-    const doSearch = async() => {
-        if(searchStr.length === 0) return;
+    //start search only if search string is not empty or it is new search
+    //1- addEventListener scroll
+    //2- dispatch apiCallStarted with searchAllProducts config
+    const startSearch = async() => {
+        if(currentSearchStr.current.length === 0 || !newSearch) return;
         dispatch({
             type: apiCallStarted.type,
             payload: searchAllProducts({ page: page.current, search: currentSearchStr.current }),
         });
-        page.current = page.current +1;
     }
     //do paginate
-    //1- dispatch apiCallStarted with browseAllProducts config
-    //2- inc page num
     const doPaginate = async() => {
         dispatch({
             type: apiCallStarted.type,
-            payload: browseAllProducts({ page: page.current, search: currentSearchStr.current }),
+            payload: searchAllProducts({ page: page.current, search: currentSearchStr.current }),
         });
-        page.current = page.current +1;
     };
-    //when canPaginate changes to false remove scrolling listener
+    //update component current page num
+    useEffect(()=>{
+        page.current = currentPage;
+    }, [currentPage]);
+    //when canPaginate changes to false remove scrolling listener or add it if canPaginate true
     useEffect(()=>{
         if(!canPaginate) {
             window.removeEventListener("scroll", scrolling);
+        } else {
+            window.addEventListener("scroll", scrolling);
         }
     }, [canPaginate]);
-    //when searchStr changes
-    //1- reset page number to 1
-    //2- set currentSearchStr to new search str
-    //3- removeEventListener scroll just in case
-    //4- addEventListener scroll
-    //5- start search
+    //when searchingStr changes
+    //1- set currentSearchStr to new search str
+    //2- start search
     useEffect(()=>{
-        page.current = 1;
-        currentSearchStr.current = searchStr;
-        window.removeEventListener("scroll", scrolling);
-        window.addEventListener("scroll", scrolling);
-        doSearch();
-    }, [searchStr]);
+        currentSearchStr.current = searchingStr;
+        startSearch();
+    }, [searchingStr]);
+    //unmount
+    //1- at unmount removeEventListener scroll
+    useEffect(()=>{
+        return ()=> window.removeEventListener("scroll", scrolling);
+    }, []);
     return (
         <>
             {
