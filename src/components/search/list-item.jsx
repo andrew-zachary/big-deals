@@ -5,7 +5,7 @@ const ListItem = ({itemData}) => {
     return (
         <li>
             {itemData.name}
-            <LinkToProduct id={itemData._id} text="see reviews" />
+            <LinkToProduct itemData={itemData} text="see reviews" />
         </li>
     );
 };
