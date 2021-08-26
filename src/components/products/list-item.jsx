@@ -4,8 +4,8 @@ import LinkToProduct from "../../parts/link-to-product.jsx";
 const ListItem = ({itemData}) => {
     return (
         <li>
-            {itemData.name}
-            <LinkToProduct id={itemData._id} text="see reviews" />
+            <h1>{itemData.name}</h1>
+            <LinkToProduct itemData={itemData} text="see details" />
         </li>
     );
 };

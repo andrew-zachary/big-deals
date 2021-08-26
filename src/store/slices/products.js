@@ -14,13 +14,24 @@ const searching = {
   newSearch: true
 };
 
+const productSelected = {};
+
 export const productsSlice = createSlice({
   name: "products",
   initialState: {
     browsing,
-    searching
+    searching,
+    productSelected
   },
   reducers: {
+    singleProductSelected:(state, action)=>{
+      return {
+        ...state,
+        productSelected:{
+          ...action.payload.itemData
+        }
+      }
+    },
     newSearchStarted:(state, action)=>{
       return {
         ...state,
@@ -55,6 +66,6 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { newSearchStarted, itemsReceivedAfterSearch, itemsReceivedAfterBrowse } = productsSlice.actions;
+export const { singleProductSelected, newSearchStarted, itemsReceivedAfterSearch, itemsReceivedAfterBrowse } = productsSlice.actions;
 
 export default productsSlice.reducer;

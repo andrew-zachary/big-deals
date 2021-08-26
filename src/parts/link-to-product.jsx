@@ -1,10 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
-const LinkToProduct = ({id, text}) => {
+import {singleProductSelected} from "../store/slices/products.js";
+
+const LinkToProduct = ({itemData, text}) => {
+    const dispatch = useDispatch();
+    const productSelectHandler = () => {
+        dispatch({type:singleProductSelected.type, payload:{itemData}});
+    };
     return (
         <div className="link-to-product">
-            <Link to={`products/${id}`} >{text}</Link>
+            <Link onClick={()=>{productSelectHandler()}} to={`products/${itemData._id}`} >{text}</Link>
         </div>
     );
 };
