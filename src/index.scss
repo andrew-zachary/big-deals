@@ -1,6 +1,5 @@
-body{
-    background-color: yellow;
-}
+@import './styles/app';
+@import './styles/app-header';
 @import './styles/products';
 @import './styles/search';
-@import './styles/reviews';
+@import './styles/single-product';

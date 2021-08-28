@@ -10,7 +10,7 @@ const ReviewsGetBtn = ({productId}) => {
         dispatch({type: apiCallStarted.type, payload:getAllReviews({page:1, product_id:productId})});
     };
     return (
-        <button onClick={()=>getReviewsHandler()}>get reviews</button>
+        <button className="bd-primary-btn" onClick={()=>getReviewsHandler()}>see reviews</button>
     );
 };
 

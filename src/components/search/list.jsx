@@ -1,17 +1,13 @@
 import React from "react";
 import Paginator from "./paginator.jsx";
 import ListItem from "./list-item.jsx";
-import SearchInput from "../../parts/search-input.jsx";
 
-const List = () => {
+const SearchList = () => {
     return (
-        <div id="list">
-            <SearchInput />
-            <ul>
-                <Paginator ItemComponent={ListItem} />
-            </ul>
-        </div>
+        <ul id="search-list">
+            <Paginator ItemComponent={ListItem} />
+        </ul>
     );
 };
 
-export default List;
+export default SearchList;

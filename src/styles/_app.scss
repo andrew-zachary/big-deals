@@ -1,0 +1,43 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+    --bd-primary-color: #f68b1e;
+    --bd-secondary-color: #282828;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100%;
+    font-size: 1.2rem;
+    color: var(--bd-secondary-color);
+}
+
+#big-deals-app {
+    min-height: 568px;
+}
+
+ul {
+    margin: 0;
+    padding :0;
+}
+
+.bd-primary-btn {
+    background-color: var(--bd-primary-color);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color:white;
+}
+
+.bd-max-width-1200 {
+    max-width: 1200px;
+    margin: auto 0;
+}

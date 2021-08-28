@@ -4,7 +4,7 @@ import List from '../components/products/list.jsx';
 
 const ProductsPage = () => {
   return (
-    <div id="productsPage">
+    <div id="products-page">
       <List />
     </div>
   );

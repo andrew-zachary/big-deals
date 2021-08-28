@@ -8,7 +8,7 @@ import ListItem from "../components/single-product/list-item.jsx";
 const SingleProduct = () => {
     const {_id, name} = useSelector(state=>state.products.productSelected);
     return (
-        <div id="single-product">
+        <div id="single-product-page">
             <h1>{name}</h1>
             <section id="product-reviews">
                 <ReviewsGetBtn productId={_id}/>

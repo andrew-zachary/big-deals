@@ -1,10 +1,8 @@
 #search-page{
-    #list{
-        ul{
-            li{
-                height: 250px;
-                border: 1px solid black;
-            }
+    ul#search-list{
+        li{
+            height: 250px;
+            border: 1px solid black;
         }
     }
 }

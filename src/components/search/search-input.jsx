@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {newSearchStarted} from "../store/slices/products";
+import {newSearchStarted} from "../../store/slices/products";
 
 const SearchInput = () => {
     const dispatch = useDispatch();
