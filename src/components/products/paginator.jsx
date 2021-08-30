@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { apiCallStarted } from "../../store/actions/API.js";
 import { browseAllProducts } from "../../store/config/products.js";
 
+import Bricks from "../../parts/bricks.jsx";
+
 //products browsing paginator
 //1- item component to render item
 const Paginator = ({ItemComponent}) => {
@@ -12,8 +14,8 @@ const Paginator = ({ItemComponent}) => {
     const page = useRef(currentPage);
     //window scrolling function
     const scrolling = useCallback((e) => {
-        e.stopImmediatePropagation();
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if ((window.innerHeight + window.scrollY) == (document.body.scrollHeight)) {
+            console.log("bottom");
             doPaginate();
         }
     }, []);
@@ -54,6 +56,7 @@ const Paginator = ({ItemComponent}) => {
                     )
                 })
             }
+            <Bricks items={items} />
         </> 
     );
 };

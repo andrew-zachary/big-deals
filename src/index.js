@@ -3,18 +3,14 @@ import "core-js/stable";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import store from "./store/index";
 
-import HomePage from "./pages/home.jsx";
-import ProductsPage from "./pages/products.jsx";
-import SingleProduct from "./pages/single-product.jsx";
-import SearchPage from "./pages/search.jsx";
-import AccountPage from "./pages/account.jsx";
-
 import AppHeader from "./parts/app-header.jsx";
+import AppFooter from "./parts/app-footer.jsx";
+import AppPage from "./parts/app-page.jsx";
 
 import "./index.scss";
 
@@ -23,13 +19,8 @@ const App = () => {
         <Provider store={store}>
             <Router>
                 <AppHeader />
-                <Switch>
-                    <Route exact path="/" component={HomePage} />
-                    <Route exact path="/products" component={ProductsPage} />
-                    <Route path="/search" component={SearchPage} />
-                    <Route path="/account" component={AccountPage} />
-                    <Route path="/products/:id" component={SingleProduct} />
-                </Switch>
+                <AppPage />
+                <AppFooter />
             </Router>
         </Provider>
     );

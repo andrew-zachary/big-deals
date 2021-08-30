@@ -4,7 +4,7 @@ import ListItem from "./list-item.jsx";
 
 const List = () => {
     return (
-        <ul id="products-page-list">
+        <ul className="products-page-list list-unstyled">
             <Paginator ItemComponent={ListItem} />
         </ul>
     );

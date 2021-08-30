@@ -1,8 +1,27 @@
 #products-page{
-    ul#products-page-list{
-        li{
-            height: 250px;
+    .products-page-list{
+        width: 100%;
+        margin: 0 auto;
+        .gallery-card {
+            height: 400px;
+            width: 375px;
             border: 1px solid black;
+        }
+
+        @media screen and (min-width:1024px){
+            &{
+                .gallery-card{
+                    width: calc(768px / 2);
+                }
+            }
+        }
+        
+        @media screen and (min-width:1200px){
+            &{
+                .gallery-card {
+                    width: calc(1200px / 3);
+                }
+            }
         }
     }
 }

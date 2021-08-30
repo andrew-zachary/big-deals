@@ -1,8 +1,19 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+@font-face {
+    font-family: "overlock-bold";
+    src: url("./assets/Overlock-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("./assets/Roboto-Regular.ttf");
+}
 
 :root {
     --bd-primary-color: #f68b1e;
-    --bd-secondary-color: #282828;
+    --bd-secondary-color: #3d1212;
 }
 
 html {
@@ -11,13 +22,15 @@ html {
 }
 
 body {
-    min-height: 100%;
+    height: 100%;
     font-size: 1.2rem;
     color: var(--bd-secondary-color);
 }
 
 #big-deals-app {
-    min-height: 568px;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
 }
 
 ul {
@@ -25,8 +38,7 @@ ul {
     padding :0;
 }
 
-.bd-primary-btn {
-    background-color: var(--bd-primary-color);
+.bd-btn {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     outline: 0;
     border: 0;
@@ -34,10 +46,27 @@ ul {
     padding: 1.2rem 1.4rem;
     font-size: 1.4rem;
     text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+        color: white;
+    }
+}
+.bd-circle-btn {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    outline: 0;
+    border: 0;
+    border-radius: 50px;
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+}
+.bd-primary-btn {
+    background-color: var(--bd-primary-color);
     color:white;
 }
 
 .bd-max-width-1200 {
     max-width: 1200px;
-    margin: auto 0;
+    margin: 0 auto;
 }
