@@ -10,8 +10,8 @@ const LinkToProduct = ({itemData, text}) => {
         dispatch({type:singleProductSelected.type, payload:{itemData}});
     };
     return (
-        <div className="link-to-product">
-            <Link onClick={()=>{productSelectHandler()}} to={`products/${itemData._id}`} >{text}</Link>
+        <div className="link-to-product d-inline-block">
+            <Link className="bd-btn bd-primary-btn" onClick={()=>{productSelectHandler()}} to={`products/${itemData._id}`} >{text}</Link>
         </div>
     );
 };

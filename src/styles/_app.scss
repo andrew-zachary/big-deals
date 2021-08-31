@@ -14,6 +14,7 @@
 :root {
     --bd-primary-color: #f68b1e;
     --bd-secondary-color: #3d1212;
+    --bd-tertiary-color: whitesmoke;
 }
 
 html {
@@ -25,6 +26,7 @@ body {
     height: 100%;
     font-size: 1.2rem;
     color: var(--bd-secondary-color);
+    background-color: var(--bd-tertiary-color);
 }
 
 #big-deals-app {
@@ -69,4 +71,35 @@ ul {
 .bd-max-width-1200 {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.bd-stars-calc {
+    li {
+        width: 20%;
+    }
+    .stars-container, .value-container {
+        width: 50%;
+    }
+    .stars-container {
+        position: relative;
+        .stars-mask, .stars-outline-row  {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .stars-fill-row {
+            z-index: 1;
+        }
+        .stars-mask {
+            left: 100%;
+            z-index: 2;
+            transform: rotate(180deg);
+            transform-origin: left;
+        }
+        .stars-outline-row {
+            left: 0;
+            z-index: 3;
+        }
+    }
 }

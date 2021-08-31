@@ -1,25 +1,77 @@
-#products-page{
-    .products-page-list{
+#products-page {
+
+    .products-list {
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
-        margin: 0 auto;
-        .gallery-card {
-            height: 400px;
-            width: 375px;
-            border: 1px solid black;
+
+        .product-item {
+            min-width: 320px;
+            .card {
+                border: 1px solid black;
+                .card-title {
+                    font-family: 'overlock-bold';
+                    font-size: 2.4rem;
+                }
+                .card-text {
+                    font-family: 'roboto-regular';
+                    font-size: 2rem;
+                    .price-unit {
+                        margin-right: 1rem;
+                    }
+                }
+                .bd-stars-calc {
+                    margin-bottom: 1.5rem;
+                    .stars-container {
+                        .stars-mask {
+                            background-color: white;
+                        }
+                    }
+                    .value-container {
+                        font-size: 2rem;
+                        line-height: 1;
+                        margin-left: 1rem;
+                    }
+                }
+                .ctrls {
+                    a {
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            &::before {
+                                font-size: 2rem;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        @media screen and (min-width:1024px){
-            &{
-                .gallery-card{
-                    width: calc(768px / 2);
+        @media screen and (min-width:320px) {
+            justify-content: space-around;
+            & {
+                .product-item {
+                    width: 45%;
+                }
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            & {
+                .product-item {
+                    width: 45%;
                 }
             }
         }
         
-        @media screen and (min-width:1200px){
-            &{
-                .gallery-card {
-                    width: calc(1200px / 3);
+        @media screen and (min-width:992px) {
+            justify-content: flex-start;
+            & {
+                .product-item {
+                    width: 33.33%;
                 }
             }
         }

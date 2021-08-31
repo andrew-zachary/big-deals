@@ -4,9 +4,14 @@
         font-family: "overlock-bold";
         font-weight: 700;
         font-size: 4.2rem;
+        .deals-word {
+            color: var(--bd-primary-color);
+        }
     }
-    button {
+    .bd-btn {
         font-family: "roboto-regular";
         font-weight: 300;
+        letter-spacing: 0.3rem;
+        font-size: 2rem;
     }
 }

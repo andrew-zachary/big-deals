@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { apiCallStarted } from "../../store/actions/API.js";
 import { browseAllProducts } from "../../store/config/products.js";
 
-import Bricks from "../../parts/bricks.jsx";
-
 //products browsing paginator
 //1- item component to render item
 const Paginator = ({ItemComponent}) => {
@@ -56,7 +54,6 @@ const Paginator = ({ItemComponent}) => {
                     )
                 })
             }
-            <Bricks items={items} />
         </> 
     );
 };
