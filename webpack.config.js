@@ -50,7 +50,7 @@ module.exports = (env) => {
           loader: "html-loader",
         },
         {
-          test: /\.scss$/i,
+          test: /\.(sass|css|scss)$/,
           use: [
             env.NODE_ENV !== "production"
               ? "style-loader"

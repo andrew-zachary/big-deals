@@ -12,7 +12,11 @@ import AppHeader from "./parts/app-header.jsx";
 import AppFooter from "./parts/app-footer.jsx";
 import AppPage from "./parts/app-page.jsx";
 
-import "./index.scss";
+import './index.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import 'swiper/css/scrollbar';
 
 const App = () => {
     return (

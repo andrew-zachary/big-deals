@@ -1,4 +1,18 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    "margin-top": map-merge(
+      map-get($utilities, "margin-top"),
+      (
+        values: map-merge(map-get(map-get($utilities, "margin-top"), "values"),("a": 3rem, "b": 1rem)),
+      ),
+    ),
+  )
+);
+@import "bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 @font-face {
@@ -29,13 +43,7 @@ body {
     background-color: var(--bd-tertiary-color);
 }
 
-#big-deals-app {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
-}
-
-ul {
+ul, p, h1, h2 {
     margin: 0;
     padding :0;
 }
@@ -74,8 +82,12 @@ ul {
 }
 
 .bd-stars-calc {
-    li {
-        width: 20%;
+    ul {
+        margin: 0;
+        left: 0;
+        li {
+            width: 20%;
+        }
     }
     .stars-container, .value-container {
         width: 50%;
@@ -96,10 +108,31 @@ ul {
             z-index: 2;
             transform: rotate(180deg);
             transform-origin: left;
+            background-color: white;
         }
         .stars-outline-row {
             left: 0;
             z-index: 3;
         }
     }
+    .value-container {
+        line-height: 1;
+        margin-left: 1rem;
+    }
+}
+
+.bd-line {
+    height: 1px;
+    background-color: var(--bd-primary-color);
+}
+
+#big-deals-app {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+#app-header, .single-product-container {
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }
