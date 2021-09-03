@@ -80,20 +80,61 @@
                         }
                     }   
                 }
+                #description {
+                    h1 {
+                        font-size: 2.5rem;    
+                        font-family: overlock-bold;
+                    }
+                    p {
+                        font-size: 1.6rem;    
+                        font-family: roboto-regular;
+                    }
+                }
                 #description-points {
+                    h1 {
+                        font-size: 2.5rem;    
+                        font-family: overlock-bold;
+                    }
                     font-size: 1.6rem;
                     list-style-position: inside;
                 }
             }
         }
         #product-reviews {
+            & > h1 {
+                font-size: 2.5rem;
+            }
             button {
                 margin-top: 1.5rem;
             }
             ul#reviews-lists {
-                li {
-                    height: 250px;
-                    border: 1px solid black;
+                font-family: 'roboto-regular';
+                & > li {
+                    margin: 2.5rem 0rem;
+                    border-bottom: 1px solid var(--bd-primary-color);
+                    h1 {
+                        font-size: 1.6rem;
+                        span {
+                            &:first-child {
+                                color: var(--bd-primary-color);
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                    .review-stars-calc {
+                        margin: 0.5rem 0rem 0.5rem 0rem;
+                        width: 27.5rem;
+                        .value-container {
+                            font-size: 2rem;
+                        }
+                    }
+                    p {
+                        font-size: 2rem;
+                        margin-bottom: 2.5rem;
+                    }
+                }
+                & > li:last-child {
+                    border:unset;
                 }
             }
         }

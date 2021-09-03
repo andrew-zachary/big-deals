@@ -12,7 +12,7 @@ const Paginator = ({ItemComponent, productId}) => {
     //window scrolling function
     const scrolling = useCallback((e) => {
         e.stopImmediatePropagation();
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if ((window.innerHeight + window.scrollY) == (document.body.scrollHeight)) {
             doPaginate();
         }
     }, []);
@@ -25,10 +25,11 @@ const Paginator = ({ItemComponent, productId}) => {
     };
     //first mount
     //1- removeEventListener scroll after unmount
+    //2- reset current product reviews
     useEffect(()=>{
         return () => {
-            dispatch({type:resetReviews.type});
             window.removeEventListener("scroll", scrolling);
+            dispatch({type:resetReviews.type});
         };
     }, []);
     //update component current page value
@@ -37,7 +38,6 @@ const Paginator = ({ItemComponent, productId}) => {
     }, [currentPage]);
     //when canPaginate changes to false remove scrolling listener or add it if canPaginate true
     useEffect(()=>{
-        console.log("test");
         if(!canPaginate) {
             window.removeEventListener("scroll", scrolling);
         } else {

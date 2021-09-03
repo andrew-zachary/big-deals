@@ -32,7 +32,7 @@ const StarsCalc = ({avgRate}) => {
                 } 
             </ul>
         </div>
-        <div className="value-container">{avgRate}</div>
+        <div className="value-container">({avgRate})</div>
     </div>
 };
 

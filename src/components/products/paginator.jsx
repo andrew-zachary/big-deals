@@ -13,7 +13,6 @@ const Paginator = ({ItemComponent}) => {
     //window scrolling function
     const scrolling = useCallback((e) => {
         if ((window.innerHeight + window.scrollY) == (document.body.scrollHeight)) {
-            console.log("bottom");
             doPaginate();
         }
     }, []);

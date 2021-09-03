@@ -67,9 +67,9 @@ const SingleProduct = () => {
             </div>
             <div className="single-product-container bd-max-width-1200 p-3 mt-5">
                 <section id="product-reviews">
-                    <h1 className="text-capitalize">customer feedback</h1>
+                    <h1 className="text-capitalize mt-b">customer feedback</h1>
                     <ReviewsGetBtn productId={_id}/>
-                    <ul id="reviews-lists">
+                    <ul id="reviews-lists" className="mt-a list-unstyled">
                         <Paginator ItemComponent={ListItem} productId={_id} />
                     </ul>
                 </section>

@@ -35,8 +35,8 @@ const ProductGallery = ({gallery}) => {
                 {
                     gallery.images.map((image, index)=>{
                         return (
-                            <div className="swiper-slide d-flex justify-content-center align-items-start">
-                                <img role="button" key={index} src={image.src} alt="" />
+                            <div key={index} className="swiper-slide d-flex justify-content-center align-items-start">
+                                <img role="button" src={image.src} alt="" />
                             </div>
                         )
                     })
@@ -50,14 +50,14 @@ const ProductGallery = ({gallery}) => {
                 {
                     gallery.thumbnails.map((thumbnail, index)=>{
                         return (
-                            <div className="swiper-slide d-flex justify-content-center align-items-center">
-                                <img role="button" key={index} src={thumbnail.src} alt="" />
+                            <div key={index} className="swiper-slide d-flex justify-content-center align-items-center">
+                                <img role="button" src={thumbnail.src} alt="" />
                             </div>
                         )
                     })
                 }
             </div>
-            <div class="thumbs-swiper-scrollbar"></div>
+            <div className="thumbs-swiper-scrollbar"></div>
         </div>
     </>
 };
