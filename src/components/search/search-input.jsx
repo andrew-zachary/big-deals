@@ -18,7 +18,7 @@ const SearchInput = () => {
         inputEle.current.value = searchingStr;
     }, []);
     return (
-        <input type="text" ref={inputEle} onChange={(e)=>inputHandler(e)} />
+        <input placeholder="search all products" className="w-100 mx-auto d-block p-2" type="text" ref={inputEle} onChange={(e)=>inputHandler(e)} />
     );
 };
 

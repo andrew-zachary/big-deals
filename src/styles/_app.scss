@@ -25,29 +25,54 @@ $utilities: map-merge(
     src: url("./assets/Roboto-Regular.ttf");
 }
 
+@font-face {
+    font-family: "lato-thin";
+    src: url("./assets/Lato-Thin.ttf");
+}
+
+/* ele ====================================== */
 :root {
     --bd-primary-color: #f68b1e;
     --bd-secondary-color: #3d1212;
     --bd-tertiary-color: whitesmoke;
 }
-
 html {
     height: 100%;
     font-size: 62.5%;
 }
-
 body {
     height: 100%;
     font-size: 1.2rem;
     color: var(--bd-secondary-color);
     background-color: var(--bd-tertiary-color);
 }
-
 ul, p, h1, h2 {
     margin: 0;
     padding :0;
 }
+input {
+    outline: unset;
+    border: unset;
+    border-bottom: 1px solid var(--bd-primary-color);
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: black;
+            opacity: 1; /* Firefox */
+            font-family: lato-thin!important;
+            font-weight: 400;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: var(--bd-primary-color);
+            font-family: lato-thin!important;
+            font-weight: 100!important;
+        }
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: var(--bd-primary-color);
+            font-family: lato-thin!important;
+            font-weight: 100!important;
+        }
+}
 
+/* base-classes ====================================== */
 .bd-btn {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     outline: 0;
@@ -75,12 +100,11 @@ ul, p, h1, h2 {
     background-color: var(--bd-primary-color);
     color:white;
 }
-
 .bd-max-width-1200 {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .bd-stars-calc {
     ul {
         margin: 0;
@@ -120,19 +144,19 @@ ul, p, h1, h2 {
         margin-left: 1rem;
     }
 }
-
 .bd-line {
     height: 1px;
     background-color: var(--bd-primary-color);
 }
 
+/* main ====================================== */
 #big-deals-app {
     min-height: 100%;
     display: grid;
     grid-template-rows: max-content 1fr max-content;
 }
 
-#app-header, .single-product-container {
+#app-header, .single-product-container, ul#search-list {
     background-color: white;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }

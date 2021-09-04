@@ -14,7 +14,7 @@ const Paginator = ({ItemComponent}) => {
     //window scrolling function
     const scrolling = useCallback((ev) => {
         ev.stopImmediatePropagation();
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if ((window.innerHeight + window.scrollY) == (document.body.scrollHeight)) {
             doPaginate();
         }
     }, []);

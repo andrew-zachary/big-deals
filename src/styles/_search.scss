@@ -1,8 +1,35 @@
-#search-page{
-    ul#search-list{
-        li{
-            height: 250px;
-            border: 1px solid black;
+#search-page {
+    #search-page-container {
+        input {
+            font-size: 3rem;
+            font-family: overlock-bold;
+            font-weight: 700;
+            max-width: 50rem;
+        }
+        ul#search-list {
+            max-width: 80rem;
+            & > li {
+                border-bottom: 0.1rem solid var(--bd-primary-color);
+                .img-container {
+                    width: 30%;
+                }
+                .info-container {
+                    width: 60%;
+                    .info-container-stars-calc {
+                        max-width: 40rem;
+                    }
+                    #product-price {
+                        font-size: 3rem;
+                        font-weight: bold;
+                        .price-num {
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+            }
+            li:last-child {
+                border: unset;
+            }
         }
     }
 }
