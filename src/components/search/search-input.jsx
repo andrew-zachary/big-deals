@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useCallback, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {newSearchStarted} from "../../store/slices/products";
@@ -6,19 +6,21 @@ import {newSearchStarted} from "../../store/slices/products";
 const SearchInput = () => {
     const dispatch = useDispatch();
     const {searchingStr} = useSelector(state=>state.products.searching);
-    const inputEle = useRef(null);
+    const [searchInput, setSearchInput] = useState(searchingStr);
     let bounce = null;
-    const inputHandler = (e)=>{
-        clearTimeout(bounce);
-        bounce = setTimeout(()=>{
-            dispatch({type:newSearchStarted.type, payload:{searchingStr:e.target.value}});
-        }, 2000);
-    };
-    useEffect(()=>{
-        inputEle.current.value = searchingStr;
-    }, []);
+    const inputHandler = useCallback((e)=>{
+            clearTimeout(bounce);
+            bounce = setTimeout(()=>{
+                dispatch({type:newSearchStarted.type, payload:{searchingStr:e.target.value}});
+            }, 2000);
+        }, []);
     return (
-        <input placeholder="search all products" className="w-100 mx-auto d-block p-2" type="text" ref={inputEle} onChange={(e)=>inputHandler(e)} />
+        <div className="form-group bd-form-group mx-auto">
+            <input type="text" className="w-100" value={searchInput} onInput={(e)=>{setSearchInput(e.target.value)}} onChange={(e)=>inputHandler(e)} />
+            <span className="highlight"></span>
+            <span className="bar"></span>
+            <label htmlFor="searchAllProducts">Search all products</label>
+        </div>
     );
 };
 

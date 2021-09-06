@@ -7,7 +7,7 @@ $utilities: map-merge(
     "margin-top": map-merge(
       map-get($utilities, "margin-top"),
       (
-        values: map-merge(map-get(map-get($utilities, "margin-top"), "values"),("a": 3rem, "b": 1rem)),
+        values: map-merge(map-get(map-get($utilities, "margin-top"), "values"),("6": 4rem, "7": 5rem)),
       ),
     ),
   )
@@ -50,26 +50,8 @@ ul, p, h1, h2 {
     margin: 0;
     padding :0;
 }
-input {
-    outline: unset;
-    border: unset;
-    border-bottom: 1px solid var(--bd-primary-color);
-        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: black;
-            opacity: 1; /* Firefox */
-            font-family: lato-thin!important;
-            font-weight: 400;
-        }
-        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: var(--bd-primary-color);
-            font-family: lato-thin!important;
-            font-weight: 100!important;
-        }
-        &::-ms-input-placeholder { /* Microsoft Edge */
-            color: var(--bd-primary-color);
-            font-family: lato-thin!important;
-            font-weight: 100!important;
-        }
+a {
+    text-decoration: none!important;
 }
 
 /* base-classes ====================================== */
@@ -95,6 +77,50 @@ input {
     position: relative;
     height: 4rem;
     width: 4rem;
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.bd-radio-btn {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--bd-secondary-color);
+    padding-left: unset;
+  
+    label {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-family: lato-thin;
+        font-weight: 700;
+    }
+  
+    input {
+        display: none;
+    
+        &:checked ~ .checkmark {
+        background-color: var(--bd-primary-color);
+        }
+    }
+  
+    .checkmark {
+        height: 2.5rem;
+        width: 2.5rem;
+        border: 0.2rem solid var(--bd-secondary-color);
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 1rem 0 0;
+    }
 }
 .bd-primary-btn {
     background-color: var(--bd-primary-color);
@@ -144,9 +170,127 @@ input {
         margin-left: 1rem;
     }
 }
-.bd-line {
-    height: 1px;
-    background-color: var(--bd-primary-color);
+.bd-form-group {
+    position:relative;
+
+    /* INPUT ======================================= */
+    input {
+        height: 7rem;
+        padding-top: 4rem;
+        font-size: 2rem;
+        font-family: overlock-bold;
+        font-weight: 700;
+        border: unset;
+        border-bottom: 1px solid lightgrey;
+        &:focus {
+            outline: none!important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: black;
+            opacity: 1; /* Firefox */
+            font-family: lato-thin!important;
+            font-weight: 400;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: var(--bd-primary-color);
+            font-family: lato-thin!important;
+            font-weight: 100!important;
+        }
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: var(--bd-primary-color);
+            font-family: lato-thin!important;
+            font-weight: 100!important;
+        }
+    }
+
+    /* ERROR ======================================= */
+    & ~ .invalid-feedback, .invalid-feedback {
+        font-size: 2rem;
+        font-family: lato-thin;
+        font-weight: 700;
+        display: block!important;
+        color: red;
+    }
+    
+    /* LABEL ======================================= */
+    label {
+        font-size: 2rem;
+        font-family: lato-thin;
+        font-weight: 700;
+        color: var(--bd-secondary-color);
+        position:absolute;
+        pointer-events:none;
+        left:0.5rem;
+        top:4rem;
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+    }
+    
+    /* active state */
+    input:focus ~ label, input:not([value=""]) ~ label {
+        top: 1.5rem;
+        font-size: 1.5rem;
+    }
+      
+    /* BOTTOM BARS ================================= */
+    .bar { position:relative; display:block; width:100%; }
+    .bar:before, .bar:after {
+        content:'';
+        height:2px; 
+        width:0;
+        bottom:1px; 
+        position:absolute;
+        background:var(--bd-primary-color); 
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+    }
+    .bar:before {
+        left:50%;
+    }
+    .bar:after {
+        right:50%; 
+    }
+      
+    /* active state */
+    input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width:50%;
+    }
+      
+    /* HIGHLIGHTER ================================== */
+    .highlight {
+        position:absolute;
+        height:60%; 
+        width:100px; 
+        top:25%; 
+        left:0;
+        pointer-events:none;
+        opacity:0.5;
+    }
+      
+    /* active state */
+    input:focus ~ .highlight {
+        -webkit-animation:inputHighlighter 0.3s ease;
+        -moz-animation:inputHighlighter 0.3s ease;
+        animation:inputHighlighter 0.3s ease;
+    }
+      
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+        from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+    }
+    @-moz-keyframes inputHighlighter {
+        from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+    }
+    @keyframes inputHighlighter {
+        from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+    }
 }
 
 /* main ====================================== */
@@ -156,7 +300,7 @@ input {
     grid-template-rows: max-content 1fr max-content;
 }
 
-#app-header, .single-product-container, ul#search-list {
+#app-header, .single-product-container, ul#search-list, #login-box, #register-box {
     background-color: white;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }

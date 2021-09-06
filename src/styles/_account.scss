@@ -1,0 +1,26 @@
+#account-page {
+    #account-page-container {
+        height: 100%;
+        #register-box {
+            #at-least {
+                font-size: 2rem;
+                font-family: lato-thin;
+                font-weight: 700;
+                padding-left: 1rem;
+            }
+        }
+        #login-box, #register-box {
+            width: 45rem;
+            font-family: 'overlock-bold';
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+                span {
+                    color: var(--bd-primary-color);
+                }
+            }
+        }
+    }
+}

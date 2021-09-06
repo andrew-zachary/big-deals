@@ -48,11 +48,11 @@ const SingleProduct = () => {
                         <div id="add-to-cart">
                             <button className="bd-btn bd-primary-btn d-flex align-items-center"><i className="fas fa-cart-plus"></i>add to cart</button>
                         </div>
-                        <div id="description" className="mt-a">
+                        <div id="description" className="mt-5">
                             <h1 className="text-capitalize">description</h1>
                             <p className="mt-b">{description}</p>
                         </div>
-                        <div id="description-points" className="mt-a">
+                        <div id="description-points" className="mt-5">
                             <h1 className="text-capitalize">details</h1>
                             <ul className="mt-b">
                                 {
@@ -69,7 +69,7 @@ const SingleProduct = () => {
                 <section id="product-reviews">
                     <h1 className="text-capitalize mt-b">customer feedback</h1>
                     <ReviewsGetBtn productId={_id}/>
-                    <ul id="reviews-lists" className="mt-a list-unstyled">
+                    <ul id="reviews-lists" className="mt-5 list-unstyled">
                         <Paginator ItemComponent={ListItem} productId={_id} />
                     </ul>
                 </section>
