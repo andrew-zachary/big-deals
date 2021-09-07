@@ -1,22 +1,13 @@
 #app-footer {
-    height: 100%;
-    align-self: center;
     &_container {
-        height: 100%;
         ul {
-            height: 100%;
             li {
-                line-height: 0;
                 margin-right: 1rem;
                 &:last-child{
                     margin:0;
                 }
                 a {
                     i {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
                         &::before {
                             font-size: 2rem;
                             color: white

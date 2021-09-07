@@ -6,6 +6,7 @@ const Nav = ({openNavMenu}) => {
     const links = [
         {to:"/account", text:"account"},
         {to:"/search", text:"search"},
+        {to:"/products", text:"products"},
         {to:"/about", text:"about"},
         {to:"/", text:"العربية"},
     ];

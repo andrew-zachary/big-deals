@@ -11,9 +11,9 @@ const Login = () => {
     const dispatch = useDispatch();
     const errorState = useSelector((state) => state.app.currentError);
     return (
-        <div id="login-box" className="p-4">
+        <div id="login-box" className="bd-white-box p-4">
             <h1 className="text-capitalize">sign in</h1>
-            <h2 className="mt-3">don't have account - <Link to="/account/register"><span role="button" className="text-capitalize">sign up</span></Link></h2>
+            <h2 className="mt-3">don't have account - <Link to="/account/register" className="text-decoration-none"><span role="button" className="text-capitalize">sign up</span></Link></h2>
             <div id="error-box" style={{ display: errorState.receivedError ? "block" : "none" }}>
                 <p className="text-center text-capitalize d-flex flex-column w-100">
                     <i className="fas fa-exclamation-triangle"></i>

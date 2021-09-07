@@ -8,8 +8,8 @@ const ListItem = ({itemData}) => {
             <div className="img-container text-center">
                 <img src="https://via.placeholder.com/200x200" alt="" />
             </div>
-            <div className="info-container d-flex flex-wrap ps-3">
-                <h1 className="w-100">{itemData.name}</h1>
+            <div className="info-container d-flex flex-wrap">
+                <h1 className="text-capitalize w-100">{itemData.name}</h1>
                 <div className="info-container-stars-calc w-100">
                     <StarsCalc avgRate={itemData.avgRate} />
                 </div>

@@ -2,9 +2,9 @@
     &_container{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 5.05rem 1fr;
+        grid-template-rows: 5.05rem 1fr;
         transition: background-color 0.3s linear;
-        img {
+        img#logo {
             width: 19.95rem;
             height: 5.05rem;
         }
@@ -16,9 +16,8 @@
                     font-size: 1.6rem;
                     color: white;
                 }
-                &:last-child{
+                &:last-child {
                     padding-bottom: 0.5rem;
-                    border: unset;
                 }
             }
         }

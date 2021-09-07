@@ -2,15 +2,15 @@
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/utilities";
 $utilities: map-merge(
-  $utilities,
-  (
-    "margin-top": map-merge(
-      map-get($utilities, "margin-top"),
-      (
-        values: map-merge(map-get(map-get($utilities, "margin-top"), "values"),("6": 4rem, "7": 5rem)),
-      ),
-    ),
-  )
+    $utilities,
+    (
+        "margin-top": map-merge(
+            map-get($utilities, "margin-top"),
+            (
+                values: map-merge(map-get(map-get($utilities, "margin-top"), "values"),("6": 4rem, "7": 5rem)),
+            ),
+        ),
+    )
 );
 @import "bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
@@ -42,7 +42,6 @@ html {
 }
 body {
     height: 100%;
-    font-size: 1.2rem;
     color: var(--bd-secondary-color);
     background-color: var(--bd-tertiary-color);
 }
@@ -50,18 +49,21 @@ ul, p, h1, h2 {
     margin: 0;
     padding :0;
 }
-a {
-    text-decoration: none!important;
-}
 
-/* base-classes ====================================== */
+/* bd-classes ====================================== */
+#bd-app {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
 .bd-btn {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     outline: 0;
     border: 0;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     padding: 1.2rem 1.4rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-family: roboto-regular;
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
@@ -70,10 +72,7 @@ a {
     }
 }
 .bd-circle-btn {
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    outline: 0;
-    border: 0;
-    border-radius: 50px;
+    border-radius: 5rem;
     position: relative;
     height: 4rem;
     width: 4rem;
@@ -86,7 +85,6 @@ a {
 }
 .bd-radio-btn {
     width: 100%;
-    cursor: pointer;
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -107,9 +105,8 @@ a {
   
     input {
         display: none;
-    
         &:checked ~ .checkmark {
-        background-color: var(--bd-primary-color);
+            background-color: var(--bd-primary-color);
         }
     }
   
@@ -127,14 +124,10 @@ a {
     color:white;
 }
 .bd-max-width-1200 {
-    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
 }
 .bd-stars-calc {
     ul {
-        margin: 0;
-        left: 0;
         li {
             width: 20%;
         }
@@ -259,48 +252,8 @@ a {
     input:focus ~ .bar:before, input:focus ~ .bar:after {
         width:50%;
     }
-      
-    /* HIGHLIGHTER ================================== */
-    .highlight {
-        position:absolute;
-        height:60%; 
-        width:100px; 
-        top:25%; 
-        left:0;
-        pointer-events:none;
-        opacity:0.5;
-    }
-      
-    /* active state */
-    input:focus ~ .highlight {
-        -webkit-animation:inputHighlighter 0.3s ease;
-        -moz-animation:inputHighlighter 0.3s ease;
-        animation:inputHighlighter 0.3s ease;
-    }
-      
-    /* ANIMATIONS ================ */
-    @-webkit-keyframes inputHighlighter {
-        from { background:#5264AE; }
-    to 	{ width:0; background:transparent; }
-    }
-    @-moz-keyframes inputHighlighter {
-        from { background:#5264AE; }
-    to 	{ width:0; background:transparent; }
-    }
-    @keyframes inputHighlighter {
-        from { background:#5264AE; }
-    to 	{ width:0; background:transparent; }
-    }
 }
-
-/* main ====================================== */
-#big-deals-app {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
-}
-
-#app-header, .single-product-container, ul#search-list, #login-box, #register-box {
+.bd-white-box {
     background-color: white;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }

@@ -30,4 +30,4 @@ const App = () => {
     );
 };
 
-ReactDOM.render(<App />, document.getElementById("big-deals-app"));
+ReactDOM.render(<App />, document.getElementById("bd-app"));

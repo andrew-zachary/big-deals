@@ -13,7 +13,7 @@ export default () => {
   const dispatch = useDispatch();
   const errorState = useSelector((state) => state.app.currentError);
   return (
-    <div id="register-box" className="p-4 mt-6">
+    <div id="register-box" className="bd-white-box p-4 mt-6">
         <h1 className="text-capitalize">sign up</h1>
         <div
             id="error-box"

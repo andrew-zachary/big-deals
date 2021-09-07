@@ -11,7 +11,7 @@ const SingleProduct = () => {
     const {_id, name, price, avgRate, features, description, descriptionPoints} = useSelector(state=>state.products.productSelected);
     return (
         <div id="single-product-page" className="mt-5">
-            <div className="single-product-container bd-max-width-1200 p-3">
+            <div className="single-product-container bd-max-width-1200 bd-white-box p-3">
                 <section id="product-info" className="d-flex">
                     <div id="product-info-left">
                         <ProductGallery gallery={{
@@ -65,7 +65,7 @@ const SingleProduct = () => {
                     </div>
                 </section>
             </div>
-            <div className="single-product-container bd-max-width-1200 p-3 mt-5">
+            <div className="single-product-container bd-max-width-1200 bd-white-box p-3 mt-5">
                 <section id="product-reviews">
                     <h1 className="text-capitalize mt-b">customer feedback</h1>
                     <ReviewsGetBtn productId={_id}/>
