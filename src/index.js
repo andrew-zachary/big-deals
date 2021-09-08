@@ -1,5 +1,6 @@
 import "regenerator-runtime/runtime";
 import "core-js/stable";
+import "./utils/i18next";
 
 import React from "react";
 import ReactDOM from "react-dom";

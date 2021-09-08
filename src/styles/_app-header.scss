@@ -98,13 +98,39 @@
                         display: block;
                     }
                     li {
-                        margin-right: 1rem;
+                        margin-right: 2rem;
                         padding-top: unset;
                         border-bottom: unset;
                         display: inline-block;
+                        &:last-child {
+                            margin: 0;
+                        }
                         a {
                             font-size: 1.6rem;
                             color: var(--bd-secondary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+html[dir=rtl] {
+    #app-header {
+        @media screen and (min-width: 768px){
+            & {
+                #app-header_container {
+                    #main-nav {
+                        li {
+                            margin-right: 0rem;
+                            margin-left: 2rem;
+                            &:last-child {
+                                margin: 0;
+                            }
+                            a {
+                                font-family: tajawal-regular;
+                                font-weight: 700;
+                            }
                         }
                     }
                 }

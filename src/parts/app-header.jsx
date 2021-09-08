@@ -9,7 +9,7 @@ const AppHeader = () => {
     const [openNavMenu, setOpenNavMenu] = useState(false);
     return (
         <section id="app-header" className="bd-white-box">
-            <div id="app-header_container" className="bd-max-width-1200 p-3" style={{backgroundColor:openNavMenu?"var(--bd-secondary-color)":"white"}}>
+            <div id="app-header_container" className="bd-max-width-1200 mx-auto p-3" style={{backgroundColor:openNavMenu?"var(--bd-secondary-color)":"white"}}>
                 <Link to={'/'}>
                     <img id="logo" src={logo} alt="" />
                 </Link>

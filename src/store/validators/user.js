@@ -7,10 +7,10 @@ const UserValidation = Joi.object({
       register: (schema) => schema.max(50).min(5).required(),
     })
     .messages({
-      "any.required": "name is needed",
-      "string.empty": "name is needed",
-      "string.min": "minimum chars number for name is 5",
-      "string.max": "maximum chars number for name is 50",
+      "any.required": "is_needed",
+      "string.empty": "is_needed",
+      "string.min": "min",
+      "string.max": "max",
     }),
   email: Joi.string()
     .regex(
@@ -18,22 +18,22 @@ const UserValidation = Joi.object({
     )
     .email({ tlds: { allow: false } })
     .max(255)
-    .min(6)
     .required()
     .messages({
-      "any.required": "email is needed",
-      "string.empty": "email is needed",
-      "string.min": "minimum chars number for name is 5",
-      "string.max": "maximum chars number for name is 255",
-      "string.email": "please enter valid e-mail",
-      "string.base": "please enter valid e-mail",
-      "string.pattern.base": "please enter valid e-mail",
+      "any.required": "is_needed",
+      "string.empty": "is_needed",
+      "string.max": "max",
+      "string.email": "not_valid",
+      "string.base": "not_valid",
+      "string.pattern.base": "not_valid",
     }),
-  password: Joi.string().required().max(255).min(6).messages({
-    "any.required": "password is needed",
-    "string.empty": "password is needed",
-    "string.min": "password can't be less than 6",
-    "string.max": "password can't be more than 255",
+  password: Joi.string().required().max(255).alter({
+    register: (schema) => schema.min(6)
+  }).messages({
+    "any.required": "is_needed",
+    "string.empty": "is_needed",
+    "string.min": "min",
+    "string.max": "max",
   }),
   confirm_password: Joi.string()
     .max(255)
@@ -42,11 +42,11 @@ const UserValidation = Joi.object({
       register: (schema) => schema.required(),
     })
     .messages({
-      "any.required": "password confirm is needed",
-      "string.base": "password confirm must be string",
-      "string.empty": "password confirm is needed",
-      "string.max": "role can't be more than 50",
-      "any.only": "password confirm doesn't match",
+      "any.required": "is_needed",
+      "string.base": "is_needed",
+      "string.empty": "is_needed",
+      "string.max": "max",
+      "any.only": "match",
     }),
   role: Joi.string()
     .alter({
@@ -54,28 +54,28 @@ const UserValidation = Joi.object({
       register: (schema) => schema.max(50).required(),
     })
     .messages({
-      "any.required": "role is needed",
-      "string.base": "role must be string",
-      "string.empty": "please select a role",
-      "string.max": "role can't be more than 50",
+      "any.required": "is_needed",
+      "string.base": "is_needed",
+      "string.empty": "is_needed",
+      "string.max": "max",
     }),
-  hobbies: Joi.array()
+    interests: Joi.array()
     .items(
       Joi.object({
         name: Joi.string().min(3),
       }).messages({
-        "any.required": "hobby is needed",
-        "string.base": "hobby must be string",
-        "string.empty": "hobby is needed",
-        "string.min": "hobby can't be less than 3 characters",
+        "any.required": "is_needed",
+        "string.base": "is_needed",
+        "string.empty": "is_needed",
+        "string.min": "min",
       })
     )
     .alter({
       register: (schema) => schema.required().min(1),
     })
     .messages({
-      "any.required": "hobbies is needed",
-      "array.min": "at least one hobby",
+      "any.required": "is_needed",
+      "array.min": "min",
     }),
 });
 

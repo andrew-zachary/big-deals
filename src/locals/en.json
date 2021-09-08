@@ -1,0 +1,107 @@
+{
+    "translation":{
+        "nav": {
+            "lang_btn": "العربية",
+            "account": "my account",
+            "search": "search",
+            "products": "products",
+            "about": "about"
+        },
+        "home": {
+            "title": {
+                "top": "new deals every day",
+                "mid": "shop our deal of the day and more"
+            },
+            "check_new_deals_btn":"check new deals"
+        },
+        "account": {
+            "sing_in": {
+                "title": "sing in",
+                "dont_have_account": "don't have account",
+                "sing_up": "sign up",
+                "btn": "sing in",
+                "form": {
+                    "email": {
+                        "label": "email",
+                        "error": {
+                            "is_needed":"email is needed",
+                            "max": "maximum chars number is 255",
+                            "not_valid": "please enter valid e-mail"
+                        }
+                    },
+                    "password": {
+                        "label": "password",
+                        "error": {
+                            "is_needed": "password is needed",
+                            "min": "password can't be less than 6",
+                            "max": "password can't be more than 255"
+                        }
+                    }
+                }
+            },
+            "sign_up": {
+                "title": "sign up",
+                "btn": "sing up",
+                "form": {
+                    "name": {
+                        "label": "name",
+                        "error": {
+                            "is_needed": "name is needed",
+                            "min": "minimum chars number for name is 5",
+                            "max": "maximum chars number for name is 50"
+                        }
+                    },
+                    "email": {
+                        "label": "email",
+                        "error": {
+                            "is_needed":"email is needed",
+                            "max": "maximum chars number is 255",
+                            "not_valid": "please enter valid e-mail"
+                        }
+                    },
+                    "password": {
+                        "label": "password",
+                        "error": {
+                            "is_needed": "password is needed",
+                            "min": "password can't be less than 6",
+                            "max": "password can't be more than 255"
+                        }
+                    },
+                    "confirm_password": {
+                        "label": "confirm password",
+                        "error": {
+                            "is_needed": "please confirm the password",
+                            "max": "password confirm can't be more than 255",
+                            "match": "password confirm doesn't match"
+                        }
+                    },
+                    "gender": {
+                        "label": "gender",
+                        "male": "male",
+                        "female": "female",
+                        "error": {
+                            "is_needed": "gender is needed",
+                            "max": "gender can't be more than 50"
+                        }
+                    },
+                    "interests": {
+                        "label": "interests",
+                        "error": {
+                            "is_needed": "interests are needed",
+                            "min": "at least one interest"
+                        },
+                        "item": {
+                            "error": {
+                                "is_needed": "interest is needed",
+                                "min": "can't be less than 3 chars"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "search": {
+            "input": "search all products"
+        }
+    }
+}

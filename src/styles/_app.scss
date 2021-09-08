@@ -30,6 +30,21 @@ $utilities: map-merge(
     src: url("./assets/Lato-Thin.ttf");
 }
 
+@font-face {
+    font-family: "tajawal-extra-light";
+    src: url("./assets/Tajawal-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "tajawal-Light";
+    src: url("./assets/Tajawal-Light.ttf");
+}
+
+@font-face {
+    font-family: "tajawal-regular";
+    src: url("./assets/Tajawal-Regular.ttf");
+}
+
 /* ele ====================================== */
 :root {
     --bd-primary-color: #f68b1e;
@@ -52,9 +67,9 @@ ul, p, h1, h2 {
 
 /* bd-classes ====================================== */
 #bd-app {
-    min-height: 100%;
+    min-height: 56.8rem;
     display: grid;
-    grid-template-rows: max-content 1fr max-content;
+    grid-template-rows: max-content minmax(52rem, 1fr) max-content;
 }
 .bd-btn {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
@@ -116,7 +131,6 @@ ul, p, h1, h2 {
         border: 0.2rem solid var(--bd-secondary-color);
         border-radius: 50%;
         display: inline-block;
-        margin: 0 1rem 0 0;
     }
 }
 .bd-primary-btn {
@@ -180,22 +194,6 @@ ul, p, h1, h2 {
             -webkit-box-shadow: none;
             box-shadow: none;
         }
-        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: black;
-            opacity: 1; /* Firefox */
-            font-family: lato-thin!important;
-            font-weight: 400;
-        }
-        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: var(--bd-primary-color);
-            font-family: lato-thin!important;
-            font-weight: 100!important;
-        }
-        &::-ms-input-placeholder { /* Microsoft Edge */
-            color: var(--bd-primary-color);
-            font-family: lato-thin!important;
-            font-weight: 100!important;
-        }
     }
 
     /* ERROR ======================================= */
@@ -256,4 +254,21 @@ ul, p, h1, h2 {
 .bd-white-box {
     background-color: white;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
+}
+
+/* rtl ============================================================= */
+html[dir=rtl] {
+    .bd-form-group {
+        label, .invalid-feedback {
+            font-family: tajawal-Light;
+        }
+        label {
+            top: 3rem;
+            width: 100%;
+        }
+        input:focus ~ label, input:not([value=""]) ~ label {
+            top: 1.5rem;
+            font-size: 1.5rem;
+        }
+    }
 }

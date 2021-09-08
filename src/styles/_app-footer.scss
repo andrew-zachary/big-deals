@@ -18,3 +18,13 @@
         }
     }
 }
+html[dir=rtl] {
+    #app-footer_container {
+        ul {
+            li {
+                margin-right: 0rem;
+                margin-left: 1rem;
+            }
+        }   
+    }
+}

@@ -8,6 +8,11 @@
                 font-weight: 700;
                 padding-left: 1rem;
             }
+            .form-check-label {
+                span {
+                    margin-left: 1rem;
+                }
+            }
         }
         #login-box, #register-box {
             width: 45rem;
@@ -19,6 +24,45 @@
                 font-size: 2rem;
                 span {
                     color: var(--bd-primary-color);
+                }
+            }
+        }
+        @media screen and (max-width:450px){
+            #login-box, #register-box {
+                width: 100%;
+            }
+        }
+    }
+}
+html[dir=rtl] {
+    #account-page {
+        #account-page-container{
+            #login-box, #register-box {
+                h1, h2 {
+                    font-family: tajawal-regular;
+                }
+                label {
+                    span {
+                        font-family: tajawal-Light;
+                    }
+                }
+            }
+            #register-box {
+                #list-of-interests {
+                    h1#at-least {
+                        font-family: tajawal-Light;
+                        padding-left: 0;
+                        padding-right: 1rem;
+                    }
+                }
+                .form-check-label {
+                    span {
+                        margin-left: 0;
+                        margin-right: 1rem;
+                    }
+                }
+                .invalid-feedback {
+                    font-family: tajawal-Light;
                 }
             }
         }

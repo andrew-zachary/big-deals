@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const appSlice = createSlice({
   name: "app",
   initialState: {
+    localization : "",
     globalSpinner: {
       show: false,
       processName: "",
@@ -47,6 +48,9 @@ export const appSlice = createSlice({
     },
   },
   reducers: {
+    localizationChanged:(state, action) => {
+      state.localization = action.payload.lang;
+    },
     globalSpinnerStarted: (state, action) => {
       state.globalSpinner.show = true;
       state.globalSpinner.processName = action.payload.processName;
@@ -134,6 +138,7 @@ export const appSlice = createSlice({
 });
 
 export const {
+  localizationChanged,
   globalSpinnerStarted,
   taskModalStarted,
   confirmModalStarted,
@@ -142,7 +147,7 @@ export const {
   toasterEnded,
   currentErrorReceived,
   processingEnded,
-  globalSpinnerEnded,
+  globalSpinnerEnded
 } = appSlice.actions;
 
 export default appSlice.reducer;

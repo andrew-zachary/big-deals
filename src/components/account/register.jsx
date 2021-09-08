@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { register } from "../../store/config/user";
 import { apiCallStarted } from "../../store/actions/API.js";
@@ -11,10 +12,11 @@ import RegisterInterestsList from "./register-interests-list.jsx";
 
 export default () => {
   const dispatch = useDispatch();
+  const {t} = useTranslation();
   const errorState = useSelector((state) => state.app.currentError);
   return (
     <div id="register-box" className="bd-white-box p-4 mt-6">
-        <h1 className="text-capitalize">sign up</h1>
+        <h1 className="text-capitalize">{t('account.sign_up.title')}</h1>
         <div
             id="error-box"
             style={{ display: errorState.receivedError ? "block" : "none" }}>
@@ -30,7 +32,7 @@ export default () => {
                 password: "",
                 confirm_password: "",
                 role: "",
-                hobbies: [],
+                interests: [],
             }}
             validate={(values) => {
                 const errors = {};
@@ -76,9 +78,9 @@ export default () => {
                             />
                             <span className="highlight"></span>
                             <span className="bar"></span>
-                            <label htmlFor="registerFormName">Name</label>
+                            <label htmlFor="registerFormName" className="text-capitalize">{t('account.sign_up.form.name.label')}</label>
                             {errors.name && touched.name && (
-                                <div className="invalid-feedback">{errors.name}</div>
+                                <div className="invalid-feedback">{t(`account.sign_up.form.name.error.${errors.name}`)}</div>
                             )}
                         </div>
                         <div className="form-group bd-form-group">
@@ -93,9 +95,9 @@ export default () => {
                             />
                             <span className="highlight"></span>
                             <span className="bar"></span>
-                            <label htmlFor="registerFormEmail">Email address</label>
+                            <label htmlFor="registerFormEmail" className="text-capitalize">{t('account.sign_up.form.email.label')}</label>
                             {errors.email && touched.email && (
-                                <div className="invalid-feedback">{errors.email}</div>
+                                <div className="invalid-feedback">{t(`account.sign_up.form.email.error.${errors.email}`)}</div>
                             )}
                         </div>
                         <div className="form-group bd-form-group">
@@ -110,9 +112,9 @@ export default () => {
                             />
                             <span className="highlight"></span>
                             <span className="bar"></span>
-                            <label htmlFor="registerFormPassword">Password</label>
+                            <label htmlFor="registerFormPassword" className="text-capitalize">{t('account.sign_up.form.password.label')}</label>
                             {errors.password && touched.password && (
-                                <div className="invalid-feedback">{errors.password}</div>
+                                <div className="invalid-feedback">{t(`account.sign_up.form.password.error.${errors.password}`)}</div>
                             )}
                         </div>
                         <div className="form-group bd-form-group">
@@ -127,10 +129,10 @@ export default () => {
                             />
                             <span className="highlight"></span>
                             <span className="bar"></span>
-                            <label htmlFor="registerFormConfirmPassword">Confirm Password</label>
+                            <label htmlFor="registerFormConfirmPassword" className="text-capitalize">{t('account.sign_up.form.confirm_password.label')}</label>
                             {errors.confirm_password && touched.confirm_password && (
                                 <div className="invalid-feedback">
-                                    {errors.confirm_password}
+                                    {t(`account.sign_up.form.confirm_password.error.${errors.confirm_password}`)}
                                 </div>
                             )}
                         </div>
@@ -146,7 +148,7 @@ export default () => {
                                     value="buyer"
                                 />
                                 <div role="button" className="checkmark"></div>
-                                <span>Buyer</span>
+                                <span className="text-capitalize">{t(`account.sign_up.form.gender.male`)}</span>
                             </label>
                         </div>
                         <div className="form-check mt-5 bd-radio-btn">
@@ -161,20 +163,21 @@ export default () => {
                                     value="seller"
                                 />
                                 <div role="button" className="checkmark"></div>
-                                <span>Seller</span>
+                                <span className="text-capitalize">{t(`account.sign_up.form.gender.female`)}</span>
                             </label>
                         </div>
                         {errors.role && touched.role && (
-                            <div className="invalid-feedback">{errors.role}</div>
+                            <div className="invalid-feedback">{t(`account.sign_up.form.gender.error.${errors.role}`)}</div>
                         )}
                         <RegisterInterestsList
-                            name="hobbies"
+                            name="interests"
                             values={values}
                             errors={errors}
                             onChange={handleChange}
                             onBlur={handleBlur}
+                            t={t}
                         />
-                        <button type="submit" className="btn bd-btn bd-primary-btn mt-5 w-100">Sign Up</button>
+                        <button type="submit" className="btn bd-btn bd-primary-btn mt-5 w-100">{t(`account.sign_up.btn`)}</button>
                     </form>
                 )}
             </Formik>

@@ -1,11 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const HomePage = () => {
+  const {t} = useTranslation();
   return (
     <div id="home-page" className="text-center">
-      <h1><span className="text-capitalize">you can buy without deals</span><br />but <span className="text-uppercase deals-word">deals</span> kill all needs</h1>
-      <Link to="/products" className="bd-btn bd-primary-btn mt-5">check big deals</Link>
+      <h1 className="text-capitalize mb-3">{t('home.title.top')}</h1>
+      <h3>{t('home.title.mid')}</h3>
+      <Link to="/products" className="bd-btn bd-primary-btn mt-3">{t('home.check_new_deals_btn')}</Link>
     </div>
   );
 };

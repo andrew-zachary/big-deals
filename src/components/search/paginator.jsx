@@ -30,6 +30,7 @@ const Paginator = ({ItemComponent}) => {
     }
     //do paginate
     const doPaginate = async() => {
+        if(currentSearchStr.current.length === 0) return;
         dispatch({
             type: apiCallStarted.type,
             payload: searchAllProducts({ page: page.current, search: currentSearchStr.current }),
