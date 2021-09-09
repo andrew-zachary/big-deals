@@ -102,6 +102,10 @@
         },
         "search": {
             "input": "search all products"
+        },
+        "connection": {
+            "title": "Heroku PaaS needs to wake up !!!",
+            "msg": "give another try ... or check your internet connection"
         }
     }
 }

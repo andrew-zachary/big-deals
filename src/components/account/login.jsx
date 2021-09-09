@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,22 +6,30 @@ import {useTranslation} from "react-i18next";
 
 import { login } from "../../store/config/user";
 import { apiCallStarted } from "../../store/actions/API.js";
+import { currentErrorEnded } from "../../store/slices/app";
 import UserValidation from "../../store/validators/user";
 
 const Login = () => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const errorState = useSelector((state) => state.app.currentError);
+    useEffect(()=>{
+        if(errorState.receivedError) {
+            dispatch({type:currentErrorEnded.type});
+        }
+    }, []);
     return (
         <div id="login-box" className="bd-white-box p-4">
             <h1 className="text-capitalize">{t('account.sing_in.title')}</h1>
             <h2 className="mt-3">{t('account.sing_in.dont_have_account')} - <Link to="/account/register" className="text-decoration-none"><span role="button" className="text-capitalize">{t('account.sing_in.sing_up')}</span></Link></h2>
-            <div id="error-box" style={{ display: errorState.receivedError ? "block" : "none" }}>
-                <p className="text-center text-capitalize d-flex flex-column w-100">
-                    <i className="fas fa-exclamation-triangle"></i>
-                    <span className="mt-3">{errorState.err}</span>
-                </p>
-            </div>
+            {
+                errorState.receivedError && <div id="error-box" className="pt-3 pb-3 mt-3">
+                    <p className="text-center text-capitalize d-flex flex-column w-100">
+                        <i className="fas fa-exclamation-triangle"></i>
+                        <span className="mt-3">{errorState.message}</span>
+                    </p>
+                </div>
+            }
             <Formik
                 initialValues={{
                     email: "",

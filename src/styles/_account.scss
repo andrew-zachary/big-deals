@@ -26,6 +26,12 @@
                     color: var(--bd-primary-color);
                 }
             }
+            #error-box {
+                font-size: 2rem;
+                border: 0.1rem solid black;
+                font-family: lato-thin;
+                font-weight: 700;
+            }
         }
         @media screen and (max-width:450px){
             #login-box, #register-box {

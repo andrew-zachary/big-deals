@@ -10,7 +10,7 @@ export const appSlice = createSlice({
     },
     currentError: {
       message: null,
-      err: null,
+      errCode: null,
       receivedError: false,
     },
     taskModal: {
@@ -57,7 +57,7 @@ export const appSlice = createSlice({
     },
     currentErrorReceived: (state, action) => {
       state.currentError.message = action.payload.message;
-      state.currentError.err = action.payload.err;
+      state.currentError.errCode = action.payload.errCode;
       state.currentError.receivedError = true;
     },
     taskModalStarted: (state, action) => {
@@ -120,9 +120,11 @@ export const appSlice = createSlice({
         },
         processing: false,
       };
+    },
+    currentErrorEnded:(state) => {
       state.currentError = {
         message: null,
-        err: null,
+        errCode: null,
         receivedError: false,
       };
     },
@@ -138,6 +140,7 @@ export const appSlice = createSlice({
 });
 
 export const {
+  currentErrorEnded,
   localizationChanged,
   globalSpinnerStarted,
   taskModalStarted,

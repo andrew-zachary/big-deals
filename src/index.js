@@ -12,6 +12,7 @@ import store from "./store/index";
 import AppHeader from "./parts/app-header.jsx";
 import AppFooter from "./parts/app-footer.jsx";
 import AppPage from "./parts/app-page.jsx";
+import AppError from "./parts/app-error.jsx";
 
 import './index.scss';
 import 'swiper/css';
@@ -26,6 +27,7 @@ const App = () => {
                 <AppHeader />
                 <AppPage />
                 <AppFooter />
+                <AppError />
             </Router>
         </Provider>
     );

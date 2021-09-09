@@ -1,5 +1,6 @@
 import { http_client } from "../../utils/http";
 import { apiCallStarted, apiCallEnded, apiCallFailed } from "../actions/API";
+import {currentErrorReceived} from "../slices/app"
 
 export default ({ dispatch }) => (next) =>
     async (action) => {
@@ -20,6 +21,13 @@ export default ({ dispatch }) => (next) =>
             });
             dispatch({ type: apiCallEnded.type });
         } catch (err) {
+            dispatch({
+                type:currentErrorReceived.type, 
+                payload: {
+                    errCode:err.code?err.code:"",
+                    message: err.response?err.response.data.err:""
+                }
+            });
             dispatch({ type: apiCallFailed.type });
     }
 };

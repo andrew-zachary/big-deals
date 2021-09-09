@@ -1,0 +1,15 @@
+#connection-page {
+    font-family: overlock-bold;
+    align-self: center;
+    i {
+        &:before {
+            font-size: 9rem;
+            color: var(--bd-primary-color);
+        }
+    }
+}
+html[dir=rtl] {
+    #connection-page {
+        font-family: tajawal-regular;
+    }
+}

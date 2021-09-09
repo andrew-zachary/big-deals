@@ -1,30 +1,36 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import { register } from "../../store/config/user";
 import { apiCallStarted } from "../../store/actions/API.js";
+import { currentErrorEnded } from "../../store/slices/app";
 
 import UserValidation from "../../store/validators/user";
 
 import RegisterInterestsList from "./register-interests-list.jsx";
 
 export default () => {
-  const dispatch = useDispatch();
-  const {t} = useTranslation();
-  const errorState = useSelector((state) => state.app.currentError);
+    const dispatch = useDispatch();
+    const {t} = useTranslation();
+    const errorState = useSelector((state) => state.app.currentError);
+    useEffect(()=>{
+        if(errorState.receivedError) {
+            dispatch({type:currentErrorEnded.type});
+        }
+    }, []);
   return (
     <div id="register-box" className="bd-white-box p-4 mt-6">
         <h1 className="text-capitalize">{t('account.sign_up.title')}</h1>
-        <div
-            id="error-box"
-            style={{ display: errorState.receivedError ? "block" : "none" }}>
-            <p className="text-center text-capitalize d-flex flex-column w-100">
-            <i className="fas fa-exclamation-triangle"></i>
-            <span className="mt-3">{errorState.err}</span>
-            </p>
-        </div>
+        {
+            errorState.receivedError && <div id="error-box" className="pt-3 pb-3 mt-3">
+                <p className="text-center text-capitalize d-flex flex-column w-100">
+                <i className="fas fa-exclamation-triangle"></i>
+                <span className="mt-3">{errorState.message}</span>
+                </p>
+            </div>
+        }
         <Formik
             initialValues={{
                 name: "",
