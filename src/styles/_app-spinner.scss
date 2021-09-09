@@ -1,0 +1,16 @@
+#app-spinner {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    #spinner-box {
+        height: 100%;
+        .spinner-border {
+            width: 10rem;
+            height: 10rem;
+            border: 1rem solid var(--bd-primary-color);
+            border-right-color: transparent;
+        }
+    }
+}

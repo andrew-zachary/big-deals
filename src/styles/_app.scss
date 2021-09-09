@@ -67,6 +67,7 @@ ul, p, h1, h2 {
 
 /* bd-classes ====================================== */
 #bd-app {
+    position: relative;
     min-height: 56.8rem;
     display: grid;
     grid-template-rows: max-content minmax(52rem, 1fr) max-content;

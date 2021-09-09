@@ -13,6 +13,7 @@ import AppHeader from "./parts/app-header.jsx";
 import AppFooter from "./parts/app-footer.jsx";
 import AppPage from "./parts/app-page.jsx";
 import AppError from "./parts/app-error.jsx";
+import AppSpinner from "./parts/app-spinner.jsx";
 
 import './index.scss';
 import 'swiper/css';
@@ -29,6 +30,7 @@ const App = () => {
                 <AppFooter />
                 <AppError />
             </Router>
+            <AppSpinner />
         </Provider>
     );
 };
