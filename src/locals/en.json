@@ -104,8 +104,14 @@
             "input": "search all products"
         },
         "connection": {
-            "title": "Heroku PaaS needs to wake up !!!",
-            "msg": "give another try ... or check your internet connection"
+            "timeout": {
+                "title": "Heroku PaaS needs to wake up !!!",
+                "body": "give another try ... or check your internet connection"
+            },
+            "noresponse": {
+                "title": "Server is down !!!",
+                "body": "contact admin or try again later ."
+            }
         }
     }
 }

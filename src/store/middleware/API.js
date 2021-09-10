@@ -27,11 +27,12 @@ export default ({ dispatch }) => (next) =>
             });
         } catch (err) {
             dispatch({ type: apiCallFailed.type });
+            console.log({...err});
             dispatch({
                 type:currentErrorReceived.type, 
                 payload: {
-                    errCode:err.code?err.code:"",
-                    message: err.response?err.response.data.err:""
+                    errCode:err.code?err.code:"NOCODE",
+                    message: err.response?err.response.data.err:"NOMESSAGE"
                 }
             });
         }

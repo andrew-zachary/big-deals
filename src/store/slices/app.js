@@ -9,8 +9,8 @@ export const appSlice = createSlice({
       processName: "",
     },
     currentError: {
-      message: null,
-      errCode: null,
+      message: "",
+      errCode: "",
       receivedError: false,
     },
     taskModal: {
@@ -56,6 +56,7 @@ export const appSlice = createSlice({
       state.globalSpinner.processName = action.payload.processName;
     },
     currentErrorReceived: (state, action) => {
+      console.log(action.payload);
       state.currentError.message = action.payload.message;
       state.currentError.errCode = action.payload.errCode;
       state.currentError.receivedError = true;

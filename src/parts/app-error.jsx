@@ -3,13 +3,16 @@ import {useSelector} from 'react-redux';
 import {useHistory} from "react-router-dom";
 
 const AppError = () => {
-    const {errCode} = useSelector(state=> state.app.currentError);
+    const {errCode, message} = useSelector(state=> state.app.currentError);
     let {push} = useHistory();
     useEffect(()=>{
-        if(errCode === "ECONNABORTED") {
-            push("/connection");
+        if(errCode === "NOCODE" && message === "NOMESSAGE") {
+            push("/connection", {notification:"connection.noresponse"});
         }
-    },[errCode]);
+        if(errCode === "ECONNABORTED") {
+            push("/connection", {notification:"connection.timeout"});
+        }
+    },[errCode, message]);
     return <></>
 };
 
