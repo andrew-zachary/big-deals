@@ -10,8 +10,9 @@
                 .card-text {
                     font-family: 'roboto-regular';
                     font-size: 2rem;
+                    font-weight: 700;
                     .price-unit {
-                        margin-right: 1rem;
+                        margin-left: 1rem;
                     }
                 }
                 .bd-stars-calc {
@@ -63,6 +64,33 @@
             & {
                 .product-item {
                     width: 25%;
+                }
+            }
+        }
+    }
+}
+html[dir=rtl] {
+    #products-page {
+        #products-list {
+            .product-item {
+                .card {
+                    .card-title {
+                        font-family: tajawal-Regular;
+                    }
+                    .card-text {
+                        .price-unit {
+                            margin-left: 0rem;
+                            margin-right: 1rem;
+                            font-family: tajawal-Light;
+                        }
+                    }
+                    .ctrls {
+                        .link-to-product {
+                            a {
+                                font-family: tajawal-regular;
+                            }
+                        }
+                    }
                 }
             }
         }

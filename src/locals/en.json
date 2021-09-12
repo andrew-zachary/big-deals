@@ -1,5 +1,9 @@
 {
     "translation":{
+        "common": {
+            "egp":"egp",
+            "see_details":"see details"
+        },
         "nav": {
             "lang_btn": "العربية",
             "account": "my account",

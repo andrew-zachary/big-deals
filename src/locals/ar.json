@@ -1,5 +1,9 @@
 {
     "translation": {
+        "common": {
+            "egp":"جنيهاً",
+            "see_details":"اعرض المزيد"
+        },
         "nav": {
             "lang_btn": "En",
             "account": "حسابي",
