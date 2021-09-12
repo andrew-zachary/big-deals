@@ -24,6 +24,13 @@ export const productsSlice = createSlice({
     productSelected
   },
   reducers: {
+    resetAllProducts:()=>{
+      return {
+        browsing:{...browsing},
+        searching:{...searching},
+        productSelected:{}
+      }
+    },
     singleProductSelected:(state, action)=>{
       return {
         ...state,
@@ -66,6 +73,11 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { singleProductSelected, newSearchStarted, itemsReceivedAfterSearch, itemsReceivedAfterBrowse } = productsSlice.actions;
+export const { 
+  singleProductSelected, 
+  newSearchStarted, 
+  itemsReceivedAfterSearch, 
+  itemsReceivedAfterBrowse,
+  resetAllProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

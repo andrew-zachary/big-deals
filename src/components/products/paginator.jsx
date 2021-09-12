@@ -9,6 +9,7 @@ import { browseAllProducts } from "../../store/config/products.js";
 const Paginator = ({ItemComponent}) => {
     const dispatch = useDispatch();
     const {items, canPaginate, currentPage} = useSelector(state=>state.products.browsing);
+    const localization = useSelector(state=>state.app.localization);
     const page = useRef(currentPage);
     //window scrolling function
     const scrolling = useCallback((e) => {
@@ -20,7 +21,7 @@ const Paginator = ({ItemComponent}) => {
     const doPaginate = async() => {
         dispatch({
             type: apiCallStarted.type,
-            payload: browseAllProducts({ page: page.current, search: "" }),
+            payload: browseAllProducts({ page: page.current, search: "", lang: localization }),
         });
     };
     //first mount

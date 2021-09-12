@@ -4,11 +4,13 @@ import {useDispatch} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 import {localizationChanged} from '../../store/slices/app';
+import {resetAllProducts} from '../../store/slices/products';
 
 const Localization = () => {
     const dispatch = useDispatch();
     const { t, i18n } = useTranslation();
     const changeDirLang = () => {
+        dispatch({type: resetAllProducts.type});
         const dir = document.documentElement.getAttribute('dir');
         if(dir==='rtl') {
             document.documentElement.setAttribute('dir', 'ltr');

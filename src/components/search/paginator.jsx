@@ -9,6 +9,7 @@ import { searchAllProducts } from "../../store/config/products.js";
 const Paginator = ({ItemComponent}) => {
     const dispatch = useDispatch();
     const {items, canPaginate, currentPage, searchingStr, newSearch} = useSelector(state=>state.products.searching);
+    const localization = useSelector(state=>state.app.localization);
     const page = useRef(currentPage);
     const currentSearchStr = useRef(searchingStr);
     //window scrolling function
@@ -25,7 +26,7 @@ const Paginator = ({ItemComponent}) => {
         if(currentSearchStr.current.length === 0 || !newSearch) return;
         dispatch({
             type: apiCallStarted.type,
-            payload: searchAllProducts({ page: page.current, search: currentSearchStr.current }),
+            payload: searchAllProducts({ page: page.current, search: currentSearchStr.current, lang: localization }),
         });
     }
     //do paginate
@@ -33,7 +34,7 @@ const Paginator = ({ItemComponent}) => {
         if(currentSearchStr.current.length === 0) return;
         dispatch({
             type: apiCallStarted.type,
-            payload: searchAllProducts({ page: page.current, search: currentSearchStr.current }),
+            payload: searchAllProducts({ page: page.current, search: currentSearchStr.current, lang: localization }),
         });
     };
     //update component current page num
