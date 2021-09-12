@@ -11,7 +11,7 @@ export const login = ({ email, password }) => {
         body: "welcome back",
         time: "now",
       },
-      onSuccess: "users/loggedIn",
+      onSuccess: "auth/loggedin",
       useGlobalSpinner: true,
       processName: "signing in ...",
     };
@@ -26,7 +26,7 @@ export const login = ({ email, password }) => {
         password,
         role,
       },
-      onSuccess: "users/loggedIn",
+      onSuccess: "auth/loggedin",
       useGlobalSpinner: true,
       processName: "signing up ...",
     };

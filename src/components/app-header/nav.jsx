@@ -2,12 +2,12 @@ import React from 'react';
 import {Collapse} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import Localization from './localization.jsx';
+import AccountBtn from './account-btn.jsx';
 import {useTranslation} from 'react-i18next';
 
 const Nav = ({openNavMenu}) => {
     const {t} = useTranslation();
     const links = [
-        {to:"/account", text:"nav.account"},
         {to:"/search", text:"nav.search"},
         {to:"/products", text:"nav.products"},
         {to:"/about", text:"nav.about"},
@@ -15,6 +15,7 @@ const Nav = ({openNavMenu}) => {
     return (
         <Collapse in={openNavMenu}>
             <ul id="main-nav" className="list-unstyled">
+                <AccountBtn />
                 {
                     links.map(({to, text})=>{
                         return <li key={text}>

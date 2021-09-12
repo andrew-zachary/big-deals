@@ -4,6 +4,12 @@ export const appSlice = createSlice({
   name: "app",
   initialState: {
     localization : "",
+    currentUserAuth: false,
+    currentUserIds: {
+      email: "",
+      name: "",
+      _id: ""
+    },
     globalSpinner: {
       show: false,
       processName: "",
@@ -48,6 +54,10 @@ export const appSlice = createSlice({
     },
   },
   reducers: {
+    userAuthChanged:(state, action) => {
+      state.currentUserAuth = action.payload.auth;
+      state.currentUserIds = {...action.payload.data};
+    },
     localizationChanged:(state, action) => {
       state.localization = action.payload.lang;
     },
@@ -56,7 +66,6 @@ export const appSlice = createSlice({
       state.globalSpinner.processName = action.payload.processName;
     },
     currentErrorReceived: (state, action) => {
-      console.log(action.payload);
       state.currentError.message = action.payload.message;
       state.currentError.errCode = action.payload.errCode;
       state.currentError.receivedError = true;
@@ -141,6 +150,7 @@ export const appSlice = createSlice({
 });
 
 export const {
+  userAuthChanged,
   currentErrorEnded,
   localizationChanged,
   globalSpinnerStarted,

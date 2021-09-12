@@ -19,6 +19,30 @@
                 &:last-child {
                     padding-bottom: 0.5rem;
                 }
+                &#account-loggedin {
+                    display: flex;
+                    align-items: center;
+                    #btn {
+                        #avatar, #toggler {
+                            i::before{
+                                color: white;
+                            }
+                        }
+                        #avatar {
+                            i::before {
+                                font-size: 4rem;
+                            }
+                        }
+                        #toggler {
+                            display: none;
+                        }
+                    }
+                    #dialog {
+                        margin-left: 2rem;
+                        font-size: 2rem;
+                        color: white;
+                    }
+                }
             }
         }
         #hamburger-menu {
@@ -94,9 +118,8 @@
                     grid-column: span 1;
                     justify-self: end;
                     align-self: center;
-                    &.collapse:not(.show){
-                        display: block;
-                    }
+                    display: flex;
+                    align-items: center;
                     li {
                         margin-right: 2rem;
                         padding-top: unset;
@@ -109,6 +132,42 @@
                             font-size: 1.6rem;
                             color: var(--bd-secondary-color);
                         }
+                        &#account-loggedin {
+                            position: relative;
+                            margin-right: 4rem;
+                            #btn {
+                                #avatar, #toggler {
+                                    position: absolute;
+                                    left: 50%;
+                                    i::before{
+                                        color: var(--bd-primary-color);
+                                    }
+                                }
+                                #avatar {
+                                    top:50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                                #toggler {
+                                    top:100%;
+                                    transform: translate(-50%, 40%);
+                                    display: block;
+                                    font-size: 2rem;
+                                }
+                            }
+                            #dialog {
+                                width: 20rem;
+                                background-color: white;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, 4rem);
+                                color: var(--bd-secondary-color);
+                                margin-left: 0rem;
+                                &.hide {
+                                    display: none;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -117,7 +176,17 @@
 }
 html[dir=rtl] {
     #app-header {
-        @media screen and (min-width: 768px){
+        #main-nav {
+            li {
+                &#account-loggedin {
+                    #dialog {
+                        margin-left: 0rem;
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+        @media screen and (min-width: 768px) {
             & {
                 #app-header_container {
                     #main-nav {
@@ -130,6 +199,10 @@ html[dir=rtl] {
                             a {
                                 font-family: tajawal-regular;
                                 font-weight: 700;
+                            }
+                            &#account-loggedin {
+                                margin-right: 0rem;
+                                margin-left: 4rem;
                             }
                         }
                     }

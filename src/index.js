@@ -14,6 +14,7 @@ import AppFooter from "./parts/app-footer.jsx";
 import AppPage from "./parts/app-page.jsx";
 import AppError from "./parts/app-error.jsx";
 import AppSpinner from "./parts/app-spinner.jsx";
+import AppAuth from "./parts/app-auth.jsx";
 
 import './index.scss';
 import 'swiper/css';
@@ -31,6 +32,7 @@ const App = () => {
                 <AppError />
             </Router>
             <AppSpinner />
+            <AppAuth />
         </Provider>
     );
 };

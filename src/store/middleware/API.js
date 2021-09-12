@@ -1,6 +1,6 @@
 import { http_client } from "../../utils/http";
 import { apiCallStarted, apiCallEnded, apiCallFailed } from "../actions/API";
-import {currentErrorReceived, globalSpinnerStarted, globalSpinnerEnded} from "../slices/app"
+import {currentErrorReceived, currentErrorEnded, globalSpinnerStarted, globalSpinnerEnded} from "../slices/app"
 
 export default ({ dispatch }) => (next) =>
     async (action) => {
@@ -23,11 +23,12 @@ export default ({ dispatch }) => (next) =>
                 type: onSuccess,
                 payload: {
                     data: res.data,
+                    "x-auth-token": res.headers["x-auth-token"]?res.headers["x-auth-token"]:""
                 },
             });
+            dispatch({type:currentErrorEnded.type});
         } catch (err) {
             dispatch({ type: apiCallFailed.type });
-            console.log({...err});
             dispatch({
                 type:currentErrorReceived.type, 
                 payload: {

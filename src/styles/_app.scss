@@ -136,7 +136,11 @@ ul, p, h1, h2 {
 }
 .bd-primary-btn {
     background-color: var(--bd-primary-color);
-    color:white;
+    color:white!important;
+}
+.bd-outline-btn {
+    background-color: white;
+    color: var(--bd-primary-color)!important;
 }
 .bd-max-width-1200 {
     max-width: 1200px;
