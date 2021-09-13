@@ -12,7 +12,7 @@ const SingleProduct = () => {
     const {t} = useTranslation();
     const {_id, name, price, avgRate, features, description, descriptionPoints} = useSelector(state=>state.products.productSelected);
     return (
-        <div id="single-product-page" className="mt-5">
+        <div id="single-product-page" className="mt-5 mx-auto">
             <div className="single-product-container bd-max-width-1200 bd-white-box p-3">
                 <section id="product-info" className="d-flex">
                     <div id="product-info_gallery">

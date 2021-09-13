@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import Localization from './localization.jsx';
 import AccountBtn from './account-btn.jsx';
 
-const Nav = ({openNavMenu}) => {
+const Nav = ({openNavMenu, setOpenNavMenu}) => {
     const {t} = useTranslation();
     const links = [
         {to:"/search", text:"nav.search"},
@@ -15,7 +15,7 @@ const Nav = ({openNavMenu}) => {
     ];
     return (
         <Collapse in={openNavMenu}>
-            <ul id="main-nav" className="list-unstyled">
+            <ul id="main-nav" className="list-unstyled" onClick={()=>setOpenNavMenu()}>
                 <AccountBtn />
                 {
                     links.map(({to, text})=>{

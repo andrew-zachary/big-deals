@@ -14,7 +14,7 @@ const AppHeader = () => {
                     <img id="logo" src={logo} alt="" />
                 </Link>
                 <NavBtn openNavMenu={openNavMenu} setOpenNavMenu={setOpenNavMenu} />
-                <Nav openNavMenu={openNavMenu} />
+                <Nav openNavMenu={openNavMenu} setOpenNavMenu={setOpenNavMenu} />
             </div>
         </section>
     );
