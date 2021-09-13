@@ -23,24 +23,36 @@
                     display: flex;
                     align-items: center;
                     #btn {
-                        #avatar, #toggler {
+                        .avatar, #toggler {
                             i::before{
                                 color: white;
                             }
                         }
-                        #avatar {
+                        .avatar {
                             i::before {
                                 font-size: 4rem;
                             }
+                        }
+                        #avatar-sm {
+                            display: unset;
+                        }
+                        #avatar-lg {
+                            display: none;
                         }
                         #toggler {
                             display: none;
                         }
                     }
                     #dialog {
-                        margin-left: 2rem;
-                        font-size: 2rem;
-                        color: white;
+                        display: flex;
+                        a{
+                            margin-left: 1rem;
+                            font-size: 1.6rem;
+                            color: white;
+                            i::before {
+                                margin-left: 0.5rem;
+                            }
+                        }
                     }
                 }
             }
@@ -136,16 +148,22 @@
                             position: relative;
                             margin-right: 4rem;
                             #btn {
-                                #avatar, #toggler {
+                                .avatar, #toggler {
                                     position: absolute;
                                     left: 50%;
                                     i::before{
                                         color: var(--bd-primary-color);
                                     }
                                 }
-                                #avatar {
+                                .avatar {
                                     top:50%;
                                     transform: translate(-50%, -50%);
+                                }
+                                #avatar-sm {
+                                    display: none;
+                                }
+                                #avatar-lg {
+                                    display: unset;
                                 }
                                 #toggler {
                                     top:100%;
@@ -155,14 +173,24 @@
                                 }
                             }
                             #dialog {
-                                width: 20rem;
-                                background-color: white;
+                                display: inline-block;
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
                                 transform: translate(-50%, 4rem);
                                 color: var(--bd-secondary-color);
                                 margin-left: 0rem;
+                                background-color: white;
+                                box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
+                                padding: 1rem;
+                                z-index: 3;
+                                a {
+                                    color: var(--bd-secondary-color);
+                                    margin: 0;
+                                    &:last-of-type {
+                                        margin-top: 0.5rem;
+                                    }
+                                }
                                 &.hide {
                                     display: none;
                                 }
@@ -180,8 +208,14 @@ html[dir=rtl] {
             li {
                 &#account-loggedin {
                     #dialog {
-                        margin-left: 0rem;
-                        margin-right: 2rem;
+                        a{
+                            margin-left: 0rem;
+                            margin-right: 1rem;
+                            i::before {
+                                margin-left: 0rem;
+                                margin-right: 0.5rem;
+                            }
+                        }
                     }
                 }
             }

@@ -13,22 +13,25 @@ const AccountBtn = () => {
     return <>
         {
             !currentUserAuth && <li key="account.anony" id="account">
-                <Link className="text-capitalize text-decoration-none" to="/account">{t('nav.account')}</Link>
+                <Link className="text-capitalize text-decoration-none" to="/account">{t('nav.account.title')}</Link>
             </li>
         }
         {
             currentUserAuth && <li key="account.login" id="account-loggedin">
                 <div id="btn" role="button" onClick={()=>{setToggleDialog(!toggleDialog)}}>
-                    <div id="avatar">
+                    <div id="avatar-lg" className="avatar">
+                        {toggleDialog?<i className="fas fa-times-circle"></i>:<i className="fas fa-user-circle"></i>}
+                    </div>
+                    <div id="avatar-sm" className="avatar">
                         <i className="fas fa-user-circle"></i>
                     </div>
                     <div id="toggler">
                         <i className="fas fa-caret-down"></i>
                     </div>
                 </div>
-                <div id="dialog" className={`${toggleDialog?"show ":"hide "} p-3 text-center bd-white-box`} onClick={()=>{dispatch({type:authLoggedout.type})}}>
-                    <button className="bd-btn bd-primary-btn w-100">logout <i class="fas fa-sign-out-alt"></i></button>
-                    <Link to="/dashboard" className="bd-btn bd-primary-btn mt-3 w-100">dashboard <i class="fas fa-cog"></i></Link>
+                <div id="dialog" className={`${toggleDialog?"show ":"hide "} text-center`}>
+                    <a role="button" className="d-flex align-items-center text-decoration-none text-capitalize" onClick={()=>{dispatch({type:authLoggedout.type})}}>{t('nav.account.sub_menu.logout')} <i className="fas fa-sign-out-alt"></i></a>
+                    <Link className="d-flex align-items-center text-decoration-none text-capitalize" to="/dashboard">{t('nav.account.sub_menu.dashboard')} <i className="fas fa-cog"></i></Link>
                 </div>
             </li>
         }

@@ -6,7 +6,13 @@
         },
         "nav": {
             "lang_btn": "العربية",
-            "account": "my account",
+            "account": {
+                "title": "my account",
+                "sub_menu": {
+                    "logout": "logout",
+                    "dashboard": "dashboard"
+                }
+            },
             "search": "search",
             "products": "products",
             "about": "about"

@@ -1,9 +1,10 @@
 import React from 'react';
 import {Collapse} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import {useTranslation} from 'react-i18next';
+
 import Localization from './localization.jsx';
 import AccountBtn from './account-btn.jsx';
-import {useTranslation} from 'react-i18next';
 
 const Nav = ({openNavMenu}) => {
     const {t} = useTranslation();

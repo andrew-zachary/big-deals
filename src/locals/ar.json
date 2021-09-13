@@ -6,7 +6,13 @@
         },
         "nav": {
             "lang_btn": "En",
-            "account": "حسابي",
+            "account": {
+                "title": "حسابي",
+                "sub_menu": {
+                    "logout": "خروج",
+                    "dashboard": "تحكم"
+                }
+            },
             "search": "بحث",
             "products": "منتجات",
             "about": "عن المتجر"
