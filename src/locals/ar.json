@@ -1,5 +1,14 @@
 {
     "translation": {
+        "single_product": {
+            "description": "الوصف",
+            "details": "التفاصيل",
+            "customers_feedback": "تعليقات المستخدمين",
+            "btn": {
+                "add_to_cart": "أضف إلى السلة",
+                "show_reviews": "اظهر التعليقات"
+            }
+        },
         "common": {
             "egp":"جنيهاً",
             "see_details":"اعرض المزيد"

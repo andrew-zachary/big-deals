@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {apiCallStarted} from '../../store/actions/API';
 import {getAllReviews} from '../../store/config/reviews';
 
-const ReviewsGetBtn = ({productId}) => {
+const ReviewsGetBtn = ({productId, text}) => {
     const [clicked, setClicked] = useState(false);
     const dispatch = useDispatch();
     const getReviewsHandler = () => {
@@ -13,7 +13,7 @@ const ReviewsGetBtn = ({productId}) => {
     };
     return (
         <>
-            {!clicked && <button className="bd-btn bd-primary-btn" onClick={()=>getReviewsHandler()}>see reviews</button>}
+            {!clicked && <button className="bd-btn bd-primary-btn" onClick={()=>getReviewsHandler()}>{text}</button>}
         </>
     );
 };

@@ -1,5 +1,14 @@
 {
     "translation":{
+        "single_product": {
+            "description": "description",
+            "details": "details",
+            "customers_feedback": "Customers Feedback",
+            "btn": {
+                "add_to_cart": "add to cart",
+                "show_reviews": "show reviews"
+            }
+        },
         "common": {
             "egp":"egp",
             "see_details":"see details"

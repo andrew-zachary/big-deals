@@ -3,7 +3,7 @@
     .single-product-container {
         font-family: 'roboto-regular';
         #product-info {
-            &-left {
+            &_gallery {
                 width: 40%;
                 .imgs-swiper, .thumbs-swiper {
                     overflow: hidden;
@@ -37,7 +37,7 @@
                     }
                 }
             }
-            &-right {
+            &_text {
                 width: 60%;
                 padding-left: 3rem;
                 #product-name {
@@ -63,7 +63,7 @@
                 #product-price {
                     font-size: 3rem;
                     font-weight: bold;
-                    .price-num {
+                    .price-unit {
                         margin-left: 1rem;
                     }
                 }
@@ -145,12 +145,13 @@
                 #product-info {
                     flex-wrap: wrap;
                     width: 100%;
-                    &-left, &-right {
+                    &_gallery, &_text {
                         width: 100%;
                         display: block;
                     }
-                    &-right {
+                    &_text{
                         padding-left: 0;
+                        padding-right: 0;
                         #product-price {
                             margin-bottom: 2rem;
                         }
@@ -167,8 +168,62 @@
                             }
                         }
                     }
-                    &-left {
+                    &_gallery {
                         text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+html[dir=rtl] {
+    #single-product-page {
+        .single-product-container {
+            #product-info {
+                &_text {
+                    padding-left: 0rem;
+                    padding-right: 3rem;
+                    font-family: tajawal-regular;
+                    #product-name {
+                        font-family: tajawal-regular;
+                    }
+                    #description {
+                        h1, p {
+                            font-family: tajawal-regular;
+                        }
+                    }
+                    #description-points {
+                        h1 {
+                            font-family: tajawal-regular;
+                        }
+                    }
+                    #product-price {
+                        .price-unit {
+                            margin-left: 0rem;
+                            margin-right: 1rem;
+                        }
+                    }
+                    #add-to-cart {
+                        button {
+                            font-family: tajawal-regular;
+                        }   
+                    }
+                }
+            }
+            #product-reviews {
+                button, h1 {
+                    font-family: tajawal-regular;
+                }   
+            }
+        }
+        & {
+            @media screen and (max-width: 768px) {
+                .single-product-container {
+                    #product-info {
+                        &_text{
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
                     }
                 }
             }
