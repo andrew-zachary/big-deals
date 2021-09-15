@@ -9,7 +9,8 @@
             "btn": {
                 "add_to_cart": "أضف إلى السلة",
                 "show_reviews": "اظهر التعليقات",
-                "done": "حسناً"
+                "done": "حسناً",
+                "update": "تعديل"
             }
         },
         "common": {

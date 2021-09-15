@@ -9,7 +9,8 @@
             "btn": {
                 "add_to_cart": "add to cart",
                 "show_reviews": "show reviews",
-                "done": "done"
+                "done": "done",
+                "update": "update"
             }
         },
         "common": {

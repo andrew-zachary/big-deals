@@ -1,6 +1,9 @@
-import React from "react";
-import {useSelector} from "react-redux";
+import React,{useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
 import {useTranslation} from "react-i18next";
+
+import { apiCallStarted } from "../store/actions/API.js";
+import { getMyReview } from "../store/config/reviews.js";
 
 import Paginator from "../components/single-product/paginator.jsx";
 import ReviewsGetBtn from "../components/single-product/reviews-get-btn.jsx";
@@ -11,7 +14,12 @@ import StarsCalc from "../parts/stars-calc.jsx";
 
 const SingleProduct = () => {
     const {t} = useTranslation();
+    const dispatch = useDispatch();
     const {_id, name, price, avgRate, features, description, descriptionPoints} = useSelector(state=>state.products.productSelected);
+    const currentReview = useSelector(state=>state.reviews.currentReview);
+    useEffect(()=>{
+        dispatch({type: apiCallStarted.type, payload:getMyReview({productId:_id})});
+    }, []);
     return (
         <div id="single-product-page" className="mt-5">
             <div className="single-product-container bd-max-width-1200 mx-auto bd-white-box p-3">
@@ -68,7 +76,7 @@ const SingleProduct = () => {
                     </div>
                 </section>
             </div>
-            <UserReview productId={_id} />
+            <UserReview productId={_id} currentReview={currentReview} />
             <div className="single-product-container bd-max-width-1200 mx-auto bd-white-box p-3 mt-5">
                 <section id="product-reviews">
                     <h1 className="text-capitalize">{t(`single_product.customers_feedback`)}</h1>
