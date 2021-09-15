@@ -71,6 +71,12 @@ ul, p, h1, h2 {
     min-height: 56.8rem;
     display: grid;
     grid-template-rows: max-content minmax(52rem, 1fr) max-content;
+    #home-page ~ #app-footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
 }
 .bd-btn {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
