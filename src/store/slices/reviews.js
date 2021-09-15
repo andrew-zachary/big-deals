@@ -1,31 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items:[],
+    items: [],
+    currentPage: 1,
     canPaginate: false,
-    currentPage: 1
-};
+    currentReview: null,
+}
 
 export const reviewsSlice = createSlice({
-    name: "reviews",
-    initialState,
-    reducers: {
-        resetReviews:()=> {
-            return {
-                ...initialState
-            }
-        },
-        productReviewsReceived:(state, action)=>{
-            return {
-                ...state,
-                items: state.items.concat(action.payload.data),
-                canPaginate: action.payload.data.length > 0?true:false,
-                currentPage: state.currentPage +1,
-            }
+  name: "reviews",
+  initialState,
+  reducers: {
+    resetReviews:()=> {
+        return {
+            ...initialState
         }
-    }
+    },
+    itemsReceived: (state, action) => {
+      state.items = state.items.concat(action.payload.data);
+      state.canPaginate = action.payload.data.length > 0 ? true : false;
+      state.currentPage = state.currentPage + 1;
+    },
+    itemReceived: (state, action) => {
+      state.currentReview = { ...action.payload.data };
+    },
+    clearItemsReceived: (state) => {
+      state.items = [];
+      state.currentPage = 1;
+      state.canPaginate = true;
+    },
+    clearItemReceived: (state) => {
+      state.currentReview = null;
+    },
+  },
 });
 
-export const { productReviewsReceived, resetReviews } = reviewsSlice.actions;
+export const {
+    resetReviews,
+    itemsReceived,
+    itemReceived,
+    clearItemsReceived,
+    clearItemReceived,
+} = reviewsSlice.actions;
 
 export default reviewsSlice.reducer;

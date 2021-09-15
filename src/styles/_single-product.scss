@@ -100,6 +100,25 @@
                 }
             }
         }
+        #user-review {
+            .form-floating {
+                textarea {
+                    height: 10rem;
+                    padding-top: 3rem;
+                    font-size: 2rem;
+                    font-family: 'roboto-regular';
+                }
+                label {
+                    font-size: 2rem;
+                }
+            }
+            .bd-stars-input {
+                max-width: 40rem;
+                .value-container {
+                    font-size: 2.5rem;
+                }
+            }
+        }
         #product-reviews {
             & > h1 {
                 font-size: 2.5rem;
@@ -208,6 +227,20 @@ html[dir=rtl] {
                             font-family: tajawal-regular;
                         }   
                     }
+                }
+            }
+            #user-review {
+                .form-floating {
+                    textarea {
+                        font-family: tajawal-regular;
+                    }
+                    label {
+                        font-family: tajawal-Light;
+                        font-size: 2rem;
+                    }
+                }
+                button, h1 {
+                    font-family: tajawal-regular;
                 }
             }
             #product-reviews {

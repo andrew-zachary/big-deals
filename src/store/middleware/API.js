@@ -1,6 +1,6 @@
 import { http_client } from "../../utils/http";
 import { apiCallStarted, apiCallEnded, apiCallFailed } from "../actions/API";
-import {currentErrorReceived, currentErrorEnded, globalSpinnerStarted, globalSpinnerEnded} from "../slices/app"
+import {currentErrorReceived, currentErrorEnded, globalSpinnerStarted, globalSpinnerEnded} from "../slices/app";
 
 export default ({ dispatch }) => (next) =>
     async (action) => {
@@ -17,6 +17,9 @@ export default ({ dispatch }) => (next) =>
                 url,
                 method,
                 data,
+                headers:{
+                    "x-auth-token":localStorage.getItem('bd-token')
+                }
             });
             dispatch({ type: apiCallEnded.type });
             dispatch({

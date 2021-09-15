@@ -12,6 +12,9 @@ const AppError = () => {
         if(errCode === "ECONNABORTED") {
             push("/connection", {notification:"connection.timeout"});
         }
+        if(errCode === "TOKENINVALID") {
+            push("/account");
+        }
     },[errCode, message]);
     return <></>
 };

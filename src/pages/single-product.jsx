@@ -6,14 +6,15 @@ import Paginator from "../components/single-product/paginator.jsx";
 import ReviewsGetBtn from "../components/single-product/reviews-get-btn.jsx";
 import ListItem from "../components/single-product/list-item.jsx";
 import ProductGallery from "../components/single-product/product-gallery.jsx";
+import UserReview from "../components/single-product/user-review.jsx";
 import StarsCalc from "../parts/stars-calc.jsx";
 
 const SingleProduct = () => {
     const {t} = useTranslation();
     const {_id, name, price, avgRate, features, description, descriptionPoints} = useSelector(state=>state.products.productSelected);
     return (
-        <div id="single-product-page" className="mt-5 mx-auto">
-            <div className="single-product-container bd-max-width-1200 bd-white-box p-3">
+        <div id="single-product-page" className="mt-5">
+            <div className="single-product-container bd-max-width-1200 mx-auto bd-white-box p-3">
                 <section id="product-info" className="d-flex">
                     <div id="product-info_gallery">
                         <ProductGallery gallery={{
@@ -67,9 +68,10 @@ const SingleProduct = () => {
                     </div>
                 </section>
             </div>
-            <div className="single-product-container bd-max-width-1200 bd-white-box p-3 mt-5">
+            <UserReview productId={_id} />
+            <div className="single-product-container bd-max-width-1200 mx-auto bd-white-box p-3 mt-5">
                 <section id="product-reviews">
-                    <h1 className="text-capitalize mt-b">{t(`single_product.customers_feedback`)}</h1>
+                    <h1 className="text-capitalize">{t(`single_product.customers_feedback`)}</h1>
                     <ReviewsGetBtn text={t(`single_product.btn.show_reviews`)} productId={_id}/>
                     <ul id="reviews-lists" className="mt-5 list-unstyled">
                         <Paginator ItemComponent={ListItem} productId={_id} />

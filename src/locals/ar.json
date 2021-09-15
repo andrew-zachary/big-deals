@@ -3,10 +3,13 @@
         "single_product": {
             "description": "الوصف",
             "details": "التفاصيل",
+            "write_a_customer_review": "اكتب مراجعة مستخدم",
+            "my_comment":"مراجعتي",
             "customers_feedback": "تعليقات المستخدمين",
             "btn": {
                 "add_to_cart": "أضف إلى السلة",
-                "show_reviews": "اظهر التعليقات"
+                "show_reviews": "اظهر التعليقات",
+                "done": "حسناً"
             }
         },
         "common": {

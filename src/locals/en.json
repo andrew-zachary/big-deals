@@ -3,10 +3,13 @@
         "single_product": {
             "description": "description",
             "details": "details",
+            "write_a_customer_review": "Write A Customer Review",
+            "my_comment":"my comment",
             "customers_feedback": "Customers Feedback",
             "btn": {
                 "add_to_cart": "add to cart",
-                "show_reviews": "show reviews"
+                "show_reviews": "show reviews",
+                "done": "done"
             }
         },
         "common": {

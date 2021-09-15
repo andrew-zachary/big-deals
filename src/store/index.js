@@ -6,6 +6,7 @@ import appReducer from "./slices/app";
 
 import API from "./middleware/API";
 import AUTH from "./middleware/AUTH";
+import ISAUTH from "./middleware/ISAUTH";
 
 export default configureStore({
   reducer: {
@@ -13,5 +14,5 @@ export default configureStore({
     reviews: reviewsReducer,
     app: appReducer
   },
-  middleware: (getDefaultMiddleware)=>getDefaultMiddleware().concat([API, AUTH])
+  middleware: (getDefaultMiddleware)=>getDefaultMiddleware().concat([ISAUTH, API, AUTH])
 });

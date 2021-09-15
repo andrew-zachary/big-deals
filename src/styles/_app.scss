@@ -281,5 +281,16 @@ html[dir=rtl] {
             margin-left: 0rem;
             margin-right: 1rem;
         }
+        .stars-container {
+            .stars-mask {
+                left: 0;
+                transform: rotate(360deg);
+            }
+        }
+    }
+    .form-floating {
+        label {
+            left: unset;
+        }
     }
 }
