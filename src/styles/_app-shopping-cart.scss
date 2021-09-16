@@ -1,0 +1,30 @@
+#app-shopping-cart {
+    position: absolute;
+    bottom: -15rem;
+    right: 0;
+    border-radius: 2.5rem;
+    margin-right: 1rem;
+    font-family: overlock-bold;
+    i {
+        &::before {
+            margin-right:1rem;
+            font-size: 3rem;
+        }
+    }
+}
+html[dir=rtl] {
+    #app-shopping-cart {
+        right: unset;
+        left: 0;
+        margin-right: unset;
+        margin-left: 1rem;
+        font-family: tajawal-regular;
+        font-size: 2.2rem;
+        i {
+            &::before { 
+                margin-right:unset;
+                margin-left:1rem;
+            }
+        }
+    }
+}

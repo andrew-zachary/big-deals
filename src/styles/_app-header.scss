@@ -1,4 +1,8 @@
 #app-header {
+    #app-header_cart-box {
+        position: relative;
+        z-index: 2;
+    }
     &_container{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -15,6 +19,13 @@
                 a {
                     font-size: 1.6rem;
                     color: white;
+                }
+                a.base-nav-btn {
+                    font-family: roboto-regular;
+                }
+                a#localization {
+                    font-family: tajawal-regular;
+                    line-height: 1;
                 }
                 &:last-child {
                     padding-bottom: 0.5rem;
@@ -46,6 +57,7 @@
                     #dialog {
                         display: flex;
                         a{
+                            font-family: roboto-regular;
                             margin-left: 1rem;
                             font-size: 1.6rem;
                             color: white;
@@ -139,6 +151,7 @@
                         display: inline-block;
                         &:last-child {
                             margin: 0;
+                            padding-bottom: 0;
                         }
                         a {
                             font-size: 1.6rem;
@@ -204,25 +217,32 @@
 }
 html[dir=rtl] {
     #app-header {
-        #main-nav {
-            li {
-                &#account-loggedin {
-                    #dialog {
-                        a{
-                            margin-left: 0rem;
-                            margin-right: 1rem;
-                            i::before {
+        &_container{ 
+            #main-nav {
+                li {
+                    a.base-nav-btn {
+                        font-family: tajawal-regular;
+                    }
+                    a#localization {
+                        font-family: roboto-regular;
+                    }
+                    &#account-loggedin {
+                        #dialog {
+                            a{
                                 margin-left: 0rem;
-                                margin-right: 0.5rem;
+                                margin-right: 1rem;
+                                font-family: tajawal-regular;
+                                i::before {
+                                    margin-left: 0rem;
+                                    margin-right: 0.5rem;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        @media screen and (min-width: 768px) {
-            & {
-                #app-header_container {
+            @media screen and (min-width: 768px) {
+                & {
                     #main-nav {
                         li {
                             margin-right: 0rem;
@@ -231,7 +251,6 @@ html[dir=rtl] {
                                 margin: 0;
                             }
                             a {
-                                font-family: tajawal-regular;
                                 font-weight: 700;
                             }
                             &#account-loggedin {

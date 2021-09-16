@@ -20,7 +20,7 @@ const Nav = ({openNavMenu, setOpenNavMenu}) => {
                 {
                     links.map(({to, text})=>{
                         return <li key={text}>
-                            <Link className="text-capitalize text-decoration-none" to={to}>{t(text)}</Link>
+                            <Link className="text-capitalize text-decoration-none base-nav-btn" to={to}>{t(text)}</Link>
                         </li>
                     })
                 }

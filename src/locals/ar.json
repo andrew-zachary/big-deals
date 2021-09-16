@@ -1,5 +1,11 @@
 {
     "translation": {
+        "header": {
+            "btn": {
+                "start_shopping_now": "إبدء التسوق",
+                "my_cart": "سلتي"
+            }
+        },
         "single_product": {
             "description": "الوصف",
             "details": "التفاصيل",

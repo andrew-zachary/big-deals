@@ -1,5 +1,11 @@
 {
     "translation":{
+        "header": {
+            "btn": {
+                "start_shopping_now": "start shopping now",
+                "my_cart": "my cart"
+            }
+        },
         "single_product": {
             "description": "description",
             "details": "details",

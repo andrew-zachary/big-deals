@@ -25,7 +25,7 @@ const Localization = () => {
         }
     }
     return <li key="locals" onClick={()=>{changeDirLang()}}>
-        <Link className="text-capitalize text-decoration-none" to={"/"}>{t('nav.lang_btn')}</Link>
+        <Link id="localization" className="text-capitalize text-decoration-none" to={"/"}>{t('nav.lang_btn')}</Link>
     </li>
 };
 

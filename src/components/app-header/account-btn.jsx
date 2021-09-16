@@ -13,7 +13,7 @@ const AccountBtn = () => {
     return <>
         {
             !currentUserAuth && <li key="account.anony" id="account">
-                <Link className="text-capitalize text-decoration-none" to="/account">{t('nav.account.title')}</Link>
+                <Link className="text-capitalize text-decoration-none base-nav-btn" to="/account">{t('nav.account.title')}</Link>
             </li>
         }
         {
