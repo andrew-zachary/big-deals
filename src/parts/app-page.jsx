@@ -7,6 +7,7 @@ import SingleProduct from "../pages/single-product.jsx";
 import SearchPage from "../pages/search.jsx";
 import AccountPage from "../pages/account.jsx";
 import ConnectionPage from "../pages/connection.jsx";
+import MyCart from "../pages/mycart.jsx";
 
 const AppPage = () => {
     return <Switch>
@@ -16,6 +17,7 @@ const AppPage = () => {
         <Route path="/account" component={AccountPage} />
         <Route path="/products/:id" component={SingleProduct} />
         <Route path="/connection" component={ConnectionPage} />
+        <Route path="/mycart" component={MyCart} />
     </Switch>
 };
 

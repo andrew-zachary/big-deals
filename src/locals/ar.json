@@ -28,8 +28,7 @@
             "account": {
                 "title": "حسابي",
                 "sub_menu": {
-                    "logout": "خروج",
-                    "dashboard": "تحكم"
+                    "logout": "خروج"
                 }
             },
             "search": "بحث",

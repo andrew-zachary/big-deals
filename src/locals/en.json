@@ -28,8 +28,7 @@
             "account": {
                 "title": "my account",
                 "sub_menu": {
-                    "logout": "logout",
-                    "dashboard": "dashboard"
+                    "logout": "logout"
                 }
             },
             "search": "search",

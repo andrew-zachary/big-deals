@@ -31,7 +31,6 @@ const AccountBtn = () => {
                 </div>
                 <div id="dialog" className={`${toggleDialog?"show ":"hide "} text-center`}>
                     <a role="button" className="d-flex align-items-center text-decoration-none text-capitalize" onClick={()=>{dispatch({type:authLoggedout.type})}}>{t('nav.account.sub_menu.logout')} <i className="fas fa-sign-out-alt"></i></a>
-                    <Link className="d-flex align-items-center text-decoration-none text-capitalize" to="/dashboard">{t('nav.account.sub_menu.dashboard')} <i className="fas fa-cog"></i></Link>
                 </div>
             </li>
         }
