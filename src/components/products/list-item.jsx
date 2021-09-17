@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import StarsCalc from "../../parts/stars-calc.jsx";
 import LinkToProduct from "../../parts/link-to-product.jsx";
+import AddToCartBtn from "../../parts/add-to-cart-btn.jsx";
 
 const ListItem = ({itemData}) => {
     const {t} = useTranslation();
@@ -18,7 +19,7 @@ const ListItem = ({itemData}) => {
                     </Card.Text>
                     <StarsCalc avgRate={itemData.avgRate}/>
                     <div className="ctrls d-flex justify-content-between align-items-center">
-                        <a className="bd-circle-btn bd-primary-btn d-inline-block" href="#"><i className="fas fa-cart-plus"></i></a>
+                        <AddToCartBtn itemData={itemData} />
                         <LinkToProduct itemData={itemData} text={t(`common.see_details`)} />
                     </div>
                 </Card.Body>

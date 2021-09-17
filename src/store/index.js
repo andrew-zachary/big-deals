@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import productsReducer from "./slices/products";
 import reviewsReducer from "./slices/reviews";
+import cartReducer from "./slices/cart";
 import appReducer from "./slices/app";
 
 import API from "./middleware/API";
@@ -12,6 +13,7 @@ export default configureStore({
   reducer: {
     products: productsReducer,
     reviews: reviewsReducer,
+    cart: cartReducer,
     app: appReducer
   },
   middleware: (getDefaultMiddleware)=>getDefaultMiddleware().concat([ISAUTH, API, AUTH])

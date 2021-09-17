@@ -60,7 +60,7 @@ body {
     color: var(--bd-secondary-color);
     background-color: var(--bd-tertiary-color);
 }
-ul, p, h1, h2 {
+ul, p, h1, h2, h3 {
     margin: 0;
     padding :0;
 }
@@ -266,6 +266,10 @@ ul, p, h1, h2 {
     background-color: white;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }
+.bd-currency {
+    margin-left: 1rem;
+    text-transform: uppercase;
+}
 
 /* rtl ============================================================= */
 html[dir=rtl] {
@@ -298,5 +302,9 @@ html[dir=rtl] {
         label {
             left: unset;
         }
+    }
+    .bd-currency {
+        margin-left: 0rem;
+        margin-right: 1rem;
     }
 }
