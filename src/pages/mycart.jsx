@@ -1,10 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import ItemQuantityCalc from "../components/mycart/item-quantity.calc.jsx";
 
 const MyCart = () => {
     const {items, totalCost} = useSelector(state=>state.cart);
+    const {t} = useTranslation();
     return <div id="mycart-page">
             {   
                 items.length > 0 && <div id="mycart-page_container" className="bd-max-width-1200 mx-auto bd-white-box mt-5">
@@ -19,11 +21,8 @@ const MyCart = () => {
                         }
                     </ul>
                     <div id="cart-ctrls" className="p-3">
-                        <p className="text-center"><span className="text-uppercase">total</span><span>{parseFloat(totalCost).toFixed(2)}</span><span className="bd-currency">egp</span></p>
-                        <div id="ctrls_btns" className="d-flex justify-content-around mt-4">
-                            <button className="bd-btn bd-primary-btn">save cart</button>
-                            <button className="bd-btn bd-primary-btn">create order</button>
-                        </div>
+                        <p className="text-center d-flex justify-content-center"><span className="text-uppercase">{t(`mycart.total`)}</span><span>{parseFloat(totalCost).toFixed(2)}</span><span className="bd-currency">{t(`common.egp`)}</span></p>
+                        <button className="bd-btn bd-primary-btn w-100">{t(`mycart.btn.create_order`)}</button>
                     </div>
                 </div>
             }

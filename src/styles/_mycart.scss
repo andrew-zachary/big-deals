@@ -30,8 +30,10 @@
                         }
                     }
                     button {
+                        width: 3rem;
+                        height: 3rem;
                         i:before {
-                            font-size: 4rem;
+                            font-size: 3rem;
                             color: var(--bd-primary-color);
                         }
                     }
@@ -83,14 +85,35 @@ html[dir=rtl] {
                         margin-left: 10rem;
                         font-family: tajawal-Light;
                     }
+                    .total-price {
+                        font-family: tajawal-Light;
+                    }
                     .ctrls {
                         button:first-of-type {
                             margin-right: 0rem;
                             margin-left: 3rem;
                         }
                     }
-                    .total-price {
+                }
+            }
+            #cart-ctrls {
+                p {
+                    span {
                         font-family: tajawal-Light;
+                        font-weight: 700;
+                        &:nth-child(2) {
+                            font-family: 'roboto-regular';
+                        }
+                        &:first-of-type {
+                            margin-right: 0rem;
+                            margin-left: 0.5rem;
+                        }
+                    }
+                }
+                btn {
+                    button {
+                        font-family: tajawal-Light;
+                        font-weight: 700;
                     }
                 }
             }

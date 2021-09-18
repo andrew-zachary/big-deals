@@ -1,5 +1,11 @@
 {
     "translation": {
+        "mycart": {
+            "total": "الاجمالي",
+            "btn": {
+                "create_order": "إرسل طلب شراء"
+            }
+        },
         "header": {
             "btn": {
                 "start_shopping_now": "إبدء التسوق الاَن",

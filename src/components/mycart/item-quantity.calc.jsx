@@ -15,7 +15,7 @@ const ItemQuantityCalc = ({item}) => {
     return <div className="item-quantities-calc d-flex align-items-center flex-wrap">
         <h3 className="d-flex"><span>{item.quantity}</span><span> x </span><span>{parseFloat(item.product.price.$numberDecimal).toFixed(2)}</span><span className="bd-currency">EGP</span></h3>
         <div className="ctrls d-flex w-100">
-            <div id="price-ctrls">
+            <div className="price-ctrls">
                 <button onClick={()=>{changeTotalPrice(1)}} className="bd-btn bd-circle-btn">
                     <i className="fas fa-plus-circle"></i>
                 </button>
@@ -23,7 +23,7 @@ const ItemQuantityCalc = ({item}) => {
                     <i className="fas fa-minus-circle"></i>
                 </button>
             </div>
-            <div id="product-ctrls">
+            <div className="product-ctrls">
                 <button onClick={()=>{removeItemFromCart(item.product._id)}} className="bd-btn bd-circle-btn">
                     <i className="fas fa-trash-alt"></i>
                 </button>
