@@ -53,6 +53,13 @@
                 span:first-of-type {
                     margin-right: 0.5rem;
                 }
+                span {
+                    font-family: lato-thin;
+                    font-weight: 700;
+                    &:nth-child(2) {
+                        font-family: 'roboto-regular';
+                    }
+                }
             }
         }
     }

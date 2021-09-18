@@ -19,7 +19,7 @@ const MyCart = () => {
                         }
                     </ul>
                     <div id="cart-ctrls" className="p-3">
-                        <p className="text-center"><span className="text-uppercase">total</span><span>{totalCost}</span><span className="bd-currency">egp</span></p>
+                        <p className="text-center"><span className="text-uppercase">total</span><span>{parseFloat(totalCost).toFixed(2)}</span><span className="bd-currency">egp</span></p>
                         <div id="ctrls_btns" className="d-flex justify-content-around mt-4">
                             <button className="bd-btn bd-primary-btn">save cart</button>
                             <button className="bd-btn bd-primary-btn">create order</button>

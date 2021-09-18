@@ -4,11 +4,14 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState: {
         items: [],
+        itemsNumber:0,
         totalCost: 0
     },
     reducers: {
         addCartItem:(state, action)=>{
             state.items.push({product:action.payload.product, quantity:1});
+            state.totalCost += parseFloat(action.payload.product.price.$numberDecimal);
+            state.itemsNumber += 1;
         },
         updateItemQuantity:(state, action)=>{
             let totalCost = 0;
@@ -30,6 +33,7 @@ export const cartSlice = createSlice({
                 }
             });
             state.totalCost = totalCost;
+            state.itemsNumber -= 1;
         }
     }
 });

@@ -13,7 +13,7 @@ const ItemQuantityCalc = ({item}) => {
         dispatch({type:removeItem.type, payload:{productId:item.product._id}});
     }
     return <div className="item-quantities-calc d-flex align-items-center flex-wrap">
-        <h3 className="d-flex"><span>{item.quantity}</span><span> x </span><span>{item.product.price.$numberDecimal}</span><span className="bd-currency">EGP</span></h3>
+        <h3 className="d-flex"><span>{item.quantity}</span><span> x </span><span>{parseFloat(item.product.price.$numberDecimal).toFixed(2)}</span><span className="bd-currency">EGP</span></h3>
         <div className="ctrls d-flex w-100">
             <div id="price-ctrls">
                 <button onClick={()=>{changeTotalPrice(1)}} className="bd-btn bd-circle-btn">
@@ -25,12 +25,12 @@ const ItemQuantityCalc = ({item}) => {
             </div>
             <div id="product-ctrls">
                 <button onClick={()=>{removeItemFromCart(item.product._id)}} className="bd-btn bd-circle-btn">
-                    <i class="fas fa-trash-alt"></i>
+                    <i className="fas fa-trash-alt"></i>
                 </button>
             </div>
         </div>
         <div className="total-price d-flex w-100">
-            <span>{item.quantity * parseFloat(item.product.price.$numberDecimal)}</span><span className="bd-currency">EGP</span>
+            <span>{(item.quantity * parseFloat(item.product.price.$numberDecimal)).toFixed(2)}</span><span className="bd-currency">EGP</span>
         </div>
     </div>
 }
