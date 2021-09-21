@@ -3,7 +3,7 @@
         "mycart": {
             "total": "total",
             "btn": {
-                "create_order": "create order"
+                "create_order": "send order"
             }
         },
         "header": {

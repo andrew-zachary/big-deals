@@ -8,6 +8,7 @@ import SearchPage from "../pages/search.jsx";
 import AccountPage from "../pages/account.jsx";
 import ConnectionPage from "../pages/connection.jsx";
 import MyCart from "../pages/mycart.jsx";
+import Orders from "../pages/orders.jsx";
 
 const AppPage = () => {
     return <Switch>
@@ -18,6 +19,7 @@ const AppPage = () => {
         <Route path="/products/:id" component={SingleProduct} />
         <Route path="/connection" component={ConnectionPage} />
         <Route path="/mycart" component={MyCart} />
+        <Route path="/orders" component={Orders} />
     </Switch>
 };
 

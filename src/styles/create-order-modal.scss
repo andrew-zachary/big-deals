@@ -1,0 +1,22 @@
+div[role=dialog] {
+    .modal-header {
+        border-bottom: unset;
+        .modal-title {
+            font-family: 'roboto-regular';
+            padding: 0.5rem 0.5rem;
+            background-color: var(--bd-primary-color);
+            color: white;
+        }
+    }
+    .modal-body {
+        font-size: 1.6rem;
+        font-family: 'lato-thin';
+        font-weight: 700;
+    }
+    .modal-footer {
+        padding: 0.5rem 1rem;
+        button {
+            padding: 0.5rem 1rem;
+        }
+    }
+}

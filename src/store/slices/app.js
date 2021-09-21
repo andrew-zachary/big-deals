@@ -98,6 +98,15 @@ export const appSlice = createSlice({
       state.toaster.time = action.payload.time;
       state.toaster.processing = true;
     },
+    confirmModalEnded: (state, action) => {
+      state.confirmModal.processing = false;
+      state.confirmModal.header = null;
+      state.confirmModal.body = null;
+      state.confirmModal.toConfirm = null;
+      state.confirmModal.toDispatch = null;
+      state.confirmModal.props = null;
+      state.confirmModal.ctrls = {confirm:null, cancel:null};
+    },
     globalSpinnerEnded: (state) => {
       state.globalSpinner.show = false;
       state.globalSpinner.processName = "";
@@ -161,7 +170,8 @@ export const {
   toasterEnded,
   currentErrorReceived,
   processingEnded,
-  globalSpinnerEnded
+  globalSpinnerEnded,
+  confirmModalEnded
 } = appSlice.actions;
 
 export default appSlice.reducer;
