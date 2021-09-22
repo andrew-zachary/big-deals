@@ -5,11 +5,11 @@ import {Modal} from 'react-bootstrap';
 import {apiCallStarted} from '../../store/actions/API';
 import {createOrder} from '../../store/config/orders';
 
-const CreateOrderModal = ({openCreateOrder, setOpenCreateOrder, items}) => {
+const CreateOrderModal = ({openCreateOrder, setOpenCreateOrder, items, totalCost}) => {
     const orderItems = items.map(item=>{return {product:item.product._id, quantity:item.quantity}});
     const dispatch = useDispatch();
     const sendOrderHandler = () => {
-        dispatch({type:apiCallStarted.type, payload:createOrder({items:orderItems})});
+        dispatch({type:apiCallStarted.type, payload:createOrder({items:orderItems, totalCost})});
         setOpenCreateOrder(false);
     };
     return <Modal show={openCreateOrder}>

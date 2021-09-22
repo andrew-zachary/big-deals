@@ -1,8 +1,8 @@
-export const createOrder = ({items}) => {
+export const createOrder = ({items, totalCost}) => {
     return {
-      url: `/big-deals/api/orders/`,
+      url: `/big-deals/api/orders`,
       method: "POST",
-      data: {items},
+      data: {items, totalCost},
       onSuccess: "orders/orderReceived",
       useGlobalSpinner: true,
       processName: "getting orders ...",
@@ -10,7 +10,7 @@ export const createOrder = ({items}) => {
   };
 export const getAllOrders = () => {
     return {
-      url: `/big-deals/api/orders/`,
+      url: `/big-deals/api/orders/?sort=date`,
       method: "GET",
       data: {},
       onSuccess: "orders/ordersReceived",

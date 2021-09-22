@@ -6,12 +6,15 @@ export const ordersSlice = createSlice({
         items:[]
     },
     reducers: {
+        ordersReceived:(state, action)=>{
+            state.items = action.payload.data;
+        },
         orderReceived:(state, action)=>{
             state.items.push(action.payload.data);
         }
     }
 });
 
-export const { orderReceived } = ordersSlice.actions;
+export const { orderReceived, ordersReceived } = ordersSlice.actions;
 
 export default ordersSlice.reducer;

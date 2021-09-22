@@ -1,7 +1,7 @@
 #app-shopping-cart {
     position: absolute;
-    bottom: -12rem;
-    right: 0;
+    bottom: -10rem;
+    right: 5rem;
     border-radius: 0rem;
     margin-right: 1rem;
     font-family: overlock-bold;
@@ -35,7 +35,7 @@
 html[dir=rtl] {
     #app-shopping-cart {
         right: unset;
-        left: 0;
+        left: 5rem;
         margin-right: unset;
         margin-left: 1rem;
         font-family: tajawal-regular;
