@@ -4,9 +4,11 @@ import { useTranslation } from 'react-i18next';
 
 import ItemQuantityCalc from "../components/mycart/item-quantity.calc.jsx";
 import CreateOrderModal from "../components/mycart/create-order-modal.jsx";
+import ConfirmOrderSent from "../components/mycart/confirm-order-sent.jsx";
 
 const MyCart = () => {
     const {items, totalCost} = useSelector(state=>state.cart);
+    const {newOrderSent} = useSelector(state=>state.orders);
     const {t} = useTranslation();
     const [openCreateOrder, setOpenCreateOrder] = useState(false);
     return <div id="mycart-page">
@@ -32,6 +34,7 @@ const MyCart = () => {
             items.length === 0 && <h1 id="cart_is_empty">cart is empty</h1>
         }
         <CreateOrderModal openCreateOrder={openCreateOrder} setOpenCreateOrder={setOpenCreateOrder} items={items} totalCost={totalCost} />
+        <ConfirmOrderSent newOrderSent={newOrderSent} />
     </div>
 }
 
