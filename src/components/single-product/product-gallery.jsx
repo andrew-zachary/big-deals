@@ -16,10 +16,6 @@ const ProductGallery = ({gallery}) => {
         });
         const imgsSwiper = new Swiper('.imgs-swiper', {
             spaceBetween: 0,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
             thumbs: {
                 swiper: thumbsSwiper,
             },
@@ -42,8 +38,6 @@ const ProductGallery = ({gallery}) => {
                     })
                 }
             </div>
-            <div className="swiper-button-prev"></div>
-            <div className="swiper-button-next"></div>
         </div>
         <div className="thumbs-swiper">
             <div className="swiper-wrapper">
