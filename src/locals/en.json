@@ -1,5 +1,8 @@
 {
     "translation":{
+        "my_orders": {
+            "title": "orders"
+        },
         "mycart": {
             "total": "total",
             "btn": {
@@ -35,7 +38,8 @@
             "account": {
                 "title": "my account",
                 "sub_menu": {
-                    "logout": "logout"
+                    "logout": "logout",
+                    "orders": "orders"
                 }
             },
             "search": "search",

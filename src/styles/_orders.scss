@@ -58,3 +58,36 @@
         }
     }
 }
+html[dir=rtl] {
+    #orders-page {
+        #order-page_container > h1 {
+            font-family: 'tajawal-regular';
+        }
+        .accordion {
+            .accordion-item {
+                .accordion-header {
+                    button.accordion-button {
+                        font-family: 'tajawal-Light';
+                        justify-content: space-between;
+                        &::after { 
+                            margin-left: unset;
+                        }
+                    }
+                }
+                .accordion-body {
+                    li {
+                        h1 {
+                            font-family: 'tajawal-Light';
+                        }
+                        h2 {
+                            font-family: 'tajawal-Light';
+                        }
+                    }
+                    .total-order-cost {
+                        font-family: 'tajawal-regular';
+                    }
+                }
+            }
+        }
+    }
+}

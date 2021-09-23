@@ -5,9 +5,8 @@ import moment from 'moment';
 
 import OrdersItem from "./item.jsx";
 
-const OrdersList = () => {
+const OrdersList = ({t}) => {
     const orders = useSelector(state=>state.orders.items);
-    console.log(orders);
     return <>
         {
             orders.length > 0 && orders.map((order, index)=>{
@@ -18,11 +17,11 @@ const OrdersList = () => {
                             <ul>
                                 {
                                     order.items.length > 0 && order.items.map((item, index)=>{
-                                        return <OrdersItem key={index} item={item} />
+                                        return <OrdersItem key={index} item={item} t={t} />
                                     })
                                 }
                             </ul>
-                            <div className="total-order-cost mt-5"><span className="order-cost">{parseFloat(order.totalCost).toFixed(2)}</span><span className="bd-currency">egp</span></div>
+                            <div className="total-order-cost mt-5"><span className="order-cost">{parseFloat(order.totalCost).toFixed(2)}</span><span className="bd-currency">{t(`common.egp`)}</span></div>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

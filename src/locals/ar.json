@@ -1,5 +1,8 @@
 {
     "translation": {
+        "my_orders": {
+            "title": "الطلبات"
+        },
         "mycart": {
             "total": "الاجمالي",
             "btn": {
@@ -35,7 +38,8 @@
             "account": {
                 "title": "حسابي",
                 "sub_menu": {
-                    "logout": "خروج"
+                    "logout": "خروج",
+                    "orders": "طلبات"
                 }
             },
             "search": "بحث",
