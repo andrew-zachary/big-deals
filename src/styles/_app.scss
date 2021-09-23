@@ -71,7 +71,11 @@ ul, p, h1, h2, h3 {
     min-height: 56.8rem;
     display: grid;
     grid-template-rows: max-content minmax(52rem, 1fr) max-content;
+    #app-footer {
+        display: none;
+    }
     #home-page ~ #app-footer {
+        display: block;
         position: fixed;
         bottom: 0;
         right: 0;
