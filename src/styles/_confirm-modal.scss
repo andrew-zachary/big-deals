@@ -20,3 +20,20 @@ div[role=dialog] {
         }
     }
 }
+html[dir=rtl] {
+    div[role=dialog] {
+        .modal-header {
+            .modal-title {
+                font-family: 'tajawal-regular';
+            }
+        }
+        .modal-body {
+            font-family: 'tajawal-Light';
+        }
+        .modal-footer {
+            button {
+                font-family: 'tajawal-regular';
+            }
+        }
+    }
+}

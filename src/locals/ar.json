@@ -1,5 +1,22 @@
 {
     "translation": {
+        "modals": {
+            "create_order_modal": {
+                "title": "ارسال طلب",
+                "body": "هل تريد ارسال طلب",
+                "ctrls": {
+                    "send": "ارسال",
+                    "cancel": "الغاء"
+                }
+            },
+            "confirm_order_sent_modal": {
+                "body": "تم ارسال الطلب",
+                "ctrls": {
+                    "cancel": "اغلاق",
+                    "go_to_orders": "فحص الطلبات"
+                }
+            }
+        },
         "my_orders": {
             "title": "الطلبات"
         },

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 
 import {orderReceivedReset} from '../../store/slices/orders';
 
-const ConfirmOrderSent = ({newOrderSent}) => {
+const ConfirmOrderSent = ({newOrderSent, t}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const continueHandler = () => {
@@ -17,17 +17,13 @@ const ConfirmOrderSent = ({newOrderSent}) => {
     }
 
     return <Modal show={newOrderSent}>
-        <Modal.Header>
-            <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-    
         <Modal.Body>
-            <p>Modal body text goes here.</p>
+            <p>{t(`modals.confirm_order_sent_modal.body`)}</p>
         </Modal.Body>
     
         <Modal.Footer>
-            <button className="bd-btn bd-primary-btn" onClick={()=>continueHandler()} variant="secondary">continue</button>
-            <button className="bd-btn bd-primary-btn" onClick={()=>openOrdersHandler()} variant="primary">open orders</button>
+            <button className="bd-btn bd-primary-btn" onClick={()=>continueHandler()} variant="secondary">{t(`modals.confirm_order_sent_modal.ctrls.cancel`)}</button>
+            <button className="bd-btn bd-primary-btn" onClick={()=>openOrdersHandler()} variant="primary">{t(`modals.confirm_order_sent_modal.ctrls.go_to_orders`)}</button>
         </Modal.Footer>
     </Modal>
 }

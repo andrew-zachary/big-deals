@@ -1,5 +1,22 @@
 {
     "translation":{
+        "modals": {
+            "create_order_modal": {
+                "title": "send order",
+                "body": "would you like to create an order",
+                "ctrls": {
+                    "send": "send",
+                    "cancel": "cancel"
+                }
+            },
+            "confirm_order_sent_modal": {
+                "body": "order has been sent",
+                "ctrls": {
+                    "cancel": "close",
+                    "go_to_orders": "go to orders"
+                }
+            }
+        },
         "my_orders": {
             "title": "orders"
         },
