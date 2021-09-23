@@ -1,5 +1,9 @@
 {
     "translation":{
+        "about": {
+            "title": "big deals",
+            "sup-title": "an ecommerce app for selling high quality goods wrapped by exclusive offers and discounts"
+        },
         "modals": {
             "create_order_modal": {
                 "title": "send order",

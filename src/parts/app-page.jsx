@@ -9,6 +9,7 @@ import AccountPage from "../pages/account.jsx";
 import ConnectionPage from "../pages/connection.jsx";
 import MyCart from "../pages/mycart.jsx";
 import Orders from "../pages/orders.jsx";
+import About from "../pages/about.jsx";
 
 const AppPage = () => {
     return <Switch>
@@ -20,6 +21,7 @@ const AppPage = () => {
         <Route path="/connection" component={ConnectionPage} />
         <Route path="/mycart" component={MyCart} />
         <Route path="/orders" component={Orders} />
+        <Route path="/about" component={About} />
     </Switch>
 };
 
