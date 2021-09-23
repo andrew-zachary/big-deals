@@ -63,9 +63,6 @@
                 #product-price {
                     font-size: 3rem;
                     font-weight: bold;
-                    .price-unit {
-                        margin-left: 1rem;
-                    }
                 }
                 #add-to-cart {
                     button {
@@ -214,12 +211,6 @@ html[dir=rtl] {
                     #description-points {
                         h1 {
                             font-family: tajawal-regular;
-                        }
-                    }
-                    #product-price {
-                        .price-unit {
-                            margin-left: 0rem;
-                            margin-right: 1rem;
                         }
                     }
                     #add-to-cart {

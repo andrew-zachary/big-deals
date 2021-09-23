@@ -54,7 +54,7 @@ const SingleProduct = () => {
                         <div className="avg-rate-opt">
                             <StarsCalc avgRate={avgRate} />
                         </div>
-                        <h2 id="product-price"><span className="price-num">{parseInt(price.$numberDecimal).toFixed(2)}</span><span className="price-unit text-capitalize">{t(`common.egp`)}</span></h2>
+                        <h2 id="product-price"><span className="price-num">{parseInt(price.$numberDecimal).toFixed(2)}</span><span className="price-unit bd-currency">{t(`common.egp`)}</span></h2>
                         <p id="shipping" className="mt-2">+ shipping from EGP 11 to 6th of October</p>
                         <div id="add-to-cart">
                             <button className="bd-btn bd-primary-btn d-flex align-items-center"><i className="fas fa-cart-plus"></i>{t(`single_product.btn.add_to_cart`)}</button>

@@ -15,7 +15,7 @@ const ListItem = ({itemData}) => {
                 <Card.Body>
                     <Card.Title className="text-capitalize">{itemData.name}</Card.Title>
                     <Card.Text>
-                        <span className="price-num">{parseFloat(itemData.price.$numberDecimal).toFixed(2)}</span><span className="price-unit text-uppercase">{t(`common.egp`)}</span>
+                        <span className="price-num">{parseFloat(itemData.price.$numberDecimal).toFixed(2)}</span><span className="price-unit text-uppercase bd-currency">{t(`common.egp`)}</span>
                     </Card.Text>
                     <StarsCalc avgRate={itemData.avgRate}/>
                     <div className="ctrls d-flex justify-content-between align-items-center">

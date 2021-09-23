@@ -11,9 +11,6 @@
                     font-family: 'roboto-regular';
                     font-size: 2rem;
                     font-weight: 700;
-                    .price-unit {
-                        margin-left: 1rem;
-                    }
                 }
                 .bd-stars-calc {
                     margin-bottom: 1.5rem;
@@ -79,8 +76,6 @@ html[dir=rtl] {
                     }
                     .card-text {
                         .price-unit {
-                            margin-left: 0rem;
-                            margin-right: 1rem;
                             font-family: tajawal-Light;
                         }
                     }

@@ -37,9 +37,6 @@
                         font-size: 3rem;
                         font-weight: bold;
                         font-family: roboto-regular;
-                        .price-num {
-                            margin-right: 1rem;
-                        }
                     }
                 }
             }
@@ -118,12 +115,6 @@ html[dir=rtl] {
                         padding-right: 1.5rem;
                         h1, .price-unit {
                             font-family: tajawal-Light;
-                        }
-                        #product-price {
-                            .price-num {
-                                margin-right: 0rem;
-                                margin-left: 1rem;
-                            }
                         }
                     }
                 }

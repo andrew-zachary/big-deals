@@ -16,7 +16,7 @@ const ListItem = ({itemData}) => {
                 <div className="info-container-stars-calc w-100">
                     <StarsCalc avgRate={itemData.avgRate} />
                 </div>
-                <h2 id="product-price" className="w-100"><span className="price-num">{parseInt(itemData.price.$numberDecimal).toFixed(2)}</span><span className="price-unit text-uppercase">{t(`common.egp`)}</span></h2>
+                <h2 id="product-price" className="w-100"><span className="price-num">{parseInt(itemData.price.$numberDecimal).toFixed(2)}</span><span className="price-unit text-uppercase bd-currency">{t(`common.egp`)}</span></h2>
                 <div className="check-out w-100">
                     <LinkToProduct itemData={itemData} text={t(`common.see_details`)} />
                 </div>
