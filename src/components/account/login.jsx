@@ -19,7 +19,7 @@ const Login = () => {
         }
     }, []);
     return (
-        <div id="login-box" className="bd-white-box p-4">
+        <div id="login-box" className="bd-white-box p-4 mt-6">
             <h1 className="text-capitalize">{t('account.sing_in.title')}</h1>
             <h2 className="mt-3">{t('account.sing_in.dont_have_account')} - <Link to="/account/register" className="text-decoration-none"><span role="button" className="text-capitalize">{t('account.sing_in.sing_up')}</span></Link></h2>
             {
