@@ -30,10 +30,8 @@
 }
 html[dir=rtl] {
     #home-page {
-        &_box {
-            h1, h3, .bd-btn {
-                font-family: tajawal-regular;
-            }
+        h1, h3, .bd-btn {
+            font-family: tajawal-regular;
         }
     }
 }
