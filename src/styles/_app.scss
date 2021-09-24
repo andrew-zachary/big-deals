@@ -68,9 +68,8 @@ ul, p, h1, h2, h3 {
 /* bd-classes ====================================== */
 #bd-app {
     position: relative;
-    min-height: 56.8rem;
     display: grid;
-    grid-template-rows: max-content minmax(52rem, 1fr) max-content;
+    grid-template-rows: max-content min-content max-content;
     #app-footer {
         display: none;
     }
@@ -279,6 +278,24 @@ ul, p, h1, h2, h3 {
 }
 .bd-line-header {
     margin-right: 1rem;
+}
+.bd-page-center {
+    height: calc(100vh - 7.05rem);
+    position: relative;
+    &_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media screen and (max-width:768px){
+        & {
+            height: calc(100vh - 18.85rem);
+            &_box {
+                top: calc(50% - 1.88rem);
+            }
+        }
+    }
 }
 
 /* rtl ============================================================= */

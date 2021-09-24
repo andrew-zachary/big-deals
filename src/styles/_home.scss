@@ -1,5 +1,4 @@
 #home-page {
-    align-self: center;
     h1 {
         font-family: "overlock-bold";
         font-weight: 700;
@@ -18,11 +17,23 @@
         font-weight: 300;
         font-size: 2rem;
     }
+    @media screen and (max-width:425px){
+        & {
+            h1 {
+                font-size: calc(1.4rem + 7vw);
+            }
+            h3 {
+                font-size: calc(1.4rem + 2.5vw);
+            }
+        }
+    }
 }
 html[dir=rtl] {
     #home-page {
-        h1, h3, .bd-btn {
-            font-family: tajawal-regular;
+        &_box {
+            h1, h3, .bd-btn {
+                font-family: tajawal-regular;
+            }
         }
     }
 }

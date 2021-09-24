@@ -15,10 +15,12 @@ const Connection = ()=> {
         }
     }, []);
     return (
-        <div id="connection-page" className="text-center">
-            <i className="fas fa-exclamation-triangle mb-4"></i>
-            <h1>{t(`${location.state.notification}.title`)}</h1>
-            <h2>{t(`${location.state.notification}.body`)}</h2>
+        <div id="connection-page" className="text-center bd-page-center">
+            <div className="w-100 bd-page-center_box">
+                <i className="fas fa-exclamation-triangle mb-4"></i>
+                <h1>{t(`${location.state.notification}.title`)}</h1>
+                <h2>{t(`${location.state.notification}.body`)}</h2>
+            </div>
         </div>
     )
 }
