@@ -337,10 +337,6 @@ html[dir=rtl] {
 }
 
 /* animations ============================================================= */
-.fade {
-    animation: fadding 0.3s 1;
-}
-
 @keyframes fadding {
     0% {
         opacity: 0;

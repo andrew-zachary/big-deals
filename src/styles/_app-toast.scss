@@ -5,6 +5,9 @@
     z-index: 9998;
     transform: translate(-50%, 0);
     .toast {
+        &.fade {
+            animation: fadding 0.3s 1;
+        }
         .toast-header {
             color: var(--bd-secondary-color);
             & > strong {
