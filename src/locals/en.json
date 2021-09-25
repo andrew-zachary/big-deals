@@ -3,7 +3,8 @@
         "toaster": {
             "cart": {
                 "title": "cart",
-                "item_cart_added": "item added to cart"
+                "item_cart_added": "item added to cart",
+                "item_cart_exist": "you have this item already"
             }
         },
         "about": {

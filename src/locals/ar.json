@@ -3,7 +3,8 @@
         "toaster": {
             "cart": {
                 "title": "السلة",
-                "item_cart_added": "تم اضافة سلعة"
+                "item_cart_added": "تم اضافة سلعة",
+                "item_cart_exist": "هذة السلعة موجودة لديك"
             }
         },
         "about": {
