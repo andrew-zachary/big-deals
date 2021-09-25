@@ -1,5 +1,11 @@
 {
     "translation": {
+        "toaster": {
+            "cart": {
+                "title": "السلة",
+                "item_cart_added": "تم اضافة سلعة"
+            }
+        },
         "about": {
             "title": "big deals",
             "sup-title": "تطبيق للتجارة الإلكترونية لبيع سلع عالية الجودة مغلفة بعروض وخصومات حصرية"

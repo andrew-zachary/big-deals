@@ -9,6 +9,7 @@ import appReducer from "./slices/app";
 import API from "./middleware/API";
 import AUTH from "./middleware/AUTH";
 import ISAUTH from "./middleware/ISAUTH";
+import TOASTING from "./middleware/TOASTING";
 
 export default configureStore({
   reducer: {
@@ -18,5 +19,5 @@ export default configureStore({
     cart: cartReducer,
     app: appReducer
   },
-  middleware: (getDefaultMiddleware)=>getDefaultMiddleware().concat([ISAUTH, API, AUTH])
+  middleware: (getDefaultMiddleware)=>getDefaultMiddleware().concat([ISAUTH, API, AUTH, TOASTING])
 });

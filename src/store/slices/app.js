@@ -10,6 +10,7 @@ export const appSlice = createSlice({
       name: "",
       _id: ""
     },
+    toastersStack:[],
     globalSpinner: {
       show: false,
       processName: "",
@@ -50,7 +51,6 @@ export const appSlice = createSlice({
       header: null,
       body: null,
       time: null,
-      processing: false,
     },
   },
   reducers: {
@@ -77,68 +77,9 @@ export const appSlice = createSlice({
       state.taskModal.props = { ...action.payload.props };
       state.taskModal.processing = true;
     },
-    confirmModalStarted: (state, action) => {
-      state.confirmModal.header = action.payload.header;
-      state.confirmModal.body = action.payload.body;
-      state.confirmModal.toConfirm = action.payload.toConfirm;
-      state.confirmModal.toDispatch = action.payload.toDispatch;
-      state.confirmModal.props = { ...action.payload.props };
-      state.confirmModal.ctrls = { ...action.payload.ctrls };
-      state.confirmModal.processing = true;
-    },
-    notificationModalStarted: (state, action) => {
-      state.notificationModal.header = action.payload.header;
-      state.notificationModal.body = action.payload.body;
-      state.notificationModal.ctrls = { ...action.payload.ctrls };
-      state.notificationModal.processing = true;
-    },
-    toasterStarted: (state, action) => {
-      state.toaster.header = action.payload.header;
-      state.toaster.body = action.payload.body;
-      state.toaster.time = action.payload.time;
-      state.toaster.processing = true;
-    },
-    confirmModalEnded: (state, action) => {
-      state.confirmModal.processing = false;
-      state.confirmModal.header = null;
-      state.confirmModal.body = null;
-      state.confirmModal.toConfirm = null;
-      state.confirmModal.toDispatch = null;
-      state.confirmModal.props = null;
-      state.confirmModal.ctrls = {confirm:null, cancel:null};
-    },
     globalSpinnerEnded: (state) => {
       state.globalSpinner.show = false;
       state.globalSpinner.processName = "";
-    },
-    processingEnded: (state) => {
-      state.taskModal = {
-        header: null,
-        taskName: null,
-        props: null,
-        auth: false,
-        processing: false,
-      };
-      state.confirmModal = {
-        header: null,
-        body: null,
-        toConfirm: null,
-        toDispatch: null,
-        props: null,
-        ctrls: {
-          cancel: null,
-          confirm: null,
-        },
-        processing: false,
-      };
-      state.notificationModal = {
-        header: null,
-        body: null,
-        ctrls: {
-          ok: null,
-        },
-        processing: false,
-      };
     },
     currentErrorEnded:(state) => {
       state.currentError = {
@@ -147,31 +88,29 @@ export const appSlice = createSlice({
         receivedError: false,
       };
     },
-    toasterEnded: (state) => {
-      state.toaster = {
-        header: null,
-        body: null,
-        time: null,
-        processing: false,
-      };
+    toastAdded: (state, action) => {
+      state.toastersStack.push({
+        header:action.payload.header, body:action.payload.body, time:action.payload.time
+      });
+    },
+    toastRemoved: (state, action) => {
+      state.toastersStack = state.toastersStack.filter((_, index)=>{
+        return index !== action.payload.toastIndex
+      });
     },
   },
 });
 
 export const {
   userAuthChanged,
-  currentErrorEnded,
   localizationChanged,
   globalSpinnerStarted,
-  taskModalStarted,
-  confirmModalStarted,
-  notificationModalStarted,
-  toasterStarted,
-  toasterEnded,
   currentErrorReceived,
-  processingEnded,
+  taskModalStarted,
   globalSpinnerEnded,
-  confirmModalEnded
+  currentErrorEnded,
+  toastAdded,
+  toastRemoved
 } = appSlice.actions;
 
 export default appSlice.reducer;

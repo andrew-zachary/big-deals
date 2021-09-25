@@ -1,5 +1,11 @@
 {
     "translation":{
+        "toaster": {
+            "cart": {
+                "title": "cart",
+                "item_cart_added": "item added to cart"
+            }
+        },
         "about": {
             "title": "big deals",
             "sup-title": "an ecommerce app for selling high quality goods wrapped by exclusive offers and discounts"

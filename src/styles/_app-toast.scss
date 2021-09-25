@@ -1,0 +1,42 @@
+.toast-container {
+    position: fixed!important;
+    left: 50%;
+    bottom: 0;
+    z-index: 9998;
+    transform: translate(-50%, 0);
+    .toast {
+        .toast-header {
+            color: var(--bd-secondary-color);
+            & > strong {
+                font-size: 1.6rem;
+            }
+            & > small {
+                font-size: 1.4rem;
+            }
+            button {
+                font-size: 1.2rem;
+            }
+        }
+        .toast-body {
+            background-color: var(--bd-primary-color);
+            color: white;
+            font-size: 1.8rem;
+            padding: 2rem 1rem;
+        }
+    }
+}
+html[dir=rtl] {
+    .toast-container {
+        .toast {
+            .toast-header {
+                justify-content: space-between;
+                & > strong {
+                    margin-right: unset!important;
+                }
+            }
+            .toast-header, .toast-body {
+                font-family: tajawal-regular;
+            }
+        }
+    }
+}
