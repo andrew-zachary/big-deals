@@ -1,5 +1,12 @@
 #mycart-page {
     position: relative;
+    .bd-page-center_box {
+        h1 {
+            text-transform: capitalize;
+            font-family: lato-thin;
+            font-weight: 700;
+        }
+    }
     &_container {
         max-width: 41.5rem;
         li {

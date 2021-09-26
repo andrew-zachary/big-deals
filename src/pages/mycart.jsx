@@ -11,7 +11,7 @@ const MyCart = () => {
     const {newOrderSent} = useSelector(state=>state.orders);
     const {t} = useTranslation();
     const [openCreateOrder, setOpenCreateOrder] = useState(false);
-    return <div id="mycart-page">
+    return <div id="mycart-page" className="bd-page-center">
         {   
             items.length > 0 && <div id="mycart-page_container" className="bd-max-width-1200 mx-auto bd-white-box mt-5">
                 <ul className="list-unstyled p-3">
@@ -31,7 +31,9 @@ const MyCart = () => {
             </div>
         }
         {
-            items.length === 0 && <h1 id="cart_is_empty">cart is empty</h1>
+            items.length === 0 && <div className="w-100 bd-page-center_box">
+                <h1 id="cart_is_empty">cart is empty</h1>
+            </div>
         }
         <CreateOrderModal openCreateOrder={openCreateOrder} setOpenCreateOrder={setOpenCreateOrder} items={items} totalCost={totalCost} t={t} />
         <ConfirmOrderSent newOrderSent={newOrderSent} t={t} />
