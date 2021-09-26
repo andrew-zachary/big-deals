@@ -33,7 +33,7 @@
                 &#account-loggedin {
                     display: flex;
                     align-items: center;
-                    #btn {
+                    #btn-toggler {
                         .avatar, #toggler {
                             i::before{
                                 color: white;
@@ -160,7 +160,7 @@
                         &#account-loggedin {
                             position: relative;
                             margin-right: 4rem;
-                            #btn {
+                            #btn-toggler {
                                 .avatar, #toggler {
                                     position: absolute;
                                     left: 50%;
