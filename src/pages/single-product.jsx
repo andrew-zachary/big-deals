@@ -4,6 +4,7 @@ import {useTranslation} from "react-i18next";
 
 import { apiCallStarted } from "../store/actions/API.js";
 import { getMyReview } from "../store/config/reviews.js";
+import { addCartItem } from "../store/slices/cart";
 
 import Paginator from "../components/single-product/paginator.jsx";
 import ReviewsGetBtn from "../components/single-product/reviews-get-btn.jsx";
@@ -17,6 +18,11 @@ const SingleProduct = () => {
     const dispatch = useDispatch();
     const {_id, name, price, avgRate, features, description, descriptionPoints} = useSelector(state=>state.products.productSelected);
     const currentReview = useSelector(state=>state.reviews.currentReview);
+    const onClickHandler = () => {
+        dispatch({type: addCartItem.type, payload: {
+            product: {_id, name, price, avgRate, features, description, descriptionPoints}
+        }});
+    };
     useEffect(()=>{
         dispatch({type: apiCallStarted.type, payload:getMyReview({productId:_id})});
     }, []);
@@ -57,7 +63,7 @@ const SingleProduct = () => {
                         <h2 id="product-price"><span className="price-num">{parseInt(price.$numberDecimal).toFixed(2)}</span><span className="price-unit bd-currency">{t(`common.egp`)}</span></h2>
                         <p id="shipping" className="mt-2">+ shipping from EGP 11 to 6th of October</p>
                         <div id="add-to-cart">
-                            <button className="bd-btn bd-primary-btn d-flex align-items-center"><i className="fas fa-cart-plus"></i>{t(`single_product.btn.add_to_cart`)}</button>
+                            <button onClick={()=>{onClickHandler()}} className="bd-btn bd-primary-btn d-flex align-items-center"><i className="fas fa-cart-plus"></i>{t(`single_product.btn.add_to_cart`)}</button>
                         </div>
                         <div id="description" className="mt-5">
                             <h1 className="text-capitalize">{t(`single_product.description`)}</h1>
