@@ -90,12 +90,16 @@ export const appSlice = createSlice({
     },
     toastAdded: (state, action) => {
       state.toastersStack.push({
-        header:action.payload.header, body:action.payload.body, time:action.payload.time
+        id:Date.now() * ((Math.random() * 100) + 1),
+        header:action.payload.header, 
+        body:action.payload.body, 
+        time:action.payload.time
       });
     },
     toastRemoved: (state, action) => {
-      state.toastersStack = state.toastersStack.filter((_, index)=>{
-        return index !== action.payload.toastIndex
+      state.toastersStack = state.toastersStack.filter((item)=>{
+        console.log(item.id, action.payload.toastId);
+        return item.id !== action.payload.toastId
       });
     },
   },

@@ -13,8 +13,8 @@ const AppToast = () => {
         {
             <ToastContainer className="p-3">
                 {
-                    toastersStack.map((toast, index)=>{
-                        return <Toast onClose={()=>dispatch({type:toastRemoved.type, payload:{toastIndex:index}})}>
+                    toastersStack.map((toast)=>{
+                        return <Toast key={toast.id} onClose={()=>dispatch({type:toastRemoved.type, payload:{toastId:toast.id}})} delay={3000} autohide>
                             <Toast.Header>
                                 <strong className="me-auto">{t(toast.header)}</strong>
                             </Toast.Header>
