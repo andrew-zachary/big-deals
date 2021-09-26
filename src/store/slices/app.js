@@ -98,7 +98,6 @@ export const appSlice = createSlice({
     },
     toastRemoved: (state, action) => {
       state.toastersStack = state.toastersStack.filter((item)=>{
-        console.log(item.id, action.payload.toastId);
         return item.id !== action.payload.toastId
       });
     },

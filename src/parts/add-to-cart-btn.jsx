@@ -8,7 +8,7 @@ const AddToCartBtn = ({itemData}) => {
     const onClickHandler = () => {
         dispatch({type: addCartItem.type, payload: {product:itemData}});
     };
-    return <a onClick={()=>{onClickHandler()}} className="bd-circle-btn bd-primary-btn d-inline-block" href="#"><i className="fas fa-cart-plus"></i></a>
+    return <button onClick={()=>{onClickHandler()}} className="bd-btn bd-circle-btn bd-primary-btn d-inline-block"><i className="fas fa-cart-plus"></i></button>
 };
 
 export default AddToCartBtn;
