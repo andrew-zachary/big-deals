@@ -39,6 +39,7 @@
         },
         "header": {
             "btn": {
+                "cart": "cart",
                 "start_shopping_now": "start shopping now",
                 "go_to_my_cart": "go to my cart"
             },

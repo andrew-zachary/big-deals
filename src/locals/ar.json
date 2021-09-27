@@ -39,6 +39,7 @@
         },
         "header": {
             "btn": {
+                "cart": "السلة",
                 "start_shopping_now": "إبدء التسوق الاَن",
                 "go_to_my_cart": "اذهب الي سلتي"
             },
