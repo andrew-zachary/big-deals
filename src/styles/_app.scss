@@ -297,6 +297,9 @@ ul, p, h1, h2, h3 {
         }
     }
 }
+.bd-scroll-hidden {
+    overflow: hidden;
+}
 
 /* rtl ============================================================= */
 html[dir=rtl] {
