@@ -16,7 +16,9 @@ const AppToast = () => {
                     toastersStack.map((toast)=>{
                         return <Toast key={toast.id} onClose={()=>dispatch({type:toastRemoved.type, payload:{toastId:toast.id}})} delay={3000} autohide>
                             <Toast.Header>
-                                <strong className="me-auto">{t(toast.header)}</strong>
+                                <strong className="me-auto">
+                                    <i className="fas fa-shopping-cart"></i>
+                                </strong>
                             </Toast.Header>
                             <Toast.Body>{t(toast.body)}</Toast.Body>
                         </Toast>

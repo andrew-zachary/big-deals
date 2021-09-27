@@ -5,13 +5,15 @@
     z-index: 9998;
     transform: translate(-50%, 0);
     .toast {
+        border: 0.1rem solid black;
         &.fade {
             animation: fadding 0.3s 1;
         }
         .toast-header {
             color: var(--bd-secondary-color);
             & > strong {
-                font-size: 1.6rem;
+                font-size: 3rem;
+                color: var(--bd-primary-color);
             }
             & > small {
                 font-size: 1.4rem;
@@ -23,8 +25,9 @@
         .toast-body {
             background-color: var(--bd-primary-color);
             color: white;
+            font-weight: 700;
             font-size: 1.8rem;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
         }
     }
 }
