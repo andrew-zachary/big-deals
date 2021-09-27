@@ -19,4 +19,5 @@
 <li>Reviews add-update.</li>
 <li>App Toaster, Modals, Spinner, Forms with validation, responsive layout.</li>
 </ul>
-<h2>Would like to have your feedback.</h2>
+
+### Would like to have your feedback

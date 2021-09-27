@@ -1,7 +1,7 @@
 {
   "name": "big-deals",
   "version": "1.0.0",
-  "description": "eCommerce app for buying products, making orders, and giving reviews .",
+  "description": "eCommerce app for viewing and buying products, making orders and giving reviews.",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
