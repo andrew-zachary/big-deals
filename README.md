@@ -1,7 +1,7 @@
 <h1>Big Deals</h1>
 <h2>eCommerce app for :</h2>
 <ul>
-  <li>view and buying products.</li>
+  <li>viewing and buying products.</li>
   <li>making orders</li>
   <li>giving reviews</li>
 </ul>
