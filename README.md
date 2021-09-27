@@ -1,11 +1,15 @@
-<h1>Big Deals</h1>
+<p align="left">
+  <a href="https://quirky-shockley-cceacf.netlify.app">
+    <img alt="big-deals" src="https://raw.githubusercontent.com/andrew-zachary/big-deals/main/src/assets/logo.png" width="250" />
+  </a>
+</p>
 <h2>eCommerce app for :</h2>
 <ul>
   <li>viewing and buying products.</li>
   <li>making orders</li>
   <li>giving reviews</li>
 </ul>
-<h2><a href="https://festive-khorana-425d49.netlify.app/">Check App On Netlify ...</a></h2>
+<h2><a href="https://quirky-shockley-cceacf.netlify.app">Check App On Netlify ...</a></h2>
 <p>React-Redux was used to manage app state and to implement features like :</p>
 <ul>
 <li>User login-register.</li>
