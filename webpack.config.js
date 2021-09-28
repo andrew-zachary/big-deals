@@ -27,7 +27,7 @@ module.exports = (env) => {
         filename: "style.[contenthash].css",
       }),
       new PurgecssPlugin({
-        paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+        paths: glob.sync(`${PATHS.src}/**/*.js`,  { nodir: true }),
       }),
       new HtmlWebpackPlugin({
         filename: "index.html",
