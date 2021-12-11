@@ -1,42 +1,25 @@
 import "regenerator-runtime/runtime";
 import "core-js/stable";
-import "./utils/i18next";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "react-redux";
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 
-import store from "./store/index";
+//pages
+import HomePage from './pages/home.jsx';
+import AdminPage from './pages/admin.jsx';
 
-import AppHeader from "./parts/app-header.jsx";
-import AppFooter from "./parts/app-footer.jsx";
-import AppPage from "./parts/app-page.jsx";
-import AppError from "./parts/app-error.jsx";
-import AppSpinner from "./parts/app-spinner.jsx";
-import AppAuth from "./parts/app-auth.jsx";
-import AppToast from "./parts/app-toast.jsx";
+//layout
+import MainLayout from "./layout/main.jsx";
 
 import './index.scss';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-import 'swiper/css/scrollbar';
+import 'semantic-ui-css/semantic.min.css';
 
-const App = () => {
-    return (
-        <Provider store={store}>
-            <Router>
-                <AppHeader />
-                <AppPage />
-                <AppFooter />
-                <AppError />
-            </Router>
-            <AppSpinner />
-            <AppAuth />
-            <AppToast />
-        </Provider>
-    );
-};
-
-ReactDOM.render(<App />, document.getElementById("bd-app"));
+ReactDOM.render(<Router>
+    <Routes>
+        <Route path="/" element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/admin" element={<AdminPage />} />
+        </Route>
+    </Routes>
+</Router>, document.getElementById("bd-app"));

@@ -1,16 +1,7 @@
-import React from "react";
-import {useTranslation} from "react-i18next";
+import React from 'react';
 
 const HomePage = () => {
-  const {t} = useTranslation();
-  return (
-    <section id="home-page" className="text-center bd-page-center">
-      <div className="w-100 bd-page-center_box">
-        <h1 className="text-capitalize">{t('home.title.top')}</h1>
-        <h3>{t('home.title.mid')}</h3>
-      </div>
-    </section>
-  );
-};
+    return <div>restructure #production-ready</div>
+}
 
 export default HomePage;
