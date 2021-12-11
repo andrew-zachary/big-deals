@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import {Sidebar, Menu, Header, Image, Icon, Segment, Checkbox} from 'semantic-ui-react';
 import {Outlet} from 'react-router-dom';
-import Footer from './footer.jsx';
+import LayoutFooter from './footer.jsx';
+import LayoutHeader from './header.jsx';
 
 const MainLayout = () => {
     const [visible, setVisible] = useState(false);
@@ -35,16 +36,12 @@ const MainLayout = () => {
             </Menu.Item>
         </Sidebar>
 
-        <Sidebar.Pusher dimmed={visible}>
-            <Checkbox
-                checked={visible}
-                label={{ children: <code>visible</code> }}
-                onChange={(e, data) => setVisible(data.checked)}
-            />
+        <Sidebar.Pusher id="main-container-pusher" dimmed={visible}>
+            <LayoutHeader visible={visible} setVisible={setVisible} />
             <section id="main-container">
                 <Outlet />
             </section>
-            <Footer />
+            <LayoutFooter />
         </Sidebar.Pusher>
     </Sidebar.Pushable>
 }
