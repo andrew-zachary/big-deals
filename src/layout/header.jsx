@@ -1,13 +1,8 @@
-import React,{useState} from 'react';
-import {Checkbox} from 'semantic-ui-react';
+import React from 'react';
 
-const LayoutHeader = ({visible, setVisible}) => {
+const LayoutHeader = () => {
     return <nav>
-        <Checkbox 
-            checked={visible}
-            label={{ children: <code>visible</code> }}
-            onChange={(e, data) => setVisible(data.checked)}
-        />
+        this is header
     </nav>
 }
 

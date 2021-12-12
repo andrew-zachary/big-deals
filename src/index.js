@@ -3,7 +3,7 @@ import "core-js/stable";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
 import HomePage from './pages/home.jsx';
@@ -13,7 +13,6 @@ import AdminPage from './pages/admin.jsx';
 import MainLayout from "./layout/main.jsx";
 
 import './index.scss';
-import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(<Router>
     <Routes>
