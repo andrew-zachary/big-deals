@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
@@ -20,6 +20,7 @@ module.exports = {
         colors: {
           'black-600': '#00000099',
           'primary': '#f68b1e',
+          'primary-dim': '#f9ae62',
           'secondary': '#00000033'
         },
         boxShadow: {

@@ -1,0 +1,39 @@
+//material input
+$primary-color: #f68b1e;
+$primary-dim-color: #f9ae62;
+
+form {
+    input,
+    textarea {
+        @include withRtl('padding', 1rem 1rem 1rem 0.5rem, 1rem 0.5rem 1rem 1rem);
+        &:focus ~ label,
+        &:valid ~ label {
+            top: -14px;
+            font-size: 1.5rem;
+            color: $primary-color;
+        }
+        &:focus ~ .bar:before {
+            width: 100%;
+        }
+    }
+    input[type="password"] {
+        letter-spacing: 0.3em;
+    }
+    label {
+        color: $primary-dim-color;
+        @include withRtl(left, 0.5rem, unset);
+        @include withRtl(right, unset, 0.5rem);
+    }
+    .bar {
+        &:before {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 0px;
+            position: absolute;
+            background: $primary-color;
+            transition: 300ms ease all;
+            left: 0%;
+        }
+    }
+}

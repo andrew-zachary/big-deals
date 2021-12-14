@@ -2,7 +2,7 @@ import React from 'react';
 import {Outlet} from 'react-router-dom';
 import LayoutFooter from './footer.jsx';
 import LayoutHeader from './header.jsx';
-import LayoutSideMenu from './menu.jsx';
+import LayoutSideMenu from './side-menu.jsx';
 import LayoutDim from './layout-dim.jsx';
 
 const MainLayout = () => {

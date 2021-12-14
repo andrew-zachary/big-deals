@@ -8,7 +8,7 @@ const HomePage = () => {
         <h2 className='font-mont font-regular text-3xl my-3'>
             all deals, all your needs
         </h2>
-        <button className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem]'>fill your cart</button>
+        <button className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize'>open your cart</button>
     </div>
 }
 
