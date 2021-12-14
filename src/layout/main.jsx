@@ -2,15 +2,23 @@ import React from 'react';
 import {Outlet} from 'react-router-dom';
 import LayoutFooter from './footer.jsx';
 import LayoutHeader from './header.jsx';
+import LayoutSideMenu from './menu.jsx';
+import LayoutDim from './layout-dim.jsx';
 
 const MainLayout = () => {
-    return <>
-        <LayoutHeader />
-            <section id="main-container">
-                <Outlet />
-            </section>
-        <LayoutFooter />
-    </>
+    return <div id='layout-wraper' className='flex relative bg-secondary'>
+        <LayoutSideMenu />
+        <LayoutDim />
+        <div id='bd-app-body'>
+            <div id='body-container' className='grid grid-rows-layout absolute w-full'>
+                <LayoutHeader />
+                <main id='main-content'>
+                    <Outlet />
+                </main>
+                <LayoutFooter />
+            </div>
+        </div>
+    </div>
 }
 
 export default MainLayout;

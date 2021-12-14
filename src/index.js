@@ -1,7 +1,7 @@
 import "regenerator-runtime/runtime";
 import "core-js/stable";
 
-import React from "react";
+import React, {useReducer} from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,13 +12,32 @@ import AdminPage from './pages/admin.jsx';
 //layout
 import MainLayout from "./layout/main.jsx";
 
+//layout-context
+import { layoutContext, layoutReducer } from "./layout/context.js";
+
+//styles
 import './index.scss';
 
-ReactDOM.render(<Router>
-    <Routes>
-        <Route path="/" element={<MainLayout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/admin" element={<AdminPage />} />
-        </Route>
-    </Routes>
-</Router>, document.getElementById("bd-app"));
+//app
+const App = () => {
+    const [state, dispatch] = useReducer(layoutReducer, {
+        menu: {
+            toggle: false
+        },
+        dim: {
+            toggle: false
+        }
+    });
+    return <layoutContext.Provider value={{state, dispatch}}>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/admin" element={<AdminPage />} />
+                    </Route>
+                </Routes>
+            </Router>
+        </layoutContext.Provider>
+}
+
+ReactDOM.render(<App />, document.getElementById("bd-app"));

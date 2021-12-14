@@ -1,0 +1,38 @@
+#layout-wraper {
+    nav {
+        transition: all .3s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
+    }
+    #layout-dim {
+        &.show {
+            animation: dimFadeIn 0.3s linear;
+        }
+        &.hide {
+            animation: dimFadeOut 0.3s linear;
+        }
+    }
+    header {
+        button {
+            @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0);
+        }
+    }
+}
+
+/*********
+animations
+*********/
+@keyframes dimFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes dimFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0
+    }
+}
