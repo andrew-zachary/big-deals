@@ -15,6 +15,14 @@
             @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0);
         }
     }
+    footer {
+        ul {
+            @include withRtl('padding', 0 1rem 0 0, 0 0 0 1rem);
+            li {
+                @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0);
+            }
+        }
+    }
 }
 
 /*********

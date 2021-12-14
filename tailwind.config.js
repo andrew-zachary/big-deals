@@ -1,9 +1,15 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
     content: [
       "./src/**/*.{js,jsx}",
     ],
     theme: {
       extend: {
+        screens: {
+          xs: '375px',
+          ...defaultTheme.screens
+        },
         maxWidth: {
           'app-body': '120rem'
         },
@@ -23,7 +29,8 @@ module.exports = {
           'layout': '20% 70% 10%'
         },
         fontSize: {
-          'home-brand': '5.6rem'
+          'home-brand': '5.6rem',
+          'home-brand-res': 'calc(1rem + 12vw)'
         },
         fontFamily: {
           mont: ['Montserrat'],

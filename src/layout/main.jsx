@@ -9,7 +9,7 @@ const MainLayout = () => {
     return <div id='layout-wraper' className='flex relative'>
         <LayoutSideMenu />
         <LayoutDim />
-        <div id='bd-app-body' className='relative w-full max-w-app-body mx-auto'>
+        <div id='bd-app-body'>
             <div id='body-container' className='grid grid-rows-layout absolute w-full'>
                 <LayoutHeader />
                 <main id='main-content'>
