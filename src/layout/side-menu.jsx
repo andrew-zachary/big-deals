@@ -1,29 +1,22 @@
-import React, {useEffect, useContext, useRef} from 'react';
-import FormInput from '../components/form/input.jsx';
+import React, {useState, useEffect, useContext, useRef} from 'react';
 import { layoutContext, layoutActions } from './context.js';
-import { FaTimes } from 'react-icons/fa';
+import LoginForm from '../pages/login-form.jsx';
+import RegisterForm from '../pages/register-form.jsx';
+import MenuCloseBtn from '../components/side-menu/close-btn.jsx';
 
 const LayoutSideMenu = () => {
+    const [currentForm, setCurrentForm] = useState('login');
     const {state, dispatch} = useContext(layoutContext);
     const navRef = useRef();
     useEffect(()=>{
         navRef.current.style.width = state.menu.toggle?`${100}%`:`${0}px`;
     }, [state.menu.toggle]);
-    return <nav id="bd-app-nav" className='relative max-w-lg z-9999 overflow-hidden bg-white' ref={navRef}>
+    return <nav id="bd-app-nav" className='relative max-w-lg z-9999 bg-white' ref={navRef}>
         <header className='flex items-center justify-end'>
-            <button className='p-4' onClick={()=>dispatch({type: layoutActions.TOGGLE_MENU, payload: !state.menu.toggle})}>
-                <FaTimes className='text-6xl text-primary' />
-            </button>
+            <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
-        <main className='p-4 text-center'>
-            <div id="img-frame" className='inline-block rounded-full overflow-hidden border shadow-secondary border-primary'>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXvvbFRDiGafT0jv4FFSmirNyaLuQ_obm_P8JMel822HZeVWimCbRf8rh71cc&s" className='max-w-[11.5rem]' alt="" />
-            </div>
-            <form action="#">
-                <FormInput id="email" name="email" type="text" label="email" />
-                <FormInput id="password" name="password" type="password" label="password" />
-                <button className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full'>login</button>
-            </form>
+        <main className='p-4 text-center overflow-y-scroll'>
+            { currentForm === 'login'?<LoginForm setCurrentForm={setCurrentForm} />:<RegisterForm setCurrentForm={setCurrentForm} /> }
         </main>
     </nav>
 }
