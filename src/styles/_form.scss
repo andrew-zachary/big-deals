@@ -1,6 +1,5 @@
 //material input
 $primary-color: #f68b1e;
-$primary-dim-color: #f9ae62;
 
 form {
     input,
@@ -10,7 +9,6 @@ form {
         &:valid ~ label {
             top: -14px;
             font-size: 1.5rem;
-            color: $primary-color;
         }
         &:focus ~ .bar:before {
             width: 100%;
@@ -20,7 +18,6 @@ form {
         letter-spacing: 0.3em;
     }
     label {
-        color: $primary-dim-color;
         @include withRtl(left, 0.5rem, unset);
         @include withRtl(right, unset, 0.5rem);
     }
