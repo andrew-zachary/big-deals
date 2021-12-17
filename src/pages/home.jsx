@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return <div id="home-page" className='content-page flex flex-col items-center justify-center'>
@@ -8,7 +9,7 @@ const HomePage = () => {
         <h2 className='font-mont font-regular text-3xl my-3'>
             all deals, all your needs
         </h2>
-        <button className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize'>open your cart</button>
+        <Link className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' to="/shopping" path="shopping">shopping now</Link>
     </div>
 }
 

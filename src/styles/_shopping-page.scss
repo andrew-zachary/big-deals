@@ -1,0 +1,29 @@
+#shopping-page {
+    #search-input {
+        button {
+            @include withRtl('border-radius', 0 0.75rem 0.75rem 0, 0.75rem 0 0 0.75rem)
+        }
+        input {
+            @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
+            @include withRtl('border-radius', 0.75rem 0 0 0.75rem, 0 0.75rem 0.75rem 0);
+            &:focus {
+                outline: none;
+            }
+        }
+        &:focus ~ #shopping-pickup {
+            background-color: black
+        }
+    }
+    #mode-pickup-list {
+        &, li {
+            @include withRtl('padding', 1rem, 1rem);
+        }
+        h2 {
+            @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
+        }
+        li:hover {
+            background-color: $primary-color;
+            color: white;
+        }
+    }
+}
