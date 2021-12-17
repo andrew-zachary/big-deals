@@ -32,9 +32,9 @@ const LoginForm = ({setCurrentForm}) => {
             <BDFormInput id="email" name="email" type="text" label="email" value={loginForm.values.email} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
             <BDFormInput id="password" name="password" type="password" label="password" value={loginForm.values.password} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
             <button type='submit' className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!loginForm.isValid}>sign in</button>
-            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentForm('register')}>sign up&nbsp;</button>
-            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentForm('forgot-password')}>/&nbsp;forgot password</button>
         </form>
+        <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentForm('register')}>sign up&nbsp;</button>
+        <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentForm('forgot-password')}>/&nbsp;forgot password</button>
     </>
 };
 
