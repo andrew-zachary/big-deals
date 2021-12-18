@@ -13,11 +13,15 @@ import ShoppingPage from './pages/shopping.jsx';
 //layout
 import MainLayout from "./layout/main.jsx";
 
-//layout-context
+//contexts
 import { layoutContext, layoutReducer } from "./layout/context.js";
 
 //styles
 import './index.scss';
+
+//store
+import { store } from "./store/create-store.js";
+import { Provider } from "react-redux";
 
 //app
 const App = () => {
@@ -29,7 +33,8 @@ const App = () => {
             toggle: false
         }
     });
-    return <layoutContext.Provider value={{state, dispatch}}>
+    return <Provider store={store}>
+        <layoutContext.Provider value={{state, dispatch}}>
             <Router>
                 <Routes>
                     <Route path="/" element={<MainLayout />}>
@@ -40,6 +45,7 @@ const App = () => {
                 </Routes>
             </Router>
         </layoutContext.Provider>
+    </Provider>
 }
 
 ReactDOM.render(<App />, document.getElementById("bd-app"));

@@ -21,9 +21,19 @@
         h2 {
             @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
         }
-        li:hover {
-            background-color: $primary-color;
+        li {
+            &:hover {
+                background-color: $primary-color;
             color: white;
+            }
+        }
+    }
+    #item-list {
+        li {
+            border-bottom: 1px solid $primary-color;
+            &:last-of-type {
+                border: unset;
+            }
         }
     }
 }
