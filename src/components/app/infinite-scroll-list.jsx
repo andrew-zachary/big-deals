@@ -31,7 +31,7 @@ const InfiniteScrollList = ({endPointOptions, items, hasMore, lastPage, ItemComp
     useEffect(()=>{
         scrollingList.current.addEventListener('scroll', scrollingHandler);
     }, [items]);
-    return <ul id="item-list" ref={scrollingList} className='overflow-y-scroll my-8'>
+    return <ul id="item-list" ref={scrollingList} className='my-8'>
         {
             items.map(item=>{
                 return <ItemComponent key={item._id} item={item} />

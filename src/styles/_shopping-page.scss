@@ -26,6 +26,8 @@
         }
     }
     #item-list {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         li {
             border-bottom: 1px solid #f68b1e80;
             &:last-of-type {
