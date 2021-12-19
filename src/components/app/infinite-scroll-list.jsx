@@ -37,13 +37,13 @@ const InfiniteScrollList = ({endPointOptions, items, hasMore, lastPage, ItemComp
                 return <ItemComponent key={item._id} item={item} />
             })
         }
-        { hasMore && <li key="spinner">
+        {/* { hasMore && <li key="spinner">
             <div className="spinner">
                 <div className="bounce1"></div>
                 <div className="bounce2"></div>
                 <div className="bounce3"></div>
             </div>
-        </li> }
+        </li> } */}
     </ul>
 };
 
