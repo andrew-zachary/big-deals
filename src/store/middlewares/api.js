@@ -9,7 +9,6 @@ export default ({dispatch}) => (next) => async (action) => {
     next(action);
 
     const {method, url, onSuccess} = action.payload;
-    console.log(method);
 
     try {
         const res = await axiosClient.request({

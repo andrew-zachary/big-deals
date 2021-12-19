@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    hasMore: true,
-    lastPage: 1,
-    items: []
+    dealsHasMore: true,
+    dealsLastPage: 1,
+    dealsItems: []
 };
 
 const dealSlice = createSlice({
@@ -12,11 +12,11 @@ const dealSlice = createSlice({
     reducers: {
         itemsReceived: (state, action) => {
             if(action.payload.data.length === 0) {
-                state.hasMore = false;
+                state.dealsHasMore = false;
                 return state;
             }
-            state.items = state.items.concat(action.payload.data);
-            state.lastPage += 1;
+            state.dealsItems = state.dealsItems.concat(action.payload.data);
+            state.dealsLastPage += 1;
         }
     }
 });

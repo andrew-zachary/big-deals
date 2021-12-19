@@ -10,9 +10,6 @@
                 outline: none;
             }
         }
-        &:focus ~ #shopping-pickup {
-            background-color: black
-        }
     }
     #mode-pickup-list {
         &, li {
@@ -24,13 +21,13 @@
         li {
             &:hover {
                 background-color: $primary-color;
-            color: white;
+                color: white;
             }
         }
     }
     #item-list {
         li {
-            border-bottom: 1px solid $primary-color;
+            border-bottom: 1px solid #f68b1e80;
             &:last-of-type {
                 border: unset;
             }

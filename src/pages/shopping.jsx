@@ -20,7 +20,7 @@ const ShoppingPage = () => {
     return <div id="shopping-page" className='flex flex-col px-4 max-w-screen-sm mx-auto h-full'>
         <SearchInput showModeList={showModeList} pickedMode={pickedMode} />
         <ModePickupList showModeList={showModeList} setPickedMode={setPickedMode} />
-        <ItemsList />
+        <ItemsList pickedMode={pickedMode} />
     </div>
 };
 
