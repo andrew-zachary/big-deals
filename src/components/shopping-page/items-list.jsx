@@ -1,18 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import {getAllDeals} from '../../store/end-points/deal.js'
+import DealListItem from './deal-list-item.jsx';
+import InfiniteScrollList from '../app/infinite-scroll-list.jsx';
 
 const ItemsList = () => {
-    const deals = useSelector(state=>state.deal.items);
-    return <ul id="item-list" className='overflow-y-scroll my-8'>
-        {
-            deals && deals.map(deal => {
-                return <li key={deal._id} className='py-6'>
-                    <h1 className='text-4xl'>{deal.name}</h1>
-                    <h2 className='text-3xl'>{deal.desc}</h2>
-                </li>
-            })
-        }
-    </ul>
+    const {items, hasMore, lastPage} = useSelector(state=>state.deal);
+    return <InfiniteScrollList
+        endPointOptions={getAllDeals}
+        items={items} 
+        hasMore={hasMore} 
+        lastPage={lastPage}
+        ItemComponent={DealListItem} />
 };
 
 export default ItemsList;
