@@ -7,7 +7,7 @@ const InfiniteScrollList = ({endPointOptions, items, hasMore, lastPage, ItemComp
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
     const scrollingHandler = useCallback((e)=>{
-        if (e.target.scrollTop + e.target.clientHeight === e.target.scrollHeight) {
+        if (Math.floor(e.target.scrollTop) + e.target.clientHeight === e.target.scrollHeight) {
             setDoPagiante(true);
         }
     }, []);
