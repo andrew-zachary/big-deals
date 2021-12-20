@@ -26,8 +26,7 @@
         }
     }
     #item-list {
-        height: calc(100% - 4rem);
-        overflow-y: auto;
+        overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
         li {
             border-bottom: 1px solid #f68b1e80;
