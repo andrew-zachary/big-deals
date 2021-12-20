@@ -29,10 +29,26 @@
         height: calc(100% - 4rem);
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-        li {
+        & > li {
             border-bottom: 1px solid #f68b1e80;
             &:last-of-type {
                 border: unset;
+            }
+            .item-header {
+                .off-box {
+                    @include withRtl('margin', 1rem 1rem 1rem 0, 1rem 0 1rem 1rem);
+                }
+            }
+            & > ul {
+                list-style: inside circle!important;
+                list-style-type: circle!important;
+                li {
+                    ul {
+                        li {
+                            @include withRtl('margin', 1rem 1rem 1rem 0, 1rem 0 1rem 1rem);
+                        }
+                    }
+                }
             }
         }
     }

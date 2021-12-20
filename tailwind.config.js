@@ -41,7 +41,8 @@ module.exports = {
           thin: 100,
           'extra-light': 200,
           light: 300,
-          regular: 400
+          regular: 400,
+          medium: 500
         }
       },
     },
