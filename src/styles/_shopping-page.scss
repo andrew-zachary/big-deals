@@ -6,9 +6,6 @@
         input {
             @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
             @include withRtl('border-radius', 0.75rem 0 0 0.75rem, 0 0.75rem 0.75rem 0);
-            &:focus {
-                outline: none;
-            }
         }
     }
     #mode-pickup-list {
@@ -18,19 +15,40 @@
         h2 {
             @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
         }
-        li {
-            &:hover {
-                background-color: $primary-color;
-                color: white;
+    }
+    #infinite-scroll-list {
+        &[mode=products] {
+            & > li {
+                border-bottom: 0.1rem solid $primary-dim;
+                padding: 1.5rem 0;
+                h1 {
+                    font-size: 3rem;
+                }
             }
         }
-    }
-    #item-list {
-        height: calc(100% - 4rem);
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
+        &[mode=deals] {
+            & > li {
+                p {
+                    display: none;
+                }
+                ul {
+                    li {
+                        margin-top: 1.5rem;
+                        h1 {
+                            font-size: 2.25rem;
+                        }
+                    }
+                }
+            }
+        }
+        li.product-block {
+            ul {
+                li {
+                    @include withRtl('margin', 1rem 1rem 1rem 0, 1rem 0 1rem 1rem);
+                }
+            }
+        }
         & > li {
-            border-bottom: 1px solid #f68b1e80;
             &:last-of-type {
                 border: unset;
             }
@@ -39,16 +57,8 @@
                     @include withRtl('margin', 1rem 1rem 1rem 0, 1rem 0 1rem 1rem);
                 }
             }
-            & > ul {
-                list-style: inside circle!important;
-                list-style-type: circle!important;
-                li {
-                    ul {
-                        li {
-                            @include withRtl('margin', 1rem 1rem 1rem 0, 1rem 0 1rem 1rem);
-                        }
-                    }
-                }
+            & > #deal-products {
+                @include withRtl('margin',1rem 0 1rem 2rem, 1rem 2rem 1rem 0);
             }
         }
     }

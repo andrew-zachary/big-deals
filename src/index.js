@@ -1,7 +1,7 @@
 import "regenerator-runtime/runtime";
 import "core-js/stable";
 
-import React, {useReducer} from "react";
+import React, {useReducer, StrictMode} from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -48,4 +48,4 @@ const App = () => {
     </Provider>
 }
 
-ReactDOM.render(<App />, document.getElementById("bd-app"));
+ReactDOM.render(<StrictMode><App /></StrictMode>, document.getElementById("bd-app"));

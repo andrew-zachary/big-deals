@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import SearchInput from '../components/shopping-page/search-input.jsx';
 import ModePickupList from '../components/shopping-page/mode-pickup-list.jsx';
-import ItemsList from '../components/shopping-page/items-list.jsx';
+import ListSwitch from '../components/shopping-page/list-switch.jsx';
 
 const ShoppingPage = () => {
     const [showModeList, setShowModeList] = useState('hide');
@@ -20,7 +20,7 @@ const ShoppingPage = () => {
     return <div id="shopping-page" className='flex flex-col px-4 max-w-screen-sm mx-auto h-full'>
         <SearchInput showModeList={showModeList} pickedMode={pickedMode} />
         <ModePickupList showModeList={showModeList} setPickedMode={setPickedMode} />
-        <ItemsList pickedMode={pickedMode} />
+        <ListSwitch pickedMode={pickedMode} />
     </div>
 };
 

@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect, useCallback} from 'react';
 import { useDispatch } from 'react-redux';
 import { apiStartCall } from '../../store/actions.js';
 
-const InfiniteScrollList = ({endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
+const InfiniteScrollList = ({pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
     const dispatch = useDispatch();
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
@@ -31,7 +31,7 @@ const InfiniteScrollList = ({endPointOptions, items, hasMore, lastPage, ItemComp
     useEffect(()=>{
         scrollingList.current.addEventListener('scroll', scrollingHandler);
     }, [items]);
-    return <ul id="item-list" ref={scrollingList} className='my-8'>
+    return <ul mode={pickedMode} id="infinite-scroll-list" ref={scrollingList} className='my-8 h-full overflow-y-scroll'>
         {
             items.map(item=>{
                 return <ItemComponent key={item._id} item={item} />
@@ -46,5 +46,7 @@ const InfiniteScrollList = ({endPointOptions, items, hasMore, lastPage, ItemComp
         </li> }
     </ul>
 };
+
+InfiniteScrollList.displayName = "infinite scroll list";
 
 export default InfiniteScrollList;

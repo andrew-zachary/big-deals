@@ -6,7 +6,7 @@ import DealListItem from './deal-list-item.jsx';
 import ProductListItem from './product-list-item.jsx';
 import InfiniteScrollList from '../app/infinite-scroll-list.jsx';
 
-const ItemsList = ({pickedMode}) => {
+const ListSwitch = ({pickedMode}) => {
     const {dealsItems, dealsHasMore, dealsLastPage} = useSelector(state=>state.deal);
     const {productsItems, productsHasMore, productsLastPage} = useSelector(state=>state.product);
     return <>
@@ -15,16 +15,20 @@ const ItemsList = ({pickedMode}) => {
             items={dealsItems} 
             hasMore={dealsHasMore} 
             lastPage={dealsLastPage}
-            ItemComponent={DealListItem} />
+            ItemComponent={DealListItem} 
+            pickedMode={pickedMode} />
         }
         { pickedMode === 'products' && <InfiniteScrollList
             endPointOptions={getAllProducts}
             items={productsItems} 
             hasMore={productsHasMore} 
             lastPage={productsLastPage}
-            ItemComponent={ProductListItem} />
+            ItemComponent={ProductListItem} 
+            pickedMode={pickedMode} />
         }
     </>
 };
 
-export default ItemsList;
+ListSwitch.displayName = "list switch";
+
+export default ListSwitch;
