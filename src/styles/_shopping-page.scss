@@ -61,7 +61,7 @@
                 }
             }
             & > #deal-products {
-                @include withRtl('margin',1rem 0 1rem 2rem, 1rem 2rem 1rem 0);
+                @include withRtl('padding',1rem 0 1rem 2rem, 1rem 2rem 1rem 0);
             }
         }
     }

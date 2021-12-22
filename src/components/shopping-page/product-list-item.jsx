@@ -9,7 +9,7 @@ const ProductListItem = ({item}) => {
             count={5} 
             size={34} 
             edit={false} 
-            value={item.avgRating.amount}
+            value={Math.ceil(item.avgRating.amount*2)/2}
             isHalf={true}
             activeColor='#f68b1e'
             color="#f9ae6280"
@@ -26,9 +26,9 @@ const ProductListItem = ({item}) => {
             }
         </ul>
         <div className="comments-block flex justify-end">
-            <Link className="comments-link text-4xl py-4 px-4 bg-primary text-white p-2 rounded-lg" to={`/comments/${item._id}`}>see comments</Link>
+            <Link className="comments-link text-4xl py-4 px-4 bg-primary text-white p-2 rounded-lg" to={`/comments/${item._id}`} state={{product:item}}>see comments</Link>
         </div>
-    </li> 
+    </li>
 };
 
 export default ProductListItem;
