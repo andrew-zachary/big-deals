@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
+import { Link } from 'react-router-dom';
 
 const ProductListItem = ({item}) => {
     return <li className='product-block'>
@@ -24,6 +25,9 @@ const ProductListItem = ({item}) => {
                 })
             }
         </ul>
+        <div className="comments-block flex justify-end">
+            <Link className="comments-link text-4xl py-4 px-4 bg-primary text-white p-2 rounded-lg" to={`/comments/${item._id}`}>see comments</Link>
+        </div>
     </li> 
 };
 

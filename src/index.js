@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from './pages/home.jsx';
 import AdminPage from './pages/admin.jsx';
 import ShoppingPage from './pages/shopping.jsx';
+import CommentsPage from './pages/comments.jsx';
 
 //layout
 import MainLayout from "./layout/main.jsx";
@@ -41,6 +42,7 @@ const App = () => {
                         <Route path="/" element={<HomePage />} />
                         <Route path="/shopping" element={<ShoppingPage />} />
                         <Route path="/admin" element={<AdminPage />} />
+                        <Route path="/comments/:id" element={<CommentsPage />} />
                     </Route>
                 </Routes>
             </Router>

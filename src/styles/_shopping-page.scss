@@ -49,6 +49,9 @@
             }
         }
         & > li {
+            a {
+                @include withRtl('text-align', right, left);
+            }
             &:last-of-type {
                 border: unset;
             }

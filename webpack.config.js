@@ -36,7 +36,7 @@ module.exports = (_, {mode})=>{
             path: path.resolve(__dirname, 'dist'),
             clean:true,
             //to construct css and js file url within html files
-            publicPath: './',
+            publicPath: '/',
         },
         optimization: {
             runtimeChunk: {

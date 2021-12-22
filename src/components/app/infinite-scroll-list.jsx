@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect, useCallback} from 'react';
 import { useDispatch } from 'react-redux';
 import { apiStartCall } from '../../store/actions.js';
 
-const InfiniteScrollList = ({pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
+const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
     const dispatch = useDispatch();
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
@@ -14,7 +14,7 @@ const InfiniteScrollList = ({pickedMode, endPointOptions, items, hasMore, lastPa
     //at the start load items if no items in the store (first load);
     useEffect(()=>{
         if(items.length === 0) {
-            dispatch( {type: apiStartCall.type, payload:endPointOptions()} );
+            dispatch( {type: apiStartCall.type, payload:endPointOptions(params)} );
         }
     }, []);
     // Do Paginate 
@@ -24,7 +24,7 @@ const InfiniteScrollList = ({pickedMode, endPointOptions, items, hasMore, lastPa
         if(doPaginate && hasMore) {
             scrollingList.current.removeEventListener('scroll', scrollingHandler);
             setDoPagiante(false);
-            dispatch( {type: apiStartCall.type, payload:endPointOptions(lastPage)} );
+            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, lastPage)} );
         }
     }, [doPaginate]);
     //add scrolling event listener only if items changed
