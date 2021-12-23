@@ -32,10 +32,23 @@
                     display: none;
                 }
                 ul {
-                    li {
+                    li.product-item {
                         margin-top: 1.5rem;
-                        h1 {
-                            font-size: 2.25rem;
+                        .price-before {
+                            position:relative;
+                            &:after {
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                height: 0.1rem;
+                                background: $primary-color;
+                                content: "";
+                                width: 100%;
+                                display: block;
+                            }
+                        }
+                        .price-after {
+                            @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0);
                         }
                     }
                 }

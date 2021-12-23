@@ -27,7 +27,7 @@ module.exports = {
           'secondary': '0 0.4rem 0.8rem 0 #00000033'
         },
         gridTemplateRows: {
-          'layout': '20% 70% 10%'
+          'layout': '15% 75% 10%'
         },
         fontSize: {
           'home-brand': '5.6rem',

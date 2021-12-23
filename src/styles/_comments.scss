@@ -7,9 +7,13 @@
         }
     }
     ul {
-        margin: unset;
-        li:first-of-type { 
-            margin: unset;
+        li {
+            &:first-of-type { 
+                margin: unset;
+            }
+            &:last-of-type { 
+                border: unset;
+            }
         }
     }
     #rate {

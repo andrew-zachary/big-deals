@@ -20,15 +20,15 @@ const CommentsPage = () => {
         }
         {
             commentsList && <>
-                <div id="make-comment" className='flex justify-end'>
-                    <button className='p-6 bg-primary shadow-secondary text-white rounded-full flex items-center'><FaRegCommentDots className="text-white text-6xl inline-block" /><span className='text-4xl capitalize'>tell us</span></button>
+                <div id="make-comment" className='flex justify-end relative'>
+                    <button className='absolute p-6 bg-primary shadow-secondary text-primay rounded-full'><FaRegCommentDots className="text-white text-6xl inline-block" /></button>
                 </div>
                 <InfiniteScrollList
                 endPointOptions={getProductComments}
                 items={commentsItems} 
                 hasMore={commentsHasMore} 
                 lastPage={commentsLastPage}
-                ItemComponent={CommentListItem} 
+                ItemComponent={CommentListItem}
                 pickedMode="comments" 
                 params={{productId: params.id}}/>
             </>
