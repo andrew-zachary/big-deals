@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { FaRegCommentDots } from 'react-icons/fa';
 
 import { getProductComments } from '../store/end-points/comment.js'
 
@@ -18,14 +19,19 @@ const CommentsPage = () => {
             !commentsList && <CommentsHeader openCommentsList={openCommentsList} />
         }
         {
-            commentsList && <InfiniteScrollList
-            endPointOptions={getProductComments}
-            items={commentsItems} 
-            hasMore={commentsHasMore} 
-            lastPage={commentsLastPage}
-            ItemComponent={CommentListItem} 
-            pickedMode="comments" 
-            params={{productId: params.id}}/>
+            commentsList && <>
+                <div id="make-comment" className='flex justify-end'>
+                    <button className='p-6 bg-primary shadow-secondary text-white rounded-full flex items-center'><FaRegCommentDots className="text-white text-6xl inline-block" /><span className='text-4xl capitalize'>tell us</span></button>
+                </div>
+                <InfiniteScrollList
+                endPointOptions={getProductComments}
+                items={commentsItems} 
+                hasMore={commentsHasMore} 
+                lastPage={commentsLastPage}
+                ItemComponent={CommentListItem} 
+                pickedMode="comments" 
+                params={{productId: params.id}}/>
+            </>
         }
     </div>
 };

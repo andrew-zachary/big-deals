@@ -1,6 +1,13 @@
 #comments-page{
+    #make-comment {
+        button {
+            span {
+                @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0);
+            }
+        }
+    }
     ul {
-        margin-top: unset;
+        margin: unset;
         li:first-of-type { 
             margin: unset;
         }
