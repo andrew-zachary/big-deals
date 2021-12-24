@@ -19,6 +19,8 @@ const Footer = () => {
             </ul>
         </div>
     </footer>
-}
+};
+
+Footer.displayName = "app footer";
 
 export default Footer;

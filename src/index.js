@@ -32,6 +32,9 @@ const App = () => {
         },
         dim: {
             toggle: false
+        },
+        footer: {
+            show: true
         }
     });
     return <Provider store={store}>
