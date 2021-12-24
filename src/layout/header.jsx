@@ -11,4 +11,6 @@ const LayoutHeader = () => {
     </header>
 }
 
+LayoutHeader.displayName = "app header";
+
 export default LayoutHeader;
