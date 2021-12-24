@@ -44,11 +44,6 @@ const ProductListItem = ({item}) => {
             <span className='font-mont font-medium text-4xl capitalize'>by</span>
             <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.seller.authId.firstName}</span>
         </div>
-        <div className='flex justify-end mt-8'>
-            <button className='font-ssp font-regular bg-primary shadow-secondary text-white px-4 py-4 rounded-full flex items-center justify-center'>
-                <FaCartPlus className='text-white text-5xl' />
-            </button>
-        </div>
     </li>
 };
 
