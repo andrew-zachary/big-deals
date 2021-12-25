@@ -34,21 +34,18 @@ const ProductListItem = ({item}) => {
             <span className='font-mont font-medium text-4xl capitalize'>free shipping</span>
             <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.freeShipping?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
         </div>
-        {/* <div className="py-4 comments-block flex justify-center items-center">
-            <Link className="comments-link p-6 bg-primary shadow-secondary rounded-full" to={`/comments/${item._id}`} state={{product:item}}>
-                <FaRegCommentDots className="text-white text-6xl inline-block" />
-            </Link>
-            <span className='py-4 capitalize text-4xl text-primary font-mont font-medium bd-unit'>see reivews</span>
-        </div> */}
         <div className='mt-4'>
             <span className='font-mont font-medium text-4xl capitalize'>by</span>
             <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.seller.authId.firstName}</span>
         </div>
-        {/* <div className='flex justify-end'>
-            <button className='mt-8 font-ssp font-regular bg-primary shadow-secondary text-white px-4 py-4 rounded-full flex items-center justify-center'>
+        <div className='flex justify-around mt-8 max-w-[28rem] mx-auto'>
+            <Link className="p-4 bg-primary shadow-secondary rounded-full" to={`/comments/${item._id}`} state={{product:item}}>
+                <FaRegCommentDots className="text-white text-5xl" />
+            </Link>
+            <button className='p-4 bg-primary shadow-secondary rounded-full'>
                 <FaCartPlus className='text-white text-5xl' />
             </button>
-        </div> */}
+        </div>
     </li>
 };
 

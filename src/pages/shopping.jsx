@@ -5,7 +5,7 @@ import ListSwitch from '../components/shopping-page/list-switch.jsx';
 
 const ShoppingPage = () => {
     const [showModeList, setShowModeList] = useState('hide');
-    const [pickedMode, setPickedMode] = useState('deals');
+    const [pickedMode, setPickedMode] = useState('products');
     const handleClickInOut = useCallback((e)=>{
         if(e.target.id === 'search-text'){
             setShowModeList('show');

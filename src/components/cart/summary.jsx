@@ -11,8 +11,8 @@ const CartSummary = () => {
                 </div>
             </div>
             <div className='text-4xl flex items-center font-mont font-medium'>
-                <span>0</span>
-                <span className='bd-unit'>$</span>
+                <span>$</span>
+                <span className='bd-unit'>0</span>
             </div>
         </div>
     </section>
