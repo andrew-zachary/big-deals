@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
-import { FaRegCommentDots, FaCheck, FaTimes, FaCartPlus } from 'react-icons/fa';
+import { FaRegCommentDots, FaCheck, FaTimes } from 'react-icons/fa';
+
+import AddProductCart from './add-product-cart.jsx';
 
 const ProductListItem = ({item}) => {
     return <li className='product-block'>
@@ -39,12 +41,10 @@ const ProductListItem = ({item}) => {
             <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.seller.authId.firstName}</span>
         </div>
         <div className='flex justify-around mt-8 max-w-[28rem] mx-auto'>
-            <Link className="p-4 bg-primary shadow-secondary rounded-full" to={`/comments/${item._id}`} state={{product:item}}>
-                <FaRegCommentDots className="text-white text-5xl" />
+            <Link className='p-4 bg-primary shadow-secondary rounded-full' to={`/comments/${item._id}`} state={{product:item}}>
+                <FaRegCommentDots className='text-white text-5xl' />
             </Link>
-            <button className='p-4 bg-primary shadow-secondary rounded-full'>
-                <FaCartPlus className='text-white text-5xl' />
-            </button>
+            <AddProductCart item={item} />
         </div>
     </li>
 };
