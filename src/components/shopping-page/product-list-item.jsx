@@ -29,7 +29,7 @@ const ProductListItem = ({item}) => {
             }
         </ul>
         <div className='py-4 flex items-center w-full'>
-            <span className='font-mont font-medium text-4xl capitalize'>instock</span>
+            <span className='font-mont font-medium text-4xl capitalize'>in stock</span>
             <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.instock?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
         </div>
         <div className='py-4 flex items-center w-full'>

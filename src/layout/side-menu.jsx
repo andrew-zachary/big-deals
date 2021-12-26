@@ -15,7 +15,7 @@ const LayoutSideMenu = () => {
         <header className='flex items-center justify-end'>
             <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
-        <main className='p-4 text-center overflow-y-scroll'>
+        <main className='p-4 text-center overflow-y-scroll h-full'>
             <SideMenuTabs currentForm={currentForm} setCurrentForm={setCurrentForm} />
         </main>
     </nav>
