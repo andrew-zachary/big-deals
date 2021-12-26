@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useContext, useRef} from 'react';
 import { layoutContext, layoutActions } from './context.js';
-import LoginForm from '../pages/login-form.jsx';
-import RegisterForm from '../pages/register-form.jsx';
+
 import MenuCloseBtn from '../components/side-menu/close-btn.jsx';
+import SideMenuTabs from '../components/side-menu/side-menu-tabs.jsx';
 
 const LayoutSideMenu = () => {
-    const [currentForm, setCurrentForm] = useState('login');
+    const [currentForm, setCurrentForm] = useState('cart');
     const {state, dispatch} = useContext(layoutContext);
     const navRef = useRef();
     useEffect(()=>{
@@ -16,9 +16,11 @@ const LayoutSideMenu = () => {
             <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
         <main className='p-4 text-center overflow-y-scroll'>
-            { currentForm === 'login'?<LoginForm setCurrentForm={setCurrentForm} />:<RegisterForm setCurrentForm={setCurrentForm} /> }
+            <SideMenuTabs currentForm={currentForm} setCurrentForm={setCurrentForm} />
         </main>
     </nav>
-}
+};
+
+LayoutSideMenu.displayName = 'layout side menu';
 
 export default LayoutSideMenu;

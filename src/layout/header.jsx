@@ -1,11 +1,11 @@
 import React from 'react';
-import BurgerBtn from './burger-btn.jsx';
+import MenuBtn from './menu-btn.jsx';
 import CartSummary from '../components/cart/summary.jsx';
 
 const LayoutHeader = () => {
     return <header>
         <div className='max-w-app-body mx-auto flex items-center h-full'>
-            <BurgerBtn />
+            <MenuBtn />
             <CartSummary />
         </div>
     </header>
