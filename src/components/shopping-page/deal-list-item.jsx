@@ -1,15 +1,8 @@
 import React from 'react';
-import { FaCartPlus } from 'react-icons/fa';
+
+import AddDealCart from './add-deal-cart.jsx';
 
 const DealListItem = ({item}) => {
-    let dealCost = 0;
-    const dealDiscountPrice = () => {
-        item.products.forEach((product)=>{
-            dealCost += product.price;
-        });
-        const discountPrice = dealCost*(item.discount/100);
-        return (dealCost - discountPrice).toFixed(2);
-    };
     return <li className='py-6 border-primary-dim border-b'>
         <div className='item-header'>
             <h1 className='text-5xl capitalize font-mont font-medium'>{item.name}</h1>
@@ -37,15 +30,10 @@ const DealListItem = ({item}) => {
                 })
             }
         </ul>
-        <button className='mt-8 font-ssp font-regular bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] flex items-center justify-around w-full max-w-[28rem] mx-auto'>
-            <span className='text-4xl capitalize'>for</span>
-            <div className='text-5xl font-ssp font-medium'>
-                <span>{dealDiscountPrice()}</span>
-                <span className='bd-unit'>$</span>
-            </div>
-            <FaCartPlus className='text-white text-5xl' />
-        </button>
+        <AddDealCart item={item} />
     </li>
 };
+
+DealListItem.displayName = 'deal list item';
 
 export default DealListItem;

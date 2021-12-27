@@ -49,4 +49,6 @@ const ProductListItem = ({item}) => {
     </li>
 };
 
+ProductListItem.displayName = 'product list item';
+
 export default ProductListItem;

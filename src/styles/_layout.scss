@@ -9,6 +9,11 @@
             svg {
                 margin-top: -1rem;
             }
+            #cart-deals, #cart-products {
+                h1 {
+                    @include withRtl('text-align', left, right);
+                }
+            }
         }
     }
     #layout-dim {
