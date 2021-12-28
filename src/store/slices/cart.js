@@ -1,106 +1,71 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    cartsItems: {
-        products: [],
-        deals: []
+    items: {
+        deals: [],
+        products: []
     },
-    totalProductsCost: 0,
-    totalDealsCost: 0,
-    totalProductsNumber: 0,
-    totalDealsNumber: 0
+    totalCost: {    
+        deals: 0,
+        products: 0
+    },
+    totalNumber: {
+        deals: 0,
+        products: 0
+    }
 };
 
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addProduct: (state, action) => {
-            const cartItemIndex = state.cartsItems.products.findIndex(item=>{
-                return item.product._id === action.payload.item._id;
+        addItem: (state, action) => {
+            let collection = action.payload.collection;
+            const cartItemIndex = state.items[collection].findIndex(item=>{
+                return item.entity._id === action.payload.item._id;
             });
             if(cartItemIndex === -1) {
-                state.cartsItems.products.push({
-                    product: action.payload.item,
+                state.items[collection].push({
+                    entity: action.payload.item,
                     quantity: 1
                 });
             } else {
-                state.cartsItems.products[cartItemIndex].quantity += 1;
+                state.items[collection][cartItemIndex].quantity += 1;
             }
-            state.totalProductsCost += action.payload.item.price;
-            state.totalProductsNumber +=  1;
+            state.totalCost[collection] += action.payload.item.price;
+            state.totalNumber[collection] +=  1;
         },
-        removeProduct: (state, action) => {
+        removeItem: (state, action) => {
+            let collection = action.payload.collection;
             let totalItemsCost = 0;
             let totalItemsNumber = 0;
-            state.cartsItems.products = state.cartsItems.products.filter(item=>{
-                return item.product._id !== action.payload.item.product._id;
+            state.items[collection] = state.items[collection].filter(item=>{
+                return item.entity._id !== action.payload.item.entity._id;
             });
-            state.cartsItems.products.forEach(item => {
-                totalItemsCost += item.product.price * item.quantity;
+            state.items[collection].forEach(item => {
+                totalItemsCost += item.entity.price * item.quantity;
                 totalItemsNumber += item.quantity;
             });
-            state.totalProductsCost = totalItemsCost;
-            state.totalProductsNumber =  totalItemsNumber;
+            state.totalCost[collection] = totalItemsCost;
+            state.totalNumber[collection] =  totalItemsNumber;
         },
-        removeDeal: (state, action) => {
+        changeItemQuantity: (state, action) => {
+            let collection = action.payload.collection;
             let totalItemsCost = 0;
             let totalItemsNumber = 0;
-            state.cartsItems.deals = state.cartsItems.deals.filter(item=>{
-                return item.deal._id !== action.payload.item.deal._id;
+            const cartItemIndex = state.items[collection].findIndex(item=>{
+                return item.entity._id === action.payload.item.entity._id;
             });
-            state.cartsItems.deals.forEach(item => {
-                totalItemsCost += item.deal.price * item.quantity;
+            state.items[collection][cartItemIndex].quantity = action.payload.pick;
+            state.items[collection].forEach(item => {
+                totalItemsCost += item.entity.price * item.quantity;
                 totalItemsNumber += item.quantity;
             });
-            state.totalDealsCost = totalItemsCost;
-            state.totalDealsNumber =  totalItemsNumber;
-        },
-        addDeal: (state, action) => {
-            const cartItemIndex = state.cartsItems.deals.findIndex(item=>{
-                return item.deal._id === action.payload.item._id;
-            });
-            if(cartItemIndex === -1) {
-                state.cartsItems.deals.push({
-                    deal: action.payload.item,
-                    quantity: 1
-                });
-            } else {
-                state.cartsItems.deals[cartItemIndex].quantity += 1;
-            }
-            state.totalDealsCost += action.payload.item.price;
-            state.totalDealsNumber +=  1;
-        },
-        changeProductQuantity: (state, action) => {
-            let totalItemsCost = 0;
-            let totalItemsNumber = 0;
-            const cartItemIndex = state.cartsItems.products.findIndex(item=>{
-                return item.product._id === action.payload.item.product._id;
-            });
-            state.cartsItems.products[cartItemIndex].quantity = action.payload.pick;
-            state.cartsItems.products.forEach(item => {
-                totalItemsCost += item.product.price * item.quantity;
-                totalItemsNumber += item.quantity;
-            });
-            state.totalProductsCost = totalItemsCost;
-            state.totalProductsNumber =  totalItemsNumber;
-        },
-        changeDealQuantity: (state, action) => {
-            let totalItemsCost = 0;
-            let totalItemsNumber = 0;
-            const cartItemIndex = state.cartsItems.deals.findIndex(item=>{
-                return item.deal._id === action.payload.item.deal._id;
-            });
-            state.cartsItems.deals[cartItemIndex].quantity = action.payload.pick;
-            state.cartsItems.deals.forEach(item => {
-                totalItemsCost += item.deal.price * item.quantity;
-                totalItemsNumber += item.quantity;
-            });
-            state.totalDealsCost = totalItemsCost;
-            state.totalDealsNumber =  totalItemsNumber;
+            state.totalCost[collection] = totalItemsCost;
+            state.totalNumber[collection] =  totalItemsNumber;
         }
     }
 });
 
 export default cartSlice.reducer;
-export const {removeProduct, removeDeal, addProduct, addDeal, changeProductQuantity, changeDealQuantity} = cartSlice.actions;
+export const {removeItem, addItem, changeItemQuantity} = cartSlice.actions;

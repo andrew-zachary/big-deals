@@ -3,7 +3,7 @@ import { FaSortDown } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { range } from 'lodash-es';
 
-import { changeDealQuantity } from '../../store/slices/cart.js';
+import { changeItemQuantity } from '../../store/slices/cart.js';
 
 const CartDealQuantity = ({item}) => {
     const [isPicking, setIsPicking] = useState(false);
@@ -11,7 +11,7 @@ const CartDealQuantity = ({item}) => {
     const dispatch = useDispatch();
     const quantityChangeHandler = (pick) => {
         setIsPicking(false);
-        dispatch({type: changeDealQuantity.type, payload: {item, pick}});
+        dispatch({type: changeItemQuantity.type, payload: {item, pick, collection:'deals'}});
     }
     return <div className='flex items-center bg-primary px-8 py-4 rounded-full relative'>
         <span className='font-mont font-medium text-white'>{item.quantity}</span>
