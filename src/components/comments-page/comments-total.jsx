@@ -4,7 +4,7 @@ import ReactStars from 'react-rating-stars-component';
 import {FaChevronDown} from 'react-icons/fa';
 import CircleRating from './circle-rating.jsx';
 
-const CommentsHeader = ({openCommentsList}) => {
+const CommentsHeader = ({setCurrentTab}) => {
     const {state:{product}} = useLocation();
 
     return <section>
@@ -24,11 +24,11 @@ const CommentsHeader = ({openCommentsList}) => {
                 color="#f9ae6280"
                 classNames=""
             />
-            <button className='text-6xl text-primary mt-8' onClick={()=>openCommentsList(true)}><FaChevronDown /></button>
+            <button className='text-6xl text-primary mt-8' onClick={()=>setCurrentTab('list')}><FaChevronDown /></button>
         </div>
     </section>
 };
 
-CommentsHeader.displayName = 'comments header';
+CommentsHeader.displayName = 'comments total';
 
 export default CommentsHeader;
