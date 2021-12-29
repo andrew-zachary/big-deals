@@ -16,7 +16,17 @@
             }
         }
     }
-    #rate {
+    #appreciate {
+        h1 {
+            line-height: 5rem;
+        }
+    }
+    #rate-in {
+        & > div {
+            justify-content: center;
+        }
+    }
+    #rate-out {
         h1 {
             svg {
                 #rating-circle {

@@ -9,6 +9,7 @@ import InfiniteScrollList from '../../components/app/infinite-scroll-list.jsx';
 import CommentListItem from '../../components/comments-page/comment-list-item.jsx';
 import CommentsTotal from '../../components/comments-page/comments-total.jsx';
 import TellUs from '../../components/comments-page/tell-us.jsx';
+import Appreciate from '../../components/comments-page/appreciate.jsx';
 
 const CommentsTabs = () => {
     const [currentTab, setCurrentTab] = useState('total');
@@ -16,8 +17,10 @@ const CommentsTabs = () => {
     const {commentsItems, commentsLastPage, commentsHasMore} = useSelector(state=>state.comment);
     const pickUpTab = (currentTab) => {
         switch (currentTab) {
+            case 'thank':
+                return <Appreciate />
             case 'new':
-                return <TellUs />
+                return <TellUs setCurrentTab={setCurrentTab} />
             case 'list':
                 return <>
                     <InfiniteScrollList

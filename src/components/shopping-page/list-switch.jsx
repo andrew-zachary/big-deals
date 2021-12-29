@@ -1,7 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+
 import {getAllDeals} from '../../store/end-points/deal.js';
 import {getAllProducts} from '../../store/end-points/product.js';
+
 import DealListItem from './deal-list-item.jsx';
 import ProductListItem from './product-list-item.jsx';
 import InfiniteScrollList from '../app/infinite-scroll-list.jsx';
