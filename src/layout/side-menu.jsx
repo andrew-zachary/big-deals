@@ -5,7 +5,7 @@ import MenuCloseBtn from '../components/side-menu/close-btn.jsx';
 import SideMenuTabs from '../components/side-menu/side-menu-tabs.jsx';
 
 const LayoutSideMenu = () => {
-    const [currentForm, setCurrentForm] = useState('cart');
+    const [currentForm, setCurrentForm] = useState('login');
     const {state, dispatch} = useContext(layoutContext);
     const navRef = useRef();
     useEffect(()=>{
@@ -15,8 +15,10 @@ const LayoutSideMenu = () => {
         <header className='flex items-center justify-end'>
             <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
-        <main className='p-4 text-center overflow-y-scroll h-full'>
-            <SideMenuTabs currentForm={currentForm} setCurrentForm={setCurrentForm} />
+        <main className='p-4 text-center overflow-y-scroll h-full grid items-center'>
+            <div id='tab'>
+                <SideMenuTabs currentForm={currentForm} setCurrentForm={setCurrentForm} />
+            </div>
         </main>
     </nav>
 };

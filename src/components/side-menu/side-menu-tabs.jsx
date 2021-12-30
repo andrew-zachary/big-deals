@@ -2,10 +2,13 @@ import React from 'react';
 import LoginForm from '../../pages/login-form.jsx';
 import RegisterForm from '../../pages/register-form.jsx';
 import CartDetails from '../../pages/cart.jsx';
+import ForgotPassword from '../../pages/forgot-password.jsx';
 
 const SideMenuTabs = ({currentForm, setCurrentForm}) => {
     const pickUpTab = (currentForm) => {
         switch (currentForm) {
+            case 'password':
+                return <ForgotPassword setCurrentForm={setCurrentForm} />
             case 'login':
                 return <LoginForm setCurrentForm={setCurrentForm} />
             case 'register':
