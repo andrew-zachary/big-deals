@@ -9,15 +9,21 @@ export default ({dispatch}) => (next) => async (action) => {
 
     next(action);
 
-    const {method, url, onSuccess} = action.payload;
+    const {method, url, data, onSuccess, onFail} = action.payload;
 
     try {
         const res = await axiosClient.request({
             method,
-            url
+            url,
+            data,
+            headers: {
+                Cookie: 'accessToken'
+            },
+            withCredentials: true
         });
+
         dispatch({ type: onSuccess, payload:{data:res.data} });
     } catch(err) {
-        console.log(err);
+        dispatch({ type: onFail, payload:{err} });
     }
 }

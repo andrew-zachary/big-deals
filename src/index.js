@@ -5,6 +5,9 @@ import React, {useReducer, StrictMode} from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+//app parts
+import Auth from "./components/app/auth.jsx";
+
 //pages
 import HomePage from './pages/home.jsx';
 import AdminPage from './pages/admin.jsx';
@@ -39,6 +42,7 @@ const App = () => {
     });
     return <Provider store={store}>
         <layoutContext.Provider value={{state, dispatch}}>
+            <Auth />
             <Router>
                 <Routes>
                     <Route path="/" element={<MainLayout />}>
