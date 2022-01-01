@@ -40,4 +40,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const {userAuthed, userErrReceived} = userSlice.actions;
+export const {userAuthed, userAuthedOut, userErrReceived} = userSlice.actions;

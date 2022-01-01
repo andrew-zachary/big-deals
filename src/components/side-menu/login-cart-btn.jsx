@@ -1,15 +1,15 @@
 import React from 'react';
 
-const LoginCart = ({currentForm, setCurrentForm}) => {
+const LoginCart = ({isAuthed, currentForm, setCurrentForm}) => {
     return <>
         {
-            currentForm === 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentForm('login')}>
-                login
+            currentForm === 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentForm('user')}>
+                {isAuthed?'profile':'login'}
             </button>
         }
         {
             currentForm !== 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentForm('cart')}>
-                open my cart
+                my cart
             </button>
         }
     </>

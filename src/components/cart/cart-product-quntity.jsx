@@ -13,7 +13,7 @@ const CartProductQuantity = ({item}) => {
         setIsPicking(false);
         dispatch({type: changeItemQuantity.type, payload: {item, pick, collection:'products'}});
     }
-    return <div className='flex items-center bg-primary px-8 py-4 rounded-full relative'>
+    return <div className='quantity flex items-center bg-primary px-8 py-4 rounded-full relative'>
         <span className='font-mont font-medium text-white'>{item.quantity}</span>
         <FaSortDown onClick={()=>setIsPicking(!isPicking)} className='cursor-pointer text-white text-4xl bd-unit mt-[-1rem]' />
         { isPicking && <ul className='cursor-pointer overflow-scroll max-h-[20rem] absolute top-full left-1/2 translate-x-[-50%] mt-2 bg-white border border-primary z-9998'>

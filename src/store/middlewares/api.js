@@ -23,6 +23,6 @@ export default ({dispatch}) => (next) => async (action) => {
 
         dispatch({ type: onSuccess, payload:{data:res.data} });
     } catch(err) {
-        dispatch({ type: onFail, payload:{err} });
+        dispatch({ type: onFail, payload:{err: err.response.data} });
     }
 }

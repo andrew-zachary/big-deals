@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useContext, useRef} from 'react';
+import { useSelector } from 'react-redux';
 import { layoutContext, layoutActions } from './context.js';
 
 import MenuCloseBtn from '../components/side-menu/close-btn.jsx';
@@ -6,6 +7,8 @@ import LoginCartBtn from '../components/side-menu/login-cart-btn.jsx';
 import SideMenuTabs from '../components/side-menu/side-menu-tabs.jsx';
 
 const LayoutSideMenu = () => {
+    const {isAuthed, userInfo} = useSelector(state=>state.user);
+    console.log(userInfo);
     const [currentForm, setCurrentForm] = useState('cart');
     const {state, dispatch} = useContext(layoutContext);
     const navRef = useRef();
@@ -14,12 +17,12 @@ const LayoutSideMenu = () => {
     }, [state.menu.toggle]);
     return <nav id="bd-app-nav" className='relative max-w-lg z-9999 bg-white' ref={navRef}>
         <header className='flex items-center justify-between'>
-            <LoginCartBtn currentForm={currentForm} setCurrentForm={setCurrentForm} />
+            <LoginCartBtn isAuthed={isAuthed} currentForm={currentForm} setCurrentForm={setCurrentForm} />
             <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
         <main className='p-4 text-center overflow-y-scroll h-full grid items-center'>
             <div id='tab'>
-                <SideMenuTabs currentForm={currentForm} setCurrentForm={setCurrentForm} />
+                <SideMenuTabs isAuthed={isAuthed} userInfo={userInfo} currentForm={currentForm} setCurrentForm={setCurrentForm} />
             </div>
         </main>
     </nav>

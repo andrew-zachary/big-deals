@@ -6,8 +6,10 @@
             button[disabled] {
                 background-color: $primary-dim;
             }
-            svg {
-                margin-top: -1rem;
+            .quantity {
+                svg {
+                    margin-top: -1rem;
+                }
             }
             #cart-deals, #cart-products {
                 h1 {

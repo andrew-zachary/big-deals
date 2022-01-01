@@ -1,4 +1,4 @@
-import { userAuthed, userErrReceived } from "../slices/user.js";
+import { userAuthed, userAuthedOut, userErrReceived } from "../slices/user.js";
 
 const baseUserUrl = '/bd/users';
 
@@ -34,4 +34,15 @@ const register = (_1, _2, _3, data) => {
     }
 }
 
-export {getUserInfo, login, register};
+//params, lastPage, limit
+const logout = (_1, _2, _3, data) => {
+    return {
+        method: 'GET',
+        url: `/auth/signout`,
+        data,
+        onSuccess: userAuthedOut.type,
+        onFail: userErrReceived.type
+    }
+}
+
+export {getUserInfo, login, register, logout};
