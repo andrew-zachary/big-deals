@@ -12,6 +12,7 @@ const getUserInfo = (_1, _2, _3) => {
     }
 }
 
+//params, lastPage, limit
 const login = (_1, _2, _3, data) => {
     return {
         method: 'POST',
@@ -22,4 +23,15 @@ const login = (_1, _2, _3, data) => {
     }
 }
 
-export {getUserInfo, login};
+//params, lastPage, limit
+const register = (_1, _2, _3, data) => {
+    return {
+        method: 'POST',
+        url: `/auth/signup`,
+        data,
+        onSuccess: userAuthed.type,
+        onFail: userErrReceived.type
+    }
+}
+
+export {getUserInfo, login, register};

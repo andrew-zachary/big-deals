@@ -1,9 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
+
 import BDFormInput from '../components/form/input.jsx';
+
+import { apiStartCall } from '../store/actions.js';
+import { register } from '../store/end-points/user.js';
 import RegisterSchema from '../validations/register-schema.js';
 
 const RegisterForm = ({setCurrentForm}) => {
+    const dispatch = useDispatch();
     const registerForm = useFormik({
         validateOnBlur: true,
         initialValues: {
@@ -24,7 +30,7 @@ const RegisterForm = ({setCurrentForm}) => {
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            dispatch({type: apiStartCall.type, payload: register(null, null, null, values)});
         },
     });
     return <>
