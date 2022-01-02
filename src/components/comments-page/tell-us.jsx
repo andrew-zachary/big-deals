@@ -5,7 +5,6 @@ const TellUs = ({setCurrentTab}) => {
     const [commentStars, setCommentStars] = useState(0);
     const commentTxt = useRef('');
     const sumitFeedback = () => {
-        console.log(commentStars, commentTxt.current.value);
         setCurrentTab('thank');
     }
     return <div id="rate-in" className='text-center'>

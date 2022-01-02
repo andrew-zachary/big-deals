@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import LoginForm from '../../pages/login-form.jsx';
 import RegisterForm from '../../pages/register-form.jsx';
@@ -6,34 +6,37 @@ import CartDetails from '../../pages/cart.jsx';
 import ForgotPassword from '../../pages/forgot-password.jsx';
 import UserProfile from '../../pages/user-profile.jsx';
 
-const SideMenuTabs = ({isAuthed, userInfo, currentForm, setCurrentForm}) => {
-    const pickUpTab = (currentForm) => {
+const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
+    useEffect(()=>{
+        setCurrentPage('user');
+    }, [isAuthed]);
+    const pickUpTab = (currentPage) => {
         if(!isAuthed) {
-            switch (currentForm) {
+            switch (currentPage) {
                 case 'password':
-                    return <ForgotPassword setCurrentForm={setCurrentForm} />
+                    return <ForgotPassword setCurrentPage={setCurrentPage} />
                 case 'user':
-                    return <LoginForm setCurrentForm={setCurrentForm} />
+                    return <LoginForm setCurrentPage={setCurrentPage} />
                 case 'register':
-                        return <RegisterForm setCurrentForm={setCurrentForm} />
+                        return <RegisterForm setCurrentPage={setCurrentPage} />
                 case 'cart':
-                        return <CartDetails setCurrentForm={setCurrentForm} />
+                        return <CartDetails setCurrentPage={setCurrentPage} />
                 default:
                     break;
             }
         } else {
-            switch (currentForm) {
+            switch (currentPage) {
                 case 'user':
-                    return <UserProfile userInfo={userInfo} setCurrentForm={setCurrentForm} />
+                    return <UserProfile userInfo={userInfo} setCurrentPage={setCurrentPage} />
                 case 'cart':
-                    return <CartDetails setCurrentForm={setCurrentForm} />
+                    return <CartDetails setCurrentPage={setCurrentPage} />
                 default:
                     break;
             }
         }
     }
     return <>
-        {pickUpTab(currentForm)}
+        {pickUpTab(currentPage)}
     </>
 };
 

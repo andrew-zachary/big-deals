@@ -8,7 +8,7 @@ import { apiStartCall } from '../store/actions.js';
 import { login } from '../store/end-points/user.js';
 import LoginSchema from '../validations/login-schema.js';
 
-const LoginForm = ({setCurrentForm}) => {
+const LoginForm = ({setCurrentPage}) => {
     const dispatch = useDispatch();
     const loginForm = useFormik({
         validateOnBlur: true,
@@ -34,13 +34,13 @@ const LoginForm = ({setCurrentForm}) => {
         <div id="img-frame" className='inline-block rounded-full overflow-hidden border shadow-secondary border-primary'>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXvvbFRDiGafT0jv4FFSmirNyaLuQ_obm_P8JMel822HZeVWimCbRf8rh71cc&s" className='max-w-[11.5rem]' alt="" />
         </div>
-        <form action="#" onSubmit={loginForm.handleSubmit}>
+        <form onSubmit={loginForm.handleSubmit}>
             <BDFormInput id="email" name="email" type="text" label="email" value={loginForm.values.email} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
             <BDFormInput id="password" name="password" type="password" label="password" value={loginForm.values.password} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
             <button type='submit' className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!loginForm.isValid}>sign in</button>
         </form>
-        <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentForm('register')}>sign up&nbsp;</button>
-        <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentForm('password')}>/&nbsp;forgot password</button>
+        <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('register')}>sign up&nbsp;</button>
+        <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('password')}>/&nbsp;forgot password</button>
     </>
 };
 

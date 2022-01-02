@@ -8,7 +8,7 @@ import { apiStartCall } from '../store/actions.js';
 import { register } from '../store/end-points/user.js';
 import RegisterSchema from '../validations/register-schema.js';
 
-const RegisterForm = ({setCurrentForm}) => {
+const RegisterForm = ({setCurrentPage}) => {
     const dispatch = useDispatch();
     const registerForm = useFormik({
         validateOnBlur: true,
@@ -34,7 +34,7 @@ const RegisterForm = ({setCurrentForm}) => {
         },
     });
     return <>
-        <form action="#" onSubmit={registerForm.handleSubmit}>
+        <form onSubmit={registerForm.handleSubmit}>
             <BDFormInput id="firstName" name="firstName" type="text" label="first name" value={registerForm.values.firstName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="lastName" name="lastName" type="text" label="last name" value={registerForm.values.lastName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="email" name="email" type="text" label="email" value={registerForm.values.email} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
@@ -42,7 +42,7 @@ const RegisterForm = ({setCurrentForm}) => {
             <BDFormInput id="password_confirm" name="passwordConfirm" type="password" label="confirm password" value={registerForm.values.passwordConfirm} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <button type='submit' className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!registerForm.isValid}>sign up</button>
         </form>
-        <button className='font-ssp font-regular text-4xl mb-12 mt-14' onClick={()=>setCurrentForm('user')}>have account - sign in</button>
+        <button className='font-ssp font-regular text-4xl mb-12 mt-14' onClick={()=>setCurrentPage('user')}>have account - sign in</button>
     </>
 };
 

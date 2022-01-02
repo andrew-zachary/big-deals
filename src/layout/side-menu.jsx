@@ -8,8 +8,7 @@ import SideMenuTabs from '../components/side-menu/side-menu-tabs.jsx';
 
 const LayoutSideMenu = () => {
     const {isAuthed, userInfo} = useSelector(state=>state.user);
-    console.log(userInfo);
-    const [currentForm, setCurrentForm] = useState('cart');
+    const [currentPage, setCurrentPage] = useState('user');
     const {state, dispatch} = useContext(layoutContext);
     const navRef = useRef();
     useEffect(()=>{
@@ -17,12 +16,12 @@ const LayoutSideMenu = () => {
     }, [state.menu.toggle]);
     return <nav id="bd-app-nav" className='relative max-w-lg z-9999 bg-white' ref={navRef}>
         <header className='flex items-center justify-between'>
-            <LoginCartBtn isAuthed={isAuthed} currentForm={currentForm} setCurrentForm={setCurrentForm} />
+            <LoginCartBtn isAuthed={isAuthed} currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
         <main className='p-4 text-center overflow-y-scroll h-full grid items-center'>
             <div id='tab'>
-                <SideMenuTabs isAuthed={isAuthed} userInfo={userInfo} currentForm={currentForm} setCurrentForm={setCurrentForm} />
+                <SideMenuTabs isAuthed={isAuthed} userInfo={userInfo} currentPage={currentPage} setCurrentPage={setCurrentPage} />
             </div>
         </main>
     </nav>

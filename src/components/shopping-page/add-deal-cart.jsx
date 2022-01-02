@@ -16,7 +16,6 @@ const AddDealCart = ({item}) => {
         return (dealCost - discountPrice).toFixed(2);
     };
     const clickHandler = (item) => {
-        console.log(item);
         dispatch( {type: addItem.type, payload: {
             item:{...item, price: (dealCost - discountPrice), collection: 'deals'}, 
             collection: 'deals'}} );

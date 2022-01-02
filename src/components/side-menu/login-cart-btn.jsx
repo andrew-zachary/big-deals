@@ -1,14 +1,14 @@
 import React from 'react';
 
-const LoginCart = ({isAuthed, currentForm, setCurrentForm}) => {
+const LoginCart = ({isAuthed, currentPage, setCurrentPage}) => {
     return <>
         {
-            currentForm === 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentForm('user')}>
+            currentPage === 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentPage('user')}>
                 {isAuthed?'profile':'login'}
             </button>
         }
         {
-            currentForm !== 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentForm('cart')}>
+            currentPage !== 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentPage('cart')}>
                 my cart
             </button>
         }

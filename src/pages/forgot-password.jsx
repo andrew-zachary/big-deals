@@ -13,7 +13,6 @@ const ForgotPassword = () => {
         .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
             return setEmailErr('please enter valid email');
         }
-        console.log(input);
     };
     return <div className='mt-[-9rem]'>
         <form action='#'>
