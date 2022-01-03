@@ -1,15 +1,16 @@
 import React from 'react';
+import {FaShoppingCart, FaArrowLeft} from 'react-icons/fa';
 
-const LoginCart = ({isAuthed, currentPage, setCurrentPage}) => {
+const LoginCart = ({currentPage, setCurrentPage}) => {
     return <>
         {
-            currentPage === 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentPage('user')}>
-                {isAuthed?'profile':'login'}
+            currentPage === 'cart' && <button onClick={()=>setCurrentPage('user')}>
+                <FaArrowLeft className='text-6xl text-primary' />
             </button>
         }
         {
-            currentPage !== 'cart' && <button className='font-mont font-regular text-4xl capitalize px-4 py-2 border-2 border-primary rounded-full' onClick={()=>setCurrentPage('cart')}>
-                my cart
+            currentPage !== 'cart' && <button className='p-4 bg-primary' onClick={()=>setCurrentPage('cart')}>
+                <FaShoppingCart className='text-6xl text-white' />
             </button>
         }
     </>

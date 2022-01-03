@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const CartSummary = () => {
     const {totalNumber, totalCost} = useSelector(state=>state.cart);
-    return <section id='cart-summary' className='bd-unit'>
+    return <section id='cart-summary'>
         <div className='flex items-center w-full'>
             <div className='flex items-center'>
                 <div className='relative p-6 bg-primary rounded-full'>

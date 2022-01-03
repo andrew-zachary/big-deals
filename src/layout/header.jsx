@@ -4,7 +4,7 @@ import CartSummary from '../components/cart/summary.jsx';
 
 const LayoutHeader = () => {
     return <header>
-        <div className='max-w-app-body mx-auto flex items-center h-full'>
+        <div className='max-w-screen-md mx-auto flex items-center justify-between h-full'>
             <MenuBtn />
             <CartSummary />
         </div>

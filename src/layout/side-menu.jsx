@@ -16,7 +16,7 @@ const LayoutSideMenu = () => {
     }, [state.menu.toggle]);
     return <nav id="bd-app-nav" className='relative max-w-lg z-9998 bg-white' ref={navRef}>
         <header className='flex items-center justify-between'>
-            <LoginCartBtn isAuthed={isAuthed} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <LoginCartBtn currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <MenuCloseBtn state={state} dispatch={dispatch} layoutActions={layoutActions} />
         </header>
         <main className='p-4 text-center overflow-y-scroll h-full grid items-center'>

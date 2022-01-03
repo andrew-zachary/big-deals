@@ -30,6 +30,9 @@
         button {
             @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0);
         }
+        #cart-summary {
+            @include withRtl('margin', 0 1rem 0 0, 0 0 0 1rem);
+        }
     }
     footer {
         ul {
