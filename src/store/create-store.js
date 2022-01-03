@@ -12,11 +12,11 @@ import userReducer from './slices/user.js';
 
 export const store = configureStore({
   reducer: {
-      deal: dealReducer,
-      product: productReducer,
-      comment: commentReducer,
-      cart: cartReducer,
-      user: userReducer
+    deal: dealReducer,
+    product: productReducer,
+    comment: commentReducer,
+    cart: cartReducer,
+    user: userReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([API])
-})
+});

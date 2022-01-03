@@ -6,7 +6,7 @@ const BurgerBtn = () => {
     const {state, dispatch} = useContext(layoutContext);
     return <button
         className="p-6 rounded-full bg-primary shadow-secondary inline-block"
-        onClick={()=>dispatch({type: layoutActions.TOGGLE_MENU, payload: {toggle: !state.menu.toggle}})}
+        onClick={()=>dispatch({type: layoutActions.TOGGLE_MENU_SHOW, payload: {toggle: !state.menu.toggle}})}
     >
         <FaShoppingCart className='text-white text-6xl' />
     </button>

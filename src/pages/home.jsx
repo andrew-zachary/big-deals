@@ -6,9 +6,9 @@ import { layoutContext, layoutActions } from '../layout/context';
 const HomePage = () => {
     const {dispatch} = useContext(layoutContext);
     useEffect(()=>{
-        dispatch({type: layoutActions.SET_SHOW_FOOTER, payload: {show:true}});
+        dispatch({type: layoutActions.TOGGLE_FOOTER_SHOW, payload: {toggle:true}});
         return () => {
-            return dispatch({type: layoutActions.SET_SHOW_FOOTER, payload: {show:false}});
+            return dispatch({type: layoutActions.TOGGLE_FOOTER_SHOW, payload: {toggle:false}});
         }
     }, []);
     return <div id="home-page" className='content-page flex flex-col items-center justify-center'>

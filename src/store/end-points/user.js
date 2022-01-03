@@ -8,7 +8,8 @@ const getUserInfo = (_1, _2, _3) => {
         method: 'GET',
         url: `${baseUserUrl}/profile`,
         onSuccess: userAuthed.type,
-        onFail: userErrReceived.type
+        onFail: userErrReceived.type,
+        layoutIdle: true
     }
 }
 
@@ -19,7 +20,8 @@ const login = (_1, _2, _3, data) => {
         url: `/auth/signin`,
         data,
         onSuccess: userAuthed.type,
-        onFail: userErrReceived.type
+        onFail: userErrReceived.type,
+        layoutIdle: true
     }
 }
 
@@ -30,7 +32,8 @@ const register = (_1, _2, _3, data) => {
         url: `/auth/signup`,
         data,
         onSuccess: userAuthed.type,
-        onFail: userErrReceived.type
+        onFail: userErrReceived.type,
+        layoutIdle: true
     }
 }
 
@@ -41,7 +44,8 @@ const logout = (_1, _2, _3, data) => {
         url: `/auth/signout`,
         data,
         onSuccess: userAuthedOut.type,
-        onFail: userErrReceived.type
+        onFail: userErrReceived.type,
+        layoutIdle: true
     }
 }
 

@@ -16,12 +16,12 @@ const MainLayout = () => {
         <LayoutSideMenu />
         <LayoutDim />
         <div id='bd-app-body'>
-            <div id='body-container' className={state.footer.show?layout:noFooterLayout}>
+            <div id='body-container' className={state.footer.toggle?layout:noFooterLayout}>
                 <LayoutHeader />
                 <main id='main-content'>
                     <Outlet />
                 </main>
-                { state.footer.show && <LayoutFooter /> }
+                { state.footer.toggle && <LayoutFooter /> }
             </div>
         </div>
     </div>

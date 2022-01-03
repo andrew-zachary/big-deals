@@ -19,7 +19,7 @@ const LayoutDim = () => {
     return <div
             ref={dimRef} 
             id="layout-dim"
-            className='w-full h-full absolute z-9998 bg-black-600'
+            className='w-full h-full absolute z-9997 bg-black-600'
             onAnimationEnd={(e)=>{
                 if(e.animationName === "dimFadeOut") {
                     dimRef.current.style.visibility = 'hidden';

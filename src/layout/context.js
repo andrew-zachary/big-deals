@@ -1,13 +1,13 @@
 import {createContext} from "react";
 
 const layoutActions = {
-    TOGGLE_MENU: 'toggleMenu',
-    SET_SHOW_FOOTER: 'set current page'
+    TOGGLE_MENU_SHOW: 'TOGGLE_MENU_SHOW',
+    TOGGLE_FOOTER_SHOW: 'TOGGLE_FOOTER_SHOW'
 }
 const layoutContext = createContext();
 const layoutReducer = (state, action) => {
     switch (action.type) {
-        case layoutActions.TOGGLE_MENU:
+        case layoutActions.TOGGLE_MENU_SHOW:
             return {
                 ...state,
                 menu: {
@@ -17,11 +17,11 @@ const layoutReducer = (state, action) => {
                     toggle: action.payload.toggle
                 }
             };
-        case layoutActions.SET_SHOW_FOOTER:
+        case layoutActions.TOGGLE_FOOTER_SHOW:
             return {
                 ...state,
                 footer: {
-                    show: action.payload.show
+                    toggle: action.payload.toggle
                 }
             };
         default:

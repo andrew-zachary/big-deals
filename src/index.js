@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //app parts
 import Auth from "./components/app/auth.jsx";
+import Loading from './components/app/loading.jsx';
 
 //pages
 import HomePage from './pages/home.jsx';
@@ -37,11 +38,12 @@ const App = () => {
             toggle: false
         },
         footer: {
-            show: true
+            toggle: true
         }
     });
     return <Provider store={store}>
         <layoutContext.Provider value={{state, dispatch}}>
+            <Loading />
             <Auth />
             <Router>
                 <Routes>
