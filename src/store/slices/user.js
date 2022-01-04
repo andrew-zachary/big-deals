@@ -34,7 +34,6 @@ const userSlice = createSlice({
             state.userInfo = userInfo;
         },
         userErrReceived: (state, action) => {
-            console.log("err user");
             state.isAuthed = false;
             state.userInfo = userInfo;
             state.userErr = action.payload.err;
