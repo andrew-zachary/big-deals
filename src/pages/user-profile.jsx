@@ -5,21 +5,24 @@ import { useDispatch } from 'react-redux';
 import { apiStartCall } from '../store/actions.js';
 import { logout } from '../store/end-points/user.js';
 
-const UserProfile = ({userInfo}) => {
+const UserProfile = ({userInfo, setCurrentPage}) => {
     const dispatch = useDispatch();
     return <>
         {
             userInfo._id && <> 
                 <div id='user-info-header'>
-                    <span className='text-4xl font-mont font-regular'>hello {userInfo.authId.firstName}</span>
+                    <span className='text-5xl font-mont font-regular capitalize'>hi {userInfo.authId.firstName}</span>
                 </div>
                 <div id='user-info-body' className='flex flex-col items-center justify-center'>
-                    <div id="ctrls" className='mt-8'>
-                        <button className='bd-unit' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaCog className='text-4xl' /></button>
-                        <button className='bd-unit' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl' /></button>
+                    <div className='mt-8 font-ssp font-regular text-4xl'>
+                        <p className='capitalize'>
+                            <span>your balance : </span><span>$</span><span className='bd-unit'>{userInfo.currentBalance}</span>
+                        </p>
                     </div>
-                    <div className='mt-8 text-5xl font-mont font-regular'>
-                        <span>$</span><span className='bd-unit'>{userInfo.currentBalance}</span>
+                    <div className="ctrls mt-20 flex justify-around items-center w-full">
+                        <button className='bd-unit p-4 rounded-full bg-primary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaCog className='text-4xl text-white' /></button>
+                        <button className='bd-unit px-4 py-12 rounded-full border-2 border-primary capitalize text-4xl' onClick={()=>setCurrentPage('order')}>orders</button>
+                        <button className='bd-unit p-4 rounded-full bg-primary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
                     </div>
                 </div>
             </>

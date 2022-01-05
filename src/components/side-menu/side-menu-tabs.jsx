@@ -5,6 +5,7 @@ import RegisterForm from '../../pages/register-form.jsx';
 import CartDetails from '../../pages/cart.jsx';
 import ForgotPassword from '../../pages/forgot-password.jsx';
 import UserProfile from '../../pages/user-profile.jsx';
+import Order from '../../pages/order.jsx';
 
 const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
     useEffect(()=>{
@@ -30,6 +31,8 @@ const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
                     return <UserProfile userInfo={userInfo} setCurrentPage={setCurrentPage} />
                 case 'cart':
                     return <CartDetails setCurrentPage={setCurrentPage} />
+                case 'order':
+                    return <Order setCurrentPage={setCurrentPage} />
                 default:
                     break;
             }

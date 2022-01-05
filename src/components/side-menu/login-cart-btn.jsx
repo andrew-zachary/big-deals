@@ -4,12 +4,12 @@ import {FaShoppingCart, FaArrowLeft} from 'react-icons/fa';
 const LoginCart = ({currentPage, setCurrentPage}) => {
     return <>
         {
-            currentPage === 'cart' && <button onClick={()=>setCurrentPage('user')}>
+            currentPage !== 'user' && <button onClick={()=>setCurrentPage('user')}>
                 <FaArrowLeft className='text-6xl text-primary' />
             </button>
         }
         {
-            currentPage !== 'cart' && <button className='p-4 bg-primary' onClick={()=>setCurrentPage('cart')}>
+            currentPage === 'user' && <button className='p-4 bg-primary' onClick={()=>setCurrentPage('cart')}>
                 <FaShoppingCart className='text-6xl text-white' />
             </button>
         }

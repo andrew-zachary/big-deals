@@ -10,7 +10,7 @@ import CartDeal from '../components/cart/cart-deal.jsx';
 const CartTab = () => {
     const dispatch = useDispatch();
     const {items, totalCost} = useSelector(state=>state.cart);
-    const checkOut = (items) => {
+    const saveOrder = (items) => {
         const deals = items.deals.map((item)=> {
             return {
                 dealId:item.entity._id,
@@ -52,7 +52,7 @@ const CartTab = () => {
             <span>$</span>
             <span>{(totalCost.products+totalCost.deals).toFixed(2)}</span>
         </div>
-        <button onClick={()=>checkOut(items)} className='text-4xl text-white font-ssp font-light capitalize bg-primary p-3 mt-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>check out</button>
+        <button onClick={()=> saveOrder(items)} className='text-4xl text-white font-ssp font-light capitalize bg-primary p-3 mt-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>submit order</button>
     </>
 };
 
