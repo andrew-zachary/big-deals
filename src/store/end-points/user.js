@@ -2,8 +2,8 @@ import { userAuthed, userAuthedOut, userErrReceived } from "../slices/user.js";
 
 const baseUserUrl = '/bd/users';
 
-//params, lastPage, limit
-const getUserInfo = (_1, _2, _3) => {
+//params, lastPage, limit, data
+const getUserInfo = (_1, _2, _3, _) => {
     return {
         method: 'GET',
         url: `${baseUserUrl}/profile`,
@@ -13,7 +13,7 @@ const getUserInfo = (_1, _2, _3) => {
     }
 }
 
-//params, lastPage, limit
+//params, lastPage, limit, data
 const login = (_1, _2, _3, data) => {
     return {
         method: 'POST',
@@ -25,7 +25,7 @@ const login = (_1, _2, _3, data) => {
     }
 }
 
-//params, lastPage, limit
+//params, lastPage, limit, data
 const register = (_1, _2, _3, data) => {
     return {
         method: 'POST',
@@ -37,7 +37,7 @@ const register = (_1, _2, _3, data) => {
     }
 }
 
-//params, lastPage, limit
+//params, lastPage, limit, data
 const logout = (_1, _2, _3, data) => {
     return {
         method: 'GET',

@@ -1,11 +1,30 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {createNewOrder} from '../store/end-points/order.js';
+import {apiStartCall} from '../store/actions.js';
 
 import CartProduct from '../components/cart/cart-product.jsx';
 import CartDeal from '../components/cart/cart-deal.jsx';
 
 const CartTab = () => {
+    const dispatch = useDispatch();
     const {items, totalCost} = useSelector(state=>state.cart);
+    const checkOut = (items) => {
+        const deals = items.deals.map((item)=> {
+            return {
+                dealId:item.entity._id,
+                quantity: item.quantity
+            }
+        });
+        const products = items.products.map((item)=> {
+            return {
+                productId:item.entity._id,
+                quantity: item.quantity
+            }
+        });
+        dispatch({type: apiStartCall.type, payload: createNewOrder(null, null, null, {items: [...deals, ...products]} )});
+    }
     return <>
         <div id="cart-deals" className='mt-8'>
             <h1 className='text-5xl capitalize font-mont font-medium'>deals</h1>
@@ -33,10 +52,7 @@ const CartTab = () => {
             <span>$</span>
             <span>{(totalCost.products+totalCost.deals).toFixed(2)}</span>
         </div>
-        <div className='flex justify-between mt-8'>
-            <button className='text-4xl bg-primary text-white px-3 py-4 rounded-[0.4rem] font-ssp font-light capitalize' disabled={items.products.length === 0}>save cart</button>
-            <button className='text-4xl bg-primary text-white px-3 py-2 rounded-[0.4rem] font-ssp font-light capitalize' disabled={items.products.length === 0}>submit order</button>
-        </div>
+        <button onClick={()=>checkOut(items)} className='text-4xl text-white font-ssp font-light capitalize bg-primary p-3 mt-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>check out</button>
     </>
 };
 
