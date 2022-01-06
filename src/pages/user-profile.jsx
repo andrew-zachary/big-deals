@@ -20,9 +20,9 @@ const UserProfile = ({userInfo, setCurrentPage}) => {
                         </p>
                     </div>
                     <div className="ctrls mt-20 flex justify-around items-center w-full">
-                        <button className='bd-unit p-4 rounded-full bg-primary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaCog className='text-4xl text-white' /></button>
-                        <button className='bd-unit px-4 py-12 rounded-full border-2 border-primary capitalize text-4xl' onClick={()=>setCurrentPage('order')}>orders</button>
-                        <button className='bd-unit p-4 rounded-full bg-primary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
+                        <button className='bd-unit p-4 rounded-full bg-primary shadow-secondary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaCog className='text-4xl text-white' /></button>
+                        <button className='bd-unit px-4 py-14 rounded-full border-2 border-primary bg-primary font-mont font-regular text-white text-4xl capitalize shadow-secondary' onClick={()=>setCurrentPage('orders')}>orders</button>
+                        <button className='bd-unit p-4 rounded-full bg-primary shadow-secondary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
                     </div>
                 </div>
             </>

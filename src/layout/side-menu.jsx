@@ -8,7 +8,7 @@ import SideMenuTabs from '../components/side-menu/side-menu-tabs.jsx';
 
 const LayoutSideMenu = () => {
     const {isAuthed, userInfo} = useSelector(state=>state.user);
-    const [currentPage, setCurrentPage] = useState('user');
+    const [currentPage, setCurrentPage] = useState('');
     const {state, dispatch} = useContext(layoutContext);
     const navRef = useRef();
     useEffect(()=>{

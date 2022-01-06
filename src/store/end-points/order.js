@@ -1,4 +1,4 @@
-import {pendingOrderReceived} from '../slices/order.js';
+import {orderReceived, ordersReceived} from '../slices/order.js';
 
 const baseOrderUrl = '/bd/orders';
 
@@ -7,19 +7,19 @@ const createNewOrder = (_1, _2, _3, data) => {
         method: 'POST',
         url: `${baseOrderUrl}/new`,
         data,
-        onSuccess: pendingOrderReceived.type,
+        onSuccess: orderReceived.type,
         layoutIdle: true
     }
 }
 
-const findPendingOrder = (_1, _2, _3, data) => {
+const allOrders = (_1, lastPage=1, limit=5, data) => {
     return {
         method: 'GET',
-        url: `${baseOrderUrl}/?status=pending`,
+        url: `${baseOrderUrl}/?page=${lastPage}&limit=${limit}`,
         data,
-        onSuccess: pendingOrderReceived.type,
+        onSuccess: ordersReceived.type,
         layoutIdle: true
     }
 }
 
-export {createNewOrder, findPendingOrder};
+export {createNewOrder, allOrders};

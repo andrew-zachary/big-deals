@@ -1,0 +1,7 @@
+#orders {
+    .order-header {
+        h1{
+            @include withRtl('text-align', left, right);
+        }
+    }
+}

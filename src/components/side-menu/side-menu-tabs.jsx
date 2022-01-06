@@ -5,11 +5,11 @@ import RegisterForm from '../../pages/register-form.jsx';
 import CartDetails from '../../pages/cart.jsx';
 import ForgotPassword from '../../pages/forgot-password.jsx';
 import UserProfile from '../../pages/user-profile.jsx';
-import Order from '../../pages/order.jsx';
+import Orders from '../../pages/orders.jsx';
 
 const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
     useEffect(()=>{
-        setCurrentPage('user');
+        setCurrentPage('orders');
     }, [isAuthed]);
     const pickUpTab = (currentPage) => {
         if(!isAuthed) {
@@ -19,9 +19,9 @@ const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
                 case 'user':
                     return <LoginForm setCurrentPage={setCurrentPage} />
                 case 'register':
-                        return <RegisterForm setCurrentPage={setCurrentPage} />
+                    return <RegisterForm setCurrentPage={setCurrentPage} />
                 case 'cart':
-                        return <CartDetails setCurrentPage={setCurrentPage} />
+                    return <CartDetails setCurrentPage={setCurrentPage} />
                 default:
                     break;
             }
@@ -31,8 +31,8 @@ const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
                     return <UserProfile userInfo={userInfo} setCurrentPage={setCurrentPage} />
                 case 'cart':
                     return <CartDetails setCurrentPage={setCurrentPage} />
-                case 'order':
-                    return <Order setCurrentPage={setCurrentPage} />
+                case 'orders':
+                    return <Orders setCurrentPage={setCurrentPage} />
                 default:
                     break;
             }

@@ -3,16 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 const orderSlice = createSlice({
     name: 'order',
     initialState: {
-        pendingOrder: null,
+        order: null,
         orders: []
     },
     reducers: {
-        pendingOrderReceived: (state, action) => {
-            console.log(action.payload);
-            state.pendingOrder = action.payload.data.length === 0?null:action.payload.data[0];
+        orderReceived: (state, action) => {
+            state.order = action.payload.data;
+        },
+        ordersReceived: (state, action) => {
+            state.orders = action.payload.data;
         },
     }
 });
 
 export default orderSlice.reducer;
-export const {pendingOrderReceived} = orderSlice.actions;
+export const {orderReceived, ordersReceived} = orderSlice.actions;

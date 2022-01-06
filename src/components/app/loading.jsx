@@ -5,18 +5,15 @@ import axiosClient from '../../utilities/axiosClient.js';
 const Loading = () => {
     const [loadingStarted, setLoadingStarted] = useState(false);
     axiosClient.interceptors.request.use((config)=>{
-        console.log("test req");
         if(config.layoutIdle) {
             setLoadingStarted(true);
         }
         return config;
     });
     axiosClient.interceptors.response.use((response)=>{
-        console.log("test res ok");
         setLoadingStarted(false);
         return response;
     }, (err)=>{
-        console.log("test res fail");
         setLoadingStarted(false);
         return err;
     });
