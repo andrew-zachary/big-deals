@@ -1,7 +1,13 @@
-#orders {
-    .order-header {
-        h1{
-            @include withRtl('text-align', left, right);
+#orders-wrapper {
+    ul[mode=orders] {
+        height: calc(100vh - 15rem);
+        max-height: 140rem;
+        li {
+            .order-header {
+                h1{
+                    @include withRtl('text-align', left, right);
+                }
+            }
         }
     }
 }

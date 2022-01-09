@@ -18,7 +18,7 @@ const allOrders = (_1, lastPage=1, limit=5, data) => {
         url: `${baseOrderUrl}/?page=${lastPage}&limit=${limit}`,
         data,
         onSuccess: ordersReceived.type,
-        layoutIdle: true
+        layoutIdle: false
     }
 }
 
