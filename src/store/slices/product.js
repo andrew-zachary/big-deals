@@ -4,9 +4,11 @@ const initialState = {
     productsHasMore: true,
     productsLastPage: 1,
     productsItems: [],
-    searchHasMore: true,
-    searchLastPage: 1,
-    searchItems: []
+    productsSearch: {
+        hasMore: true,
+        lastPage: 1,
+        items: []
+    }
 };
 
 const productSlice = createSlice({
@@ -23,19 +25,19 @@ const productSlice = createSlice({
         },
         searchItemsReceived: (state, action) => {
             if(action.payload.data.length === 0) {
-                state.searchHasMore = false;
+                state.productsSearch.hasMore = false;
                 return state;
             }
-            state.searchItems = state.searchItems.concat(action.payload.data);
-            state.searchLastPage += 1;
+            state.productsSearch.items = state.productsSearch.items.concat(action.payload.data);
+            state.productsSearch.lastPage += 1;
         },
-        resetSearch: (state, _) => {
-            state.searchItems = [];
-            state.searchLastPage = 1;
-            state.searchHasMore = true;
+        resetProductsSearch: (state, _) => {
+            state.productsSearch.items = [];
+            state.productsSearch.lastPage = 1;
+            state.productsSearch.hasMore = true;
         }
     }
 });
 
 export default productSlice.reducer;
-export const {itemsReceived, searchItemsReceived, resetSearch} = productSlice.actions;
+export const {itemsReceived, searchItemsReceived, resetProductsSearch} = productSlice.actions;

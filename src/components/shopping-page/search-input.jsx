@@ -2,14 +2,16 @@ import React, {useRef} from 'react';
 import { useDispatch } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
 
-import { resetSearch } from '../../store/slices/product.js';
+import { resetProductsSearch } from '../../store/slices/product.js';
+import { resetDealsSearch } from '../../store/slices/deal.js';
 
 const SearchInput = ({startSearch, setStartSearch, showModeList, pickedMode}) => {
     const dispatch = useDispatch();
     const searchTxt = useRef('');
     const searchHandler = (startSearch) => {
         if(startSearch.value !== searchTxt.current.value) {
-            dispatch({type: resetSearch.type});
+            dispatch({type: resetProductsSearch.type});
+            dispatch({type: resetDealsSearch.type});
         }
         setStartSearch({
             show: true, 
