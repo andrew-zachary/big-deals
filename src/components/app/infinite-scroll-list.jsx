@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect, useCallback} from 'react';
 import { useDispatch } from 'react-redux';
+
 import { apiStartCall } from '../../store/actions.js';
 
 const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
@@ -7,7 +8,6 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
     const scrollingHandler = useCallback((e)=>{
-        console.log("scrolling");
         if ((Math.floor(e.target.scrollTop) + Math.floor(e.target.clientHeight) + 300) > Math.floor(e.target.scrollHeight)) {
             setDoPagiante(true);
         }
@@ -38,7 +38,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
                 return <ItemComponent key={item._id} item={item} />
             })
         }
-        { hasMore && <li key="spinner">
+        { hasMore && items.length === 5 && <li key="spinner">
             <div className="spinner">
                 <div className="bounce1"></div>
                 <div className="bounce2"></div>

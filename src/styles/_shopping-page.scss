@@ -17,6 +17,14 @@
         }
     }
     #infinite-scroll-list {
+        &{
+            height: calc(100% - 7rem);
+        }
+        &[mode=search] {
+            & > li {
+                padding:2rem 0rem;
+            }
+        }
         &[mode=products] {
             & > li {
                 border-bottom: 0.1rem solid $primary-dim;

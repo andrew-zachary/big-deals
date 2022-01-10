@@ -9,7 +9,7 @@ import Orders from '../../pages/orders.jsx';
 
 const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
     useEffect(()=>{
-        setCurrentPage('orders');
+        setCurrentPage('user');
     }, [isAuthed]);
     const pickUpTab = (currentPage) => {
         if(!isAuthed) {

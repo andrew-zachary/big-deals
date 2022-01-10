@@ -13,7 +13,6 @@ const AddDealCart = ({item}) => {
             dealCost += product.price;
         });
         discountPrice = dealCost*(item.discount/100);
-        console.log(dealCost, discountPrice);
         return (dealCost - discountPrice).toFixed(2);
     };
     const clickHandler = (item) => {
