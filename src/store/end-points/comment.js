@@ -2,6 +2,7 @@ import { itemsReceived } from "../slices/comment.js";
 
 const baseCommentUrl = '/bd/comments';
 
+//params, lastPage, limit, data
 const getProductComments = (params, lastPage=1, limit=5) => {
     return {
         method: 'GET',

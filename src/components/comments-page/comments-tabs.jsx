@@ -10,6 +10,7 @@ import CommentListItem from '../../components/comments-page/comment-list-item.js
 import CommentsTotal from '../../components/comments-page/comments-total.jsx';
 import TellUs from '../../components/comments-page/tell-us.jsx';
 import Appreciate from '../../components/comments-page/appreciate.jsx';
+import AuthedActionBtn from '../app/authed-action-btn.jsx';
 
 const CommentsTabs = () => {
     const [currentTab, setCurrentTab] = useState('total');
@@ -32,7 +33,12 @@ const CommentsTabs = () => {
                     pickedMode="comments" 
                     params={{productId: params.id}}/>
                     <div id="make-comment" className='flex justify-end relative'>
-                        <button onClick={()=>setCurrentTab('new')} className='absolute p-6 bg-primary shadow-secondary text-primay rounded-full top-[-8rem]'><FaRegCommentDots className="text-white text-6xl inline-block" /></button>
+                        <AuthedActionBtn 
+                            action={setCurrentTab} 
+                            payload='new' 
+                            tailWindStyle='absolute p-6 bg-primary shadow-secondary text-primay rounded-full top-[-8rem]' 
+                            reactIcon={<FaRegCommentDots className="text-white text-6xl inline-block" />}
+                        />
                     </div>
                 </>
             case 'total':

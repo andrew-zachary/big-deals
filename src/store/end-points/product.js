@@ -2,6 +2,7 @@ import { itemsReceived, searchItemsReceived } from "../slices/product.js";
 
 const baseDealUrl = '/bd/products';
 
+//params, lastPage, limit, data
 const getAllProducts = (params={}, lastPage=1, limit=5) => {
     return {
         method: 'GET',
@@ -10,6 +11,7 @@ const getAllProducts = (params={}, lastPage=1, limit=5) => {
     }
 }
 
+//params, lastPage, limit, data
 const searchAllProducts = (params={}, lastPage=1, limit=5) => {
     console.log(params);
     return {
