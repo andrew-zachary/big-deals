@@ -1,23 +1,23 @@
 <p align="left">
-  <a href="https://big-deals.netlify.app/">
-    <img alt="big-deals" src="https://raw.githubusercontent.com/andrew-zachary/big-deals/main/src/assets/logo.png" width="250" />
+  <a style="text-transform:uppercase;font-size:48px" href="https://big-deals.netlify.app/">
+    big deals
   </a>
 </p>
 <h2>eCommerce app for :</h2>
 <ul>
-  <li>viewing and buying products.</li>
-  <li>making orders</li>
-  <li>giving reviews</li>
+  <li>searching and buying products and deals.</li>
+  <li>submit orders.</li>
+  <li>make reviews.</li>
 </ul>
-<h2><a href="https://big-deals.netlify.app">Open Big Deals</a></h2>
+<h2><a href="https://big-deals.netlify.app">big-deals.netlify.app</a></h2>
 <p>React-Redux was used to manage app state and to implement features like :</p>
 <ul>
 <li>User login-register.</li>
-<li>Cart add-remove items, calculate-price.</li>
-<li>Orders submit and view.</li>
-<li>Products view and paginate.</li>
+<li>Cart add-remove items, calculate total price.</li>
+<li>Orders submit and view all bills.</li>
+<li>Products & Deals view and paginate.</li>
 <li>Reviews add-update.</li>
-<li>App Toaster, Modals, Spinner, Forms with validation, responsive layout.</li>
+<li>App Toaster, Modals, Spinner, Forms with validation, mobile first layout.</li>
 </ul>
 
 ### Would like to have your feedback

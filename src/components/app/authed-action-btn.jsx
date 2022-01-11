@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { layoutContext, layoutActions } from '../../layout/context.js';
 
-const AuthedActionBtn = ({action, payload, tailWindStyle, reactIcon}) => {
+const AuthedActionBtn = ({action, payload, tailWindStyle, children}) => {
     const {dispatch} = useContext(layoutContext);
     const {isAuthed} = useSelector(state=>state.user);
     const authingAction = () => {
@@ -16,7 +16,7 @@ const AuthedActionBtn = ({action, payload, tailWindStyle, reactIcon}) => {
     return <button 
         onClick={()=>authingAction()}
         className={tailWindStyle}>
-            {reactIcon}
+            {children}
     </button>
 };
 

@@ -1,11 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
-import { FaRegCommentDots, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaRegCommentDots, FaCheck, FaTimes, FaCartPlus } from 'react-icons/fa';
 
-import AddProductCart from './add-product-cart.jsx';
+import AuthedActionBtn from '../app/authed-action-btn.jsx';
+
+import { addItem } from '../../store/slices/cart.js';
 
 const ProductListItem = ({item}) => {
+    const dispatch = useDispatch();
     return <li className='product-block'>
         <h1 className='inline-block text-4xl capitalize font-mont font-medium'>{item.name}</h1>
         <ReactStars 
@@ -44,7 +48,13 @@ const ProductListItem = ({item}) => {
             <Link className='p-4 bg-primary shadow-secondary rounded-full' to={`/comments/${item._id}`} state={{product:item}}>
                 <FaRegCommentDots className='text-white text-5xl' />
             </Link>
-            <AddProductCart item={item} />
+            <AuthedActionBtn
+                action={dispatch} 
+                payload={ { type: addItem.type, payload:{item, collection: 'products'} } }
+                tailWindStyle='p-4 bg-primary shadow-secondary rounded-full'
+            >
+                <FaCartPlus className='text-white text-5xl' />
+            </AuthedActionBtn>
         </div>
     </li>
 };
