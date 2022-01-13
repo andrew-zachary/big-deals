@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     commentsHasMore: true,
     commentsLastPage: 1,
-    commentsItems: []
+    commentsItems: [],
+    currentComment: null,
+    commentError: ''
 };
 
 const commentSlice = createSlice({
@@ -17,9 +19,23 @@ const commentSlice = createSlice({
             }
             state.commentsItems = state.commentsItems.concat(action.payload.data);
             state.commentsLastPage += 1;
+        },
+        itemReceived: (state, action) => {
+            console.log(action.payload.data)
+            state.currentComment = action.payload.data?action.payload.data:null;
+        },
+        commentReset: (state, _) => {
+            state.commentsHasMore = true;
+            state.commentsLastPage = 1;
+            state.commentsItems = [];
+            state.currentComment = null;
+            state.commentError = '';
+        },
+        commentErrorReceived: (state, action) => {
+            state.commentError = action.payload.data;
         }
     }
 });
 
 export default commentSlice.reducer;
-export const {itemsReceived} = commentSlice.actions;
+export const {itemsReceived, itemReceived, commentReset, commentErrorReceived} = commentSlice.actions;

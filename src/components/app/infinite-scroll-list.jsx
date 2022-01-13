@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { apiStartCall } from '../../store/actions.js';
 
-const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
+const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent, collectionName}) => {
     const dispatch = useDispatch();
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
@@ -32,20 +32,27 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     useEffect(()=>{
         scrollingList.current.addEventListener('scroll', scrollingHandler);
     }, [items]);
-    return <ul mode={pickedMode} id="infinite-scroll-list" ref={scrollingList} className='my-8 h-full overflow-y-scroll'>
+    return <>
+        <ul mode={pickedMode} id="infinite-scroll-list" ref={scrollingList} className='my-8 h-full overflow-y-scroll'>
+            {
+                items.map(item=>{
+                    return <ItemComponent key={item._id} item={item} />
+                })
+            }
+            { hasMore && items.length === 5 && <li key="spinner">
+                <div className="spinner">
+                    <div className="bounce1"></div>
+                    <div className="bounce2"></div>
+                    <div className="bounce3"></div>
+                </div>
+            </li> }
+        </ul>
         {
-            items.map(item=>{
-                return <ItemComponent key={item._id} item={item} />
-            })
+            items.length === 0 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl text-center capitalize font-mont font-bold'>
+                no {collectionName} yet ...
+            </div> 
         }
-        { hasMore && items.length === 5 && <li key="spinner">
-            <div className="spinner">
-                <div className="bounce1"></div>
-                <div className="bounce2"></div>
-                <div className="bounce3"></div>
-            </div>
-        </li> }
-    </ul>
+    </>
 };
 
 InfiniteScrollList.displayName = "infinite scroll list";
