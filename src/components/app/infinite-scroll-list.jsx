@@ -49,7 +49,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
         </ul>
         {
             items.length === 0 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl text-center capitalize font-mont font-bold'>
-                no {collectionName} yet ...
+                no {collectionName} found ...
             </div> 
         }
     </>

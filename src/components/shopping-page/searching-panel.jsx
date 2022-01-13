@@ -20,23 +20,27 @@ const SearchingPanel = ({startSearch, setStartSearch}) => {
             })} className='text-6xl text-primary cursor-pointer' />
         </div>
         { startSearch.mode === 'deals' && <InfiniteScrollList 
-            endPointOptions={searchAllDeals}
-            items={dealsSearch.items} 
-            hasMore={dealsSearch.hasMore} 
-            lastPage={dealsSearch.lastPage}
-            ItemComponent={DealListItem} 
-            pickedMode='search'
-            params={{s:startSearch.value}}
-        /> }
+                endPointOptions={searchAllDeals}
+                items={dealsSearch.items} 
+                hasMore={dealsSearch.hasMore} 
+                lastPage={dealsSearch.lastPage}
+                ItemComponent={DealListItem} 
+                pickedMode='search'
+                params={{s:startSearch.value}}
+                collectionName='results'
+            /> 
+        }
         { startSearch.mode === 'products' && <InfiniteScrollList 
-            endPointOptions={searchAllProducts}
-            items={productsSearch.items} 
-            hasMore={productsSearch.hasMore} 
-            lastPage={productsSearch.lastPage}
-            ItemComponent={ProductListItem} 
-            pickedMode='search'
-            params={{s:startSearch.value}}
-        /> }
+                endPointOptions={searchAllProducts}
+                items={productsSearch.items} 
+                hasMore={productsSearch.hasMore} 
+                lastPage={productsSearch.lastPage}
+                ItemComponent={ProductListItem} 
+                pickedMode='search'
+                params={{s:startSearch.value}}
+                collectionName='results'
+            /> 
+        }
     </div>
 };
 

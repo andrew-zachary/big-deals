@@ -16,7 +16,9 @@ const AllOrdersTab = () => {
             hasMore={ordersHasMore} 
             lastPage={ordersLastPage}
             ItemComponent={OrderItem} 
-            pickedMode='orders' />
+            pickedMode='orders'
+            collectionName='orders'
+        />
     </div>
 };
 

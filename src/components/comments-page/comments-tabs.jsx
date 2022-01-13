@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 import CommentsTotal from './comments-total.jsx';
-import TellUs from './tell-us.jsx';
+import TellUsTabs from './tell-us-tabs.jsx';
 import Appreciate from './appreciate.jsx';
 import CommentsList from './comments-list.jsx';
 
@@ -14,7 +14,7 @@ const CommentsTabs = () => {
             case 'thank':
                 return <Appreciate />
             case 'new':
-                return <TellUs productId={params.id} setCurrentTab={setCurrentTab} />
+                return <TellUsTabs productId={params.id} setCurrentTab={setCurrentTab} />
             case 'list':
                 return <CommentsList productId={params.id} setCurrentTab={setCurrentTab} />
             case 'total':

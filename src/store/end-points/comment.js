@@ -13,7 +13,7 @@ const getProductComments = (params, lastPage=1, limit=5, _4) => {
 };
 
 //params, lastPage, limit, data
-const getUserComment = (params, _2, _3, data) => {
+const getUserComment = (_1, _2, _3, data) => {
     return {
         method: 'POST',
         url: `${baseCommentUrl}/owner`,
@@ -21,7 +21,7 @@ const getUserComment = (params, _2, _3, data) => {
         onSuccess: itemReceived.type,
         onFail: commentErrorReceived.type
     }
-}
+};
 
 //params, lastPage, limit, data
 const newComment = (_1, _2, _3, data) => {
@@ -32,6 +32,17 @@ const newComment = (_1, _2, _3, data) => {
         onSuccess: itemReceived.type,
         onFail: commentErrorReceived.type
     }
-}
+};
 
-export {getProductComments, newComment, getUserComment};
+//params, lastPage, limit, data
+const updateComment = (params, _2, _3, data) => {
+    return {
+        method: 'PUT',
+        url: `${baseCommentUrl}/${params.commentId}/owner`,
+        data,
+        onSuccess: itemReceived.type,
+        onFail: commentErrorReceived.type
+    }
+};
+
+export {getProductComments, newComment, getUserComment, updateComment};

@@ -13,20 +13,24 @@ const ListSwitch = ({pickedMode}) => {
     const {productsItems, productsHasMore, productsLastPage} = useSelector(state=>state.product);
     return <>
         { pickedMode === 'deals' && <InfiniteScrollList
-            endPointOptions={getAllDeals}
-            items={dealsItems} 
-            hasMore={dealsHasMore} 
-            lastPage={dealsLastPage}
-            ItemComponent={DealListItem} 
-            pickedMode={pickedMode} />
+                endPointOptions={getAllDeals}
+                items={dealsItems} 
+                hasMore={dealsHasMore} 
+                lastPage={dealsLastPage}
+                ItemComponent={DealListItem} 
+                pickedMode={pickedMode}
+                collectionName='deals'
+            />
         }
         { pickedMode === 'products' && <InfiniteScrollList
-            endPointOptions={getAllProducts}
-            items={productsItems} 
-            hasMore={productsHasMore} 
-            lastPage={productsLastPage}
-            ItemComponent={ProductListItem} 
-            pickedMode={pickedMode} />
+                endPointOptions={getAllProducts}
+                items={productsItems} 
+                hasMore={productsHasMore} 
+                lastPage={productsLastPage}
+                ItemComponent={ProductListItem} 
+                pickedMode={pickedMode}
+                collectionName='products'
+            />
         }
     </>
 };

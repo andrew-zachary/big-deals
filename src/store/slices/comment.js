@@ -21,7 +21,6 @@ const commentSlice = createSlice({
             state.commentsLastPage += 1;
         },
         itemReceived: (state, action) => {
-            console.log(action.payload.data)
             state.currentComment = action.payload.data?action.payload.data:null;
         },
         commentReset: (state, _) => {
