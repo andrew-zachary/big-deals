@@ -68,3 +68,27 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
     transform: scale(1.0);
   }
 }
+
+//modal
+.ReactModalPortal {
+  position: relative;
+  z-index: 9999;
+  .confirm-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 100%;
+    max-width: 37.5rem;
+    height: 25rem;
+  }
+  .confirm-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}

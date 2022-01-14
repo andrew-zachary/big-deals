@@ -2,11 +2,27 @@ import {createContext} from "react";
 
 const layoutActions = {
     TOGGLE_MENU_SHOW: 'TOGGLE_MENU_SHOW',
-    TOGGLE_FOOTER_SHOW: 'TOGGLE_FOOTER_SHOW'
+    TOGGLE_FOOTER_SHOW: 'TOGGLE_FOOTER_SHOW',
+    TOGGLE_MODAL_SHOW: 'TOGGLE_MODAL_SHOW'
 }
 const layoutContext = createContext();
 const layoutReducer = (state, action) => {
     switch (action.type) {
+        case layoutActions.TOGGLE_MODAL_SHOW:
+            return {
+                ...state,
+                modal: {
+                    toggle: action.payload.toggle,
+                    text: {
+                        header: action.payload.text.header,
+                        body: action.payload.text.body,
+                    },
+                    toConfirm: {
+                        action: action.payload.toConfirm.action,
+                        payload: action.payload.toConfirm.payload,
+                    }
+                },
+            }
         case layoutActions.TOGGLE_MENU_SHOW:
             return {
                 ...state,

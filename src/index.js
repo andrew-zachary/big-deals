@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //app parts
 import Auth from "./components/app/auth.jsx";
 import Loading from './components/app/loading.jsx';
+import ConfirmModal from "./components/app/confirm-modal.jsx";
 
 //pages
 import HomePage from './pages/home.jsx';
@@ -31,6 +32,17 @@ import { Provider } from "react-redux";
 //app
 const App = () => {
     const [state, dispatch] = useReducer(layoutReducer, {
+        modal: {
+            toggle: false,
+            text: {
+                header: null,
+                body: null
+            },
+            toConfirm: {
+                action: null,
+                payload: null
+            },
+        },
         menu: {
             toggle: false
         },
@@ -43,6 +55,7 @@ const App = () => {
     });
     return <Provider store={store}>
         <layoutContext.Provider value={{state, dispatch}}>
+            <ConfirmModal />
             <Loading />
             <Auth />
             <Router>

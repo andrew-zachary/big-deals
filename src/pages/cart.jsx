@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { layoutActions } from '../layout/context.js';
 import {createNewOrder} from '../store/end-points/order.js';
 import {apiStartCall} from '../store/actions.js';
 
 import CartProduct from '../components/cart/cart-product.jsx';
 import CartDeal from '../components/cart/cart-deal.jsx';
 
-const CartTab = () => {
+const CartTab = ({layoutDispatch}) => {
     const dispatch = useDispatch();
     const {items, totalCost} = useSelector(state=>state.cart);
     const saveOrder = (items) => {
@@ -23,7 +24,20 @@ const CartTab = () => {
                 quantity: item.quantity
             }
         });
-        dispatch({type: apiStartCall.type, payload: createNewOrder(null, null, null, {items: [...deals, ...products]} )});
+        layoutDispatch({
+            type: layoutActions.TOGGLE_MODAL_SHOW, 
+            payload: {
+                text: {
+                    header: 'send order',
+                    body: 'would you like to submit your current cart ?'
+                },
+                toggle: true,
+                toConfirm: {
+                    action: dispatch,
+                    payload: {type: apiStartCall.type, payload: createNewOrder(null, null, null, {items: [...deals, ...products]} )}
+                }
+            }
+        });
     }
     return <>
         <div id="cart-deals" className='mt-8'>

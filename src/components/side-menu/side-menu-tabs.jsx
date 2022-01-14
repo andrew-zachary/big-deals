@@ -1,4 +1,6 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
+
+import { layoutContext } from '../../layout/context.js';
 
 import LoginForm from '../../pages/login-form.jsx';
 import RegisterForm from '../../pages/register-form.jsx';
@@ -8,6 +10,7 @@ import UserProfile from '../../pages/user-profile.jsx';
 import Orders from '../../pages/orders.jsx';
 
 const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
+    const {dispatch} = useContext(layoutContext);
     useEffect(()=>{
         setCurrentPage('user');
     }, [isAuthed]);
@@ -30,7 +33,7 @@ const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
                 case 'user':
                     return <UserProfile userInfo={userInfo} setCurrentPage={setCurrentPage} />
                 case 'cart':
-                    return <CartDetails setCurrentPage={setCurrentPage} />
+                    return <CartDetails layoutDispatch={dispatch} setCurrentPage={setCurrentPage} />
                 case 'orders':
                     return <Orders setCurrentPage={setCurrentPage} />
                 default:
