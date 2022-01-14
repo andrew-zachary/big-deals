@@ -18,7 +18,7 @@ const MainLayout = () => {
         <div id='bd-app-body'>
             <div id='body-container' className={state.footer.toggle?layout:noFooterLayout}>
                 <LayoutHeader />
-                <main id='main-content'>
+                <main id='main-content' className='max-h-[80rem] self-center'>
                     <Outlet />
                 </main>
                 { state.footer.toggle && <LayoutFooter /> }

@@ -39,7 +39,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
                     return <ItemComponent key={item._id} item={item} />
                 })
             }
-            { hasMore && items.length === 5 && <li key="spinner">
+            { hasMore && items.length > 4 && <li key="spinner">
                 <div className="spinner">
                     <div className="bounce1"></div>
                     <div className="bounce2"></div>
@@ -48,7 +48,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
             </li> }
         </ul>
         {
-            items.length === 0 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl text-center capitalize font-mont font-bold'>
+            items.length === 0 && !hasMore && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl text-center capitalize font-mont font-bold'>
                 no {collectionName} found ...
             </div> 
         }
