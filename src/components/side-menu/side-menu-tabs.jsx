@@ -8,6 +8,7 @@ import CartDetails from '../../pages/cart.jsx';
 import ForgotPassword from '../../pages/forgot-password.jsx';
 import UserProfile from '../../pages/user-profile.jsx';
 import Orders from '../../pages/orders.jsx';
+import Settings from '../../pages/settings.jsx';
 
 const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
     const {dispatch} = useContext(layoutContext);
@@ -36,6 +37,8 @@ const SideMenuTabs = ({isAuthed, userInfo, currentPage, setCurrentPage}) => {
                     return <CartDetails layoutDispatch={dispatch} setCurrentPage={setCurrentPage} />
                 case 'orders':
                     return <Orders setCurrentPage={setCurrentPage} />
+                case 'settings':
+                    return <Settings />
                 default:
                     break;
             }
