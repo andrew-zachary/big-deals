@@ -19,6 +19,7 @@ const AddDealCart = ({item}) => {
         setTotalPrice(dealCost - discountPrice);
     }, [item]);
     return <AuthedActionBtn
+        active={false}
         action={dispatch} 
         payload={ {type: addItem.type, payload: {
             item:{...item, price: totalPrice, collection: 'deals'}, 

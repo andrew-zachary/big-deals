@@ -49,6 +49,7 @@ const ProductListItem = ({item}) => {
                 <FaRegCommentDots className='text-white text-5xl' />
             </Link>
             <AuthedActionBtn
+                active={false}
                 action={dispatch} 
                 payload={ { type: addItem.type, payload:{item, collection: 'products'} } }
                 tailWindStyle='p-4 bg-primary shadow-secondary rounded-full'
