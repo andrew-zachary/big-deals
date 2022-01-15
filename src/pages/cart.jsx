@@ -8,7 +8,7 @@ import {apiStartCall} from '../store/actions.js';
 import CartProduct from '../components/cart/cart-product.jsx';
 import CartDeal from '../components/cart/cart-deal.jsx';
 
-const CartTab = ({layoutDispatch}) => {
+const CartTab = ({layoutDispatch, setCurrentPage}) => {
     const dispatch = useDispatch();
     const {items, totalCost} = useSelector(state=>state.cart);
     const saveOrder = (items) => {
@@ -24,20 +24,24 @@ const CartTab = ({layoutDispatch}) => {
                 quantity: item.quantity
             }
         });
-        layoutDispatch({
-            type: layoutActions.TOGGLE_MODAL_SHOW, 
-            payload: {
-                text: {
-                    header: 'send order',
-                    body: 'would you like to submit your current cart ?'
-                },
-                toggle: true,
-                toConfirm: {
-                    action: dispatch,
-                    payload: {type: apiStartCall.type, payload: createNewOrder(null, null, null, {items: [...deals, ...products]} )}
+        if(!layoutDispatch) {
+            setCurrentPage('user');
+        } else {
+            layoutDispatch({
+                type: layoutActions.TOGGLE_MODAL_SHOW, 
+                payload: {
+                    text: {
+                        header: 'send order',
+                        body: 'would you like to submit your current cart ?'
+                    },
+                    toggle: true,
+                    toConfirm: {
+                        action: dispatch,
+                        payload: {type: apiStartCall.type, payload: createNewOrder(null, null, null, {items: [...deals, ...products]} )}
+                    }
                 }
-            }
-        });
+            });
+        }
     }
     return <>
         <div id="cart-deals" className='mt-8'>
