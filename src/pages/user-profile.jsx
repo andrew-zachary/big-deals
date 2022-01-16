@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSignOutAlt } from 'react-icons/fa';
+import { FaSignOutAlt, FaCog } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 
 import { apiStartCall } from '../store/actions.js';

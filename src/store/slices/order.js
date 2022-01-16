@@ -6,11 +6,12 @@ const orderSlice = createSlice({
         order: null,
         ordersHasMore: true,
         ordersLastPage: 1,
-        ordersItems: []
+        ordersItems: [],
+        currentOrders: []
     },
     reducers: {
         orderReceived: (state, action) => {
-            state.order = action.payload.data;
+            state.currentOrders.unshift(action.payload.data);
         },
         ordersReceived: (state, action) => {
             if(action.payload.data.length === 0) {

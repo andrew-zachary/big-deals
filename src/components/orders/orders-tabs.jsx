@@ -1,14 +1,17 @@
 import React from 'react';
 
-import AllOrdersTab from './all-orders-tab.jsx';
+import OlderOrdersTab from './older-orders-tab.jsx';
+import CurrentOrdersTab from './current-orders-tab.jsx';
 
 const OrderTabs = ({currentTab, setCurrentTab}) => {
     const pickupTab = (currentTab) => {
         switch (currentTab) {
-            case 'all':
-                return <AllOrdersTab currentTab={currentTab} setCurrentTab={setCurrentTab} />
+            case 'older':
+                return <OlderOrdersTab currentTab={currentTab} setCurrentTab={setCurrentTab} />
+            case 'current':
+                return <CurrentOrdersTab currentTab={currentTab} setCurrentTab={setCurrentTab} />
             default:
-                return <h1>no orders found</h1>
+                return <h1 className='mt-8 text-4xl capitalize font-ssp font-regular'>review all your bills</h1>
         }
     }
     return <>
