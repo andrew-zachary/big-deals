@@ -36,10 +36,10 @@ const ConfirmModal = () => {
             contentLabel="Confirm Modal"
         >
             <div id="confirm-modal-content" className='flex flex-col justify-between p-6 h-full'>
-                <div className="header text-6xl font-mont font-regular capitalize text-primary">
+                <div className="header text-5xl font-mont font-regular capitalize text-primary">
                     {text.header}
                 </div>
-                <div className="body text-4xl font-mont font-regular capitalize text-center">
+                <div className="body text-3xl font-mont font-regular capitalize text-center">
                     {text.body}
                 </div>
                 <div className="ctrls flex justify-around">
