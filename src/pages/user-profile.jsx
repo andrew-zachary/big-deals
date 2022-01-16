@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSignOutAlt, FaCog } from 'react-icons/fa';
+import { FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 
 import { apiStartCall } from '../store/actions.js';
@@ -20,7 +20,6 @@ const UserProfile = ({userInfo, setCurrentPage}) => {
                         </p>
                     </div>
                     <div className="ctrls mt-20 flex justify-around items-center w-full">
-                        <button className='bd-unit p-4 rounded-full bg-primary shadow-secondary' onClick={()=>setCurrentPage('settings')}><FaCog className='text-4xl text-white' /></button>
                         <button className='bd-unit px-4 py-8 rounded-full border-2 border-primary bg-primary font-mont font-regular text-white text-4xl capitalize shadow-secondary' onClick={()=>setCurrentPage('orders')}>bills</button>
                         <button className='bd-unit p-4 rounded-full bg-primary shadow-secondary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
                     </div>
