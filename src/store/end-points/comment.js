@@ -19,7 +19,8 @@ const getUserComment = (_1, _2, _3, data) => {
         url: `${baseCommentUrl}/owner`,
         data,
         onSuccess: itemReceived.type,
-        onFail: commentErrorReceived.type
+        onFail: commentErrorReceived.type,
+        layoutIdle: true
     }
 };
 
@@ -30,7 +31,8 @@ const newComment = (_1, _2, _3, data) => {
         url: `${baseCommentUrl}/new`,
         data,
         onSuccess: itemReceived.type,
-        onFail: commentErrorReceived.type
+        onFail: commentErrorReceived.type,
+        layoutIdle: true
     }
 };
 
@@ -41,7 +43,8 @@ const updateComment = (params, _2, _3, data) => {
         url: `${baseCommentUrl}/${params.commentId}/owner`,
         data,
         onSuccess: itemReceived.type,
-        onFail: commentErrorReceived.type
+        onFail: commentErrorReceived.type,
+        layoutIdle: true
     }
 };
 

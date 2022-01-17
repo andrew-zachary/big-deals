@@ -15,6 +15,7 @@ const commentSlice = createSlice({
         itemsReceived: (state, action) => {
             if(action.payload.data.length === 0) {
                 state.commentsHasMore = false;
+                state.commentsLastPage += 1;
                 return state;
             }
             state.commentsItems = state.commentsItems.concat(action.payload.data);

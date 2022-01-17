@@ -11,7 +11,7 @@ const getUserInfo = (_1, _2, _3, _) => {
         url: `${baseUserUrl}/profile`,
         onSuccess: userAuthed.type,
         onFail: userNoProfile.type,
-        layoutIdle: true
+        layoutIdle: false
     }
 };
 
