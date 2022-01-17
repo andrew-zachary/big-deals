@@ -9,7 +9,7 @@ const CurrentOrdersTab = () => {
         <ul mode='orders' className='my-8 overflow-y-scroll'>
             {
                 currentOrders.map(order=>{
-                    return <OrderItem item={order} />
+                    return <OrderItem key={order._id} item={order} />
                 })
             }
         </ul>

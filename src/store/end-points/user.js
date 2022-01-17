@@ -1,4 +1,6 @@
-import { userAuthed, userAuthedOut, userErrReceived } from "../slices/user.js";
+import { userAuthed, userAuthedOut } from "../slices/user.js";
+import { errorReceived } from "../slices/app.js";
+import { userNoProfile } from "../actions.js";
 
 const baseUserUrl = '/bd/users';
 
@@ -8,10 +10,10 @@ const getUserInfo = (_1, _2, _3, _) => {
         method: 'GET',
         url: `${baseUserUrl}/profile`,
         onSuccess: userAuthed.type,
-        onFail: userErrReceived.type,
+        onFail: userNoProfile.type,
         layoutIdle: true
     }
-}
+};
 
 //params, lastPage, limit, data
 const login = (_1, _2, _3, data) => {
@@ -20,10 +22,10 @@ const login = (_1, _2, _3, data) => {
         url: `/auth/signin`,
         data,
         onSuccess: userAuthed.type,
-        onFail: userErrReceived.type,
+        onFail: errorReceived.type,
         layoutIdle: true
     }
-}
+};
 
 //params, lastPage, limit, data
 const register = (_1, _2, _3, data) => {
@@ -32,10 +34,10 @@ const register = (_1, _2, _3, data) => {
         url: `/auth/signup`,
         data,
         onSuccess: userAuthed.type,
-        onFail: userErrReceived.type,
+        onFail: errorReceived.type,
         layoutIdle: true
     }
-}
+};
 
 //params, lastPage, limit, data
 const logout = (_1, _2, _3, data) => {
@@ -44,9 +46,9 @@ const logout = (_1, _2, _3, data) => {
         url: `/auth/signout`,
         data,
         onSuccess: userAuthedOut.type,
-        onFail: userErrReceived.type,
+        onFail: errorReceived.type,
         layoutIdle: true
     }
-}
+};
 
 export {getUserInfo, login, register, logout};

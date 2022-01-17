@@ -10,6 +10,7 @@ import commentReducer from './slices/comment.js';
 import cartReducer from './slices/cart.js';
 import userReducer from './slices/user.js';
 import orderReducer from './slices/order.js';
+import appReducer from './slices/app.js';
 
 export const store = configureStore({
   reducer: {
@@ -18,7 +19,8 @@ export const store = configureStore({
     comment: commentReducer,
     cart: cartReducer,
     user: userReducer,
-    order: orderReducer
+    order: orderReducer,
+    app: appReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([API])
 });

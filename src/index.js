@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Auth from "./components/app/auth.jsx";
 import Loading from './components/app/loading.jsx';
 import ConfirmModal from "./components/app/confirm-modal.jsx";
+import AppError from "./components/app/error.jsx";
 
 //pages
 import HomePage from './pages/home.jsx';
@@ -55,6 +56,7 @@ const App = () => {
     });
     return <Provider store={store}>
         <layoutContext.Provider value={{state, dispatch}}>
+            <AppError />
             <ConfirmModal />
             <Loading />
             <Auth />

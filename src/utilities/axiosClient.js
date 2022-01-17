@@ -5,5 +5,4 @@ const axiosClient = axios.create({
     baseURL,
     withCredentials: true
 });
-
-export default axiosClient;
+export {axiosClient};

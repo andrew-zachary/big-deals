@@ -32,14 +32,9 @@ const userSlice = createSlice({
         userAuthedOut: (state, _) => {
             state.isAuthed = false;
             state.userInfo = userInfo;
-        },
-        userErrReceived: (state, action) => {
-            state.isAuthed = false;
-            state.userInfo = userInfo;
-            state.userErr = action.payload.err;
         }
     }
 });
 
 export default userSlice.reducer;
-export const {userAuthed, userAuthedOut, userErrReceived} = userSlice.actions;
+export const {userAuthed, userAuthedOut} = userSlice.actions;

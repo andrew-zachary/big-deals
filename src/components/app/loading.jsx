@@ -1,24 +1,10 @@
-import React, {useState} from 'react';
-
-import axiosClient from '../../utilities/axiosClient.js';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Loading = () => {
-    const [loadingStarted, setLoadingStarted] = useState(false);
-    axiosClient.interceptors.request.use((config)=>{
-        if(config.layoutIdle) {
-            setLoadingStarted(true);
-        }
-        return config;
-    });
-    axiosClient.interceptors.response.use((response)=>{
-        setLoadingStarted(false);
-        return response;
-    }, (err)=>{
-        setLoadingStarted(false);
-        return err;
-    });
+    const {show} = useSelector(state=>state.app.loader);
     return <>
-        { loadingStarted && <div id='loading' className='absolute top-0 left-0 z-9999 h-full w-full bg-white'>
+        { show && <div id='loading' className='absolute top-0 left-0 z-9999 h-full w-full bg-white'>
             <div id='loading-box' className='absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]'>
                 <h1 id='msg' className='capitalize text-4xl text-center font-mont font-regular'>please wait</h1>
                 <div id='loader' className='mt-8'>
