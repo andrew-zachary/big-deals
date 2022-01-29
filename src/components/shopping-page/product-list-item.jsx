@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaRegCommentDots, FaCheck, FaTimes, FaCartPlus } from 'react-icons/fa';
 
 import AuthedActionBtn from '../app/authed-action-btn.jsx';
+import ProductPhotos from './product-photos.jsx';
 
 import { addItem } from '../../store/slices/cart.js';
 
@@ -12,6 +13,12 @@ const ProductListItem = ({item}) => {
     const dispatch = useDispatch();
     return <li className='product-block'>
         <h1 className='inline-block text-4xl capitalize font-mont font-medium'>{item.name}</h1>
+        <ProductPhotos thumbs={[
+            "https://via.placeholder.com/45x45",
+            "https://via.placeholder.com/45x45",
+            "https://via.placeholder.com/45x45",
+            "https://via.placeholder.com/45x45"
+        ]} />
         <ReactStars 
             count={5} 
             size={34} 

@@ -7,9 +7,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        ...defaultTheme.screens,
         md: '768px',
-        xs: '375px',
-        ...defaultTheme.screens
+        sm: '412px',
+        xs: '375px'
       },
       maxWidth: {
         'app-body': '120rem'

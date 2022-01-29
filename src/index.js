@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Auth from "./components/app/auth.jsx";
 import Loading from './components/app/loading.jsx';
 import ConfirmModal from "./components/app/confirm-modal.jsx";
+import SliderModal from "./components/app/slider-modal.jsx";
 import AppError from "./components/app/error.jsx";
 
 //pages
@@ -33,6 +34,10 @@ import { Provider } from "react-redux";
 //app
 const App = () => {
     const [state, dispatch] = useReducer(layoutReducer, {
+        slider_modal: {
+            toggle: false,
+            clickedIndex: null
+        },
         modal: {
             toggle: false,
             text: {
@@ -58,6 +63,7 @@ const App = () => {
         <layoutContext.Provider value={{state, dispatch}}>
             <AppError />
             <ConfirmModal />
+            <SliderModal />
             <Loading />
             <Auth />
             <Router>

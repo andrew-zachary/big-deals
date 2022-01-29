@@ -91,6 +91,34 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
         max-width: 37.5rem;
         height: 20rem;
       }
-    }   
+      &.slider-modal > div {
+        max-width: 76.8rem;
+        max-height: 65.3rem;
+        height: 100%;
+        width: 100%;
+      }
+    } 
+  }
+}
+
+//slider
+.slick-slider {
+  .slick-dots {
+    li {
+      button {
+        &:before {
+          font-size: 25px;
+          color: $primary-color;
+          opacity: 0.5;
+        }
+      }
+      &.slick-active {
+        button {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
