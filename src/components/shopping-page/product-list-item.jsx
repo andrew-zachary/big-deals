@@ -13,12 +13,20 @@ const ProductListItem = ({item}) => {
     const dispatch = useDispatch();
     return <li className='product-block'>
         <h1 className='inline-block text-4xl capitalize font-mont font-medium'>{item.name}</h1>
-        <ProductPhotos thumbs={[
-            "https://via.placeholder.com/45x45",
-            "https://via.placeholder.com/45x45",
-            "https://via.placeholder.com/45x45",
-            "https://via.placeholder.com/45x45"
-        ]} />
+        <ProductPhotos 
+            thumbs={[
+                "https://via.placeholder.com/45x45",
+                "https://via.placeholder.com/45x45",
+                "https://via.placeholder.com/45x45",
+                "https://via.placeholder.com/45x45"
+            ]}
+            imgs={[
+                "https://via.placeholder.com/375x375",
+                "https://via.placeholder.com/375x375",
+                "https://via.placeholder.com/375x375",
+                "https://via.placeholder.com/375x375"
+            ]}
+        />
         <ReactStars 
             count={5} 
             size={34} 

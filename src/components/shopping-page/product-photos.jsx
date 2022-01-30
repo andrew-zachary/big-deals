@@ -2,14 +2,15 @@ import React, {useContext} from 'react'
 
 import {layoutContext, layoutActions} from '../../layout/context.js'
 
-const ProductPhotos = ({thumbs}) => {
+const ProductPhotos = ({thumbs, imgs}) => {
     const {dispatch} = useContext(layoutContext)
     const openSliderModal = (index) => {
         dispatch({
             type: layoutActions.TOGGLE_SLIDER_MODAL_SHOW,
             payload: {
                 toggle: true,
-                clickedIndex: index
+                clickedIndex: index,
+                imgs
             }
         })
     }

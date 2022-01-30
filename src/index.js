@@ -22,7 +22,7 @@ import CommentsPage from './pages/comments.jsx';
 import MainLayout from "./layout/main.jsx";
 
 //contexts
-import { layoutContext, layoutReducer } from "./layout/context.js";
+import { layoutContext, layoutReducer, initialState } from "./layout/context.js";
 
 //styles
 import './index.scss';
@@ -33,32 +33,7 @@ import { Provider } from "react-redux";
 
 //app
 const App = () => {
-    const [state, dispatch] = useReducer(layoutReducer, {
-        slider_modal: {
-            toggle: false,
-            clickedIndex: null
-        },
-        modal: {
-            toggle: false,
-            text: {
-                header: null,
-                body: null
-            },
-            toConfirm: {
-                action: null,
-                payload: null
-            },
-        },
-        menu: {
-            toggle: false
-        },
-        dim: {
-            toggle: false
-        },
-        footer: {
-            toggle: true
-        }
-    });
+    const [state, dispatch] = useReducer(layoutReducer, initialState);
     return <Provider store={store}>
         <layoutContext.Provider value={{state, dispatch}}>
             <AppError />

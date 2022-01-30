@@ -9,7 +9,7 @@ import Slider from 'react-slick'
 Modal.setAppElement('#bd-app')
 
 const SliderModal = () => {
-    const {state: {slider_modal: {toggle, clickedIndex}}, dispatch} = useContext(layoutContext);
+    const {state: {slider_modal: {toggle, clickedIndex, imgs}}, dispatch} = useContext(layoutContext);
     const settings = {
         dots: true,
         infinite: true,
@@ -22,8 +22,9 @@ const SliderModal = () => {
         dispatch({
             type: layoutActions.TOGGLE_SLIDER_MODAL_SHOW, 
             payload: {
-                toggle:false,
-                clickedIndex: null
+                toggle: false,
+                clickedIndex: null,
+                imgs: []
             }
         });
     };
@@ -42,18 +43,13 @@ const SliderModal = () => {
                     </div>
                     <div className='body w-screen max-w-screen-sm self-center justify-self-center'>
                         <Slider {...settings}>
-                            <div>
-                                <img className='mx-auto' src='https://via.placeholder.com/375x375' title='img 1' />
-                            </div>
-                            <div>
-                                <img className='mx-auto' src='https://via.placeholder.com/375x375' title='img 2' />
-                            </div>
-                            <div>
-                                <img className='mx-auto' src='https://via.placeholder.com/375x375' title='img 3' />
-                            </div>
-                            <div>
-                                <img className='mx-auto' src='https://via.placeholder.com/375x375' title='img 4' />
-                            </div>
+                            {
+                                imgs.length > 0 && imgs.map((img, index)=>{
+                                    return <div key={index}>
+                                        <img className='mx-auto' src={img} title={`img ${index}`} />
+                                    </div>
+                                })
+                            }
                         </Slider>
                     </div>
                 </div>

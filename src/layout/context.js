@@ -1,5 +1,32 @@
 import {createContext} from "react";
 
+const initialState = {
+    slider_modal: {
+        toggle: false,
+        clickedIndex: null,
+        imgs: []
+    },
+    modal: {
+        toggle: false,
+        text: {
+            header: null,
+            body: null
+        },
+        toConfirm: {
+            action: null,
+            payload: null
+        },
+    },
+    menu: {
+        toggle: false
+    },
+    dim: {
+        toggle: false
+    },
+    footer: {
+        toggle: true
+    }
+}
 const layoutActions = {
     TOGGLE_MENU_SHOW: 'TOGGLE_MENU_SHOW',
     TOGGLE_FOOTER_SHOW: 'TOGGLE_FOOTER_SHOW',
@@ -14,7 +41,8 @@ const layoutReducer = (state, action) => {
                 ...state,
                 slider_modal: {
                     toggle: action.payload.toggle,
-                    clickedIndex: action.payload.clickedIndex
+                    clickedIndex: action.payload.clickedIndex,
+                    imgs: action.payload.imgs
                 }
             }
         case layoutActions.TOGGLE_MODAL_SHOW:
@@ -54,4 +82,4 @@ const layoutReducer = (state, action) => {
     }
 }
 
-export {layoutContext, layoutReducer, layoutActions};
+export {layoutContext, layoutReducer, layoutActions, initialState};
