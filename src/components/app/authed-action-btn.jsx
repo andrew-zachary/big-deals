@@ -16,7 +16,7 @@ const AuthedActionBtn = ({active = true, action, payload, tailWindStyle, childre
             action(payload);
         } else {
             console.log("test 3");
-            dispatch({ type: layoutActions.TOGGLE_MENU_SHOW, payload: {toggle: true} });
+            dispatch({ type: layoutActions.TOGGLE_MENU_SHOW, payload: {toggle: true, toAuth: true} });
         }
     }
     return <button 

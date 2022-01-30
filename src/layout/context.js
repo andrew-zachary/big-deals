@@ -18,7 +18,8 @@ const initialState = {
         },
     },
     menu: {
-        toggle: false
+        toggle: false,
+        toAuth: false
     },
     dim: {
         toggle: false
@@ -64,7 +65,8 @@ const layoutReducer = (state, action) => {
             return {
                 ...state,
                 menu: {
-                    toggle: action.payload.toggle
+                    toggle: action.payload.toggle,
+                    toAuth: action.payload.toAuth
                 },
                 dim: {
                     toggle: action.payload.toggle

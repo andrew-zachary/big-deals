@@ -13,6 +13,9 @@ const LayoutSideMenu = () => {
     const navRef = useRef();
     useEffect(()=>{
         navRef.current.style.width = state.menu.toggle?`${100}%`:`${0}px`;
+        if(state.menu.toAuth) {
+            setCurrentPage('user')
+        }
     }, [state.menu.toggle]);
     return <nav id="bd-app-nav" className='relative max-w-lg z-9998 bg-white' ref={navRef}>
         <header className='flex items-center justify-between'>
