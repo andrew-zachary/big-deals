@@ -19,9 +19,11 @@ const ImgAvatar = forwardRef(({mode}, ref) => {
         }
     }));
     return <div id="img-avatar" className='relative'>
-        {/* <div id="img-avatar_data" className='p-40 relative max-w-[11.5rem] max-h-[11.5rem] inline-block rounded-full overflow-hidden border shadow-secondary border-primary'>
-            <img src={imgFrame} className='max-w-[11.5rem]' alt="" />
-        </div> */}
+        {
+            mode === 'profile' && <div id="img-avatar_data" className='p-28 relative max-w-[8rem] max-h-[8rem] inline-block rounded-full overflow-hidden border shadow-secondary border-primary'>
+                <img src={imgFrame} className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]' alt="" />
+            </div>
+        }
         {
             mode === 'register' && <>
                 <AvatarEditor
@@ -43,12 +45,12 @@ const ImgAvatar = forwardRef(({mode}, ref) => {
                         <FaCamera className='text-white text-3xl' />
                     </label>
                 </div>
+                <label htmlFor="img-scale" className='flex items-center justify-center pt-10'>
+                    <span className='text-[1.6rem] capitalize font-mont font-regular'>crop: </span>
+                    <input type='range' min='100' max='200' value={scale} className='slider' id='img-scale' name='img-scale' onChange={e=>setScale(e.target.value)} />
+                </label>
             </>
         }
-        <label htmlFor="img-scale" className='flex items-center justify-center pt-10'>
-            <span className='text-[1.6rem] capitalize font-mont font-regular'>crop: </span>
-            <input type='range' min='100' max='200' value={scale} className='slider' id='img-scale' name='img-scale' onChange={e=>setScale(e.target.value)} />
-        </label>
     </div>
 })
 
