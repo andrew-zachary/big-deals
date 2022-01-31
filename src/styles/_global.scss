@@ -104,6 +104,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
 //slider
 .slick-slider {
   .slick-dots {
+    bottom: -4.5rem;
     li {
       button {
         &:before {

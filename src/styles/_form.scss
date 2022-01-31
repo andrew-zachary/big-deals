@@ -1,3 +1,11 @@
+#img-avatar {
+    &_ctrls {
+        label {
+            @include withRtl('left', 60%, unset);
+            @include withRtl('right', unset, 60%);
+        }
+    }
+}
 form {
     input,
     textarea {

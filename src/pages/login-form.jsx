@@ -31,9 +31,6 @@ const LoginForm = ({setCurrentPage}) => {
         },
     });
     return <>
-        <div id="img-frame" className='inline-block rounded-full overflow-hidden border shadow-secondary border-primary'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXvvbFRDiGafT0jv4FFSmirNyaLuQ_obm_P8JMel822HZeVWimCbRf8rh71cc&s" className='max-w-[11.5rem]' alt="" />
-        </div>
         <form onSubmit={loginForm.handleSubmit}>
             <BDFormInput id="email" name="email" type="text" label="email" value={loginForm.values.email} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
             <BDFormInput id="password" name="password" type="password" label="password" value={loginForm.values.password} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />

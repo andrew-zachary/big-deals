@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 
 import BDFormInput from '../components/form/input.jsx';
+import ImgAvatar from '../components/form/img-avatar.jsx';
 
 import { apiStartCall } from '../store/actions.js';
 import { register } from '../store/end-points/user.js';
 import RegisterSchema from '../validations/register-schema.js';
 
 const RegisterForm = ({setCurrentPage}) => {
+    const imgAvatar = useRef()
     const dispatch = useDispatch();
     const registerForm = useFormik({
         validateOnBlur: true,
@@ -30,10 +32,22 @@ const RegisterForm = ({setCurrentPage}) => {
             return errors;
         },
         onSubmit: values => {
-            dispatch({type: apiStartCall.type, payload: register(null, null, null, values)});
+            let registerData = {};
+            const didNotPick = imgAvatar.current.getUserAvatar().current.props.image.includes('https://');
+            if(didNotPick) {
+                registerData = { ...values };
+            } else {
+                registerData = {
+                    ...values,
+                    avatar: imgAvatar.current.getUserAvatar().current.getImage().toDataURL()
+                };
+            }
+
+            dispatch({type: apiStartCall.type, payload: register(null, null, null, registerData)});
         },
     });
     return <>
+        <ImgAvatar mode="register" ref={imgAvatar} />
         <form onSubmit={registerForm.handleSubmit}>
             <BDFormInput id="firstName" name="firstName" type="text" label="first name" value={registerForm.values.firstName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="lastName" name="lastName" type="text" label="last name" value={registerForm.values.lastName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
