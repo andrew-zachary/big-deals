@@ -17,7 +17,7 @@
 <li>Orders submit and view all bills.</li>
 <li>Products & Deals view and paginate.</li>
 <li>Reviews add-update.</li>
-<li>App Toaster, Modals, Spinner, Forms with validation, mobile first layout.</li>
+<li>With Modals, Spinner, Forms with validation, mobile first layout.</li>
 </ul>
 
 ### Would like to have your feedback

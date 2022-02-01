@@ -14,7 +14,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     }, []);
     //at the start load items if no items in the store (first load);
     useEffect(()=>{
-        if(items.length === 0) {
+        if(items.length === 0 && hasMore) {
             dispatch( {type: apiStartCall.type, payload:endPointOptions(params)} );
         }
     }, []);
@@ -34,7 +34,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     }, [items]);
     return <>
         {
-            lastPage === 1 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl text-center capitalize font-mont font-bold'>
+            lastPage === 1 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-mont font-bold'>
                 searching for {collectionName}
             </div> 
         }
@@ -53,7 +53,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
             </li> }
         </ul>
         {
-            items.length === 0 && !hasMore && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl text-center capitalize font-mont font-bold'>
+            items.length === 0 && !hasMore && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-mont font-bold'>
                 no {collectionName} found ...
             </div> 
         }

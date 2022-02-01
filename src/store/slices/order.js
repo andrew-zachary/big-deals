@@ -16,6 +16,7 @@ const orderSlice = createSlice({
         ordersReceived: (state, action) => {
             if(action.payload.data.length === 0) {
                 state.ordersHasMore = false;
+                state.ordersLastPage += 1;
                 return state;
             }
             state.ordersItems = state.ordersItems.concat(action.payload.data);
