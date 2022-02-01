@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 
@@ -6,6 +6,7 @@ import BDFormInput from '../components/form/input.jsx';
 import ImgAvatar from '../components/form/img-avatar.jsx';
 
 import { apiStartCall } from '../store/actions.js';
+import { testAvatarSaved } from '../store/slices/user.js';
 import { register } from '../store/end-points/user.js';
 import RegisterSchema from '../validations/register-schema.js';
 
@@ -37,10 +38,14 @@ const RegisterForm = ({setCurrentPage}) => {
             if(didNotPick) {
                 registerData = { ...values };
             } else {
+                const avatar = imgAvatar.current.getUserAvatar().current.getImage().toDataURL();
                 registerData = {
                     ...values,
-                    avatar: imgAvatar.current.getUserAvatar().current.getImage().toDataURL()
+                    avatar
                 };
+
+                //for testing only save avatar in memory (redux)
+                dispatch({ type: testAvatarSaved.type, payload: {avatar} });
             }
 
             dispatch({type: apiStartCall.type, payload: register(null, null, null, registerData)});

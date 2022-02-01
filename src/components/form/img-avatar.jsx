@@ -2,8 +2,14 @@ import React, {useRef, useState, forwardRef, useImperativeHandle} from 'react'
 import {FaCamera} from 'react-icons/fa'
 import AvatarEditor from 'react-avatar-editor'
 
+import { useSelector } from 'react-redux'
+
 const ImgAvatar = forwardRef(({mode}, ref) => {
     const canvasRef = useRef();
+
+    //show testAvatar after crop
+    const {testAvatar} = useSelector(state=>state.user)
+    
     const [scale, setScale] = useState("100");
     const [imgFrame, setImgFrame] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXvvbFRDiGafT0jv4FFSmirNyaLuQ_obm_P8JMel822HZeVWimCbRf8rh71cc&s')
     const handleImgRead = (event) => {
@@ -21,7 +27,7 @@ const ImgAvatar = forwardRef(({mode}, ref) => {
     return <div id="img-avatar" className='relative'>
         {
             mode === 'profile' && <div id="img-avatar_data" className='p-28 relative max-w-[8rem] max-h-[8rem] inline-block rounded-full overflow-hidden border shadow-secondary border-primary'>
-                <img src={imgFrame} className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]' alt="" />
+                <img src={testAvatar} className='absolute w-full top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]' alt="" />
             </div>
         }
         {
