@@ -22,16 +22,13 @@ export default ({dispatch}) => (next) => async (action) => {
             layoutIdle
         });
 
-        if(result.response && [404, 403, 401].includes(result.response.status)) {
-            dispatch({ type: onFail, payload:{data: result.response.data} });
-        } else {
-            dispatch({ type: onSuccess, payload:{data:result.data} });
-        }
-
+        dispatch({ type: onSuccess, payload:{data:result.data} });
         dispatch({ type: apiEndCall.type });
     } catch(err) {
         if(err.response) {
-            dispatch({ type: onFail, payload:{err: err.response.data} });
+            dispatch({ type: onFail, payload:{data: err.response.data} });
+        } else {
+            dispatch({ type: onFail, payload:{data: 'server connection error, please call admin'} });
         }
 
         dispatch({ type: apiCallFailed.type });

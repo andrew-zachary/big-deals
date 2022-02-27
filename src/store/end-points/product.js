@@ -13,7 +13,6 @@ const getAllProducts = (params={}, lastPage=1, limit=5) => {
 
 //params, lastPage, limit, data
 const searchAllProducts = (params={}, lastPage=1, limit=5) => {
-    console.log(params);
     return {
         method: 'GET',
         url: `${baseDealUrl}/?page=${lastPage}&limit=${limit}&s=${params.s}`,

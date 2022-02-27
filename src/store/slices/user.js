@@ -27,7 +27,6 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         userAuthed: (state, action) => {
-            console.log(action.payload.data);
             state.isAuthed = true;
             state.userInfo = {...action.payload.data};
         },
