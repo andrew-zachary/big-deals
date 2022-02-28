@@ -26,6 +26,9 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
+        userAvatarPicked: (state, action) => {
+            state.userInfo.authId.avatar = action.payload.data;
+        },
         userAuthed: (state, action) => {
             state.isAuthed = true;
             state.userInfo = {...action.payload.data};
@@ -38,4 +41,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const {userAuthed, userAuthedOut} = userSlice.actions;
+export const {userAuthed, userAuthedOut, userAvatarPicked} = userSlice.actions;

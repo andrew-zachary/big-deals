@@ -1,17 +1,18 @@
-import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 
 import BDFormInput from '../components/form/input.jsx';
-import ImgAvatar from '../components/form/img-avatar.jsx';
+import AvatarPlaceholder from '../components/form/avatar-placeholder.jsx';
+import AvatarInput from '../components/form/avatar-input.jsx';
 
 import { apiStartCall } from '../store/actions.js';
 import { register } from '../store/end-points/user.js';
 import RegisterSchema from '../validations/register-schema.js';
 
 const RegisterForm = ({setCurrentPage}) => {
-    const imgAvatar = useRef()
     const dispatch = useDispatch();
+    const {avatar} = useSelector(state=>state.user.userInfo.authId);
     const registerForm = useFormik({
         validateOnBlur: true,
         initialValues: {
@@ -33,23 +34,18 @@ const RegisterForm = ({setCurrentPage}) => {
         },
         onSubmit: values => {
             let registerData = {};
-            const didNotPick = imgAvatar.current.getUserAvatar().current.props.image.includes('https://');
-            if(didNotPick) {
-                registerData = { ...values };
+            if(avatar.includes('base64')) {
+                registerData = { avatar, ...values }; 
             } else {
-                const avatar = imgAvatar.current.getUserAvatar().current.getImage().toDataURL();
-                registerData = {
-                    ...values,
-                    avatar
-                };
+                registerData = { ...values };
             }
-
             dispatch({type: apiStartCall.type, payload: register(null, null, null, registerData)});
         },
     });
     return <>
-        <ImgAvatar mode="register" ref={imgAvatar} />
         <form onSubmit={registerForm.handleSubmit}>
+            <AvatarPlaceholder />
+            <AvatarInput />
             <BDFormInput id="firstName" name="firstName" type="text" label="first name" value={registerForm.values.firstName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="lastName" name="lastName" type="text" label="last name" value={registerForm.values.lastName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="email" name="email" type="text" label="email" value={registerForm.values.email} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
