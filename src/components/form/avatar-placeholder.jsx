@@ -1,10 +1,8 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 
-const AvatarPlaceholder = () => {
-    const {avatar} = useSelector(state=>state.user.userInfo.authId);
-    return <div id="avatar-placeholder" className='border border-primary overflow-hidden rounded-full mx-auto shadow-secondary'>
-        <img src={avatar.length > 0?avatar:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXvvbFRDiGafT0jv4FFSmirNyaLuQ_obm_P8JMel822HZeVWimCbRf8rh71cc&s'} />
+const AvatarPlaceholder = ({avatar, placeholderImg}) => {
+    return <div id="avatar-placeholder" className='border border-primary flex justify-center items-center w-full overflow-hidden mx-auto shadow-secondary'>
+        <img className='h-full' src={avatar.length > 0?avatar:placeholderImg} />
     </div>
 };
 

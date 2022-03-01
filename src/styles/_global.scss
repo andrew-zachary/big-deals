@@ -125,6 +125,9 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
 }
 
 #avatar-placeholder {
-  width: 100%;
   max-width: 14rem;
+  height: 14rem;
+}
+#avatar-ctrls {
+  max-width: 12rem;
 }

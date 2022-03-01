@@ -2,7 +2,7 @@ import React from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 
-import AvatarPlaceholder from '../components/form/avatar-placeholder.jsx';
+import AvatarManager from '../components/form/avatar-manager.jsx';
 
 import { apiStartCall } from '../store/actions.js';
 import { logout } from '../store/end-points/user.js';
@@ -13,7 +13,7 @@ const UserProfile = ({userInfo, setCurrentPage}) => {
         {
             userInfo._id && <> 
                 <div id='user-info-header'>
-                    <AvatarPlaceholder />
+                    <AvatarManager avatar={userInfo.authId.avatar} />
                     <span className='mt-10 block text-5xl font-mont font-regular capitalize'>hi {userInfo.authId.firstName}</span>
                 </div>
                 <div id='user-info-body' className='flex flex-col items-center justify-center'>

@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 
 import BDFormInput from '../components/form/input.jsx';
-import AvatarPlaceholder from '../components/form/avatar-placeholder.jsx';
-import AvatarInput from '../components/form/avatar-input.jsx';
+import AvatarManager from '../components/form/avatar-manager.jsx';
 
 import { apiStartCall } from '../store/actions.js';
 import { register } from '../store/end-points/user.js';
@@ -44,8 +43,7 @@ const RegisterForm = ({setCurrentPage}) => {
     });
     return <>
         <form onSubmit={registerForm.handleSubmit}>
-            <AvatarPlaceholder />
-            <AvatarInput />
+            <AvatarManager avatar={avatar} />
             <BDFormInput id="firstName" name="firstName" type="text" label="first name" value={registerForm.values.firstName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="lastName" name="lastName" type="text" label="last name" value={registerForm.values.lastName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="email" name="email" type="text" label="email" value={registerForm.values.email} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
