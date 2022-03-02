@@ -26,6 +26,7 @@ const productSlice = createSlice({
         searchItemsReceived: (state, action) => {
             if(action.payload.data.length === 0) {
                 state.productsSearch.hasMore = false;
+                state.productsSearch.lastPage += 1;
                 return state;
             }
             state.productsSearch.items = state.productsSearch.items.concat(action.payload.data);

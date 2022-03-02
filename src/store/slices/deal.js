@@ -26,6 +26,7 @@ const dealSlice = createSlice({
         searchItemsReceived: (state, action) => {
             if(action.payload.data.length === 0) {
                 state.dealsSearch.hasMore = false;
+                state.dealsSearch.lastPage += 1;
                 return state;
             }
             state.dealsSearch.items = state.dealsSearch.items.concat(action.payload.data);
