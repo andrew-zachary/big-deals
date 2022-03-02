@@ -14,7 +14,7 @@ const ShoppingPage = () => {
     const [showModeList, setShowModeList] = useState('hide');
     const [pickedMode, setPickedMode] = useState('products');
     const handleClickInOut = useCallback((e)=>{
-        if(e.target.id === 'search-text'){
+        if(e.target.id === 'mode-picker'){
             setShowModeList('show');
         } else {
             setShowModeList('hide');
