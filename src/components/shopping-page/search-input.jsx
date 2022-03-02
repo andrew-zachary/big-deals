@@ -24,7 +24,14 @@ const SearchInput = ({startSearch, setStartSearch, showModeList, pickedMode}) =>
             <div id="mode-picker" className="absolute h-full w-full"></div>
             <FaSortDown className='cursor-pointer text-primary text-4xl mt-[-1rem]' />
         </button>
-        <input ref={searchTxt} id="search-text" type="text" placeholder={`${showModeList === 'show'?'...':'search'+' '+pickedMode}`} className='focus:outline-none text-4xl w-4/5 capitalize border-y-2 border-primary' />
+        <input 
+            ref={searchTxt} 
+            id="search-text" 
+            type="text" 
+            placeholder={`${showModeList === 'show'?'...':'search'+' '+pickedMode}`} 
+            className='focus:outline-none text-4xl w-4/5 capitalize border-y-2 border-primary'
+            onKeyDown={(e)=> e.key === 'Enter'?searchHandler(startSearch):null} 
+        />
         <button
             id="search-btn"
             type="button"
