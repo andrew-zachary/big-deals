@@ -30,8 +30,8 @@ const AvatarManager = ({avatar}) => {
                     initialAspectRatio={16 / 9}
                     guides={true}
                     ref={cropperRef}
-                    minCropBoxWidth={250}
-                    minCropBoxHeight={250}
+                    minCropBoxWidth={200}
+                    minCropBoxHeight={200}
                     dragMode='none'
                 />
                 <div id="avatar-ctrls" className='flex justify-between mx-auto'>

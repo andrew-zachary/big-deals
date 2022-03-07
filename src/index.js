@@ -17,6 +17,7 @@ import HomePage from './pages/home.jsx';
 import AdminPage from './pages/admin.jsx';
 import ShoppingPage from './pages/shopping.jsx';
 import CommentsPage from './pages/comments.jsx';
+import MailVerify from './pages/mail-verify.jsx';
 
 //layout
 import MainLayout from "./layout/main.jsx";
@@ -48,6 +49,7 @@ const App = () => {
                         <Route path="/shopping" element={<ShoppingPage />} />
                         <Route path="/admin" element={<AdminPage />} />
                         <Route path="/comments/:id" element={<CommentsPage />} />
+                        <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
                     </Route>
                 </Routes>
             </Router>

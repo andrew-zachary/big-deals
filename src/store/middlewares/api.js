@@ -18,8 +18,7 @@ export default ({dispatch}) => (next) => async (action) => {
         const result = await axiosClient.request({
             method,
             url,
-            data,
-            layoutIdle
+            data
         });
 
         dispatch({ type: onSuccess, payload:{data:result.data} });

@@ -36,9 +36,12 @@ const userSlice = createSlice({
         userAuthedOut: (state, _) => {
             state.isAuthed = false;
             state.userInfo = userInfo;
+        },
+        userMailVerified: (state, _) => {
+            state.userInfo.authId.email.verified = true;
         }
     }
 });
 
 export default userSlice.reducer;
-export const {userAuthed, userAuthedOut, userAvatarPicked} = userSlice.actions;
+export const {userAuthed, userAuthedOut, userAvatarPicked, userMailVerified} = userSlice.actions;

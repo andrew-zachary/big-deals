@@ -1,4 +1,4 @@
-import { userAuthed, userAuthedOut } from "../slices/user.js";
+import { userAuthed, userAuthedOut, userMailVerified } from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
 import { userNoProfile } from "../actions.js";
 
@@ -51,4 +51,16 @@ const logout = (_1, _2, _3, data) => {
     }
 };
 
-export {getUserInfo, login, register, logout};
+//params, lastPage, limit, data
+const verifyUserMail = ({mail, token}, _2, _3, _4) => {
+    return {
+        method: 'GET',
+        url: `/auth/verify-email/${mail}/${token}`,
+        data: null,
+        onSuccess: userMailVerified.type,
+        onFail: errorReceived.type,
+        layoutIdle: true
+    }
+}
+
+export {getUserInfo, login, register, logout, verifyUserMail};

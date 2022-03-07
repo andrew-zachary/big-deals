@@ -2,8 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 let plugins = [
+    new CopyPlugin({
+        patterns:[
+            {from: path.join(__dirname, '_redirects')}
+        ]
+    }),
     new HtmlWebpackPlugin({
         inject: 'body',
         template: "./index.html",
