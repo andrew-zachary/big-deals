@@ -1,6 +1,6 @@
 import { userAuthed, userAuthedOut, userMailVerified } from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
-import { userNoProfile, passwordResetMailSent } from "../actions.js";
+import { userNoProfile, passwordResetMailSent, passwordResetDone } from "../actions.js";
 
 const baseUserUrl = '/bd/users';
 
@@ -61,7 +61,7 @@ const verifyUserMail = ({mail, token}, _2, _3, _4) => {
         onFail: errorReceived.type,
         layoutIdle: true
     }
-}
+};
 
 //params, lastPage, limit, data
 const requestPasswordRestMail = (_1, _2, _3, data) => {
@@ -73,6 +73,18 @@ const requestPasswordRestMail = (_1, _2, _3, data) => {
         onFail: errorReceived.type,
         layoutIdle: true
     }
-}
+};
 
-export {getUserInfo, login, register, logout, verifyUserMail, requestPasswordRestMail};
+//params, lastPage, limit, data
+const resettingUserPassword = ({email, date, token}, _2, _3, data) => {
+    return {
+        method: 'POST',
+        url: `/auth/reset-password/${email}/${date}/${token}`,
+        data,
+        onSuccess: passwordResetDone.type,
+        onFail: errorReceived.type,
+        layoutIdle: true
+    }
+};
+
+export {getUserInfo, login, register, logout, verifyUserMail, requestPasswordRestMail, resettingUserPassword};

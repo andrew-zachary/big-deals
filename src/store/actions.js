@@ -6,5 +6,13 @@ const apiCallFailed = createAction('api/callFailed');
 
 const userNoProfile = createAction('user/noProfile');
 const passwordResetMailSent = createAction('user/passwordResetMailSent');
+const passwordResetDone = createAction('user/passwordResetDone');
 
-export {apiStartCall, apiEndCall, apiCallFailed, userNoProfile, passwordResetMailSent};
+export {
+    apiStartCall, 
+    apiEndCall, 
+    apiCallFailed, 
+    userNoProfile, 
+    passwordResetMailSent, 
+    passwordResetDone
+};

@@ -18,6 +18,7 @@ import AdminPage from './pages/admin.jsx';
 import ShoppingPage from './pages/shopping.jsx';
 import CommentsPage from './pages/comments.jsx';
 import MailVerify from './pages/mail-verify.jsx';
+import ResetPassword from './pages/reset-password.jsx';
 
 //layout
 import MainLayout from "./layout/main.jsx";
@@ -50,6 +51,7 @@ const App = () => {
                         <Route path="/admin" element={<AdminPage />} />
                         <Route path="/comments/:id" element={<CommentsPage />} />
                         <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
+                        <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
                     </Route>
                 </Routes>
             </Router>

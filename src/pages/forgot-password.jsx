@@ -7,6 +7,7 @@ import { apiStartCall } from '../store/actions.js';
 import { requestPasswordRestMail } from '../store/end-points/user.js';
 
 const ForgotPassword = () => {
+    const [btnTxt, setBtnTxt] = useState("send reset password email");
     const [email, setEmail] = useState("");
     const [emailErr, setEmailErr] = useState(null);
     const dispatch = useDispatch();
@@ -20,13 +21,14 @@ const ForgotPassword = () => {
             return setEmailErr('please enter valid email');
         }
         dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, null, {email: input})});
+        setBtnTxt("email was sent");
     };
     return <div id="forgot-password" className='mt-[-9rem]'>
         <form action='#'>
             <BDFormInput id="email" name="email" type="email" label="email" htmlInput={true} htmlInputErr={emailErr} value={email} onChange={(e)=>setEmail(e.target.value)} onBlur={null} errors={null} touched={null} />
         </form>
         <div id="reset-ctrls" className='flex justify-between'>
-            <button className='font-ssp font-regular text-3xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>send reset password email</button>
+            <button className='font-ssp font-regular text-3xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{btnTxt}</button>
         </div>
     </div>
 };
