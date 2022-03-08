@@ -1,9 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 import BDFormInput from '../components/form/input.jsx';
+
+import { apiStartCall } from '../store/actions.js';
+import { requestPasswordRestMail } from '../store/end-points/user.js';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [emailErr, setEmailErr] = useState(null);
+    const dispatch = useDispatch();
     const sendHandler = (input) => {
         setEmailErr(null);
         if(input.length === 0) {
@@ -13,8 +19,9 @@ const ForgotPassword = () => {
         .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
             return setEmailErr('please enter valid email');
         }
+        dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, null, {email: input})});
     };
-    return <div className='mt-[-9rem]'>
+    return <div id="forgot-password" className='mt-[-9rem]'>
         <form action='#'>
             <BDFormInput id="email" name="email" type="email" label="email" htmlInput={true} htmlInputErr={emailErr} value={email} onChange={(e)=>setEmail(e.target.value)} onBlur={null} errors={null} touched={null} />
         </form>

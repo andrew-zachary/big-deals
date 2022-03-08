@@ -5,5 +5,6 @@ const apiEndCall = createAction('api/endCall');
 const apiCallFailed = createAction('api/callFailed');
 
 const userNoProfile = createAction('user/noProfile');
+const passwordResetMailSent = createAction('user/passwordResetMailSent');
 
-export {apiStartCall, apiEndCall, apiCallFailed, userNoProfile};
+export {apiStartCall, apiEndCall, apiCallFailed, userNoProfile, passwordResetMailSent};
