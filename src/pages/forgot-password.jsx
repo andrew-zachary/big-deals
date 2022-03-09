@@ -27,9 +27,16 @@ const ForgotPassword = () => {
         <form action='#'>
             <BDFormInput id="email" name="email" type="email" label="email" htmlInput={true} htmlInputErr={emailErr} value={email} onChange={(e)=>setEmail(e.target.value)} onBlur={null} errors={null} touched={null} />
         </form>
-        <div id="reset-ctrls" className='flex justify-between'>
-            <button className='font-ssp font-regular text-3xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{btnTxt}</button>
-        </div>
+        {
+            btnTxt !== "send reset password email" && <p className="text-4xl font-mont font-regular px-4 capitalize">
+                reset email was sent
+            </p>
+        }
+        {
+            btnTxt === "send reset password email" && <div id="reset-ctrls" className='flex justify-between'>
+                <button className='font-ssp font-regular text-3xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{btnTxt}</button>
+            </div>
+        }
     </div>
 };
 
