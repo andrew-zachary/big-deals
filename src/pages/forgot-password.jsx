@@ -20,7 +20,7 @@ const ForgotPassword = () => {
         .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
             return setEmailErr('please enter valid email');
         }
-        dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, null, {email: input})});
+        dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, {email: input})});
         setBtnTxt("email was sent");
     };
     return <div id="forgot-password" className='mt-[-9rem]'>

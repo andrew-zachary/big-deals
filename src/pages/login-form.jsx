@@ -27,7 +27,7 @@ const LoginForm = ({setCurrentPage}) => {
             return errors;
         },
         onSubmit: values => {
-            dispatch({type: apiStartCall.type, payload: login(null, null, null, values)});
+            dispatch({type: apiStartCall.type, payload: login(null, null, values)});
         },
     });
     return <>

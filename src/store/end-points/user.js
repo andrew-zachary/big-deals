@@ -4,8 +4,8 @@ import { userNoProfile, passwordResetMailSent, passwordResetDone } from "../acti
 
 const baseUserUrl = '/bd/users';
 
-//params, lastPage, limit, data
-const getUserInfo = (_1, _2, _3, _) => {
+//params, query, data
+const getUserInfo = (_1, _2, _3) => {
     return {
         method: 'GET',
         url: `${baseUserUrl}/profile`,
@@ -15,8 +15,8 @@ const getUserInfo = (_1, _2, _3, _) => {
     }
 };
 
-//params, lastPage, limit, data
-const login = (_1, _2, _3, data) => {
+//params, query, data
+const login = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `/auth/signin`,
@@ -27,8 +27,8 @@ const login = (_1, _2, _3, data) => {
     }
 };
 
-//params, lastPage, limit, data
-const register = (_1, _2, _3, data) => {
+//params, query, data
+const register = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `/auth/signup`,
@@ -39,8 +39,8 @@ const register = (_1, _2, _3, data) => {
     }
 };
 
-//params, lastPage, limit, data
-const logout = (_1, _2, _3, data) => {
+//params, query, data
+const logout = (_1, _2, data) => {
     return {
         method: 'GET',
         url: `/auth/signout`,
@@ -51,8 +51,8 @@ const logout = (_1, _2, _3, data) => {
     }
 };
 
-//params, lastPage, limit, data
-const verifyUserMail = ({mail, token}, _2, _3, _4) => {
+//params, query, data
+const verifyUserMail = ({mail, token}, _2, _3) => {
     return {
         method: 'GET',
         url: `/auth/verify-email/${mail}/${token}`,
@@ -63,8 +63,8 @@ const verifyUserMail = ({mail, token}, _2, _3, _4) => {
     }
 };
 
-//params, lastPage, limit, data
-const requestPasswordRestMail = (_1, _2, _3, data) => {
+//params, query, data
+const requestPasswordRestMail = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `/auth/forgot-password`,
@@ -75,8 +75,8 @@ const requestPasswordRestMail = (_1, _2, _3, data) => {
     }
 };
 
-//params, lastPage, limit, data
-const resettingUserPassword = ({email, date, token}, _2, _3, data) => {
+//params, query, data
+const resettingUserPassword = ({email, date, token}, _2, data) => {
     return {
         method: 'POST',
         url: `/auth/reset-password/${email}/${date}/${token}`,

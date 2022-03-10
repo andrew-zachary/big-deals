@@ -2,20 +2,20 @@ import { itemsReceived, searchItemsReceived } from "../slices/product.js";
 
 const baseDealUrl = '/bd/products';
 
-//params, lastPage, limit, data
-const getAllProducts = (params={}, lastPage=1, limit=5) => {
+//params, query, data
+const getAllProducts = (params={}, query) => {
     return {
         method: 'GET',
-        url: `${baseDealUrl}/?page=${lastPage}&limit=${limit}`,
+        url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}`,
         onSuccess: itemsReceived.type
     }
 }
 
-//params, lastPage, limit, data
-const searchAllProducts = (params={}, lastPage=1, limit=5) => {
+//params, query, data
+const searchAllProducts = (params={}, query) => {
     return {
         method: 'GET',
-        url: `${baseDealUrl}/?page=${lastPage}&limit=${limit}&s=${params.s}`,
+        url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}&s=${params.s}`,
         onSuccess: searchItemsReceived.type
     }
 }

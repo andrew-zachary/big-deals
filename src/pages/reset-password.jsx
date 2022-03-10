@@ -27,7 +27,7 @@ const ResetPassword = () => {
         if(password !== confirmPassword) {
             return setConfirmPasswordError("confirm password doesn't match");
         }
-        dispatch({type: apiStartCall.type, payload: resettingUserPassword({email: params.mail, date: params.date, token: params.token}, null, null, {newPassword: password})});
+        dispatch({type: apiStartCall.type, payload: resettingUserPassword({email: params.mail, date: params.date, token: params.token}, null, {newPassword: password})});
         setBtnTxt("continue");
     };
     return <div id="reset-password-page" className="h-full flex flex-col items-center justify-center">

@@ -38,7 +38,7 @@ const RegisterForm = ({setCurrentPage}) => {
             } else {
                 registerData = { ...values };
             }
-            dispatch({type: apiStartCall.type, payload: register(null, null, null, registerData)});
+            dispatch({type: apiStartCall.type, payload: register(null, null, registerData)});
         },
     });
     return <>

@@ -11,7 +11,7 @@ const MailVerify = () => {
     const params = useParams();
     const {verified} = useSelector(state=>state.user.userInfo.authId.email);
     useEffect(()=>{
-        dispatch({type: apiStartCall.type, payload: verifyUserMail(params, null, null, null)})
+        dispatch({type: apiStartCall.type, payload: verifyUserMail(params, null, null)})
     }, []);
     return <div id="verify-mail-page" className="h-full flex flex-col items-center justify-center">
         <h1 className='text-6xl capitalize font-mont font-regular'>{verified?'mail verified':'not verified'}</h1>
