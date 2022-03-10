@@ -2,20 +2,20 @@ import { itemsReceived, searchItemsReceived } from "../slices/deal.js";
 
 const baseDealUrl = '/bd/deals';
 
-//params, lastPage, limit, data
-const getAllDeals = (params={}, lastPage=1, limit=5) => {
+//params, query, data
+const getAllDeals = (_1, query, _3) => {
     return {
         method: 'GET',
-        url: `${baseDealUrl}/?page=${lastPage}&limit=${limit}`,
+        url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}`,
         onSuccess: itemsReceived.type
     }
 }
 
-//params, lastPage, limit, data
-const searchAllDeals = (params={}, lastPage=1, limit=5) => {
+//params, query, data
+const searchAllDeals = (params={}, query, _3) => {
     return {
         method: 'GET',
-        url: `${baseDealUrl}/?page=${lastPage}&limit=${limit}&s=${params.s}`,
+        url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}&s=${params.s}`,
         onSuccess: searchItemsReceived.type
     }
 }
