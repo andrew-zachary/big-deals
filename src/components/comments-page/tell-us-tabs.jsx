@@ -11,7 +11,7 @@ const TellUsTabs = ({productId, setCurrentTab}) => {
     const commentTxt = useRef('');
     const {currentComment} = useSelector(state=>state.comment);
     useEffect(()=>{
-        dispatch({ type: apiStartCall.type, payload: getUserComment(null, null, null, {productId})});
+        dispatch({ type: apiStartCall.type, payload: getUserComment(null, null, {productId})});
     }, []);
     //init inputs incase update (currentComment not null)
     useEffect(()=> {
@@ -38,12 +38,12 @@ const TellUsTabs = ({productId, setCurrentTab}) => {
             });
         } else {
             if(currentComment) {
-                dispatch({type: apiStartCall.type, payload: updateComment({commentId: currentComment._id}, null, null, {
+                dispatch({type: apiStartCall.type, payload: updateComment({commentId: currentComment._id}, null, {
                     body: commentTxt.current.value,
                     rate: commentStars
                 })});
             } else {
-                dispatch({type: apiStartCall.type, payload: newComment(null, null, null, {
+                dispatch({type: apiStartCall.type, payload: newComment(null, null, {
                     productId,
                     body: commentTxt.current.value,
                     rate: commentStars

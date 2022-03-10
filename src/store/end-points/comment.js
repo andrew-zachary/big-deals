@@ -2,18 +2,18 @@ import { itemsReceived, itemReceived, commentErrorReceived } from "../slices/com
 
 const baseCommentUrl = '/bd/comments';
 
-//params, lastPage, limit, data
-const getProductComments = (params, lastPage=1, limit=5, _4) => {
+//params, query, data
+const getProductComments = (params, query, _3) => {
     return {
         method: 'GET',
-        url: `${baseCommentUrl}/products/${params.productId}?page=${lastPage}&limit=${limit}`,
+        url: `${baseCommentUrl}/products/${params.productId}?page=${query.lastPage}&limit=${query.limit}`,
         onSuccess: itemsReceived.type,
         onFail: commentErrorReceived.type
     }
 };
 
-//params, lastPage, limit, data
-const getUserComment = (_1, _2, _3, data) => {
+//params, query, data
+const getUserComment = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `${baseCommentUrl}/owner`,
@@ -24,8 +24,8 @@ const getUserComment = (_1, _2, _3, data) => {
     }
 };
 
-//params, lastPage, limit, data
-const newComment = (_1, _2, _3, data) => {
+//params, query, data
+const newComment = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `${baseCommentUrl}/new`,
@@ -36,8 +36,8 @@ const newComment = (_1, _2, _3, data) => {
     }
 };
 
-//params, lastPage, limit, data
-const updateComment = (params, _2, _3, data) => {
+//params, query, data
+const updateComment = (params, _2, data) => {
     return {
         method: 'PUT',
         url: `${baseCommentUrl}/${params.commentId}/owner`,

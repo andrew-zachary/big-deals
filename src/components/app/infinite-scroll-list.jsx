@@ -15,7 +15,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     //at the start load items if no items in the store (first load);
     useEffect(()=>{
         if(items.length === 0 && hasMore) {
-            dispatch( {type: apiStartCall.type, payload:endPointOptions(params)} );
+            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5})} );
         }
     }, []);
     // Do Paginate 
@@ -25,7 +25,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
         if(doPaginate && hasMore) {
             scrollingList.current.removeEventListener('scroll', scrollingHandler);
             setDoPagiante(false);
-            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, lastPage)} );
+            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5})} );
         }
     }, [doPaginate]);
     //add scrolling event listener only if items changed
