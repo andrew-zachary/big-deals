@@ -2,8 +2,8 @@ import {orderReceived, ordersReceived} from '../slices/order.js';
 
 const baseOrderUrl = '/bd/orders';
 
-//params, lastPage, limit, data
-const createNewOrder = (_1, _2, _3, data) => {
+//params, query, data
+const createNewOrder = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `${baseOrderUrl}/new`,
@@ -13,11 +13,11 @@ const createNewOrder = (_1, _2, _3, data) => {
     }
 }
 
-//params, lastPage, limit, data
-const allOrders = (_1, lastPage=1, limit=5, data) => {
+//params, query, data
+const allOrders = (_1, query, data) => {
     return {
         method: 'GET',
-        url: `${baseOrderUrl}/?page=${lastPage}&limit=${limit}`,
+        url: `${baseOrderUrl}/?page=${query.lastPage}&limit=${query.limit}`,
         data,
         onSuccess: ordersReceived.type,
         layoutIdle: false

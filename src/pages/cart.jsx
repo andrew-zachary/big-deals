@@ -37,7 +37,7 @@ const CartTab = ({layoutDispatch, setCurrentPage}) => {
                     toggle: true,
                     toConfirm: {
                         action: dispatch,
-                        payload: {type: apiStartCall.type, payload: createNewOrder(null, null, null, {items: [...deals, ...products]} )}
+                        payload: {type: apiStartCall.type, payload: createNewOrder(null, null, {items: [...deals, ...products]} )}
                     }
                 }
             });
