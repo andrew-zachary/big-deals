@@ -1,5 +1,4 @@
 import "regenerator-runtime/runtime";
-import "core-js/stable";
 
 import React, {useReducer, StrictMode} from "react";
 import ReactDOM from "react-dom";

@@ -1,6 +1,6 @@
 import { userAuthed, userAuthedOut, userMailVerified } from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
-import { userNoProfile, passwordResetMailSent, passwordResetDone } from "../actions.js";
+import { userAvatarChanged, userNoProfile, passwordResetMailSent, passwordResetDone } from "../actions.js";
 
 const baseUserUrl = '/bd/users';
 
@@ -87,4 +87,25 @@ const resettingUserPassword = ({email, date, token}, _2, data) => {
     }
 };
 
-export {getUserInfo, login, register, logout, verifyUserMail, requestPasswordRestMail, resettingUserPassword};
+//params, query, data
+const changeUserAvatar = (_1, _2, data) => {
+    return {
+        method: 'put',
+        url: `${baseUserUrl}/profile/avatar`,
+        data,
+        onSuccess: userAvatarChanged.type,
+        onFail: errorReceived.type,
+        layoutIdle: true
+    }
+};
+
+export {
+    getUserInfo, 
+    login, 
+    register, 
+    logout, 
+    verifyUserMail, 
+    requestPasswordRestMail, 
+    resettingUserPassword,
+    changeUserAvatar
+};
