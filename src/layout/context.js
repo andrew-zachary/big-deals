@@ -1,11 +1,6 @@
 import {createContext} from "react";
 
 const initialState = {
-    slider_modal: {
-        toggle: false,
-        clickedIndex: null,
-        imgs: []
-    },
     modal: {
         toggle: false,
         text: {
@@ -19,21 +14,11 @@ const initialState = {
     }
 }
 const layoutActions = {
-    TOGGLE_MODAL_SHOW: 'TOGGLE_MODAL_SHOW',
-    TOGGLE_SLIDER_MODAL_SHOW: 'TOGGLE_SLIDER_MODAL_SHOW'
+    TOGGLE_MODAL_SHOW: 'TOGGLE_MODAL_SHOW'
 }
 const layoutContext = createContext();
 const layoutReducer = (state, action) => {
     switch (action.type) {
-        case layoutActions.TOGGLE_SLIDER_MODAL_SHOW:
-            return {
-                ...state,
-                slider_modal: {
-                    toggle: action.payload.toggle,
-                    clickedIndex: action.payload.clickedIndex,
-                    imgs: action.payload.imgs
-                }
-            }
         case layoutActions.TOGGLE_MODAL_SHOW:
             return {
                 ...state,

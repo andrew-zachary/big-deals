@@ -1,30 +1,31 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Modal from 'react-modal';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { layoutContext, layoutActions } from '../../layout/context.js';
+import { confirmModalToggled } from '../../store/slices/app.js';
 
 Modal.setAppElement('#bd-app');
 
 const ConfirmModal = () => {
-    const {state: {modal: {toConfirm, toggle, text}}, dispatch} = useContext(layoutContext);
+    const dispatch = useDispatch();
+    const {toggle, text, toConfirm} = useSelector(state=>state.app.confirmModal);
     const closeModal = () => {
         dispatch({
-            type: layoutActions.TOGGLE_MODAL_SHOW, 
+            type: confirmModalToggled.type, 
             payload: {
-                toggle:false,
+                toggle: false,
                 text: {
                     header: null,
                     body: null
                 },
                 toConfirm: {
-                    action: null,
                     payload: null
                 }
             }
         });
     };
     const confirmAction = () => {
-        toConfirm.action(toConfirm.payload);
+        dispatch(toConfirm.payload);
         closeModal();
     };
     return <div>

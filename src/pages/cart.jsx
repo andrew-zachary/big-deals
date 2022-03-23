@@ -2,13 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { layoutActions } from '../layout/context.js';
-import {createNewOrder} from '../store/end-points/order.js';
-import {apiStartCall} from '../store/actions.js';
+import { createNewOrder } from '../store/end-points/order.js';
+import { apiStartCall } from '../store/actions.js';
+import { confirmModalToggled } from '../store/slices/app.js';
 
 import CartProduct from '../components/cart/cart-product.jsx';
 import CartDeal from '../components/cart/cart-deal.jsx';
 
-const CartTab = ({layoutDispatch, setCurrentPage}) => {
+const CartTab = ({isAuthed, setCurrentPage}) => {
     const dispatch = useDispatch();
     const {items, totalCost} = useSelector(state=>state.cart);
     const saveOrder = (items) => {
@@ -24,11 +25,11 @@ const CartTab = ({layoutDispatch, setCurrentPage}) => {
                 quantity: item.quantity
             }
         });
-        if(!layoutDispatch) {
+        if(!isAuthed) {
             setCurrentPage('user');
         } else {
-            layoutDispatch({
-                type: layoutActions.TOGGLE_MODAL_SHOW, 
+            dispatch({
+                type: confirmModalToggled.type,
                 payload: {
                     text: {
                         header: 'send order',
@@ -36,7 +37,6 @@ const CartTab = ({layoutDispatch, setCurrentPage}) => {
                     },
                     toggle: true,
                     toConfirm: {
-                        action: dispatch,
                         payload: {type: apiStartCall.type, payload: createNewOrder(null, null, {items: [...deals, ...products]} )}
                     }
                 }
