@@ -31,27 +31,24 @@ import { Provider } from "react-redux";
 
 //app
 const App = () => {
-    const [state, dispatch] = useReducer(layoutReducer, initialState);
     return <Provider store={store}>
-        <layoutContext.Provider value={{state, dispatch}}>
-            <AppError />
-            <ConfirmModal />
-            <SliderModal />
-            <Loading />
-            <Auth />
-            <Router>
-                <Routes>
-                    <Route path="/" element={<MainLayout />}>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/shopping" element={<ShoppingPage />} />
-                        <Route path="/admin" element={<AdminPage />} />
-                        <Route path="/comments/:id" element={<CommentsPage />} />
-                        <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
-                        <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
-                    </Route>
-                </Routes>
-            </Router>
-        </layoutContext.Provider>
+        <AppError />
+        <ConfirmModal />
+        <SliderModal />
+        <Loading />
+        <Auth />
+        <Router>
+            <Routes>
+                <Route path="/" element={<MainLayout />}>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/shopping" element={<ShoppingPage />} />
+                    <Route path="/admin" element={<AdminPage />} />
+                    <Route path="/comments/:id" element={<CommentsPage />} />
+                    <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
+                    <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
+                </Route>
+            </Routes>
+        </Router>
     </Provider>
 }
 
