@@ -1,21 +1,21 @@
-import React, {useEffect, useContext, useRef} from 'react';
-import { layoutContext } from './context.js';
+import React, {useEffect, useRef} from 'react';
+import { useSelector } from 'react-redux';
 
 const LayoutDim = () => {
-    const {state} = useContext(layoutContext);
+    const {toggle} = useSelector(state=>state.app.sideMenu);
     const dimRef = useRef();
     useEffect(()=>{
         dimRef.current.style.visibility = 'hidden';
     }, []);
     useEffect(()=>{
-        if(state.dim.toggle){
+        if(toggle){
             dimRef.current.classList.remove('hide');
             dimRef.current.classList.add('show');
         } else {
             dimRef.current.classList.remove('show');
             dimRef.current.classList.add('hide');
         }
-    }, [state.dim.toggle]);
+    }, [toggle]);
     return <div
             ref={dimRef} 
             id="layout-dim"
@@ -32,5 +32,7 @@ const LayoutDim = () => {
             }}
         ></div>
 };
+
+LayoutDim.displayName = "layout default dim";
 
 export default LayoutDim;

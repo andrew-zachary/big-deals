@@ -19,7 +19,6 @@ const userInfo = {
 const initialState = {
     isAuthed: false,
     userInfo,
-    userErr: null
 };
 
 const userSlice = createSlice({

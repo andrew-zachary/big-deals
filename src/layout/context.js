@@ -17,19 +17,11 @@ const initialState = {
             payload: null
         },
     },
-    menu: {
-        toggle: false,
-        toAuth: false
-    },
-    dim: {
-        toggle: false
-    },
     footer: {
         toggle: true
     }
 }
 const layoutActions = {
-    TOGGLE_MENU_SHOW: 'TOGGLE_MENU_SHOW',
     TOGGLE_FOOTER_SHOW: 'TOGGLE_FOOTER_SHOW',
     TOGGLE_MODAL_SHOW: 'TOGGLE_MODAL_SHOW',
     TOGGLE_SLIDER_MODAL_SHOW: 'TOGGLE_SLIDER_MODAL_SHOW'
@@ -61,17 +53,6 @@ const layoutReducer = (state, action) => {
                     }
                 },
             }
-        case layoutActions.TOGGLE_MENU_SHOW:
-            return {
-                ...state,
-                menu: {
-                    toggle: action.payload.toggle,
-                    toAuth: action.payload.toAuth
-                },
-                dim: {
-                    toggle: action.payload.toggle
-                }
-            };
         case layoutActions.TOGGLE_FOOTER_SHOW:
             return {
                 ...state,

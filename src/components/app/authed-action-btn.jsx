@@ -1,10 +1,11 @@
-import React, {useContext} from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { layoutContext, layoutActions } from '../../layout/context.js';
+import { sideMenuToggled } from '../../store/slices/app.js';
 
 const AuthedActionBtn = ({active = true, action, payload, tailWindStyle, children}) => {
-    const {dispatch} = useContext(layoutContext);
+    const dispatch = useDispatch();
+
     const {isAuthed} = useSelector(state=>state.user);
     const authingAction = () => {
         if(!active) {
@@ -13,7 +14,7 @@ const AuthedActionBtn = ({active = true, action, payload, tailWindStyle, childre
         else if(isAuthed) {
             action(payload);
         } else {
-            dispatch({ type: layoutActions.TOGGLE_MENU_SHOW, payload: {toggle: true, toAuth: true} });
+            dispatch({ type: sideMenuToggled.type, payload: {toggle: true, toAuth: true} });
         }
     }
     return <button 

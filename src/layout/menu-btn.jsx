@@ -1,15 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FaBars } from 'react-icons/fa';
-import { layoutContext, layoutActions } from './context.js';
+import { useDispatch } from 'react-redux';
+
+import { sideMenuToggled } from '../store/slices/app.js';
 
 const BurgerBtn = () => {
-    const {state, dispatch} = useContext(layoutContext);
+    const dispatch = useDispatch();
     return <button
         className="p-6 rounded-full bg-primary shadow-secondary inline-block"
-        onClick={()=>dispatch({type: layoutActions.TOGGLE_MENU_SHOW, payload: {toggle: !state.menu.toggle, toAuth: false}})}
+        onClick={()=>dispatch({type: sideMenuToggled.type, payload: {toggle: true, toAuth: false}})}
     >
         <FaBars className='text-white text-6xl' />
     </button>
 }
+
+BurgerBtn.displayName = "sideMenu burger button";
 
 export default BurgerBtn;
