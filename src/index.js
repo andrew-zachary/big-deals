@@ -22,9 +22,6 @@ import ResetPassword from './pages/reset-password.jsx';
 //layout
 import MainLayout from "./layout/main.jsx";
 
-//contexts
-import { layoutContext, layoutReducer, initialState } from "./layout/context.js";
-
 //styles
 import './index.scss';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { layoutActions } from '../layout/context.js';
 import { createNewOrder } from '../store/end-points/order.js';
 import { apiStartCall } from '../store/actions.js';
 import { confirmModalToggled } from '../store/slices/app.js';
