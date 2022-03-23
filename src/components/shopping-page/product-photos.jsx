@@ -1,12 +1,13 @@
-import React, {useContext} from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import {layoutContext, layoutActions} from '../../layout/context.js'
+import { sliderModalToggled } from '../../store/slices/app.js';
 
 const ProductPhotos = ({thumbs, imgs}) => {
-    const {dispatch} = useContext(layoutContext)
+    const dispatch = useDispatch();
     const openSliderModal = (index) => {
         dispatch({
-            type: layoutActions.TOGGLE_SLIDER_MODAL_SHOW,
+            type: sliderModalToggled.type,
             payload: {
                 toggle: true,
                 clickedIndex: index,
@@ -23,8 +24,8 @@ const ProductPhotos = ({thumbs, imgs}) => {
             })
         }
     </ul>
-}
+};
 
-ProductPhotos.displayName = 'Product Photos'
+ProductPhotos.displayName = 'Product Photos';
 
 export default ProductPhotos;

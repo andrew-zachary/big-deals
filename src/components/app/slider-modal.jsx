@@ -1,15 +1,16 @@
-import React, {useContext} from 'react'
-import Modal from 'react-modal'
-import {FaTimes} from 'react-icons/fa'
+import React from 'react';
+import Modal from 'react-modal';
+import {FaTimes} from 'react-icons/fa';
+import Slider from 'react-slick';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { layoutContext, layoutActions } from '../../layout/context.js'
+import {sliderModalToggled} from '../../store/slices/app.js';
 
-import Slider from 'react-slick'
-
-Modal.setAppElement('#bd-app')
+Modal.setAppElement('#bd-app');
 
 const SliderModal = () => {
-    const {state: {slider_modal: {toggle, clickedIndex, imgs}}, dispatch} = useContext(layoutContext);
+    const dispatch = useDispatch();
+    const {toggle, clickedIndex, imgs} = useSelector(state=>state.app.sliderModal);
     const settings = {
         dots: true,
         infinite: true,
@@ -17,10 +18,10 @@ const SliderModal = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide:clickedIndex
-    }
+    };
     const closeModal = () => {
         dispatch({
-            type: layoutActions.TOGGLE_SLIDER_MODAL_SHOW, 
+            type: sliderModalToggled.type, 
             payload: {
                 toggle: false,
                 clickedIndex: null,
@@ -56,8 +57,8 @@ const SliderModal = () => {
             </Modal>
         }
     </>
-}
+};
 
-SliderModal.displayName = 'Slider Modal'
+SliderModal.displayName = 'Slider Modal';
 
-export default SliderModal
+export default SliderModal;

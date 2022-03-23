@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    sliderModal: {
+        toggle: false,
+        clickedIndex: null,
+        imgs: []
+    },
     footer: false,
     sideMenu: {
         toggle: false,
@@ -19,6 +24,9 @@ const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
+        sliderModalToggled: (state, action) => {
+            state.sliderModal = {...action.payload};
+        },
         footerShowToggled: (state, action) => {
             state.footer = action.payload.toggle;
         },
@@ -41,8 +49,9 @@ const appSlice = createSlice({
 
 export default appSlice.reducer;
 export const {
+    sliderModalToggled,
     footerShowToggled,
     sideMenuToggled,
     errorReceived, 
     errorReset, 
-    loaderToggled} = appSlice.actions;
+    loaderToggled } = appSlice.actions;
