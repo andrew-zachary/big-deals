@@ -16,13 +16,9 @@ const initialState = {
             action: null,
             payload: null
         },
-    },
-    footer: {
-        toggle: true
     }
 }
 const layoutActions = {
-    TOGGLE_FOOTER_SHOW: 'TOGGLE_FOOTER_SHOW',
     TOGGLE_MODAL_SHOW: 'TOGGLE_MODAL_SHOW',
     TOGGLE_SLIDER_MODAL_SHOW: 'TOGGLE_SLIDER_MODAL_SHOW'
 }
@@ -53,13 +49,6 @@ const layoutReducer = (state, action) => {
                     }
                 },
             }
-        case layoutActions.TOGGLE_FOOTER_SHOW:
-            return {
-                ...state,
-                footer: {
-                    toggle: action.payload.toggle
-                }
-            };
         default:
             return state;
     }

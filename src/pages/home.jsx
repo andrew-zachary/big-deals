@@ -1,16 +1,7 @@
-import React, {useEffect, useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { layoutContext, layoutActions } from '../layout/context';
-
 const HomePage = () => {
-    const {dispatch} = useContext(layoutContext);
-    useEffect(()=>{
-        dispatch({type: layoutActions.TOGGLE_FOOTER_SHOW, payload: {toggle:true}});
-        return () => {
-            return dispatch({type: layoutActions.TOGGLE_FOOTER_SHOW, payload: {toggle:false}});
-        }
-    }, []);
     return <div id="home-page" className='content-page flex flex-col items-center justify-center'>
         <h1 className="font-mont font-light text-home-brand-res xs:text-home-brand text-black uppercase font-bold tracking-widest">
             big deals
