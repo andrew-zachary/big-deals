@@ -1,6 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    notificationModal: {
+        toggle: false,
+        text: {
+            header: null,
+            body: null
+        }
+    },
     confirmModal: {
         toggle: false,
         text: {
@@ -34,6 +41,9 @@ const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
+        notificationModalToggled: (state, action) => {
+            state.notificationModal = {...action.payload};
+        },
         confirmModalToggled: (state, action) => {
             state.confirmModal = {...action.payload};
         },
@@ -62,6 +72,7 @@ const appSlice = createSlice({
 
 export default appSlice.reducer;
 export const {
+    notificationModalToggled,
     confirmModalToggled,
     sliderModalToggled,
     footerShowToggled,

@@ -1,5 +1,5 @@
 import {apiStartCall, apiEndCall, apiCallFailed} from "../actions.js";
-import { loaderToggled } from "../slices/app.js";
+import { loaderToggled, notificationModalToggled } from "../slices/app.js";
 import {axiosClient} from '../../utilities/axiosClient.js';
 
 export default ({dispatch}) => (next) => async (action) => {
@@ -7,7 +7,14 @@ export default ({dispatch}) => (next) => async (action) => {
 
     next(action);
 
-    const {method, url, data, onSuccess, onFail, layoutIdle} = action.payload;
+    const {
+        method, 
+        url, 
+        data, 
+        onSuccess, 
+        onFail, 
+        layoutIdle, 
+        notification } = action.payload;
 
     //start loader
     if(layoutIdle) {
@@ -36,5 +43,16 @@ export default ({dispatch}) => (next) => async (action) => {
     if(layoutIdle) {
         //end loader
         dispatch({type: loaderToggled.type});
+    }
+
+    if(notification) {
+        //push notification
+        dispatch({type: notificationModalToggled.type, payload:{
+            toggle: true,
+            text: {
+                header: notification.header,
+                body: notification.body
+            }
+        }});
     }
 }

@@ -1,6 +1,6 @@
 import "regenerator-runtime/runtime";
 
-import React, {useReducer, StrictMode} from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -10,6 +10,7 @@ import Loading from './components/app/loading.jsx';
 import ConfirmModal from "./components/app/confirm-modal.jsx";
 import SliderModal from "./components/app/slider-modal.jsx";
 import AppError from "./components/app/error.jsx";
+import NotificationModal from "./components/app/notification-modal.jsx";
 
 //pages
 import HomePage from './pages/home.jsx';
@@ -35,6 +36,7 @@ const App = () => {
         <AppError />
         <ConfirmModal />
         <SliderModal />
+        <NotificationModal />
         <Loading />
         <Auth />
         <Router>

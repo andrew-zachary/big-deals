@@ -95,7 +95,11 @@ const changeUserAvatar = (_1, _2, data) => {
         data,
         onSuccess: userAvatarChanged.type,
         onFail: errorReceived.type,
-        layoutIdle: true
+        layoutIdle: true,
+        notification: {
+            header: 'big deals',
+            body: 'profile image changed'
+        }
     }
 };
 
