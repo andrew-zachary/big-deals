@@ -1,4 +1,5 @@
-import { itemsReceived, itemReceived, commentErrorReceived } from "../slices/comment.js";
+import { errorReceived } from "../slices/app.js";
+import { itemsReceived, itemReceived } from "../slices/comment.js";
 
 const baseCommentUrl = '/bd/comments';
 
@@ -8,7 +9,7 @@ const getProductComments = (params, query, _3) => {
         method: 'GET',
         url: `${baseCommentUrl}/products/${params.productId}?page=${query.lastPage}&limit=${query.limit}`,
         onSuccess: itemsReceived.type,
-        onFail: commentErrorReceived.type
+        onFail: errorReceived.type
     }
 };
 
@@ -19,7 +20,7 @@ const getUserComment = (_1, _2, data) => {
         url: `${baseCommentUrl}/owner`,
         data,
         onSuccess: itemReceived.type,
-        onFail: commentErrorReceived.type,
+        onFail: errorReceived.type,
         layoutIdle: true
     }
 };
@@ -31,7 +32,7 @@ const newComment = (_1, _2, data) => {
         url: `${baseCommentUrl}/new`,
         data,
         onSuccess: itemReceived.type,
-        onFail: commentErrorReceived.type,
+        onFail: errorReceived.type,
         layoutIdle: true
     }
 };
@@ -43,7 +44,7 @@ const updateComment = (params, _2, data) => {
         url: `${baseCommentUrl}/${params.commentId}/owner`,
         data,
         onSuccess: itemReceived.type,
-        onFail: commentErrorReceived.type,
+        onFail: errorReceived.type,
         layoutIdle: true
     }
 };

@@ -1,3 +1,4 @@
+import { errorReceived } from "../slices/app.js";
 import {orderReceived, ordersReceived} from '../slices/order.js';
 
 const baseOrderUrl = '/bd/orders';
@@ -9,9 +10,10 @@ const createNewOrder = (_1, _2, data) => {
         url: `${baseOrderUrl}/new`,
         data,
         onSuccess: orderReceived.type,
-        layoutIdle: true
+        layoutIdle: true,
+        onFail: errorReceived.type
     }
-}
+};
 
 //params, query, data
 const allOrders = (_1, query, data) => {
@@ -20,8 +22,9 @@ const allOrders = (_1, query, data) => {
         url: `${baseOrderUrl}/?page=${query.lastPage}&limit=${query.limit}`,
         data,
         onSuccess: ordersReceived.type,
-        layoutIdle: false
+        layoutIdle: false,
+        onFail: errorReceived.type
     }
-}
+};
 
 export {createNewOrder, allOrders};

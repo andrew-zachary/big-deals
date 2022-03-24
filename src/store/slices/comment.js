@@ -5,7 +5,6 @@ const initialState = {
     commentsLastPage: 1,
     commentsItems: [],
     currentComment: null,
-    commentError: ''
 };
 
 const commentSlice = createSlice({
@@ -29,13 +28,9 @@ const commentSlice = createSlice({
             state.commentsLastPage = 1;
             state.commentsItems = [];
             state.currentComment = null;
-            state.commentError = '';
-        },
-        commentErrorReceived: (state, action) => {
-            state.commentError = action.payload.data;
         }
     }
 });
 
 export default commentSlice.reducer;
-export const {itemsReceived, itemReceived, commentReset, commentErrorReceived} = commentSlice.actions;
+export const {itemsReceived, itemReceived, commentReset} = commentSlice.actions;

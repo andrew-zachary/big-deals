@@ -1,3 +1,4 @@
+import { errorReceived } from "../slices/app.js";
 import { itemsReceived, searchItemsReceived } from "../slices/deal.js";
 
 const baseDealUrl = '/bd/deals';
@@ -7,7 +8,8 @@ const getAllDeals = (_1, query, _3) => {
     return {
         method: 'GET',
         url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}`,
-        onSuccess: itemsReceived.type
+        onSuccess: itemsReceived.type,
+        onFail: errorReceived.type
     }
 }
 
@@ -16,7 +18,8 @@ const searchAllDeals = (params={}, query, _3) => {
     return {
         method: 'GET',
         url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}&s=${params.s}`,
-        onSuccess: searchItemsReceived.type
+        onSuccess: searchItemsReceived.type,
+        onFail: errorReceived.type
     }
 }
 

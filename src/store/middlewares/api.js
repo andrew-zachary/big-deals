@@ -28,6 +28,8 @@ export default ({dispatch}) => (next) => async (action) => {
             data
         });
 
+        console.log(result);
+
         dispatch({ type: onSuccess, payload:{data:result.data} });
         dispatch({ type: apiEndCall.type });
     } catch(err) {
