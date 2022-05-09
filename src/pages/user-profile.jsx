@@ -3,6 +3,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 
 import AvatarManager from '../components/form/avatar-manager.jsx';
+import GoAdminBtn from '../components/side-menu/go-admin-btn.jsx';
 
 import { apiStartCall } from '../store/actions.js';
 import { logout } from '../store/end-points/user.js';
@@ -23,6 +24,7 @@ const UserProfile = ({userInfo, setCurrentPage}) => {
                         </p>
                     </div>
                     <div className="ctrls mt-20 flex justify-around items-center w-full">
+                        <GoAdminBtn dispatch={dispatch} />
                         <button className='bd-unit px-4 py-8 rounded-full border-2 border-primary bg-primary font-mont font-regular text-white text-4xl capitalize shadow-secondary' onClick={()=>setCurrentPage('orders')}>bills</button>
                         <button className='bd-unit p-4 rounded-full bg-primary shadow-secondary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
                     </div>
