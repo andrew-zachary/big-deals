@@ -16,8 +16,8 @@
 <li>Cart add-remove items, calculate total price.</li>
 <li>Orders submit and view all bills.</li>
 <li>Products & Deals view and paginate.</li>
-<li>Reviews add-update.</li>
-<li>With Modals, Spinner, Forms with validation, mobile first layout.</li>
+<li>add-update Users Reviews.</li>
+<li>UI Modals, Spinner, Forms with validation and mobile first layout.</li>
 </ul>
 
 ### Would like to have your feedback
