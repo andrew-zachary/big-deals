@@ -32,6 +32,16 @@ export default ({dispatch}) => (next) => async (action) => {
 
         dispatch({ type: onSuccess, payload:{data:result.data} });
         dispatch({ type: apiEndCall.type });
+        if(notification) {
+            //push notification
+            dispatch({type: notificationModalToggled.type, payload:{
+                toggle: true,
+                text: {
+                    header: notification.header,
+                    body: notification.body
+                }
+            }});
+        }
     } catch(err) {
         if(err.response) {
             dispatch({ type: onFail, payload:{data: err.response.data} });
@@ -47,14 +57,4 @@ export default ({dispatch}) => (next) => async (action) => {
         dispatch({type: loaderToggled.type});
     }
 
-    if(notification) {
-        //push notification
-        dispatch({type: notificationModalToggled.type, payload:{
-            toggle: true,
-            text: {
-                header: notification.header,
-                body: notification.body
-            }
-        }});
-    }
 }

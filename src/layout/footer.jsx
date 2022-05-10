@@ -8,7 +8,7 @@ import { footerShowToggled } from '../store/slices/app.js';
 const Footer = ({footerToggle}) => {
     const location = useLocation();
     const dispatch = useDispatch();
-    const iconContainerStyle = 'p-4 rounded-full bg-primary text-white inline-block';
+    const iconContainerStyle = 'p-4 rounded-full bg-primary text-white inline-block cursor-pointer';
     const iconStyle = 'text-4xl';
     useEffect(()=>{
         const homePage = document.querySelector('#home-page');

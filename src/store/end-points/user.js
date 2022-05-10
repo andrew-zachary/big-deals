@@ -1,6 +1,12 @@
 import { userAuthed, userAuthedOut, userMailVerified } from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
-import { userAvatarChanged, userNoProfile, passwordResetMailSent, passwordResetDone } from "../actions.js";
+import { 
+    userAvatarChanged, 
+    userNoProfile, 
+    passwordResetMailSent, 
+    passwordResetDone, 
+    passwordChanged
+} from "../actions.js";
 
 const baseUserUrl = '/bd/users';
 
@@ -103,6 +109,22 @@ const changeUserAvatar = (_1, _2, data) => {
     }
 };
 
+//params, query, data
+const changePassword = (_1, _2, data) => {
+    return {
+        method: 'POST',
+        url: `/auth/change-password`,
+        data,
+        onSuccess: passwordChanged.type,
+        onFail: errorReceived.type,
+        layoutIdle: true,
+        notification: {
+            header: 'big deals',
+            body: 'password has been changed'
+        }
+    }
+};
+
 export {
     getUserInfo, 
     login, 
@@ -111,5 +133,6 @@ export {
     verifyUserMail, 
     requestPasswordRestMail, 
     resettingUserPassword,
-    changeUserAvatar
+    changeUserAvatar,
+    changePassword
 };

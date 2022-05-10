@@ -7,6 +7,7 @@ const apiCallFailed = createAction('api/callFailed');
 const userNoProfile = createAction('user/noProfile');
 const passwordResetMailSent = createAction('user/passwordResetMailSent');
 const passwordResetDone = createAction('user/passwordResetDone');
+const passwordChanged = createAction('user/passwordChangedDone');
 const userAvatarChanged = createAction('user/avatarChanged');
 
 export {
@@ -16,5 +17,6 @@ export {
     userNoProfile, 
     passwordResetMailSent, 
     passwordResetDone,
-    userAvatarChanged
+    userAvatarChanged,
+    passwordChanged
 };
