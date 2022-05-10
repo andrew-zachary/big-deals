@@ -15,6 +15,8 @@ import NotificationModal from "./components/app/notification-modal.jsx";
 //pages
 import HomePage from './pages/home.jsx';
 import AdminPage from './pages/admin.jsx';
+import AdminChangePassword from './pages/admin-change-password-form.jsx';
+import AdminHome from "./pages/admin-home.jsx";
 import ShoppingPage from './pages/shopping.jsx';
 import CommentsPage from './pages/comments.jsx';
 import MailVerify from './pages/mail-verify.jsx';
@@ -44,7 +46,10 @@ const App = () => {
                 <Route path="/" element={<MainLayout />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/shopping" element={<ShoppingPage />} />
-                    <Route path="/admin" element={<AdminPage />} />
+                    <Route path="/admin" element={<AdminPage />}>
+                        <Route path="" element={<AdminHome />} />
+                        <Route path="change-password" element={<AdminChangePassword />} />
+                    </Route>
                     <Route path="/comments/:id" element={<CommentsPage />} />
                     <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
                     <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
