@@ -1,3 +1,11 @@
 #admin-page {
-    background-color: #cdae1826;
+    ul {
+        grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
+        row-gap: 1rem;
+        column-gap: 2.5rem;
+        li {
+            max-width: 22.5rem;
+            height: 22.5rem;
+        }
+    }
 }
