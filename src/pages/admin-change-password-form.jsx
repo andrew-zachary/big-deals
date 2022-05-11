@@ -31,7 +31,7 @@ const ChangePasswordForm = () => {
             dispatch({type: apiStartCall.type, payload: changePassword(null, null, {oldPassword:values.oldPassword, newPassword:values.newPassword})});
         },
     });
-    return <section id='change-password' className='mt-8 p-4 font-ssp w-full'>
+    return <section id='change-password' className='p-4 font-ssp w-full max-w-screen-sm mx-auto'>
         <h1 className='text-5xl capitalize'>change password</h1>
         <form onSubmit={form.handleSubmit} action="#">
             <BDFormInput id="oldPassword" name="oldPassword" type="password" label="old password" value={form.values.oldPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
