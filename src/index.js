@@ -16,6 +16,7 @@ import NotificationModal from "./components/app/notification-modal.jsx";
 import HomePage from './pages/home.jsx';
 import AdminPage from './pages/admin.jsx';
 import AdminChangePassword from './pages/admin-change-password-form.jsx';
+import AdminAppPreferences from './pages/admin-app-preferences.jsx';
 import AdminHome from "./pages/admin-home.jsx";
 import ShoppingPage from './pages/shopping.jsx';
 import CommentsPage from './pages/comments.jsx';
@@ -49,6 +50,7 @@ const App = () => {
                     <Route path="/admin" element={<AdminPage />}>
                         <Route path="" element={<AdminHome />} />
                         <Route path="change-password" element={<AdminChangePassword />} />
+                        <Route path="app-preferences" element={<AdminAppPreferences />} />
                     </Route>
                     <Route path="/comments/:id" element={<CommentsPage />} />
                     <Route path="/verify-email/:mail/:token" element={<MailVerify />} />

@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/**/*.{js,jsx}',
   ],
@@ -23,7 +24,9 @@ module.exports = {
       colors: {
         'black-600': '#00000099',
         'primary': '#f68b1e',
+        'primary-dark': '#0f172a',
         'primary-dim': '#f9ae62',
+        'primary-dim-dark': '#8d9cb1',
         'secondary': '#00000033'
       },
       boxShadow: {

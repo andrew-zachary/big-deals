@@ -1,11 +1,11 @@
-import { userAuthed, userAuthedOut, userMailVerified } from "../slices/user.js";
+import { userAuthed, userAuthedOut, userMailVerified, userPrefsUpdated } from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
 import { 
     userAvatarChanged, 
     userNoProfile, 
     passwordResetMailSent, 
     passwordResetDone, 
-    passwordChanged
+    passwordChanged,
 } from "../actions.js";
 
 const baseUserUrl = '/bd/users';
@@ -125,6 +125,22 @@ const changePassword = (_1, _2, data) => {
     }
 };
 
+//params, query, data
+const updatePreferences = (_1, _2, data) => {
+    return {
+        method: 'PUT',
+        url: `${baseUserUrl}/profile/app`,
+        data,
+        onSuccess: userPrefsUpdated.type,
+        onFail: errorReceived.type,
+        layoutIdle: true,
+        notification: {
+            header: 'big deals',
+            body: 'app preferences updated'
+        }
+    }
+};
+
 export {
     getUserInfo, 
     login, 
@@ -134,5 +150,6 @@ export {
     requestPasswordRestMail, 
     resettingUserPassword,
     changeUserAvatar,
-    changePassword
+    changePassword,
+    updatePreferences
 };

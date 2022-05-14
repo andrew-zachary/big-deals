@@ -13,7 +13,10 @@ const userInfo = {
     },
     _id: '',
     currentBalance: '',
-    role: ''
+    role: '',
+    appPreferences: {
+        mode: ''
+    }
 };
 
 const initialState = {
@@ -38,9 +41,19 @@ const userSlice = createSlice({
         },
         userMailVerified: (state, _) => {
             state.userInfo.authId.email.verified = true;
+        },
+        userPrefsUpdated: (state, action) => {
+            state.userInfo.appPreferences = action.payload.data
         }
     }
 });
 
 export default userSlice.reducer;
-export const {userAuthed, userAuthedOut, userAvatarPicked, userMailVerified} = userSlice.actions;
+
+export const {
+    userAuthed, 
+    userAuthedOut, 
+    userAvatarPicked, 
+    userMailVerified,
+    userPrefsUpdated
+} = userSlice.actions;

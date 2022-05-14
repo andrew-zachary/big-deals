@@ -1,10 +1,22 @@
 //colors
-$primary-color: #f68b1e;
-$primary-dim: #f9ae62;
+$bg-primary-color: #f68b1e;
+$bg-primary-dim: #f9ae62;
+$font-primary-color: white;
+
+:root {
+  --bg-primary-color: #f68b1e;
+  --bg-primary-dim: #f9ae62;
+  --font-primary-color: white;
+}
 
 //base elements
 html {
   font-size: 62.5%;
+  &.dark {
+    --bg-primary-color: #0f172a;
+    --bg-primary-dim: #8d9cb1;
+    background-color: var(--bg-primary-color);
+  }
 }
 html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-content, nav, .content-page {
   height: 100%;
@@ -40,7 +52,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   & > div {
     width: 1.8rem;
     height: 1.8rem;
-    background-color: $primary-color;
+    background-color: var(--bg-primary-color);
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -109,7 +121,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
       button {
         &:before {
           font-size: 25px;
-          color: $primary-color;
+          color: var(--bg-primary-color);
           opacity: 0.5;
         }
       }
@@ -124,6 +136,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   }
 }
 
+//avatar
 #avatar-placeholder {
   max-width: 15rem;
   height: 18rem;
@@ -133,4 +146,55 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
 }
 #avatar-ctrls {
   max-width: 12rem;
+}
+
+//customized checkbox
+.container-label {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 2.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #ffd7af;
+}
+.container-label input:checked ~ .checkmark {
+  background-color: var(--bg-primary-color);
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container-label input:checked ~ .checkmark:after {
+  display: block;
+}
+.container-label .checkmark:after {
+  left: 0.9rem;
+  top: 0.5rem;
+  width: 0.7rem;
+  height: 1.4rem;
+  border: solid white;
+  border-width: 0 0.3rem 0.3rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

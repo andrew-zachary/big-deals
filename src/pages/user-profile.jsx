@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 
@@ -10,6 +10,11 @@ import { logout } from '../store/end-points/user.js';
 
 const UserProfile = ({userInfo, setCurrentPage}) => {
     const dispatch = useDispatch();
+    const {mode} = userInfo.appPreferences;
+    useEffect(()=>{
+        const htmlEle = document.querySelector('html');
+        htmlEle.classList.add(mode);
+    }, []);
     return <>
         {
             userInfo._id && <> 

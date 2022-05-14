@@ -4,7 +4,7 @@
         main {
             max-height: calc(100% - 5.75rem);
             button[disabled] {
-                background-color: $primary-dim;
+                background-color: $bg-primary-dim;
             }
             .quantity {
                 svg {
