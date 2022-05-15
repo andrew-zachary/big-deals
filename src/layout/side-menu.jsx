@@ -16,7 +16,7 @@ const LayoutSideMenu = () => {
             setCurrentPage('user');
         }
     }, [toggle]);
-    return <nav id="bd-app-nav" className='relative max-w-lg z-9998 bg-white' ref={navRef}>
+    return <nav id="bd-app-nav" className='relative max-w-lg z-9998' ref={navRef}>
         <header className='flex items-center justify-between'>
             <LoginCartBtn currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <MenuCloseBtn />

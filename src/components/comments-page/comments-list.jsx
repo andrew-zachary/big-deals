@@ -24,7 +24,7 @@ const CommentsList = ({productId, setCurrentTab}) => {
             <AuthedActionBtn 
                 action={setCurrentTab} 
                 payload='new' 
-                tailWindStyle='absolute p-6 bg-primary shadow-secondary text-primay rounded-full top-[-8rem]' 
+                tailWindStyle='absolute p-6 bg-primary dark:bg-primary-dark shadow-secondary text-primay rounded-full top-[-8rem]' 
             >
                 <FaRegCommentDots className="text-white text-6xl inline-block" />
             </AuthedActionBtn>

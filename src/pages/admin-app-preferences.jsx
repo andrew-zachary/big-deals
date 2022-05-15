@@ -27,7 +27,7 @@ const AdminAppPreferences = () => {
             </label>
         </div>
         <div id='app-preferences_ctrls' className='flex justify-end mt-12'>
-            <button className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' onClick={()=>saveChanges()}>save changes</button>
+            <button className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' onClick={()=>saveChanges()}>save changes</button>
         </div>
     </section>
 };

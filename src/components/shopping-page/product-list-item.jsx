@@ -60,14 +60,14 @@ const ProductListItem = ({item}) => {
             <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.seller.authId.firstName}</span>
         </div>
         <div className='flex justify-around mt-8 max-w-[28rem] mx-auto'>
-            <Link className='p-4 bg-primary shadow-secondary rounded-full' to={`/comments/${item._id}`} state={{product:item}}>
+            <Link className='p-4 bg-primary dark:bg-primary-dark shadow-secondary rounded-full' to={`/comments/${item._id}`} state={{product:item}}>
                 <FaRegCommentDots className='text-white text-5xl' />
             </Link>
             <AuthedActionBtn
                 active={false}
                 action={dispatch} 
                 payload={ { type: addItem.type, payload:{item, collection: 'products'} } }
-                tailWindStyle='p-4 bg-primary shadow-secondary rounded-full'
+                tailWindStyle='p-4 bg-primary dark:bg-primary-dark shadow-secondary rounded-full'
             >
                 <FaCartPlus className='text-white text-5xl' />
             </AuthedActionBtn>

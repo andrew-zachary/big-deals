@@ -24,7 +24,7 @@ const AddDealCart = ({item}) => {
         payload={ {type: addItem.type, payload: {
             item:{...item, price: totalPrice, collection: 'deals'}, 
             collection: 'deals'}} }
-        tailWindStyle='mt-8 font-ssp font-regular bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] flex items-center justify-around w-full max-w-[28rem] mx-auto'
+        tailWindStyle='mt-8 font-ssp font-regular bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] flex items-center justify-around w-full max-w-[28rem] mx-auto'
     >
         <span className='text-4xl capitalize'>for</span>
         <div className='text-5xl font-ssp font-medium'>

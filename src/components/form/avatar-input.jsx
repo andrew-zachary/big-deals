@@ -11,7 +11,7 @@ const AvatarInput = ({dispatch, userAvatarPicked, setMode}) => {
             setMode('editing');
         }
     }
-    return <label htmlFor='avatar-input' className='inline-block cursor-pointer mt-5 p-2.5 rounded-full bg-primary'>
+    return <label htmlFor='avatar-input' className='inline-block cursor-pointer mt-5 p-2.5 rounded-full bg-primary dark:bg-primary-dark'>
         <input type='file' name='avatar-input' id='avatar-input' onInput={(e)=>handleImgRead(e)} hidden/>
         <FaCamera className='text-4xl text-white' />
     </label>

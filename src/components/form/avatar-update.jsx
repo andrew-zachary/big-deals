@@ -14,7 +14,7 @@ const AvatarUpdate = ({setMode, cropperRef, dispatch, userAvatarPicked}) => {
             dispatch({type: apiStartCall.type, payload: changeUserAvatar(null, null, {avatar: cropperRef.current.cropper.getCroppedCanvas().toDataURL()})});
         }
     }
-    return <button type='button' onClick={()=>updateAvatar()} className='inline-block cursor-pointer mt-5 p-2.5 rounded-full bg-primary'>
+    return <button type='button' onClick={()=>updateAvatar()} className='inline-block cursor-pointer mt-5 p-2.5 rounded-full bg-primary dark:bg-primary-dark'>
         <FaCheck className='text-4xl text-white' />
     </button>
 };

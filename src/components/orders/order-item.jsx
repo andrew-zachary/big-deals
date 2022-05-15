@@ -15,12 +15,12 @@ const OrderItem = ({item}) => {
                             <span className='bd-unit'>x</span>
                             <span className='bd-unit'>{product.quantity}</span>
                         </li>
-                        <li className='bd-unit bg-primary p-4 text-white'>{(product.quantity * product.price).toFixed(2)}</li>
+                        <li className='bd-unit bg-primary dark:bg-primary-dark p-4 text-white'>{(product.quantity * product.price).toFixed(2)}</li>
                     </ul>
                 })
             }
         </div>
-        <div className='order-footer flex justify-center my-4 p-4 bg-primary font-mont font-regular text-3xl text-white'>
+        <div className='order-footer flex justify-center my-4 p-4 bg-primary dark:bg-primary-dark font-mont font-regular text-3xl text-white'>
             <span className='capitalize'>total price:</span>
             <span className='bd-unit'>$</span>
             <span className='bd-unit'>{item.totalPrice}</span>

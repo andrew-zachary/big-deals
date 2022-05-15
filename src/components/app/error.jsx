@@ -22,14 +22,14 @@ const AppError = () => {
                 contentLabel="Notification Modal"
             >
                 <div id="confirm-modal-content" className='flex flex-col justify-between p-6 h-full'>
-                    <div className="header text-5xl font-mont font-regular capitalize text-primary">
+                    <div className="header text-5xl font-mont font-regular capitalize text-primary dark:text-primary-dark">
                         big deals
                     </div>
-                    <div className="body text-3xl font-mont font-regular capitalize text-center">
+                    <div className="body text-3xl font-mont font-regular capitalize text-center dark:text-primary-dark">
                         {msg}
                     </div>
                     <div className="ctrls flex justify-around w-full">
-                        <button className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>closeModal()}>ok</button>
+                        <button className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>closeModal()}>ok</button>
                     </div>
                 </div>
             </Modal>

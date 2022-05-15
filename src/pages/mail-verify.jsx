@@ -15,7 +15,7 @@ const MailVerify = () => {
     }, []);
     return <div id="verify-mail-page" className="h-full flex flex-col items-center justify-center">
         <h1 className='text-6xl capitalize font-mont font-regular'>{verified?'mail verified':'not verified'}</h1>
-        <Link className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize mt-8' to="/shopping" path="shopping">continue</Link>
+        <Link className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize mt-8' to="/shopping" path="shopping">continue</Link>
     </div>
 };
 

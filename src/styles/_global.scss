@@ -1,23 +1,27 @@
 //colors
-$bg-primary-color: #f68b1e;
-$bg-primary-dim: #f9ae62;
-$font-primary-color: white;
-
 :root {
-  --bg-primary-color: #f68b1e;
-  --bg-primary-dim: #f9ae62;
-  --font-primary-color: white;
+  --primary: #f68b1e;
+  --primary-dim: #f9ae62;
+  --bg: white;
+  --font-color: black;
+  &.dark {
+    --primary: #8d9cb1;
+    --primary-dim: #b3c4dd;
+    --bg: #0c1124;
+    --font-color: white;
+  }
 }
 
 //base elements
 html {
   font-size: 62.5%;
-  &.dark {
-    --bg-primary-color: #0f172a;
-    --bg-primary-dim: #8d9cb1;
-    background-color: var(--bg-primary-color);
-  }
 }
+
+html, nav {
+  background-color: var(--bg);
+  color: var(--font-color);
+}
+
 html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-content, nav, .content-page {
   height: 100%;
   overflow: hidden;
@@ -52,7 +56,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   & > div {
     width: 1.8rem;
     height: 1.8rem;
-    background-color: var(--bg-primary-color);
+    background-color: var(--primary);
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -121,7 +125,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
       button {
         &:before {
           font-size: 25px;
-          color: var(--bg-primary-color);
+          color: var(--primary);
           opacity: 0.5;
         }
       }
@@ -177,7 +181,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   background-color: #ffd7af;
 }
 .container-label input:checked ~ .checkmark {
-  background-color: var(--bg-primary-color);
+  background-color: var(--primary);
 }
 .checkmark:after {
   content: "";
@@ -197,4 +201,17 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+//fix auto select
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px var(--bg) inset !important;
+}
+
+//inputs global style
+button[disabled] {
+  background-color: var(--primary-dim)!important;
 }

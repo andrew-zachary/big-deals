@@ -3,9 +3,6 @@
         transition: all .3s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
         main {
             max-height: calc(100% - 5.75rem);
-            button[disabled] {
-                background-color: $bg-primary-dim;
-            }
             .quantity {
                 svg {
                     margin-top: -1rem;

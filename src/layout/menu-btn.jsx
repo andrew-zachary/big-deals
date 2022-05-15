@@ -7,7 +7,7 @@ import { sideMenuToggled } from '../store/slices/app.js';
 const BurgerBtn = () => {
     const dispatch = useDispatch();
     return <button
-        className="p-6 rounded-full bg-primary shadow-secondary inline-block"
+        className="p-6 rounded-full bg-primary dark:bg-primary-dark shadow-secondary inline-block"
         onClick={()=>dispatch({type: sideMenuToggled.type, payload: {toggle: true, toAuth: false}})}
     >
         <FaBars className='text-white text-6xl' />

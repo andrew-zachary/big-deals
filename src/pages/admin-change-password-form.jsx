@@ -37,7 +37,7 @@ const ChangePasswordForm = () => {
             <BDFormInput id="oldPassword" name="oldPassword" type="password" label="old password" value={form.values.oldPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
             <BDFormInput id="newPassword" name="newPassword" type="password" label="new Password" value={form.values.newPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
             <BDFormInput id="confirmNewPassword" name="confirmNewPassword" type="password" label="confirm new password" value={form.values.confirmNewPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
-            <button type='submit' className='font-ssp font-regular text-4xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!form.isValid}>change password</button>
+            <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!form.isValid}>change password</button>
         </form>
     </section>
 };

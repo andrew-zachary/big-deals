@@ -34,7 +34,7 @@ const ForgotPassword = () => {
         }
         {
             btnTxt === "send reset password email" && <div id="reset-ctrls" className='flex justify-between'>
-                <button className='font-ssp font-regular text-3xl bg-primary shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{btnTxt}</button>
+                <button className='font-ssp font-regular text-3xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{btnTxt}</button>
             </div>
         }
     </div>

@@ -65,11 +65,11 @@ const CartTab = ({isAuthed, setCurrentPage}) => {
                 }
             </ul>
         </div>
-        <div className='text-4xl text-primary pt-8'>
+        <div className='text-4xl text-primary dark:text-primary-dark pt-8'>
             <span>$</span>
             <span>{(totalCost.products+totalCost.deals).toFixed(2)}</span>
         </div>
-        <button onClick={()=> saveOrder(items)} className='text-4xl text-white font-ssp font-light capitalize bg-primary p-3 mt-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>submit order</button>
+        <button onClick={()=> saveOrder(items)} className='text-4xl text-white font-ssp font-light capitalize bg-primary dark:bg-primary-dark p-3 mt-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>submit order</button>
     </>
 };
 

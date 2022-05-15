@@ -24,9 +24,9 @@ module.exports = {
       colors: {
         'black-600': '#00000099',
         'primary': '#f68b1e',
-        'primary-dark': '#0f172a',
         'primary-dim': '#f9ae62',
-        'primary-dim-dark': '#8d9cb1',
+        'primary-dark': '#8d9cb1',
+        'primary-dim-dark': '#b3c4dd',
         'secondary': '#00000033'
       },
       boxShadow: {

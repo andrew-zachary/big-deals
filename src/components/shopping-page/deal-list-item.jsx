@@ -7,7 +7,7 @@ const DealListItem = ({item}) => {
         <div className='item-header'>
             <h1 className='text-5xl capitalize font-mont font-medium'>{item.name}</h1>
             <div className='text-4xl capitalize text-primary inline-block'>
-                <span className='off-box p-4 inline-block uppercase bg-primary text-white font-mont font-medium'>off</span>
+                <span className='off-box p-4 inline-block uppercase bg-primary dark:bg-primary-dark text-white font-mont font-medium'>off</span>
                 <span className='text-4xl font-mont font-medium'>{parseFloat(item.discount).toFixed(2)}</span>
                 <span className='bd-unit'>%</span>
             </div>

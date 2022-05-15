@@ -28,7 +28,7 @@ const GoAdminBtn = ({dispatch}) => {
     }
 
     return <>
-        <button className='bd-unit p-4 rounded-full bg-primary shadow-secondary' onClick={()=>goAdmin()}>
+        <button className='bd-unit p-4 rounded-full bg-primary dark:bg-primary-dark shadow-secondary' onClick={()=>goAdmin()}>
             {pickIcon()}
         </button>
     </>
