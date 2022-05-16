@@ -13,12 +13,12 @@ const CartProductItem = ({item}) => {
             <span className='capitalize block font-mont font-light'>{item.entity.name}</span>
             <CartProductQuantity item={item} />
         </div>
-        <div className='flex justify-between text-primary text-4xl mt-20 border-primary border-b'>
+        <div className='flex justify-between text-primary dark:text-primary-dark text-4xl mt-20 border-primary dark:border-primary-dark border-b'>
             <div>
                 <span className='bd-unit'>$</span>
                 <span>{(item.entity.price * item.quantity).toFixed(2)}</span>
             </div>
-            <FaTrashAlt onClick={()=>dispatch({type: removeItem.type, payload: {item, collection: 'products'}})} className='cursor-pointer text-4xl text-primary' />
+            <FaTrashAlt onClick={()=>dispatch({type: removeItem.type, payload: {item, collection: 'products'}})} className='cursor-pointer text-4xl text-primary dark:text-primary-dark' />
         </div>
     </li>
 };

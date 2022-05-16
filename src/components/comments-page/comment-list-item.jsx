@@ -11,11 +11,11 @@ const CommentListItem = ({item}) => {
             edit={false} 
             value={item.rate}
             isHalf={true}
-            activeColor='#f68b1e'
+            activeColor='var(--primary)'
             color="#f9ae6280"
         />
         <p className='text-4xl mt-3'>{item.body}</p>
-        <h1 className='text-4xl text-primary font-mon font-light mt-5'>by <span className='font-medium'>{item.userId.authId.firstName}</span> on <span className='font-medium'>{format(new Date(item.createdAt), 'yyyy-MM-dd') }</span></h1>
+        <h1 className='text-4xl text-primary dark:text-primary-dark font-mon font-light mt-5'>by <span className='font-medium'>{item.userId.authId.firstName}</span> on <span className='font-medium'>{format(new Date(item.createdAt), 'yyyy-MM-dd') }</span></h1>
     </li>
 };
 

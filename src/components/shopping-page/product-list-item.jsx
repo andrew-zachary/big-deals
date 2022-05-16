@@ -33,31 +33,31 @@ const ProductListItem = ({item}) => {
             edit={false} 
             value={Math.ceil(item.avgRating.amount*2)/2}
             isHalf={true}
-            activeColor='#f68b1e'
+            activeColor={'var(--primary)'}
             color="#f9ae6280"
         />
-        <div className='text-5xl text-primary py-4'>
+        <div className='text-5xl text-primary dark:text-primary-dark py-4'>
             <span className='font-mont font-medium'>{item.price}</span><span className='bd-unit font-mon font-medium'>$</span>
         </div>
         <p className='text-4xl py-4 font-ssp font-medium'>{item.desc}</p>
         <ul>
             {
                 item.features.map(feature => {
-                    return <li key={feature} className='text-3xl p-4 inline-block border border-primary font-ssp font-medium capitalize'>{feature}</li>
+                    return <li key={feature} className='text-3xl p-4 inline-block border border-primary dark:border-primary-dark font-ssp font-medium capitalize'>{feature}</li>
                 })
             }
         </ul>
         <div className='py-4 flex items-center w-full'>
             <span className='font-mont font-medium text-4xl capitalize'>in stock</span>
-            <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.instock?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
+            <span className='text-4xl bd-unit font-ssp font-medium text-primary dark:text-primary-dark'>{item.instock?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
         </div>
         <div className='py-4 flex items-center w-full'>
             <span className='font-mont font-medium text-4xl capitalize'>free shipping</span>
-            <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.freeShipping?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
+            <span className='text-4xl bd-unit font-ssp font-medium text-primary dark:text-primary-dark'>{item.freeShipping?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
         </div>
         <div className='mt-4'>
             <span className='font-mont font-medium text-4xl capitalize'>by</span>
-            <span className='text-4xl bd-unit font-ssp font-medium text-primary'>{item.seller.authId.firstName}</span>
+            <span className='text-4xl bd-unit font-ssp font-medium text-primary dark:text-primary-dark'>{item.seller.authId.firstName}</span>
         </div>
         <div className='flex justify-around mt-8 max-w-[28rem] mx-auto'>
             <Link className='p-4 bg-primary dark:bg-primary-dark shadow-secondary rounded-full' to={`/comments/${item._id}`} state={{product:item}}>

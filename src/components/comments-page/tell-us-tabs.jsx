@@ -61,11 +61,11 @@ const TellUsTabs = ({productId, setCurrentTab}) => {
                 size={60} 
                 edit={true} 
                 isHalf={false}
-                activeColor='#f68b1e'
+                activeColor='var(--primary)'
                 color='#f9ae6280'
             />
                 <div className='capitalize text-3xl text-red font-ssp font-bold mb-4 text-primary'>{ commentErrors.rate && `* ${commentErrors.rate}` }</div>
-                <textarea ref={commentTxt} id="w3review" className='font-ssp font-medium text-4xl w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder='tell us' />
+                <textarea ref={commentTxt} id="w3review" className='font-ssp font-medium text-4xl dark:text-primary-dark w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder='tell us' />
                 <div className='capitalize text-3xl text-red font-ssp font-bold mt-4 text-primary'>{ commentErrors.body && `* ${commentErrors.body}` }</div>
                 <button onClick={()=>sumitFeedback()} className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 mt-6 rounded-[0.4rem] capitalize w-full max-w-[32rem]'>vote</button>
             </div>
@@ -79,11 +79,11 @@ const TellUsTabs = ({productId, setCurrentTab}) => {
                 size={60} 
                 edit={true} 
                 isHalf={false}
-                activeColor='#f68b1e'
+                activeColor='var(--primary)'
                 color='#f9ae6280'
             />
                 <div className='capitalize text-3xl text-red font-ssp font-bold mb-4 text-primary'>{ commentErrors.rate && `* ${commentErrors.rate}` }</div>
-                <textarea ref={commentTxt} id="w3review" className='font-ssp font-medium text-4xl w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder='tell us' />
+                <textarea ref={commentTxt} id="w3review" className='font-ssp font-medium text-4xl dark:text-primary-dark w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder='tell us' />
                 <div className='capitalize text-3xl text-red font-ssp font-bold mt-4 text-primary'>{ commentErrors.body && `* ${commentErrors.body}` }</div>
                 <button onClick={()=>sumitFeedback()} className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 mt-6 rounded-[0.4rem] capitalize w-full max-w-[32rem]'>update</button>
             </div>

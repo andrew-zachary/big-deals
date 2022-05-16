@@ -40,7 +40,7 @@ const SliderModal = () => {
             >
                 <div className='grid grid-cols-1 grid-rows-[10%_90%]'>
                     <div className='header px-4 flex items-end justify-end'>
-                        <FaTimes className='text-6xl text-primary cursor-pointer' onClick={()=>closeModal()} />
+                        <FaTimes className='text-6xl text-primary dark:text-primary-dark cursor-pointer' onClick={()=>closeModal()} />
                     </div>
                     <div className='body w-screen max-w-screen-sm self-center justify-self-center'>
                         <Slider {...settings}>
