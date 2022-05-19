@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaKey, FaHeart } from 'react-icons/fa';
 
 const AdminHome = () => {
-    return <section id='admin-links' className='h-full mx-auto'>
+    return <section id='admin-links' className='h-full mx-auto px-4'>
         <ul className='h-full grid justify-items-center content-center pb-4'>
             <li className='bg-primary dark:bg-primary-dark shadow-secondary rounded-[0.4rem]'>
                 <Link to='change-password' className='h-full px-4 flex flex-col justify-center items-center font-ssp font-regular text-center text-5xl text-white capitalize'>
