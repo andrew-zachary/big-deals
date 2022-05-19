@@ -8,7 +8,7 @@ import InfiniteScrollList from '../app/infinite-scroll-list.jsx';
 
 const OlderOrdersTab = () => {
     const {ordersItems, ordersHasMore, ordersLastPage} = useSelector(state=>state.order);
-    return <div id='orders-wrapper-content' className='flex flex-col justify-center'>
+    return <div id='old-orders-wrapper' className='flex flex-col justify-center'>
             <InfiniteScrollList
                 endPointOptions={allOrders}
                 items={ordersItems} 
