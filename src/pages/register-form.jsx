@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
+import SimpleBar from 'simplebar-react';
 
 import BDFormInput from '../components/form/input.jsx';
 import AvatarManager from '../components/form/avatar-manager.jsx';
@@ -41,8 +42,8 @@ const RegisterForm = ({setCurrentPage}) => {
             dispatch({type: apiStartCall.type, payload: register(null, null, registerData)});
         },
     });
-    return <>
-        <form onSubmit={registerForm.handleSubmit}>
+    return <SimpleBar>
+        <form onSubmit={registerForm.handleSubmit} className='px-8'>
             <AvatarManager avatar={avatar} />
             <BDFormInput id="firstName" name="firstName" type="text" label="first name" value={registerForm.values.firstName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="lastName" name="lastName" type="text" label="last name" value={registerForm.values.lastName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
@@ -52,7 +53,7 @@ const RegisterForm = ({setCurrentPage}) => {
             <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!registerForm.isValid}>sign up</button>
         </form>
         <button className='font-ssp font-regular text-4xl mb-12 mt-14' onClick={()=>setCurrentPage('user')}>have account - sign in</button>
-    </>
+    </SimpleBar>
 };
 
 export default RegisterForm;

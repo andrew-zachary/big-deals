@@ -1,8 +1,10 @@
 #layout-wraper {
     nav {
         transition: all .3s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
+        div[data-simplebar=init], #login-form, #user-profile, #orders-wrapper {
+            height: calc(100% - 6rem);
+        }
         main {
-            max-height: calc(100% - 5.75rem);
             .quantity {
                 svg {
                     margin-top: -1rem;

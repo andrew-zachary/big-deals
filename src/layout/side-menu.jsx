@@ -21,8 +21,8 @@ const LayoutSideMenu = () => {
             <LoginCartBtn currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <MenuCloseBtn />
         </header>
-        <main className='p-4 text-center overflow-y-scroll h-full grid items-center'>
-            <div id='tab'>
+        <main className='text-center h-full'>
+            <div id='tab' className='h-full'>
                 <SideMenuTabs isAuthed={isAuthed} userInfo={userInfo} currentPage={currentPage} setCurrentPage={setCurrentPage} />
             </div>
         </main>

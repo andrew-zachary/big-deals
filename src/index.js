@@ -28,6 +28,7 @@ import MainLayout from "./layout/main.jsx";
 
 //styles
 import './index.scss';
+import 'simplebar/dist/simplebar.min.css';
 
 //store
 import { store } from "./store/create-store.js";

@@ -203,15 +203,24 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   transform: rotate(45deg);
 }
 
-//fix auto select
+//fix autofill
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
   -webkit-box-shadow: 0 0 0 30px var(--bg) inset !important;
+}
+input:-webkit-autofill{
+  -webkit-text-fill-color: var(--font-color) !important;
 }
 
 //inputs global style
 button[disabled] {
   background-color: var(--primary-dim)!important;
+}
+
+//scroll bar
+.simplebar-scrollbar::before {
+  background-color: var(--primary)!important;
+  opacity: 1!important;
 }

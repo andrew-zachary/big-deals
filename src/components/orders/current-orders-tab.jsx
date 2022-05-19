@@ -6,7 +6,7 @@ import OrderItem from './order-item.jsx';
 const CurrentOrdersTab = () => {
     const {currentOrders} = useSelector(state=>state.order);
     return <div id='orders-wrapper'>
-        <ul mode='orders' className='my-8 overflow-y-scroll h-full'>
+        <ul mode='orders' className='my-8 overflow-y-auto h-full'>
             {
                 currentOrders.map(order=>{
                     return <OrderItem key={order._id} item={order} />

@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect, useCallback} from 'react';
 import { useDispatch } from 'react-redux';
+import SimpleBar from 'simplebar-react';
 
 import { apiStartCall } from '../../store/actions.js';
 
@@ -8,7 +9,8 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
     const scrollingHandler = useCallback((e)=>{
-        if ((Math.floor(e.target.scrollTop) + Math.floor(e.target.clientHeight) + 300) > Math.floor(e.target.scrollHeight)) {
+        console.log(Math.floor(e.target.scrollTop) + Math.floor(e.target.clientHeight) + 40), Math.floor(e.target.scrollHeight);
+        if ((Math.floor(e.target.scrollTop) + Math.floor(e.target.clientHeight) + 40) > Math.floor(e.target.scrollHeight)) {
             setDoPagiante(true);
         }
     }, []);
@@ -17,28 +19,31 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
         if(items.length === 0 && hasMore) {
             dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5})} );
         }
+        // return () => {
+        //     return scrollingList.current.unMount();
+        // }
     }, []);
     // Do Paginate 
     // 1- remove scroll event
     // 2- paginate only if scrolling bottom and the returned items is not empty array
     useEffect(()=>{
         if(doPaginate && hasMore) {
-            scrollingList.current.removeEventListener('scroll', scrollingHandler);
+            scrollingList.current.getScrollElement().removeEventListener('scroll', scrollingHandler);
             setDoPagiante(false);
             dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5})} );
         }
     }, [doPaginate]);
     //add scrolling event listener only if items changed
     useEffect(()=>{
-        scrollingList.current.addEventListener('scroll', scrollingHandler);
+        scrollingList.current.getScrollElement().addEventListener('scroll', scrollingHandler);
     }, [items]);
-    return <>
+    return <SimpleBar ref={scrollingList} autoHide={false}>
         {
             lastPage === 1 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-mont font-bold'>
                 searching for {collectionName}
             </div> 
         }
-        <ul mode={pickedMode} id="infinite-scroll-list" ref={scrollingList} className='my-8 h-full overflow-y-scroll'>
+        <ul mode={pickedMode} id="infinite-scroll-list" className='my-8 h-full'>
             {
                 items.map(item=>{
                     return <ItemComponent key={item._id} item={item} />
@@ -57,7 +62,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
                 no {collectionName} found ...
             </div> 
         }
-    </>
+    </SimpleBar>
 };
 
 InfiniteScrollList.displayName = "infinite scroll list";

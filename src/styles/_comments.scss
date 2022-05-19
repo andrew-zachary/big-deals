@@ -1,4 +1,7 @@
 #comments-page{
+    div[data-simplebar=init] {
+        height: calc(100% - 7rem);
+    }
     #make-comment {
         button {
             span {
