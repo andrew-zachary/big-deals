@@ -27,6 +27,8 @@ module.exports = {
         'primary-dim': '#f9ae62',
         'primary-dark': '#8d9cb1',
         'primary-dim-dark': '#b3c4dd',
+        'primary-bg': 'white',
+        'primary-bg-dark': '#0c1124',
         'secondary': '#00000033'
       },
       boxShadow: {

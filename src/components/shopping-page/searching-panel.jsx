@@ -12,7 +12,7 @@ import DealListItem from './deal-list-item.jsx';
 const SearchingPanel = ({startSearch, setStartSearch}) => {
     const {productsSearch} = useSelector(state=>state.product);
     const {dealsSearch} = useSelector(state=>state.deal);
-    return <div id="searching-panel" className='absolute top-0 left-0 py-8 px-4 w-full h-full bg-white z-9997'>
+    return <div id="searching-panel" className='absolute top-0 left-0 py-8 px-4 w-full h-full bg-primary-bg dark:bg-primary-bg-dark z-9997'>
         <div id="header" className='flex justify-end'>
             <FaTimes onClick={()=>setStartSearch({
                 ...startSearch,
