@@ -11,13 +11,13 @@ const ShoppingPage = () => {
         value: '',
         mode: ''
     });
-    const [showModeList, setShowModeList] = useState('hide');
+    const [showModeList, setShowModeList] = useState(false);
     const [pickedMode, setPickedMode] = useState('products');
     const handleClickInOut = useCallback((e)=>{
-        if(e.target.id === 'mode-picker'){
-            setShowModeList('show');
+        if(e.target.classList.contains('pick-mode-trigger')) {
+            setShowModeList((value) => !value);
         } else {
-            setShowModeList('hide');
+            setShowModeList(false);
         }
     }, []);
     useEffect(()=>{

@@ -20,9 +20,9 @@ const SearchInput = ({startSearch, setStartSearch, showModeList, pickedMode}) =>
         })
     };
     return <div id="search-input" className='w-full flex'>
-        <button id="pick-mode-btn" type="button" className="relative border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]">
-            <div id="mode-picker" className="absolute h-full w-full"></div>
-            <FaSortDown className='cursor-pointer text-primary dark:text-primary-dark text-4xl mt-[-1rem]' />
+        <button id="pick-mode-btn" type="button" className="pick-mode-trigger relative border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]">
+            <div id="mode-picker" className="pick-mode-trigger absolute h-full w-full"></div>
+            <FaSortDown className='pick-mode-trigger cursor-pointer text-primary dark:text-primary-dark text-4xl mt-[-1rem]' />
         </button>
         <input 
             ref={searchTxt} 
