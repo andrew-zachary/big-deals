@@ -12,6 +12,12 @@
             @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
         }
     }
+    #auto-complete-list {
+        max-height: calc(4 * 4.5rem);
+        ul {
+            max-height: calc(5 * 4.5rem);
+        }
+    }
     #mode-pickup-list {
         &, li {
             @include withRtl('padding', 1rem, 1rem);
