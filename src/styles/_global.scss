@@ -30,7 +30,7 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   outline: unset!important;
 }
 
-//utilities
+//mixins
 @mixin withRtl($property, $ltr-value, $rtl-value) {
   & {
     #{$property}: $ltr-value;
@@ -221,6 +221,12 @@ button[disabled] {
 }
 
 //scroll bar
+div[data-simplebar=init] {
+  .simplebar-track.simplebar-vertical {
+    @include withRtl(right, 0, unset);
+    @include withRtl(left, unset, 0);
+  }
+}
 .simplebar-scrollbar::before {
   background-color: var(--primary)!important;
   opacity: 1!important;
