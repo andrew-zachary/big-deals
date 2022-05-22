@@ -1,13 +1,24 @@
 #admin-page {
-    #admin-links {
-        max-width: calc(20rem*2);
-        ul {
-            grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
-            row-gap: 1rem;
-            column-gap: 1rem;
-            li {
-                max-width: 17.5rem;
-                height: 17.5rem;
+    #admin-page_content {
+        #admin-links {
+            max-width: 76.8rem;
+            div[data-simplebar=init], .simplebar-content {
+                height: 100%;
+            }
+            .simplebar-content {
+                display: grid;
+                align-items: center;
+            }
+            ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+                align-content: center;
+                justify-items: center;
+                gap: 1rem;
+                li {
+                    width: 15.5rem;
+                    height: 15.5rem;
+                }
             }
         }
     }
