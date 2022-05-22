@@ -12,7 +12,7 @@ import { addItem } from '../../store/slices/cart.js';
 const ProductListItem = ({item}) => {
     const dispatch = useDispatch();
     return <li className='product-block'>
-        <h1 className='inline-block text-4xl capitalize font-mont font-medium'>{item.name}</h1>
+        <h1 className='inline-block text-5xl capitalize font-mont font-medium'>{item.name}</h1>
         <ProductPhotos 
             thumbs={[
                 "https://via.placeholder.com/45x45",

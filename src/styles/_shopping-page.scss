@@ -6,7 +6,10 @@
             @include withRtl('border-right', unset, 0.2rem solid var(--primary));
         }
         #search-btn {
+            border: 0.2rem solid var(--primary);
             @include withRtl('border-radius', 0 0.75rem 0 0, 0.75rem 0 0 0);
+            @include withRtl('border-left', none, 0.2rem solid var(--primary));
+            @include withRtl('border-right', 0.2rem solid var(--primary), none);
         }
         input {
             @include withRtl('padding', 0 0 0 1rem, 0 1rem 0 0);
@@ -30,11 +33,6 @@
         height: calc(100% - 7rem);
     }
     #infinite-scroll-list {
-        &[mode=search] {
-            & > li {
-                padding:2rem 0rem;
-            }
-        }
         &[mode=products] {
             & > li {
                 border-bottom: 0.1rem solid var(--primary-dim);

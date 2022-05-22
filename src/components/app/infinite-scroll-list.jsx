@@ -42,7 +42,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
                 searching for {collectionName}
             </div> 
         }
-        <ul mode={pickedMode} id="infinite-scroll-list" className='h-full'>
+        <ul mode={pickedMode} id="infinite-scroll-list" className='h-full px-6'>
             {
                 items.map(item=>{
                     return <ItemComponent key={item._id} item={item} />
