@@ -11,6 +11,7 @@ import ConfirmModal from "./components/app/confirm-modal.jsx";
 import SliderModal from "./components/app/slider-modal.jsx";
 import AppError from "./components/app/error.jsx";
 import NotificationModal from "./components/app/notification-modal.jsx";
+import Authed from "./guards/authed.jsx";
 
 //pages
 import HomePage from './pages/home.jsx';
@@ -48,7 +49,7 @@ const App = () => {
                 <Route path="/" element={<MainLayout />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/shopping" element={<ShoppingPage />} />
-                    <Route path="/admin" element={<AdminPage />}>
+                    <Route path="/admin" element={<Authed Component={AdminPage} />}>
                         <Route path="" element={<AdminHome />} />
                         <Route path="change-password" element={<AdminChangePassword />} />
                         <Route path="app-preferences" element={<AdminAppPreferences />} />

@@ -24,7 +24,7 @@ const SearchInput = ({debouncedNewSearch, showModeList, pickedMode, setPickedMod
                 onKeyDown={(e)=> e.key === 'Enter'?newSearch(e.target.value):null}
                 onInput={debouncedNewSearch}
             />
-            <div id="search-btn" className='bd-btn-icon-center w-1/5 bg-primary-bg dark:primary-bg-dark rounded-r-2xl py-6 text-center'>
+            <div id="search-btn" className='bd-btn-icon-center w-1/5 bg-primary-bg dark:bg-[#1e293b] rounded-r-2xl py-6 text-center'>
                 <FaSearch className='text-4xl text-primary dark:text-primary-dark inline-block' />
             </div>
         </div>

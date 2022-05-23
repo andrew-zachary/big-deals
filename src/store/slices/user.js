@@ -20,6 +20,7 @@ const userInfo = {
 };
 
 const initialState = {
+    userType: undefined,
     isAuthed: false,
     userInfo,
 };
@@ -34,16 +35,21 @@ const userSlice = createSlice({
         userAuthed: (state, action) => {
             state.isAuthed = true;
             state.userInfo = {...action.payload.data};
+            state.userType = 'user';
         },
         userAuthedOut: (state, _) => {
             state.isAuthed = false;
             state.userInfo = userInfo;
+            state.userType = 'anony';
         },
         userMailVerified: (state, _) => {
             state.userInfo.authId.email.verified = true;
         },
         userPrefsUpdated: (state, action) => {
             state.userInfo.appPreferences = action.payload.data
+        },
+        profileNotFound: (state) => {
+            state.userType = 'anony';
         }
     }
 });
@@ -55,5 +61,6 @@ export const {
     userAuthedOut, 
     userAvatarPicked, 
     userMailVerified,
-    userPrefsUpdated
+    userPrefsUpdated,
+    profileNotFound
 } = userSlice.actions;

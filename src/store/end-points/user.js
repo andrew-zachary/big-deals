@@ -1,8 +1,7 @@
-import { userAuthed, userAuthedOut, userMailVerified, userPrefsUpdated } from "../slices/user.js";
+import { userAuthed, userAuthedOut, userMailVerified, userPrefsUpdated, profileNotFound } from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
 import { 
     userAvatarChanged, 
-    userNoProfile, 
     passwordResetMailSent, 
     passwordResetDone, 
     passwordChanged,
@@ -16,7 +15,7 @@ const getUserInfo = (_1, _2, _3) => {
         method: 'GET',
         url: `${baseUserUrl}/profile`,
         onSuccess: userAuthed.type,
-        onFail: userNoProfile.type,
+        onFail: profileNotFound.type,
         layoutIdle: false
     }
 };
