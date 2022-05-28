@@ -15,10 +15,10 @@ import Authed from "./guards/authed.jsx";
 
 //pages
 import HomePage from './pages/home.jsx';
-import AdminPage from './pages/admin.jsx';
+const AdminPage = React.lazy(()=> import('./pages/admin.jsx'));
 import AdminChangePassword from './pages/admin-change-password-form.jsx';
 import AdminAppPreferences from './pages/admin-app-preferences.jsx';
-import AdminHome from "./pages/admin-home.jsx";
+import AdminHome from './pages/admin-home.jsx';
 import ShoppingPage from './pages/shopping.jsx';
 import CommentsPage from './pages/comments.jsx';
 import MailVerify from './pages/mail-verify.jsx';
@@ -37,30 +37,32 @@ import { Provider } from "react-redux";
 
 //app
 const App = () => {
-    return <Provider store={store}>
-        <AppError />
-        <ConfirmModal />
-        <SliderModal />
-        <NotificationModal />
-        <Loading />
-        <Auth />
-        <Router>
-            <Routes>
-                <Route path="/" element={<MainLayout />}>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/shopping" element={<ShoppingPage />} />
-                    <Route path="/admin" element={<Authed Component={AdminPage} />}>
-                        <Route path="" element={<AdminHome />} />
-                        <Route path="change-password" element={<AdminChangePassword />} />
-                        <Route path="app-preferences" element={<AdminAppPreferences />} />
+    return <React.Suspense fallback={<span>loading</span>}>
+        <Provider store={store}>
+            <AppError />
+            <ConfirmModal />
+            <SliderModal />
+            <NotificationModal />
+            <Loading />
+            <Auth />
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/shopping" element={<ShoppingPage />} />
+                        <Route path="/admin" element={<Authed Component={AdminPage} />}>
+                            <Route path="" element={<AdminHome />} />
+                            <Route path="change-password" element={<AdminChangePassword />} />
+                            <Route path="app-preferences" element={<AdminAppPreferences />} />
+                        </Route>
+                        <Route path="/comments/:id" element={<CommentsPage />} />
+                        <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
+                        <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
                     </Route>
-                    <Route path="/comments/:id" element={<CommentsPage />} />
-                    <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
-                    <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
-                </Route>
-            </Routes>
-        </Router>
-    </Provider>
+                </Routes>
+            </Router>
+        </Provider>
+    </React.Suspense>
 }
 
 ReactDOM.render(<StrictMode><App /></StrictMode>, document.getElementById("bd-app"));

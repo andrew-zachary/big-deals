@@ -60,8 +60,7 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^6.1.0",
     "react-slick": "^0.28.1",
-    "simplebar-react": "^2.3.7",
-    "swiper": "^7.0.2"
+    "simplebar-react": "^2.3.7"
   },
   "browserslist": [
     "> 1%",
