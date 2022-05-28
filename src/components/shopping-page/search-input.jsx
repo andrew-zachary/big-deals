@@ -1,13 +1,23 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
+import { useSelector } from 'react-redux';
 
 import { FaSearch, FaSortDown } from 'react-icons/fa';
 
-const SearchInput = ({debouncedNewSearch, showModeList, pickedMode, setPickedMode}) => {
+const SearchInput = ({debouncedNewSearch, showModeList, pickedMode, setPickedMode, setStartSearch}) => {
+    const {searchStr} = useSelector(state=>state.app.temp);
     const searchTxt = useRef('');
     const pickingModes = [
         {value: 'deals', header: 'search deals', desc: 'every day new deal is out ... '},
         {value: 'products', header: 'search products', desc: 'browse all products'}
     ];
+
+    useEffect(()=> {
+        searchTxt.current.value = searchStr;
+        setStartSearch({
+            value: searchStr,
+            mode: pickedMode
+        });
+    }, []);
 
     return <div id="search-input" className='w-full flex flex-col'>
         <div id="search-input-ctrls" className='w-full flex'>
@@ -21,7 +31,7 @@ const SearchInput = ({debouncedNewSearch, showModeList, pickedMode, setPickedMod
                 type="text" 
                 placeholder={`${showModeList === 'show'?'...':'search'+' '+pickedMode}`} 
                 className='focus:outline-none text-4xl w-4/5 capitalize border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]'
-                onKeyDown={(e)=> e.key === 'Enter'?newSearch(e.target.value):null}
+                onKeyDown={(e)=> e.key === 'Enter'?debouncedNewSearch:null}
                 onInput={debouncedNewSearch}
             />
             <div id="search-btn" className='bd-btn-icon-center w-1/5 bg-primary-bg dark:bg-[#1e293b] rounded-r-2xl py-6 text-center'>

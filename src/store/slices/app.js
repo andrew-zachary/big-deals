@@ -34,6 +34,9 @@ const initialState = {
     },
     loader: {
         show: false
+    },
+    temp: {
+        searchStr: ''
     }
 };
 
@@ -67,6 +70,9 @@ const appSlice = createSlice({
         loaderToggled: (state, _) => {
             state.loader.show = !state.loader.show;
         },
+        searchStarted: (state, action) => {
+            state.temp.searchStr = action.payload.searchStr;
+        }
     }
 });
 
@@ -79,4 +85,5 @@ export const {
     sideMenuToggled,
     errorReceived, 
     errorReset, 
-    loaderToggled } = appSlice.actions;
+    loaderToggled, 
+    searchStarted} = appSlice.actions;

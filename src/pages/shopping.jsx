@@ -7,6 +7,7 @@ import SearchInput from '../components/shopping-page/search-input.jsx';
 
 import { resetDealsSearch } from '../store/slices/deal.js';
 import { resetProductsSearch } from '../store/slices/product.js';
+import { searchStarted } from '../store/slices/app.js';
 
 import useClickInOut from '../hooks/clickInOut.js';
 
@@ -20,10 +21,12 @@ const ShoppingPage = () => {
         mode: ''
     });
     const newSearch = (e) => {
+        let searchStr = e.target.value;
         dispatch({type: resetDealsSearch.type});
         dispatch({type: resetProductsSearch.type});
+        dispatch({type: searchStarted.type, payload: {searchStr}});
         setStartSearch({
-            value: e.target.value,
+            value: searchStr,
             mode: ''
         });
         setNewMount(Date.now());
@@ -42,6 +45,7 @@ const ShoppingPage = () => {
             showModeList={triggerClicked} 
             pickedMode={pickedMode} 
             setPickedMode={setPickedMode}
+            setStartSearch={setStartSearch}
         />
         <SearchingPanel key={newMount} pickedMode={pickedMode} startSearch={startSearch} />
     </div>
