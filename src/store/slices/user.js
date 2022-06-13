@@ -15,7 +15,8 @@ const userInfo = {
     currentBalance: '',
     role: '',
     appPreferences: {
-        mode: ''
+        mode: '',
+        lang: 'en'
     }
 };
 
