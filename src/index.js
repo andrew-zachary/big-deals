@@ -1,4 +1,5 @@
 import "regenerator-runtime/runtime";
+import './utilities/i18n.js';
 
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
