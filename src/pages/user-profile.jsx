@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
 import AvatarManager from '../components/form/avatar-manager.jsx';
 import GoAdminBtn from '../components/side-menu/go-admin-btn.jsx';
@@ -10,17 +9,7 @@ import { apiStartCall } from '../store/actions.js';
 import { logout } from '../store/end-points/user.js';
 
 const UserProfile = ({userInfo, setCurrentPage}) => {
-    const { i18n } = useTranslation();
     const dispatch = useDispatch();
-    const {mode, lang} = userInfo.appPreferences;
-    const htmlEle = document.querySelector('html');
-    useEffect(()=>{
-        htmlEle.classList.add(mode);
-        htmlEle.setAttribute('dir', lang === 'en'?'ltr':'rtl');
-    }, []);
-    useEffect(()=> {
-        i18n.changeLanguage(lang);
-    }, [lang]);
     return <>
         {
             userInfo._id && <div id='user-profile' className='grid content-center'> 

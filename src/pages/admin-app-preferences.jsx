@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { apiStartCall } from '../store/actions.js';
+import { userPrefsUpdated } from '../store/slices/user.js';
 import { updatePreferences } from '../store/end-points/user.js';
 
 const AdminAppPreferences = () => {
@@ -9,30 +10,26 @@ const AdminAppPreferences = () => {
     const {mode, lang} = useSelector(state=>state.user.userInfo.appPreferences);
     const modeCheckbox = useRef();
     const langList = useRef();
-    const htmlEle = document.querySelector('html');
-    const toggleDarkClass = () => {
-        htmlEle.classList.toggle('dark');
-    };
-    const chooseLang = (value) => {
-        htmlEle.setAttribute('dir', value === 'en'?'ltr':'rtl');
+    const updatePrefs = () => {
+        dispatch({type: userPrefsUpdated.type, payload: {data: {lang: langList.current.value, mode: modeCheckbox.current.checked?'dark':'light'}}});
     };
     const saveChanges = () => {
-        dispatch({type: apiStartCall.type, payload: updatePreferences(null, null, {mode: modeCheckbox.current.checked?'dark':'light', lang: langList.current.value})});
+        dispatch({type: apiStartCall.type, payload: updatePreferences(null, null, {lang: langList.current.value, mode: modeCheckbox.current.checked?'dark':'light'})});
     };
     useEffect(()=> {
         modeCheckbox.current.checked = mode === 'dark';
-    }, [mode]);
+    }, []);
     return <section id='app-preferences' className='p-4 w-full max-w-screen-sm mx-auto'>
         <div className='flex justify-between items-center'>
             <h1 className='text-4xl font-mont capitalize'>switch to dark mode</h1>
             <label className='container-label'>
-                <input ref={modeCheckbox} type='checkbox' id='dark-mode' name='dark-mode' onChange={()=>toggleDarkClass()} />
+                <input ref={modeCheckbox} type='checkbox' id='dark-mode' name='dark-mode' onChange={()=>updatePrefs()} />
                 <span className="checkmark"></span>
             </label>
         </div>
         <div className='flex justify-between items-center mt-8'>
             <h1 className='text-4xl font-mont capitalize'>choose language</h1>
-            <select ref={langList} name='lang' id='lang' defaultValue={lang === 'en'?'en':'ar'} onChange={(e)=>chooseLang(e.target.value)} className="text-4xl text-white bg-primary dark:bg-primary-dark p-2">
+            <select ref={langList} name='lang' id='lang' defaultValue={lang === 'en'?'en':'ar'} onChange={(e)=>updatePrefs()} className="text-4xl text-white bg-primary dark:bg-primary-dark p-2">
                 <option value='en'>en</option>
                 <option value='ar'>ar</option>
             </select>

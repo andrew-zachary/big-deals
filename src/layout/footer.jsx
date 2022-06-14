@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 
 import { footerShowToggled } from '../store/slices/app.js';
 
+import LangToggler from '../components/footer/lang-toggler.jsx';
+
 const Footer = ({footerToggle}) => {
     const location = useLocation();
     const dispatch = useDispatch();
@@ -21,8 +23,9 @@ const Footer = ({footerToggle}) => {
     return <>
         {
             footerToggle && <footer>
-                <div className='max-w-app-body mx-auto h-full'>
-                    <ul className='flex justify-end'>
+                <div className='max-w-app-body mx-auto h-full flex justify-between items-center'>
+                    <LangToggler />
+                    <ul className='flex justify-end items-center'>
                         <li className={iconContainerStyle}>
                             <FaFacebookF className={iconStyle} />
                         </li>

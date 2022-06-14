@@ -12,6 +12,7 @@ import ConfirmModal from "./components/app/confirm-modal.jsx";
 import SliderModal from "./components/app/slider-modal.jsx";
 import AppError from "./components/app/error.jsx";
 import NotificationModal from "./components/app/notification-modal.jsx";
+import AppPrefs from "./components/app/prefs.jsx";
 import Authed from "./guards/authed.jsx";
 
 //pages
@@ -62,6 +63,7 @@ const App = () => {
                     </Route>
                 </Routes>
             </Router>
+            <AppPrefs />
         </Provider>
     </React.Suspense>
 }
