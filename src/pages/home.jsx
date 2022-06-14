@@ -11,7 +11,7 @@ const HomePage = () => {
         <h2 className='font-mont font-regular text-3xl my-3 dark:text-white'>
             {t('home.header')}
         </h2>
-        <Link className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' to="/shopping" path="shopping">shopping now</Link>
+        <Link className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' to="/shopping" path="shopping">{t('home.shopping_now')}</Link>
     </div>
 }
 
