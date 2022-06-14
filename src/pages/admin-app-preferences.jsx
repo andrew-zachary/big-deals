@@ -32,9 +32,9 @@ const AdminAppPreferences = () => {
         </div>
         <div className='flex justify-between items-center mt-8'>
             <h1 className='text-4xl font-mont capitalize'>choose language</h1>
-            <select ref={langList} name='lang' id='lang' onChange={(e)=>chooseLang(e.target.value)} className="text-4xl text-white bg-primary dark:bg-primary-dark p-2">
-                <option value='en' selected={lang === 'en'}>en</option>
-                <option value='ar' selected={lang === 'ar'}>ar</option>
+            <select ref={langList} name='lang' id='lang' defaultValue={lang === 'en'?'en':'ar'} onChange={(e)=>chooseLang(e.target.value)} className="text-4xl text-white bg-primary dark:bg-primary-dark p-2">
+                <option value='en'>en</option>
+                <option value='ar'>ar</option>
             </select>
         </div>
         <div id='app-preferences_ctrls' className='flex justify-end mt-12'>
