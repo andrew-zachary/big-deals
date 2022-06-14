@@ -10,10 +10,11 @@ import { logout } from '../store/end-points/user.js';
 
 const UserProfile = ({userInfo, setCurrentPage}) => {
     const dispatch = useDispatch();
-    const {mode} = userInfo.appPreferences;
+    const {mode, lang} = userInfo.appPreferences;
     const htmlEle = document.querySelector('html');
     useEffect(()=>{
         htmlEle.classList.add(mode);
+        htmlEle.setAttribute('dir', lang === 'en'?'ltr':'rtl');
     }, []);
     return <>
         {
