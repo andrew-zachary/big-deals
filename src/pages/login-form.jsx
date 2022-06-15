@@ -40,7 +40,7 @@ const LoginForm = ({setCurrentPage}) => {
         </form>
         <div id="login-form-options">
             <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('register')}>{t('login.sign_up_btn')}</button>
-            <span>/</span>
+            <span className='text-4xl px-2'>/</span>
             <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('password')}>{t('login.forgot_password_btn')}</button>
         </div>
     </div>

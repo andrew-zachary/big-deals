@@ -20,9 +20,9 @@ const BDFormInput = ({htmlInput, htmlInputErr, id, name, type, label, value, onC
         { htmlInput && <div className={groupStyle}>
             <input className={inputStyle} id={id} name={name} type={type} value={value} onChange={onChange} onBlur={onBlur} />
             <span className={barStyle}></span>
-            <label className={labelStyle} htmlFor={id}>{label}</label>
+            <label className={labelStyle} htmlFor={id}>{t(label)}</label>
             <div className='error text-red-600 text-3xl mt-4'>
-                {htmlInputErr}
+                {t(htmlInputErr)}
             </div>
         </div> }
     </>

@@ -60,6 +60,13 @@ const ar = {
             },
             "submit_btn": "sign up",
             "have_account": "have an account"
+        },
+        "forgot_password": {
+            "email": {
+                "label": "email"
+            },
+            "submit_btn": "send reset password email",
+            "email_was_sent": "email was sent"
         }
     }
 };

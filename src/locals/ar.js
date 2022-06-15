@@ -60,6 +60,13 @@ const ar = {
             },
             "submit_btn": "تسجيل جديد",
             "have_account": "لديك حساب بالفعال"
+        },
+        "forgot_password": {
+            "email": {
+                "label": "البريد الالكتروني"
+            },
+            "submit_btn": "رسالة اعادة تعين كلمة مرور",
+            "email_was_sent": "تم الارسال"
         }
     }
 };
