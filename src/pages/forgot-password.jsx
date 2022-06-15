@@ -16,11 +16,11 @@ const ForgotPassword = () => {
     const sendHandler = (input) => {
         setEmailErr(null);
         if(input.length === 0) {
-            return setEmailErr('email is needed')
+            return setEmailErr('forgot_password.email.errors.required')
         }
         if(!input.toLowerCase()
         .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-            return setEmailErr('please enter valid email');
+            return setEmailErr('forgot_password.email.errors.email_not_valid');
         }
         dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, {email: input})});
         setBtnTxt("forgot_password.email_was_sent");

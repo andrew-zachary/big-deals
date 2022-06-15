@@ -63,7 +63,11 @@ const ar = {
         },
         "forgot_password": {
             "email": {
-                "label": "email"
+                "label": "email",
+                "errors": {
+                    "required": "email is required",
+                    "email_not_valid": "email is not valid"
+                }
             },
             "submit_btn": "send reset password email",
             "email_was_sent": "email was sent"

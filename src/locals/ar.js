@@ -63,7 +63,11 @@ const ar = {
         },
         "forgot_password": {
             "email": {
-                "label": "البريد الالكتروني"
+                "label": "البريد الالكتروني",
+                "errors": {
+                    "required": "البريد الالكتروني مطلوب",
+                    "email_not_valid": "الصيغة غير صحيحة"
+                }
             },
             "submit_btn": "رسالة اعادة تعين كلمة مرور",
             "email_was_sent": "تم الارسال"
