@@ -16,7 +16,7 @@ const userInfo = {
     role: '',
     appPreferences: {
         mode: 'light',
-        lang: 'ar'
+        lang: 'en'
     }
 };
 
