@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import BDFormInput from '../components/form/input.jsx';
 
@@ -9,6 +10,7 @@ import { login } from '../store/end-points/user.js';
 import LoginSchema from '../validations/login-schema.js';
 
 const LoginForm = ({setCurrentPage}) => {
+    const {t} = useTranslation();
     const dispatch = useDispatch();
     const loginForm = useFormik({
         validateOnBlur: true,
@@ -32,13 +34,14 @@ const LoginForm = ({setCurrentPage}) => {
     });
     return <div id='login-form' className='grid content-center px-8'>
         <form onSubmit={loginForm.handleSubmit}>
-            <BDFormInput id="email" name="email" type="text" label="email" value={loginForm.values.email} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
-            <BDFormInput id="password" name="password" type="password" label="password" value={loginForm.values.password} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
-            <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!loginForm.isValid}>sign in</button>
+            <BDFormInput id="email" name="email" type="text" label="login.email.label" value={loginForm.values.email} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
+            <BDFormInput id="password" name="password" type="password" label="login.password.label" value={loginForm.values.password} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
+            <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!loginForm.isValid}>{t('login.submit_btn')}</button>
         </form>
         <div id="login-form-options">
-            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('register')}>sign up&nbsp;</button>
-            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('password')}>/&nbsp;forgot password</button>
+            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('register')}>{t('login.sign_up_btn')}</button>
+            <span>/</span>
+            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('password')}>{t('login.forgot_password_btn')}</button>
         </div>
     </div>
 };
