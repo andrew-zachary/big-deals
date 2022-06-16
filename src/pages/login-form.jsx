@@ -36,12 +36,12 @@ const LoginForm = ({setCurrentPage}) => {
         <form onSubmit={loginForm.handleSubmit}>
             <BDFormInput id="email" name="email" type="text" label="login.email.label" value={loginForm.values.email} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
             <BDFormInput id="password" name="password" type="password" label="login.password.label" value={loginForm.values.password} onChange={loginForm.handleChange} onBlur={loginForm.handleBlur} errors={loginForm.errors} touched={loginForm.touched} />
-            <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!loginForm.isValid}>{t('login.submit_btn')}</button>
+            <button type='submit' className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!loginForm.isValid}>{t('login.submit_btn')}</button>
         </form>
-        <div id="login-form-options">
-            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('register')}>{t('login.sign_up_btn')}</button>
+        <div id="login-form-options" className='bd-font-base'>
+            <button className='font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('register')}>{t('login.sign_up_btn')}</button>
             <span className='text-4xl px-2'>/</span>
-            <button className='font-ssp font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('password')}>{t('login.forgot_password_btn')}</button>
+            <button className='font-regular text-4xl capitalize mb-12 mt-14' onClick={()=>setCurrentPage('password')}>{t('login.forgot_password_btn')}</button>
         </div>
     </div>
 };

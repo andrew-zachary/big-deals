@@ -38,7 +38,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     }, [items]);
     return <SimpleBar ref={scrollingList} autoHide={false}>
         {
-            lastPage === 1 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-mont font-bold'>
+            lastPage === 1 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-bold'>
                 searching for {collectionName}
             </div> 
         }
@@ -57,7 +57,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
             </li> }
         </ul>
         {
-            items.length === 0 && !hasMore && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-mont font-bold'>
+            items.length === 0 && !hasMore && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-bold'>
                 no {collectionName} found ...
             </div> 
         }

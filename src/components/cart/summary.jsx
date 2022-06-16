@@ -11,7 +11,7 @@ const CartSummary = () => {
                 </div>
             </div>
             <div className='bd-unit'>
-                <div className='bg-primary dark:bg-primary-dark text-white text-4xl px-8 py-4 flex items-center font-mont font-medium rounded-full'>
+                <div className='bg-primary dark:bg-primary-dark text-white text-4xl px-8 py-4 flex items-center font-medium rounded-full'>
                     <span>$</span>
                     <span className='bd-unit'>{(totalCost.products+totalCost.deals).toFixed(2)}</span>
                 </div>

@@ -31,13 +31,13 @@ const ChangePasswordForm = () => {
             dispatch({type: apiStartCall.type, payload: changePassword(null, null, {oldPassword:values.oldPassword, newPassword:values.newPassword})});
         },
     });
-    return <section id='change-password' className='p-4 font-ssp w-full max-w-screen-sm mx-auto'>
+    return <section id='change-password' className='p-4 w-full max-w-screen-sm mx-auto'>
         <h1 className='text-5xl capitalize'>change password</h1>
         <form onSubmit={form.handleSubmit} action="#">
             <BDFormInput id="oldPassword" name="oldPassword" type="password" label="old password" value={form.values.oldPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
             <BDFormInput id="newPassword" name="newPassword" type="password" label="new Password" value={form.values.newPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
             <BDFormInput id="confirmNewPassword" name="confirmNewPassword" type="password" label="confirm new password" value={form.values.confirmNewPassword} onChange={form.handleChange} onBlur={form.handleBlur} errors={form.errors} touched={form.touched} />
-            <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!form.isValid}>change password</button>
+            <button type='submit' className='font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!form.isValid}>change password</button>
         </form>
     </section>
 };

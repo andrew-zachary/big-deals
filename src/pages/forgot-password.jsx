@@ -31,13 +31,13 @@ const ForgotPassword = () => {
                 <BDFormInput id="email" name="email" type="email" label="forgot_password.email.label" htmlInput={true} htmlInputErr={emailErr} value={email} onChange={(e)=>setEmail(e.target.value)} onBlur={null} errors={null} touched={null} />
             </form>
             {
-                btnTxt !== "forgot_password.submit_btn" && <p className="text-4xl font-mont font-regular px-4 capitalize">
+                btnTxt !== "forgot_password.submit_btn" && <p className="bd-font-base text-4xl font-regular px-4 capitalize">
                     {t(btnTxt)}
                 </p>
             }
             {
                 btnTxt === "forgot_password.submit_btn" && <div id="reset-ctrls" className='flex justify-between'>
-                    <button className='font-ssp font-regular text-3xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{t(btnTxt)}</button>
+                    <button className='bd-font-compo font-medium text-3xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>sendHandler(email)}>{t(btnTxt)}</button>
                 </div>
             }
         </div>

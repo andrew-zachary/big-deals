@@ -46,6 +46,12 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
   display: inline-block;
   @include withRtl('margin', 0 0 0 1rem, 0 1rem 0 0)
 }
+.bd-font-base {
+  @include withRtl('font-family', "Source Sans Pro", Vazirmatn);
+}
+.bd-font-compo {
+  @include withRtl('font-family', Montserrat, Tajawal);
+}
 
 //loading spinner
 .spinner {

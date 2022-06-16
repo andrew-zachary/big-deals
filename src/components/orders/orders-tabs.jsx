@@ -11,7 +11,7 @@ const OrderTabs = ({currentTab, setCurrentTab}) => {
             case 'current':
                 return <CurrentOrdersTab currentTab={currentTab} setCurrentTab={setCurrentTab} />
             default:
-                return <h1 className='mt-8 text-4xl capitalize font-ssp font-regular'>review all your bills</h1>
+                return <h1 className='mt-8 text-4xl capitalize font-regular'>review all your bills</h1>
         }
     }
     return <>

@@ -12,7 +12,7 @@ const LangToggler = () => {
         const toggleTo = currentLang === 'en'?'ar':'en';
         dispatch({type: userPrefsUpdated.type, payload: {data: {lang: toggleTo, mode}}});
     };
-    return <div onClick={()=>toggleLang(lang)} id='lang-toggler' className='cursor-pointer'>{t('base.target')}</div>
+    return <div onClick={()=>toggleLang(lang)} id='lang-toggler' className='text-5xl font-medium cursor-pointer'>{t('base.target')}</div>
 };
 
 LangToggler.displayName = 'language toggler';

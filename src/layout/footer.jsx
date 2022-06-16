@@ -23,7 +23,7 @@ const Footer = ({footerToggle}) => {
     return <>
         {
             footerToggle && <footer>
-                <div className='max-w-app-body mx-auto h-full flex justify-between items-center'>
+                <div className='max-w-screen-md mx-auto h-full flex justify-between items-center'>
                     <LangToggler />
                     <ul className='flex justify-end items-center'>
                         <li className={iconContainerStyle}>

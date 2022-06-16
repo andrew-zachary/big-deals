@@ -16,7 +16,7 @@ const CurrentOrdersTab = () => {
                 }
             </ul>
             {
-                currentOrders.length === 0 && <div id='no-current-orders' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-mont font-bold'>
+                currentOrders.length === 0 && <div id='no-current-orders' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-bold'>
                     no new orders ...
                 </div>
             }

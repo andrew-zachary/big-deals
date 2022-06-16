@@ -8,10 +8,10 @@ const HomePage = () => {
         <h1 className="font-mont font-light text-home-brand-res xs:text-home-brand text-black uppercase font-bold tracking-widest dark:text-white">
             big deals
         </h1>
-        <h2 className='font-mont font-regular text-3xl my-3 dark:text-white'>
+        <h2 className='bd-font-base font-regular text-3xl my-3 dark:text-white'>
             {t('home.header')}
         </h2>
-        <Link className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' to="/shopping" path="shopping">{t('home.shopping_now')}</Link>
+        <Link className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' to="/shopping" path="shopping">{t('home.shopping_now')}</Link>
     </div>
 }
 

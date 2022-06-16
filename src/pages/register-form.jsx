@@ -52,9 +52,9 @@ const RegisterForm = ({setCurrentPage}) => {
             <BDFormInput id="email" name="email" type="text" label={t('register.email.label')} value={registerForm.values.email} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="password" name="password" type="password" label={t('register.password.label')} value={registerForm.values.password} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="password_confirm" name="passwordConfirm" type="password" label={t('register.password_confirm.label')} value={registerForm.values.passwordConfirm} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
-            <button type='submit' className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!registerForm.isValid}>{t('register.submit_btn')}</button>
+            <button type='submit' className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] uppercase w-full' disabled={!registerForm.isValid}>{t('register.submit_btn')}</button>
         </form>
-        <button className='font-ssp font-regular text-4xl mb-12 mt-14' onClick={()=>setCurrentPage('user')}>{t('register.have_account')}</button>
+        <button className='bd-font-base font-regular text-4xl mb-12 mt-14' onClick={()=>setCurrentPage('user')}>{t('register.have_account')}</button>
     </SimpleBar>
 };
 

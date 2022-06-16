@@ -12,7 +12,7 @@ import { addItem } from '../../store/slices/cart.js';
 const ProductListItem = ({item}) => {
     const dispatch = useDispatch();
     return <li className='product-block'>
-        <h1 className='inline-block text-5xl capitalize font-mont font-medium'>{item.name}</h1>
+        <h1 className='inline-block text-5xl capitalize font-medium'>{item.name}</h1>
         <ProductPhotos 
             thumbs={[
                 "https://via.placeholder.com/45x45",
@@ -37,27 +37,27 @@ const ProductListItem = ({item}) => {
             color="#f9ae6280"
         />
         <div className='text-5xl text-primary dark:text-primary-dark py-4'>
-            <span className='font-mont font-medium'>{item.price}</span><span className='bd-unit font-mon font-medium'>$</span>
+            <span className='font-medium'>{item.price}</span><span className='bd-unit font-mon font-medium'>$</span>
         </div>
-        <p className='text-4xl py-4 font-ssp font-medium'>{item.desc}</p>
+        <p className='text-4xl py-4 font-medium'>{item.desc}</p>
         <ul>
             {
                 item.features.map(feature => {
-                    return <li key={feature} className='text-3xl p-4 inline-block border border-primary dark:border-primary-dark font-ssp font-medium capitalize'>{feature}</li>
+                    return <li key={feature} className='text-3xl p-4 inline-block border border-primary dark:border-primary-dark font-medium capitalize'>{feature}</li>
                 })
             }
         </ul>
         <div className='py-4 flex items-center w-full'>
-            <span className='font-mont font-medium text-4xl capitalize'>in stock</span>
-            <span className='text-4xl bd-unit font-ssp font-medium text-primary dark:text-primary-dark'>{item.instock?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
+            <span className='font-medium text-4xl capitalize'>in stock</span>
+            <span className='text-4xl bd-unit font-medium text-primary dark:text-primary-dark'>{item.instock?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
         </div>
         <div className='py-4 flex items-center w-full'>
-            <span className='font-mont font-medium text-4xl capitalize'>free shipping</span>
-            <span className='text-4xl bd-unit font-ssp font-medium text-primary dark:text-primary-dark'>{item.freeShipping?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
+            <span className='font-medium text-4xl capitalize'>free shipping</span>
+            <span className='text-4xl bd-unit font-medium text-primary dark:text-primary-dark'>{item.freeShipping?<FaCheck className='text-4xl' />:<FaTimes className='text-4xl' />}</span>
         </div>
         <div className='mt-4'>
-            <span className='font-mont font-medium text-4xl capitalize'>by</span>
-            <span className='text-4xl bd-unit font-ssp font-medium text-primary dark:text-primary-dark'>{item.seller.authId.firstName}</span>
+            <span className='font-medium text-4xl capitalize'>by</span>
+            <span className='text-4xl bd-unit font-medium text-primary dark:text-primary-dark'>{item.seller.authId.firstName}</span>
         </div>
         <div className='flex justify-around mt-8 max-w-[28rem] mx-auto'>
             <Link className='p-4 bg-primary dark:bg-primary-dark shadow-secondary rounded-full' to={`/comments/${item._id}`} state={{product:item}}>

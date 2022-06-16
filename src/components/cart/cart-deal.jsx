@@ -10,7 +10,7 @@ const CartDealItem = ({item}) => {
     const dispatch = useDispatch();
     return <li>
         <div className='item-body text-4xl flex items-center justify-between mt-8'>
-            <span className='capitalize block font-mont font-light'>{item.entity.name}</span>
+            <span className='capitalize block font-light'>{item.entity.name}</span>
             <CartDealQuantity item={item} />
         </div>
         <div className='flex justify-between text-primary text-4xl mt-20 border-primary dark:border-primary-dark border-b'>

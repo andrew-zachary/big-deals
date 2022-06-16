@@ -9,7 +9,7 @@ const OrderItem = ({item}) => {
         <div className="order-body mt-4">
             {
                 item.items.map((product) => {
-                    return <ul key={product._id} className='flex items-center justify-between text-2xl font-ssp font-regular mt-2'>
+                    return <ul key={product._id} className='flex items-center justify-between text-2xl font-regular mt-2'>
                         <li>
                             <span>{product.name}</span>
                             <span className='bd-unit'>x</span>
@@ -20,7 +20,7 @@ const OrderItem = ({item}) => {
                 })
             }
         </div>
-        <div className='order-footer flex justify-center my-4 p-4 bg-primary dark:bg-primary-dark font-mont font-regular text-3xl text-white'>
+        <div className='order-footer flex justify-center my-4 p-4 bg-primary dark:bg-primary-dark font-regular text-3xl text-white'>
             <span className='capitalize'>total price:</span>
             <span className='bd-unit'>$</span>
             <span className='bd-unit'>{item.totalPrice}</span>

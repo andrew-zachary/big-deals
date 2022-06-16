@@ -37,15 +37,15 @@ const ConfirmModal = () => {
             contentLabel="Confirm Modal"
         >
             <div id="confirm-modal-content" className='flex flex-col justify-between p-6 h-full'>
-                <div className="header text-5xl font-mont font-regular capitalize text-primary dark:text-primary-dark">
+                <div className="header text-5xl font-regular capitalize text-primary dark:text-primary-dark">
                     {text.header}
                 </div>
-                <div className="body text-3xl font-mont font-regular capitalize text-center dark:text-primary-dark">
+                <div className="body text-3xl font-regular capitalize text-center dark:text-primary-dark">
                     {text.body}
                 </div>
                 <div className="ctrls flex justify-around">
-                    <button className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' onClick={()=>confirmAction()}>ok</button>
-                    <button className='font-ssp font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' onClick={()=>closeModal()}>cancel</button>
+                    <button className='font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' onClick={()=>confirmAction()}>ok</button>
+                    <button className='font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize' onClick={()=>closeModal()}>cancel</button>
                 </div>
             </div>
         </Modal>

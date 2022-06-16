@@ -46,8 +46,8 @@ const CartTab = ({isAuthed, setCurrentPage}) => {
     return <SimpleBar>
         <div id='main-cart' className='px-8'>
             <div id="cart-deals" className='mt-8'>
-                <h1 className='text-5xl capitalize font-mont font-medium'>deals</h1>
-                {items.deals.length === 0 && <h2 className='text-3xl capitalize font-mont font-light mt-4'>new deals eveyday</h2>}
+                <h1 className='text-5xl capitalize font-medium'>deals</h1>
+                {items.deals.length === 0 && <h2 className='text-3xl capitalize font-light mt-4'>new deals eveyday</h2>}
                 <ul>
                     {
                         items.deals.map(item=>{
@@ -57,8 +57,8 @@ const CartTab = ({isAuthed, setCurrentPage}) => {
                 </ul>
             </div>
             <div id="cart-products" className='mt-8'>
-                <h1 className='text-5xl capitalize font-mont font-medium'>products</h1>
-                {items.products.length === 0 && <h2 className='text-3xl capitalize font-mont font-light mt-4'>big collection waiting you</h2>}
+                <h1 className='text-5xl capitalize font-medium'>products</h1>
+                {items.products.length === 0 && <h2 className='text-3xl capitalize font-light mt-4'>big collection waiting you</h2>}
                 <ul>
                     {
                         items.products.map(item=>{
@@ -71,7 +71,7 @@ const CartTab = ({isAuthed, setCurrentPage}) => {
                 <span>$</span>
                 <span>{(totalCost.products+totalCost.deals).toFixed(2)}</span>
             </div>
-            <button onClick={()=> saveOrder(items)} className='text-4xl text-white font-ssp font-light capitalize bg-primary dark:bg-primary-dark p-3 mt-8 mb-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>submit order</button>
+            <button onClick={()=> saveOrder(items)} className='text-4xl text-white font-light capitalize bg-primary dark:bg-primary-dark p-3 mt-8 mb-8 rounded-[0.4rem] w-full' disabled={(items.products.length + items.deals.length) === 0}>submit order</button>
         </div>
     </SimpleBar>
 };
