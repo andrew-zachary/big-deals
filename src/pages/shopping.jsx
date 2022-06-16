@@ -14,7 +14,7 @@ import useClickInOut from '../hooks/clickInOut.js';
 const ShoppingPage = () => {
     const dispatch = useDispatch();
     const [triggerClicked] = useClickInOut('pick-mode-trigger', document);
-    const [pickedMode, setPickedMode] = useState('products');
+    const [pickedMode, setPickedMode] = useState('shopping.search.modes.products');
     const [newMount, setNewMount] = useState('');
     const [startSearch, setStartSearch] = useState({
         value: '',

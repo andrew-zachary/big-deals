@@ -71,6 +71,23 @@ const ar = {
             },
             "submit_btn": "رسالة اعادة تعين كلمة مرور",
             "email_was_sent": "تم الارسال"
+        },
+        "shopping": {
+            "search": {
+                "label": "بحث",
+                "modes": {
+                    "deals": "عروض",
+                    "products": "منتجات"
+                },
+                "deals": {
+                    "header": "بحث العروض",
+                    "desc": "كل يوم عرض جديد"
+                },
+                "products": {
+                    "header": "بحث المنتجات",
+                    "desc": "تصفح كل المنتجات"
+                }
+            }
         }
     }
 };

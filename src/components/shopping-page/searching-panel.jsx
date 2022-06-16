@@ -12,24 +12,24 @@ const SearchingPanel = ({pickedMode, startSearch}) => {
     const {productsSearch} = useSelector(state=>state.product);
     const {dealsSearch} = useSelector(state=>state.deal);
     return <div id="searching-panel" className='py-8 w-full h-full bg-primary-bg dark:bg-primary-bg-dark z-9997'>
-        { pickedMode === 'deals' && <InfiniteScrollList 
+        { pickedMode === 'shopping.search.modes.deals' && <InfiniteScrollList 
                 endPointOptions={searchAllDeals}
                 items={dealsSearch.items} 
                 hasMore={dealsSearch.hasMore} 
                 lastPage={dealsSearch.lastPage}
                 ItemComponent={DealListItem} 
-                pickedMode={pickedMode}
+                pickedMode='deals'
                 params={{s:startSearch.value}}
                 collectionName='results'
             /> 
         }
-        { pickedMode === 'products' && <InfiniteScrollList 
+        { pickedMode === 'shopping.search.modes.products' && <InfiniteScrollList 
                 endPointOptions={searchAllProducts}
                 items={productsSearch.items} 
                 hasMore={productsSearch.hasMore} 
                 lastPage={productsSearch.lastPage}
                 ItemComponent={ProductListItem} 
-                pickedMode={pickedMode}
+                pickedMode='products'
                 params={{s:startSearch.value}}
                 collectionName='results'
             /> 
