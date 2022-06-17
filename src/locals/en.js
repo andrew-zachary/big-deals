@@ -1,4 +1,4 @@
-const ar = {
+const en = {
     translation: {
         "base": {
             "target": "العربية"
@@ -88,8 +88,21 @@ const ar = {
                     "desc": "browse all products"
                 }
             }
+        },
+        "cart": {
+            "sections": {
+                "deals": {
+                    "label": "deals",
+                    "desc": "new deals every day"
+                },
+                "products": {
+                    "label": "products",
+                    "desc": "big collection waiting you"
+                }
+            },
+            "submit": "submit order"
         }
     }
 };
 
-export default ar;
+export default en;

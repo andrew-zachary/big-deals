@@ -11,7 +11,7 @@ import DealListItem from './deal-list-item.jsx';
 const SearchingPanel = ({pickedMode, startSearch}) => {
     const {productsSearch} = useSelector(state=>state.product);
     const {dealsSearch} = useSelector(state=>state.deal);
-    return <div id="searching-panel" className='py-8 w-full h-full bg-primary-bg dark:bg-primary-bg-dark z-9997'>
+    return <div id="searching-panel" className='py-8 w-full h-full bg-primary-bg dark:bg-primary-bg-dark z-9996'>
         { pickedMode === 'shopping.search.modes.deals' && <InfiniteScrollList 
                 endPointOptions={searchAllDeals}
                 items={dealsSearch.items} 
