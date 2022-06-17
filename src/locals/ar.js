@@ -76,8 +76,8 @@ const ar = {
             "search": {
                 "label": "بحث",
                 "modes": {
-                    "deals": "عروض",
-                    "products": "منتجات"
+                    "deals": "العروض",
+                    "products": "المنتجات"
                 },
                 "deals": {
                     "header": "بحث العروض",

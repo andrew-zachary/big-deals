@@ -71,6 +71,23 @@ const ar = {
             },
             "submit_btn": "send reset password email",
             "email_was_sent": "email was sent"
+        },
+        "shopping": {
+            "search": {
+                "label": "search",
+                "modes": {
+                    "deals": "deals",
+                    "products": "products"
+                },
+                "deals": {
+                    "header": "search deals",
+                    "desc": "everyday new deal"
+                },
+                "products": {
+                    "header": "search products",
+                    "desc": "browse all products"
+                }
+            }
         }
     }
 };
