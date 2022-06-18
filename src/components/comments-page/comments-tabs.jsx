@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import CommentsTotal from './comments-total.jsx';
 import TellUsTabs from './tell-us-tabs.jsx';
@@ -7,6 +8,7 @@ import Appreciate from './appreciate.jsx';
 import CommentsList from './comments-list.jsx';
 
 const CommentsTabs = () => {
+    const {t} = useTranslation();
     const [currentTab, setCurrentTab] = useState('total');
     const params = useParams();
     const pickUpTab = (currentTab) => {
@@ -18,7 +20,7 @@ const CommentsTabs = () => {
             case 'list':
                 return <CommentsList productId={params.id} setCurrentTab={setCurrentTab} />
             case 'total':
-                return <CommentsTotal setCurrentTab={setCurrentTab} />
+                return <CommentsTotal t={t} setCurrentTab={setCurrentTab} />
             default:
                 return <CommentsList productId={params.id} setCurrentTab={setCurrentTab} />
         }

@@ -101,6 +101,14 @@ const en = {
                 }
             },
             "submit": "submit order"
+        },
+        "review": {
+            "label": {
+                "single": "review",
+                "plural": "reviews"
+            },
+            "by": "by",
+            "on": "on"
         }
     }
 };

@@ -4,7 +4,7 @@ import ReactStars from 'react-rating-stars-component';
 import {FaChevronDown} from 'react-icons/fa';
 import CircleRating from './circle-rating.jsx';
 
-const CommentsHeader = ({setCurrentTab}) => {
+const CommentsHeader = ({setCurrentTab, t}) => {
     const {state:{product}} = useLocation();
 
     return <div id='rate-out' className='text-center'>
@@ -12,7 +12,7 @@ const CommentsHeader = ({setCurrentTab}) => {
             <CircleRating amount={product.avgRating.amount} />
             <span className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>{parseFloat(product.avgRating.amount).toFixed(1)}</span>
         </h1>
-        <h2 className='text-5xl dark:text-primary-dark font-mon font-medium mt-6 text-primary'>{product.avgRating.numOfRating} reviews</h2>
+        <h2 className='bd-font-base text-5xl dark:text-primary-dark font-mon font-medium mt-6 text-primary'>{product.avgRating.numOfRating} {t('review.label.plural')}</h2>
         <ReactStars
             count={5} 
             size={60} 
