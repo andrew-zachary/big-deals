@@ -17,7 +17,7 @@ const getAllDeals = (_1, query, _3) => {
 const searchAllDeals = (params={}, query, _3) => {
     return {
         method: 'GET',
-        url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}&s=${params.s}`,
+        url: `${baseDealUrl}/?page=${query.lastPage}&limit=${query.limit}&s=${query.s}&lang=${query.lang}`,
         onSuccess: searchItemsReceived.type,
         onFail: errorReceived.type
     }

@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar-react';
 
 import { apiStartCall } from '../../store/actions.js';
 
-const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent, collectionName}) => {
+const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent, collectionName}) => {
     const dispatch = useDispatch();
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
@@ -16,7 +16,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
     //at the start load items if no items in the store (first load);
     useEffect(()=>{
         if(items.length === 0 && hasMore) {
-            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5})} );
+            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5, ...query})} );
         }
         // return () => {
         //     return scrollingList.current.unMount();
@@ -29,7 +29,7 @@ const InfiniteScrollList = ({params, pickedMode, endPointOptions, items, hasMore
         if(doPaginate && hasMore) {
             scrollingList.current.getScrollElement().removeEventListener('scroll', scrollingHandler);
             setDoPagiante(false);
-            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5})} );
+            dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5, ...query})} );
         }
     }, [doPaginate]);
     //add scrolling event listener only if items changed

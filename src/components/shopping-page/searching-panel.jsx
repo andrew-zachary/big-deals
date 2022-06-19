@@ -9,6 +9,7 @@ import ProductListItem from './product-list-item.jsx';
 import DealListItem from './deal-list-item.jsx';
 
 const SearchingPanel = ({pickedMode, startSearch}) => {
+    const {lang} = useSelector(state=>state.user.userInfo.appPreferences);
     const {productsSearch} = useSelector(state=>state.product);
     const {dealsSearch} = useSelector(state=>state.deal);
     return <div id="searching-panel" className='py-8 w-full h-full bg-primary-bg dark:bg-primary-bg-dark z-9996'>
@@ -19,7 +20,8 @@ const SearchingPanel = ({pickedMode, startSearch}) => {
                 lastPage={dealsSearch.lastPage}
                 ItemComponent={DealListItem} 
                 pickedMode='deals'
-                params={{s:startSearch.value}}
+                params={{}}
+                query={{s:startSearch.value, lang}}
                 collectionName='results'
             /> 
         }
@@ -30,7 +32,8 @@ const SearchingPanel = ({pickedMode, startSearch}) => {
                 lastPage={productsSearch.lastPage}
                 ItemComponent={ProductListItem} 
                 pickedMode='products'
-                params={{s:startSearch.value}}
+                params={{}}
+                query={{s:startSearch.value, lang}}
                 collectionName='results'
             /> 
         }
