@@ -115,11 +115,28 @@ const en = {
             "on": "on"
         },
         "app": {
+            "loading": {
+                "please_wait": "please wait ..."
+            },
             "errors": {
                 "no_connection": "server connection error or check your internet"
             },
             "btns": {
                 "ok": "ok"
+            }
+        },
+        "user_profile": {
+            "bills": "bills"
+        },
+        "orders": {
+            "desc": "review all your bills",
+            "current": {
+                "btn": "current",
+                "not_found": "no new orders ..."
+            },
+            "older": {
+                "btn": "older",
+                "total_price": "total price"
             }
         }
     }

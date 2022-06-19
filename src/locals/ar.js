@@ -115,11 +115,28 @@ const ar = {
             "on": "في"
         },
         "app": {
+            "loading": {
+                "please_wait": "انتظر من فضلك ..."
+            },
             "errors": {
                 "no_connection": "خطاء في الاتصال بالخادم او تحقق من اتصال الانترنت"
             },
             "btns": {
                 "ok": "حسنا"
+            }
+        },
+        "user_profile": {
+            "bills": "فواتير"
+        },
+        "orders": {
+            "desc": "مراجعة كل الفواتير",
+            "current": {
+                "btn": "حالية",
+                "not_found": "لا يوجد نتائج"
+            },
+            "older": {
+                "btn": "قديمة",
+                "total_price": "الاجمالي"
             }
         }
     }
