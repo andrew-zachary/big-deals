@@ -86,6 +86,10 @@ const ar = {
                 "products": {
                     "header": "بحث المنتجات",
                     "desc": "تصفح كل المنتجات"
+                },
+                "msgs": {
+                    "searching": "بحث ...",
+                    "not_found": "لا يوجد نتائج"
                 }
             }
         },

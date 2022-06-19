@@ -86,6 +86,10 @@ const en = {
                 "products": {
                     "header": "search products",
                     "desc": "browse all products"
+                },
+                "msgs": {
+                    "searching": "searching ...",
+                    "not_found": "no results found"
                 }
             }
         },

@@ -1,11 +1,13 @@
 import React, {useRef, useState, useEffect, useCallback} from 'react';
 import { useDispatch } from 'react-redux';
 import SimpleBar from 'simplebar-react';
+import { useTranslation } from 'react-i18next';
 
 import { apiStartCall } from '../../store/actions.js';
 
 const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent, collectionName}) => {
     const dispatch = useDispatch();
+    const {t} = useTranslation();
     const scrollingList = useRef();
     const [doPaginate, setDoPagiante] = useState(false);
     const scrollingHandler = useCallback((e)=>{
@@ -38,8 +40,8 @@ const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, 
     }, [items]);
     return <SimpleBar ref={scrollingList} autoHide={false}>
         {
-            lastPage === 1 && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-bold'>
-                searching for {collectionName}
+            lastPage === 1 && <div id='searching' className='bd-font-base w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-medium'>
+                {t('shopping.search.msgs.searching')}
             </div> 
         }
         <ul mode={pickedMode} id="infinite-scroll-list" className='h-full px-6'>
@@ -57,8 +59,8 @@ const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, 
             </li> }
         </ul>
         {
-            items.length === 0 && !hasMore && <div id='no-comments' className='w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-bold'>
-                no {collectionName} found ...
+            items.length === 0 && !hasMore && <div id='not-found' className='bd-font-base w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-3xl text-center capitalize font-medium'>
+                {t('shopping.search.msgs.not_found')}
             </div> 
         }
     </SimpleBar>
