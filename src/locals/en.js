@@ -138,6 +138,36 @@ const en = {
                 "btn": "older",
                 "total_price": "total price"
             }
+        },
+        "admin": {
+            "change_password": {
+                "label": "change password",
+                "form": {
+                    "old_password": {
+                        "label": "old password",
+                        "errors": {
+                            "required": "old password is required"
+                        }
+                    },
+                    "new_password": {
+                        "label": "new password",
+                        "errors": {
+                            "required": "new password is required"
+                        }
+                    },
+                    "confirm_new_password": {
+                        "label": "confirm new password",
+                        "errors": {
+                            "required": "confirm new password is required",
+                            "no_match": "password confirm does\'t match"
+                        }
+                    },
+                    "btn": "change password"
+                }
+            },
+            "app_preferences": {
+                "label": "app preferences"
+            },
         }
     }
 };

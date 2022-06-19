@@ -138,6 +138,36 @@ const ar = {
                 "btn": "قديمة",
                 "total_price": "الاجمالي"
             }
+        },
+        "admin": {
+            "change_password": {
+                "label": "تغير كلمة المرور",
+                "form": {
+                    "old_password": {
+                        "label": "كلمة المرور القديمة",
+                        "errors": {
+                            "required": "كلمة المرور القديمة مطلوبة"
+                        }
+                    },
+                    "new_password": {
+                        "label": "كلمة المرور الجديدة",
+                        "errors": {
+                            "required": "كلمة المرور الجديدة مطلوبة"
+                        }
+                    },
+                    "confirm_new_password": {
+                        "label": "تأكيد كلمة المرور الجديدة",
+                        "errors": {
+                            "required": "اكد كلمة المرور",
+                            "no_match": "كلمة المرور مختلفة"
+                        }
+                    },
+                    "btn": "غير كلمة المرور"
+                }
+            },
+            "app_preferences": {
+                "label": "الاعدادات المفضلة"
+            },
         }
     }
 };
