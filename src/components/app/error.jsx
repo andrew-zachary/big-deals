@@ -1,12 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
 import {useSelector, useDispatch} from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import {errorReset} from '../../store/slices/app.js';
 
 Modal.setAppElement('#bd-app');
 
 const AppError = () => {
+    const {t} = useTranslation();
     const dispatch = useDispatch();
     const {msg, show} = useSelector(state=>state.app.error);
     const closeModal = () => {
@@ -25,11 +27,11 @@ const AppError = () => {
                     <div className="header text-5xl font-regular capitalize text-primary dark:text-primary-dark">
                         big deals
                     </div>
-                    <div className="body text-3xl font-regular capitalize text-center dark:text-primary-dark">
-                        {msg}
+                    <div className="body bd-font-base text-3xl font-regular capitalize text-center dark:text-primary-dark">
+                        {t(msg)}
                     </div>
                     <div className="ctrls flex justify-around w-full">
-                        <button className='font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>closeModal()}>ok</button>
+                        <button className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>closeModal()}>{t('app.btns.ok')}</button>
                     </div>
                 </div>
             </Modal>

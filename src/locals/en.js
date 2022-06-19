@@ -113,6 +113,14 @@ const en = {
             },
             "by": "by",
             "on": "on"
+        },
+        "app": {
+            "errors": {
+                "no_connection": "server connection error or check your internet"
+            },
+            "btns": {
+                "ok": "ok"
+            }
         }
     }
 };
