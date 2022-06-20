@@ -112,7 +112,20 @@ const en = {
                 "plural": "reviews"
             },
             "by": "by",
-            "on": "on"
+            "on": "on",
+            "rate_in": {
+                "tell_us": "tell us ...",
+                "errors": {
+                    "rate_from": "rate from 1 To 5 stars",
+                    "text_is_required": "feedback text is required"
+                },
+                "btn_vote": "vote",
+                "btn_update": "update"
+            },
+            "thank_you": {
+                "label": "thank you for your valuable feedback",
+                "btn": "continue"
+            }
         },
         "app": {
             "loading": {

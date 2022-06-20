@@ -6,7 +6,7 @@ import { apiStartCall } from '../../store/actions.js';
 import { updateComment, newComment, getUserComment } from '../../store/end-points/comment.js';
 import commentSchema from '../../validations/comment-schema.js';
 
-const TellUsTabs = ({productId, setCurrentTab}) => {
+const TellUsTabs = ({productId, setCurrentTab, t}) => {
     const dispatch = useDispatch();
     const commentTxt = useRef('');
     const {currentComment} = useSelector(state=>state.comment);
@@ -64,10 +64,10 @@ const TellUsTabs = ({productId, setCurrentTab}) => {
                 activeColor='var(--primary)'
                 color='#f9ae6280'
             />
-                <div className='capitalize text-3xl text-red font-bold mb-4 text-primary'>{ commentErrors.rate && `* ${commentErrors.rate}` }</div>
-                <textarea ref={commentTxt} id="w3review" className='font-medium text-4xl dark:text-primary-dark w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder='tell us' />
-                <div className='capitalize text-3xl text-red font-bold mt-4 text-primary'>{ commentErrors.body && `* ${commentErrors.body}` }</div>
-                <button onClick={()=>sumitFeedback()} className='font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 mt-6 rounded-[0.4rem] capitalize w-full max-w-[32rem]'>vote</button>
+                <div className='bd-font-base capitalize text-3xl text-red-600 font-medium mb-4'>{ commentErrors.rate && `* ${t(commentErrors.rate)}` }</div>
+                <textarea ref={commentTxt} id="w3review" className='bd-font-base font-medium text-4xl dark:text-primary-dark w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder={t('review.rate_in.tell_us')} />
+                <div className='bd-font-base capitalize text-3xl text-red-600 font-medium mt-4'>{ commentErrors.body && `* ${t(commentErrors.body)}` }</div>
+                <button onClick={()=>sumitFeedback()} className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 mt-6 rounded-[0.4rem] capitalize w-full max-w-[32rem]'>{t('review.rate_in.btn_vote')}</button>
             </div>
         }
         {
@@ -82,10 +82,10 @@ const TellUsTabs = ({productId, setCurrentTab}) => {
                 activeColor='var(--primary)'
                 color='#f9ae6280'
             />
-                <div className='capitalize text-3xl text-red font-bold mb-4 text-primary'>{ commentErrors.rate && `* ${commentErrors.rate}` }</div>
-                <textarea ref={commentTxt} id="w3review" className='font-medium text-4xl dark:text-primary-dark w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder='tell us' />
-                <div className='capitalize text-3xl text-red font-bold mt-4 text-primary'>{ commentErrors.body && `* ${commentErrors.body}` }</div>
-                <button onClick={()=>sumitFeedback()} className='font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 mt-6 rounded-[0.4rem] capitalize w-full max-w-[32rem]'>update</button>
+                <div className='bd-font-base capitalize text-3xl text-red-600 font-medium mb-4'>{ commentErrors.rate && `* ${t(commentErrors.rate)}` }</div>
+                <textarea ref={commentTxt} id="w3review" className='bd-font-base font-medium text-4xl dark:text-primary-dark w-full border border-primary p-3 rounded-[0.4rem] focus:outline-primary' name="commentTxt" rows='7' cols='50' placeholder={t('review.rate_in.tell_us')} />
+                <div className='bd-font-base capitalize text-3xl text-red-600 font-medium mt-4'>{ commentErrors.body && `* ${(commentErrors.body)}` }</div>
+                <button onClick={()=>sumitFeedback()} className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 mt-6 rounded-[0.4rem] capitalize w-full max-w-[32rem]'>{t('review.rate_in.btn_update')}</button>
             </div>
         }
     </>

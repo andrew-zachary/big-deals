@@ -112,7 +112,20 @@ const ar = {
                 "plural": "مراجعات"
             },
             "by": "بواسطة",
-            "on": "في"
+            "on": "في",
+            "rate_in": {
+                "tell_us": "اخبرنا ...",
+                "errors": {
+                    "rate_from": "اختر من 1 الي 5 نجوم",
+                    "text_is_required": "من فضلك اكتب رايك"
+                },
+                "btn_vote": "حسنا",
+                "btn_update": "حدث",
+            },
+            "thank_you": {
+                "label": "تقيمك يهمنا ... شكرا لك",
+                "btn": "تابع"
+            }
         },
         "app": {
             "loading": {

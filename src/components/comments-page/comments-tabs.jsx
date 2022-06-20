@@ -14,9 +14,9 @@ const CommentsTabs = () => {
     const pickUpTab = (currentTab) => {
         switch (currentTab) {
             case 'thank':
-                return <Appreciate />
+                return <Appreciate t={t} />
             case 'new':
-                return <TellUsTabs productId={params.id} setCurrentTab={setCurrentTab} />
+                return <TellUsTabs t={t} productId={params.id} setCurrentTab={setCurrentTab} />
             case 'list':
                 return <CommentsList productId={params.id} setCurrentTab={setCurrentTab} />
             case 'total':
