@@ -166,7 +166,10 @@ const en = {
                 }
             },
             "app_preferences": {
-                "label": "app preferences"
+                "label": "app preferences",
+                "switch": "switch to dark mode",
+                "language": "choose language",
+                "submit": "save changes"
             },
         }
     }
