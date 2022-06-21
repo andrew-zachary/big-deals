@@ -5,7 +5,7 @@ const LoginCart = ({currentPage, setCurrentPage}) => {
     return <>
         {
             currentPage !== 'user' && <button onClick={()=>setCurrentPage('user')}>
-                <FaArrowLeft className='text-6xl text-primary dark:text-primary-dark' />
+                <FaArrowLeft className='fa-arrow text-6xl text-primary dark:text-primary-dark' />
             </button>
         }
         {

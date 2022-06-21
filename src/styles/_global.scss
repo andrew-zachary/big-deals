@@ -221,6 +221,15 @@ input:-webkit-autofill{
   -webkit-text-fill-color: var(--font-color) !important;
 }
 
+//fix react-stars-half
+span[data-forhalf] {
+  @include withRtl('transform', scale(1, 1), scale(-1, 1));
+  &::before {
+    @include withRtl('left', 0, unset);
+    @include withRtl('right', unset, 0);
+  }
+}
+
 //inputs global style
 button[disabled] {
   background-color: var(--primary-dim)!important;
