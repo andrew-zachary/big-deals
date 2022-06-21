@@ -132,10 +132,22 @@ const en = {
                 "please_wait": "please wait ..."
             },
             "errors": {
-                "no_connection": "server connection error or check your internet"
+                "no_connection": "server connection error or check your internet",
+                "wrong_password": "old password is wrong",
+                "wrong_email_password": "wrong email or password"
             },
             "btns": {
-                "ok": "ok"
+                "ok": "ok",
+                "cancel": "cancel"
+            },
+            "notification": {
+                "avatar_changed": "profile image changed",
+                "password_changed": "password has been changed",
+                "prefs_updated": "app preferences updated"
+            },
+            "confirm": {
+                "send_order": "send order",
+                "submit_cart": "would you like to submit your cart ?"
             }
         },
         "user_profile": {

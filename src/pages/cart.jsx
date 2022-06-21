@@ -34,8 +34,8 @@ const CartTab = ({isAuthed, setCurrentPage}) => {
                 type: confirmModalToggled.type,
                 payload: {
                     text: {
-                        header: 'send order',
-                        body: 'would you like to submit your current cart ?'
+                        header: 'app.confirm.send_order',
+                        body: 'app.confirm.submit_cart'
                     },
                     toggle: true,
                     toConfirm: {

@@ -44,7 +44,7 @@ export default ({dispatch}) => (next) => async (action) => {
         if(err.response) {
             dispatch({ type: onFail, payload:{data: err.response.data} });
         } else {
-            dispatch({ type: onFail, payload:{data: 'app.errors.no_connection'} });
+            dispatch({ type: onFail, payload:{data: 'no_connection'} });
         }
 
         dispatch({ type: apiCallFailed.type });

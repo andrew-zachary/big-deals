@@ -132,10 +132,22 @@ const ar = {
                 "please_wait": "انتظر من فضلك ..."
             },
             "errors": {
-                "no_connection": "خطاء في الاتصال بالخادم او تحقق من اتصال الانترنت"
+                "no_connection": "خطاء في الاتصال بالخادم او تحقق من اتصال الانترنت",
+                "wrong_password": "كلمة المرور القديمة خطأ",
+                "wrong_email_password": "البريد الالكتروني او كلمة المرور خطأ"
             },
             "btns": {
-                "ok": "حسنا"
+                "ok": "حسنا",
+                "cancel": "الغاء"
+            },
+            "notification": {
+                "avatar_changed": "تم تغير الصورة الشخصية",
+                "password_changed": "تم تغير كلمة المرور",
+                "prefs_updated": "تم تحديث الاعدادات المفضلة",
+            },
+            "confirm": {
+                "send_order": "ارسل طلب",
+                "submit_cart": "تأكيد شراء كل محتوي عربة التسوق"
             }
         },
         "user_profile": {

@@ -103,7 +103,7 @@ const changeUserAvatar = (_1, _2, data) => {
         layoutIdle: true,
         notification: {
             header: 'big deals',
-            body: 'profile image changed'
+            body: 'app.notification.avatar_changed'
         }
     }
 };
@@ -119,7 +119,7 @@ const changePassword = (_1, _2, data) => {
         layoutIdle: true,
         notification: {
             header: 'big deals',
-            body: 'password has been changed'
+            body: 'app.notification.password_changed'
         }
     }
 };
@@ -135,7 +135,7 @@ const updatePreferences = (_1, _2, data) => {
         layoutIdle: true,
         notification: {
             header: 'big deals',
-            body: 'app preferences updated'
+            body: 'app.notification.prefs_updated'
         }
     }
 };

@@ -1,5 +1,6 @@
 import { errorReceived } from "../slices/app.js";
 import { itemsReceived, itemReceived } from "../slices/comment.js";
+import { commentNotFound } from "../actions.js";
 
 const baseCommentUrl = '/bd/comments';
 
@@ -20,7 +21,7 @@ const getUserComment = (_1, _2, data) => {
         url: `${baseCommentUrl}/owner`,
         data,
         onSuccess: itemReceived.type,
-        onFail: errorReceived.type,
+        onFail: commentNotFound.type,
         layoutIdle: true
     }
 };

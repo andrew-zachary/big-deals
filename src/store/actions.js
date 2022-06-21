@@ -9,6 +9,8 @@ const passwordResetDone = createAction('user/passwordResetDone');
 const passwordChanged = createAction('user/passwordChangedDone');
 const userAvatarChanged = createAction('user/avatarChanged');
 
+const commentNotFound = createAction('comment/notFound');
+
 export {
     apiStartCall, 
     apiEndCall, 
@@ -16,5 +18,6 @@ export {
     passwordResetMailSent, 
     passwordResetDone,
     userAvatarChanged,
-    passwordChanged
+    passwordChanged,
+    commentNotFound
 };

@@ -14,6 +14,18 @@ const AppError = () => {
     const closeModal = () => {
         dispatch({type: errorReset.type});
     };
+    const calcError = (msg) => {
+        switch (msg) {
+            case "no_connection":
+                return "app.errors.no_connection";
+            case "wrong_password":
+                return "app.errors.wrong_password";
+            case "wrong_email_password":
+                return "app.errors.wrong_email_password"
+            default:
+                break;
+        }
+    }
     return <>
         {
             <Modal
@@ -28,7 +40,7 @@ const AppError = () => {
                         big deals
                     </div>
                     <div className="body bd-font-base text-3xl font-regular capitalize text-center dark:text-primary-dark">
-                        {t(msg)}
+                        {t(calcError(msg))}
                     </div>
                     <div className="ctrls flex justify-around w-full">
                         <button className='bd-font-compo font-regular text-4xl bg-primary dark:bg-primary-dark shadow-secondary text-white px-8 py-4 rounded-[0.4rem] capitalize w-full' onClick={()=>closeModal()}>{t('app.btns.ok')}</button>
