@@ -40,7 +40,7 @@ const userSlice = createSlice({
         },
         userAuthedOut: (state, _) => {
             state.isAuthed = false;
-            state.userInfo = userInfo;
+            state.userInfo = {...userInfo, appPreferences: {...state.userInfo.appPreferences}};
             state.userType = 'anony';
         },
         userMailVerified: (state, _) => {
