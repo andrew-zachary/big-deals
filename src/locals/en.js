@@ -91,6 +91,11 @@ const en = {
                     "searching": "searching ...",
                     "not_found": "no results found"
                 }
+            },
+            "item": {
+                "in_stock": "in stock",
+                "free_shipping": "free shipping",
+                "by": "by"
             }
         },
         "cart": {

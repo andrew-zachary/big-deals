@@ -1,7 +1,7 @@
 const ar = {
     translation: {
         "base": {
-            "target": "en"
+            "target": "EN"
         },
         "home": {
             "header": "كل العروض لكل احتياجاتك",
@@ -91,6 +91,11 @@ const ar = {
                     "searching": "بحث ...",
                     "not_found": "لا يوجد نتائج"
                 }
+            },
+            "item": {
+                "in_stock": "متوفر",
+                "free_shipping": "الشحن مجانا",
+                "by": "بواسطة"
             }
         },
         "cart": {
