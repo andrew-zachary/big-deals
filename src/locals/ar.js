@@ -95,7 +95,8 @@ const ar = {
             "item": {
                 "in_stock": "متوفر",
                 "free_shipping": "الشحن مجانا",
-                "by": "بواسطة"
+                "by": "بواسطة",
+                "for": "فقط"
             }
         },
         "cart": {

@@ -95,7 +95,8 @@ const en = {
             "item": {
                 "in_stock": "in stock",
                 "free_shipping": "free shipping",
-                "by": "by"
+                "by": "by",
+                "for": "for"
             }
         },
         "cart": {
