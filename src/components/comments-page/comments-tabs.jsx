@@ -6,6 +6,7 @@ import CommentsTotal from './comments-total.jsx';
 import TellUsTabs from './tell-us-tabs.jsx';
 import Appreciate from './appreciate.jsx';
 import CommentsList from './comments-list.jsx';
+import Authed from '../../guards/authed.jsx';
 
 const CommentsTabs = () => {
     const {t} = useTranslation();
@@ -14,9 +15,9 @@ const CommentsTabs = () => {
     const pickUpTab = (currentTab) => {
         switch (currentTab) {
             case 'thank':
-                return <Appreciate t={t} />
+                return <Authed key={Date.now()} Component={Appreciate} t={t} />
             case 'new':
-                return <TellUsTabs t={t} productId={params.id} setCurrentTab={setCurrentTab} />
+                return <Authed key={Date.now()} Component={TellUsTabs} t={t} productId={params.id} setCurrentTab={setCurrentTab} />
             case 'list':
                 return <CommentsList productId={params.id} setCurrentTab={setCurrentTab} />
             case 'total':

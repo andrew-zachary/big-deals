@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
-const Authed = ({Component}) => {
+const Authed = (props) => {
     const {isAuthed, userType} = useSelector(state=>state.user);
     const [destination, setDestination] = useState(false);
 
@@ -10,7 +10,7 @@ const Authed = ({Component}) => {
         if(userType === undefined) {
             setDestination(<p>processing ...</p>)
         } else if(userType === 'user' && isAuthed) {
-            setDestination(<Component />);
+            setDestination(<props.Component {...props} />);
         } else {
             setDestination(<Navigate to='/' replace />);
         }
