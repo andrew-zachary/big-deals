@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 
 import { searchAllProducts } from '../../store/end-points/product.js';

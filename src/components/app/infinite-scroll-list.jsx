@@ -1,11 +1,12 @@
 import React, {useRef, useState, useEffect, useCallback} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SimpleBar from 'simplebar-react';
 import { useTranslation } from 'react-i18next';
 
 import { apiStartCall } from '../../store/actions.js';
 
 const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent, collectionName}) => {
+    const {userType} = useSelector(state=>state.user)
     const dispatch = useDispatch();
     const {t} = useTranslation();
     const scrollingList = useRef();
@@ -17,13 +18,13 @@ const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, 
     }, []);
     //at the start load items if no items in the store (first load);
     useEffect(()=>{
-        if(items.length === 0 && hasMore) {
+        if(items.length === 0 && hasMore && userType !== undefined) {
             dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5, ...query})} );
         }
         // return () => {
         //     return scrollingList.current.unMount();
         // }
-    }, []);
+    }, [userType]);
     // Do Paginate 
     // 1- remove scroll event
     // 2- paginate only if scrolling bottom and the returned items is not empty array
