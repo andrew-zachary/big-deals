@@ -1,23 +1,28 @@
-<h1 align="left">
-  <a href="https://big-deals.netlify.app/">
-    big-deals.netlify.app
-  </a>
+<h1>
+  **BIG DEALS**
 </h1>
-<h2>Ecommerce app for :</h2>
+<p>Ecommerce to search for products and deals, submit orders and make reviews, customers can find exactly what they need, at any time, directly from their desktop or mobile device. By getting started with BIG DEALS, business can reach more customers online and significantly increase revenue.</p>
+<h2>Demo :</h2>
 <ul>
-  <li>searching and buying products and deals.</li>
-  <li>submit orders.</li>
-  <li>make reviews.</li>
+  <li><a href="https://big-deals.netlify.app/">
+    big-deals.netlify.app
+  </a></li>
 </ul>
-<h2>Features :</h2>
+<h2>Technical Details :</h2>
 <ul>
-<li>Manage app state with React-Redux.</li>
+  <li>React-Redux to manage app state.</li>
+  <li>Localization with React-i18next.</li>
+  <li>Theme developed by tailwindcss and sass.</li>
+  <li>Building and Validating forms with formik and joi</li>
+</ul>
+<h2>App Features :</h2>
+<ul>
 <li>User login/register.</li>
 <li>Profile image upload/update.</li>
 <li>Cart add/remove items, update and calculate total price.</li>
 <li>Orders submit and view new/old bills.</li>
-<li>Products & Deals search and paginate.</li>
+<li>Products & Deals search/paginate.</li>
 <li>add/update Users Reviews.</li>
-<li>RTL and dark-mode theme support</li>
+<li>RTL and dark-mode theme support.</li>
 <li>UI Modals, Spinner, Forms with validation.</li>
 </ul>
