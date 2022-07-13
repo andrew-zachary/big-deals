@@ -1,5 +1,5 @@
 <h1>
-  **BIG DEALS**
+  BIG DEALS
 </h1>
 <p>Ecommerce to search for products and deals, submit orders and make reviews, customers can find exactly what they need, at any time, directly from their desktop or mobile device. By getting started with BIG DEALS, business can reach more customers online and significantly increase revenue.</p>
 <h2>Demo :</h2>
