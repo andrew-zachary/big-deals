@@ -1,23 +1,23 @@
-<p align="left">
-  <a style="text-transform:uppercase;font-size:48px" href="https://big-deals.netlify.app/">
-    big deals
+<h1 align="left">
+  <a href="https://big-deals.netlify.app/">
+    big-deals.netlify.app
   </a>
-</p>
-<h2>eCommerce app for :</h2>
+</h1>
+<h2>Ecommerce app for :</h2>
 <ul>
   <li>searching and buying products and deals.</li>
   <li>submit orders.</li>
   <li>make reviews.</li>
 </ul>
-<h2><a href="https://big-deals.netlify.app">big-deals.netlify.app</a></h2>
-<p>React-Redux was used to manage app state and to implement features like :</p>
+<h2>Features :</h2>
 <ul>
-<li>User login-register.</li>
-<li>Cart add-remove items, calculate total price.</li>
-<li>Orders submit and view all bills.</li>
-<li>Products & Deals view and paginate.</li>
-<li>add-update Users Reviews.</li>
-<li>UI Modals, Spinner, Forms with validation and mobile first layout.</li>
+<li>Manage app state with React-Redux.</li>
+<li>User login/register.</li>
+<li>Profile image upload/update.</li>
+<li>Cart add/remove items, update and calculate total price.</li>
+<li>Orders submit and view new/old bills.</li>
+<li>Products & Deals search and paginate.</li>
+<li>add/update Users Reviews.</li>
+<li>RTL and dark-mode theme support</li>
+<li>UI Modals, Spinner, Forms with validation.</li>
 </ul>
-
-### Would like to have your feedback
