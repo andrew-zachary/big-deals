@@ -141,7 +141,8 @@ const ar = {
                 "no_connection": "خطاء في الاتصال بالخادم او تحقق من اتصال الانترنت",
                 "wrong_password": "كلمة المرور القديمة خطأ",
                 "wrong_email_password": "البريد الالكتروني او كلمة المرور خطأ",
-                "wrong_app_key": "رمز التطبيق خطاء"
+                "wrong_app_key": "رمز التطبيق خطاء",
+                "balance_not_enough": "الرصيد غير كاف"
             },
             "btns": {
                 "ok": "حسنا",

@@ -141,7 +141,8 @@ const en = {
                 "no_connection": "server connection error or check your internet",
                 "wrong_password": "old password is wrong",
                 "wrong_email_password": "wrong email or password",
-                "wrong_app_key": "wrong app key"
+                "wrong_app_key": "wrong app key",
+                "balance_not_enough": "balance is not enough"
             },
             "btns": {
                 "ok": "ok",

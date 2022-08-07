@@ -24,6 +24,8 @@ const AppError = () => {
                 return "app.errors.wrong_email_password"
             case "wrong_app_key":
                     return "app.errors.wrong_app_key"
+            case "balance_not_enough":
+                    return "app.errors.balance_not_enough"
             default:
                 break;
         }
