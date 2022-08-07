@@ -62,6 +62,7 @@ const appSlice = createSlice({
         },
         errorReceived: (state, action) => {
             state.error.show = true;
+            console.log(action.payload.data);
             state.error.msg = action.payload.data;
         },
         errorReset: (state, _) => {

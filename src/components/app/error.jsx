@@ -22,6 +22,8 @@ const AppError = () => {
                 return "app.errors.wrong_password";
             case "wrong_email_password":
                 return "app.errors.wrong_email_password"
+            case "wrong_app_key":
+                    return "app.errors.wrong_app_key"
             default:
                 break;
         }
