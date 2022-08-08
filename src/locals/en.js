@@ -151,7 +151,8 @@ const en = {
             "notification": {
                 "avatar_changed": "profile image changed",
                 "password_changed": "password has been changed",
-                "prefs_updated": "app preferences updated"
+                "prefs_updated": "app preferences updated",
+                "balance_added": "balance added"
             },
             "confirm": {
                 "send_order": "send order",
@@ -204,6 +205,17 @@ const en = {
                 "language": "choose language",
                 "submit": "save changes"
             },
+            "add_balance": {
+                "label": "add balance",
+                "form": {
+                    "ccn": "credit card number",
+                    "exm": "exp month",
+                    "exy": "exp year",
+                    "cvv": "cvv",
+                    "amount": "amount",
+                    "btn": "add balance"
+                }
+            }
         }
     }
 };

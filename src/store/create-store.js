@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 //middlewares
 import API from './middlewares/api.js';
+import UserBalance from './middlewares/user-balance.js';
 
 //reducers
 import dealReducer from './slices/deal.js';
@@ -22,5 +23,5 @@ export const store = configureStore({
     order: orderReducer,
     app: appReducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([API])
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([API, UserBalance])
 });

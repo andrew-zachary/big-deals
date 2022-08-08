@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaKey, FaHeart } from 'react-icons/fa';
+import { FaKey, FaHeart, FaDollarSign } from 'react-icons/fa';
 import SimpleBar from 'simplebar-react';
 import { useTranslation } from 'react-i18next';
 
@@ -19,6 +19,12 @@ const AdminHome = () => {
                     <Link to='app-preferences' className='h-full px-4 flex flex-col justify-center items-center font-regular text-center text-4xl text-white capitalize'>
                         <span className='bd-font-base font-regular'>{t('admin.app_preferences.label')}</span>
                         <FaHeart className='mt-8 text-5xl' />
+                    </Link>
+                </li>
+                <li className='bg-primary dark:bg-primary-dark shadow-secondary rounded-[0.4rem]'>
+                    <Link to='add-balance' className='h-full px-4 flex flex-col justify-center items-center font-regular text-center text-4xl text-white capitalize'>
+                        <span className='bd-font-base font-regular'>{t('admin.add_balance.label')}</span>
+                        <FaDollarSign className='mt-8 text-5xl' />
                     </Link>
                 </li>
             </ul>

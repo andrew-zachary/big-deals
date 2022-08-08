@@ -51,6 +51,9 @@ const userSlice = createSlice({
         },
         profileNotFound: (state) => {
             state.userType = 'anony';
+        },
+        userBalanceUpdate: (state, action) => {
+            state.userInfo.currentBalance += action.payload.amount || 1000;
         }
     }
 });
@@ -63,5 +66,6 @@ export const {
     userAvatarPicked, 
     userMailVerified,
     userPrefsUpdated,
-    profileNotFound
+    profileNotFound,
+    userBalanceUpdate
 } = userSlice.actions;

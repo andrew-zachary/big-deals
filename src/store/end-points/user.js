@@ -1,4 +1,11 @@
-import { userAuthed, userAuthedOut, userMailVerified, userPrefsUpdated, profileNotFound } from "../slices/user.js";
+import { 
+    userAuthed, 
+    userAuthedOut, 
+    userMailVerified, 
+    userPrefsUpdated, 
+    profileNotFound,
+    userBalanceUpdate
+} from "../slices/user.js";
 import { errorReceived } from "../slices/app.js";
 import { 
     userAvatarChanged, 
@@ -142,6 +149,22 @@ const updatePreferences = (_1, _2, data) => {
     }
 };
 
+//params, query, data
+const addBalance = (_1, _2, data) => {
+    return {
+        method: 'post',
+        url: `${baseUserUrl}/profile/balance`,
+        data,
+        onSuccess: userBalanceUpdate.type,
+        onFail: errorReceived.type,
+        layoutIdle: false,
+        notification: {
+            header: 'big deals',
+            body: 'app.notification.balance_added'
+        }
+    }
+};
+
 export {
     getUserInfo, 
     login, 
@@ -152,5 +175,6 @@ export {
     resettingUserPassword,
     changeUserAvatar,
     changePassword,
-    updatePreferences
+    updatePreferences,
+    addBalance
 };
