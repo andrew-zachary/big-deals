@@ -142,7 +142,8 @@ const en = {
                 "wrong_password": "old password is wrong",
                 "wrong_email_password": "wrong email or password",
                 "wrong_app_key": "wrong app key",
-                "balance_not_enough": "balance is not enough"
+                "balance_not_enough": "balance is not enough",
+                "email_already_taken": "email already taken"
             },
             "btns": {
                 "ok": "ok",
@@ -152,7 +153,8 @@ const en = {
                 "avatar_changed": "profile image changed",
                 "password_changed": "password has been changed",
                 "prefs_updated": "app preferences updated",
-                "balance_added": "balance added"
+                "balance_added": "balance added",
+                "order_submitted": "purchase done"
             },
             "confirm": {
                 "send_order": "send order",

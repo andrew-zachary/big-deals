@@ -157,7 +157,7 @@ const addBalance = (_1, _2, data) => {
         data,
         onSuccess: userBalanceUpdate.type,
         onFail: errorReceived.type,
-        layoutIdle: false,
+        layoutIdle: true,
         notification: {
             header: 'big deals',
             body: 'app.notification.balance_added'

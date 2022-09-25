@@ -11,7 +11,11 @@ const createNewOrder = (_1, _2, data) => {
         data,
         onSuccess: orderReceived.type,
         layoutIdle: true,
-        onFail: errorReceived.type
+        onFail: errorReceived.type,
+        notification: {
+            header: 'big deals',
+            body: 'app.notification.order_submitted'
+        }
     }
 };
 

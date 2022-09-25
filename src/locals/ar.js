@@ -142,7 +142,8 @@ const ar = {
                 "wrong_password": "كلمة المرور القديمة خطأ",
                 "wrong_email_password": "البريد الالكتروني او كلمة المرور خطأ",
                 "wrong_app_key": "رمز التطبيق خطاء",
-                "balance_not_enough": "الرصيد غير كاف"
+                "balance_not_enough": "الرصيد غير كاف",
+                "email_already_taken": "البريد الالكتروني موجود من قبل"
             },
             "btns": {
                 "ok": "حسنا",
@@ -152,7 +153,8 @@ const ar = {
                 "avatar_changed": "تم تغير الصورة الشخصية",
                 "password_changed": "تم تغير كلمة المرور",
                 "prefs_updated": "تم تحديث الاعدادات المفضلة",
-                "balance_added": "تم اضافة الرصيد"
+                "balance_added": "تم اضافة الرصيد",
+                "order_submitted": "تم الشراء"
             },
             "confirm": {
                 "send_order": "ارسل طلب",

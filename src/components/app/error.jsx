@@ -26,6 +26,8 @@ const AppError = () => {
                     return "app.errors.wrong_app_key"
             case "balance_not_enough":
                     return "app.errors.balance_not_enough"
+            case "email_already_taken":
+                    return "app.errors.email_already_taken"
             default:
                 break;
         }

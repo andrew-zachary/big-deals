@@ -245,4 +245,5 @@ div[data-simplebar=init] {
 .simplebar-scrollbar::before {
   background-color: var(--primary)!important;
   opacity: 1!important;
+  width: 0.5rem!important;
 }
