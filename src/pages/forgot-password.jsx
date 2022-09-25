@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import BDFormInput from '../components/form/input.jsx';
@@ -13,6 +13,7 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [emailErr, setEmailErr] = useState(null);
     const dispatch = useDispatch();
+    const {lang} = useSelector(state => state.user.userInfo.appPreferences)
     const sendHandler = (input) => {
         setEmailErr(null);
         if(input.length === 0) {
@@ -22,7 +23,7 @@ const ForgotPassword = () => {
         .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
             return setEmailErr('forgot_password.email.errors.email_not_valid');
         }
-        dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, {email: input})});
+        dispatch({type: apiStartCall.type, payload: requestPasswordRestMail(null, null, {email: input, lang})});
         setBtnTxt("forgot_password.email_was_sent");
     };
     return <div id="forgot-password" className='mt-[-9rem] h-full flex flex-col justify-center'>

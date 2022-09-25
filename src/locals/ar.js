@@ -61,6 +61,26 @@ const ar = {
             "submit_btn": "تسجيل جديد",
             "have_account": "لديك حساب بالفعال"
         },
+        "reset_password": {
+            "password": {
+                "label": "كلمة المرور",
+                "errors": {
+                    "required": "كلمة المرور مطلوبة"
+                }
+            },
+            "confirm_password": {
+                "label": "تأكيد كلمة المرور",
+                "errors": {
+                    "required": "تأكيد كلمة المرور مطلوب",
+                    "no_match": "كلمة المرور مختلفة"
+                }
+            },
+            "btns": {
+                "reset_password": "إعادة تعين",
+                "continue": "إستكمال"
+            },
+            "msg": "إستخدم كلمة المرور الجديدة في الدخول"
+        },
         "forgot_password": {
             "email": {
                 "label": "البريد الالكتروني",

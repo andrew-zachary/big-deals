@@ -72,6 +72,26 @@ const en = {
             "submit_btn": "send reset password email",
             "email_was_sent": "email was sent"
         },
+        "reset_password": {
+            "password": {
+                "label": "password",
+                "errors": {
+                    "required": "password is required"
+                }
+            },
+            "confirm_password": {
+                "label": "confirm password",
+                "errors": {
+                    "required": "confirm password is required",
+                    "no_match": "confirm password doesn't match"
+                }
+            },
+            "btns": {
+                "reset_password": "reset password",
+                "continue": "continue"
+            },
+            "msg": "use your new password to sign in"
+        },
         "shopping": {
             "search": {
                 "label": "search",

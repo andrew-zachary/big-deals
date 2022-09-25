@@ -47,7 +47,10 @@ const userSlice = createSlice({
             state.userInfo.authId.email.verified = true;
         },
         userPrefsUpdated: (state, action) => {
-            state.userInfo.appPreferences = action.payload.data
+            state.userInfo.appPreferences = action.payload.data;
+        },
+        userLangPrefsUpdated: (state, action) => {
+            state.userInfo.appPreferences.lang = action.payload;
         },
         profileNotFound: (state) => {
             state.userType = 'anony';
@@ -67,5 +70,6 @@ export const {
     userMailVerified,
     userPrefsUpdated,
     profileNotFound,
-    userBalanceUpdate
+    userBalanceUpdate,
+    userLangPrefsUpdated
 } = userSlice.actions;

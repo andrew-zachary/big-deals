@@ -61,7 +61,7 @@ const App = () => {
                         </Route>
                         <Route path="/comments/:id" element={<CommentsPage />} />
                         <Route path="/verify-email/:mail/:token" element={<MailVerify />} />
-                        <Route path="/reset-password/:mail/:date/:token" element={<ResetPassword />} />
+                        <Route path="/reset-password/:mail/:date/:token/:lang" element={<ResetPassword />} />
                     </Route>
                 </Routes>
             </Router>
