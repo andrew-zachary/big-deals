@@ -14,7 +14,7 @@ import RegisterSchema from '../validations/register-schema.js';
 const RegisterForm = ({setCurrentPage}) => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
-    const {avatar} = useSelector(state=>state.user.userInfo.authId);
+    const {authId, appPreferences} = useSelector(state=>state.user.userInfo);
     const registerForm = useFormik({
         validateOnBlur: true,
         initialValues: {
@@ -36,17 +36,17 @@ const RegisterForm = ({setCurrentPage}) => {
         },
         onSubmit: values => {
             let registerData = {};
-            if(avatar.includes('base64')) {
-                registerData = { avatar, ...values }; 
+            if(authId.avatar.includes('base64')) {
+                registerData = { avatar: authId.avatar, ...appPreferences, ...values }; 
             } else {
-                registerData = { ...values };
+                registerData = { ...appPreferences, ...values };
             }
             dispatch({type: apiStartCall.type, payload: register(null, null, registerData)});
         },
     });
     return <SimpleBar>
         <form onSubmit={registerForm.handleSubmit} className='px-8'>
-            <AvatarManager avatar={avatar} />
+            <AvatarManager avatar={authId.avatar} />
             <BDFormInput id="firstName" name="firstName" type="text" label={t('register.f_name.label')} value={registerForm.values.firstName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="lastName" name="lastName" type="text" label={t('register.l_name.label')} value={registerForm.values.lastName} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
             <BDFormInput id="email" name="email" type="text" label={t('register.email.label')} value={registerForm.values.email} onChange={registerForm.handleChange} onBlur={registerForm.handleBlur} errors={registerForm.errors} touched={registerForm.touched} />
