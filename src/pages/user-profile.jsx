@@ -29,7 +29,7 @@ const UserProfile = ({userInfo, setCurrentPage}) => {
                     <div className="ctrls mt-5 flex justify-around items-center w-full">
                         <GoAdminBtn dispatch={dispatch} />
                         <button className='bd-font-base h-[7rem] w-[7rem] rounded-full border-2 border-primary dark:border-primary-dark bg-primary dark:bg-primary-dark font-regular text-white text-4xl capitalize shadow-secondary' onClick={()=>setCurrentPage('orders')}>{t('user_profile.bills')}</button>
-                        <button className='p-4 rounded-full bg-primary dark:bg-primary-dark shadow-secondary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
+                        <button className='bd-rtl-shape p-4 rounded-full bg-primary dark:bg-primary-dark shadow-secondary' onClick={()=>dispatch({type: apiStartCall.type, payload: logout()})}><FaSignOutAlt className='text-4xl text-white' /></button>
                     </div>
                 </div>
                 <div id='user-info-footer'>

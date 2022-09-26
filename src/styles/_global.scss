@@ -52,6 +52,9 @@ html, body, #bd-app, #bd-app-body, #body-container, #layout-wraper, #main-conten
 .bd-font-compo {
   @include withRtl('font-family', Montserrat, Tajawal);
 }
+.bd-rtl-shape {
+  @include withRtl('transform', scale(1, 1), scale(-1, 1));
+}
 
 //loading spinner
 .spinner {

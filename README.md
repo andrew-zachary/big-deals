@@ -18,6 +18,8 @@
 <h2>App Features :</h2>
 <ul>
 <li>User login/register.</li>
+<li>Password Recovery</li>
+<li>Email Verification</li>
 <li>Profile image upload/update.</li>
 <li>Cart add/remove items, update and calculate total price.</li>
 <li>Orders submit and view new/old bills.</li>
