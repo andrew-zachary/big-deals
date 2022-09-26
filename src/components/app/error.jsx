@@ -21,13 +21,17 @@ const AppError = () => {
             case "wrong_password":
                 return "app.errors.wrong_password";
             case "wrong_email_password":
-                return "app.errors.wrong_email_password"
+                return "app.errors.wrong_email_password";
             case "wrong_app_key":
-                    return "app.errors.wrong_app_key"
+                return "app.errors.wrong_app_key";
             case "balance_not_enough":
-                    return "app.errors.balance_not_enough"
+                return "app.errors.balance_not_enough";
             case "email_already_taken":
-                    return "app.errors.email_already_taken"
+                return "app.errors.email_already_taken";
+            case "email_already_verified":
+                return "verify_email.errors.email_already_verified";
+            case "link_not_valid":
+                return "verify_email.errors.link_not_valid";
             default:
                 break;
         }

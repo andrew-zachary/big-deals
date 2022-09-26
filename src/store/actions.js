@@ -8,6 +8,7 @@ const passwordResetMailSent = createAction('user/passwordResetMailSent');
 const passwordResetDone = createAction('user/passwordResetDone');
 const passwordChanged = createAction('user/passwordChangedDone');
 const userAvatarChanged = createAction('user/avatarChanged');
+const verifyMailSent = createAction('user/verifyMailSent');
 
 const commentNotFound = createAction('comment/notFound');
 
@@ -19,5 +20,6 @@ export {
     passwordResetDone,
     userAvatarChanged,
     passwordChanged,
-    commentNotFound
+    commentNotFound,
+    verifyMailSent
 };

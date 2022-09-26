@@ -12,6 +12,7 @@ import {
     passwordResetMailSent, 
     passwordResetDone, 
     passwordChanged,
+    verifyMailSent
 } from "../actions.js";
 
 const baseUserUrl = '/bd/users';
@@ -74,6 +75,22 @@ const verifyUserMail = ({mail, token}, _2, _3) => {
         onSuccess: userMailVerified.type,
         onFail: errorReceived.type,
         layoutIdle: true
+    }
+};
+
+//params, query, data
+const requestVerifyUserMail = (_1, _2, _3) => {
+    return {
+        method: 'GET',
+        url: `/auth/verify-email`,
+        data: null,
+        onSuccess: verifyMailSent.type,
+        onFail: errorReceived.type,
+        layoutIdle: true,
+        notification: {
+            header: 'big deals',
+            body: 'verify_email.notification'
+        }
     }
 };
 
@@ -176,5 +193,6 @@ export {
     changeUserAvatar,
     changePassword,
     updatePreferences,
-    addBalance
+    addBalance,
+    requestVerifyUserMail
 };

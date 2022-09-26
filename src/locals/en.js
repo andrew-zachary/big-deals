@@ -92,6 +92,20 @@ const en = {
             },
             "msg": "use your new password to sign in"
         },
+        "verify_email": {
+            "btns": {
+                "verify_email": "verify your email",
+                "email_verified": "email verified",
+                "continue": "continue"
+            },
+            "errors": {
+                "email_already_verified": "email already verified",
+                "link_not_valid": "verification link is not valid"
+            },
+            "notification": "verifying link was sent to your email",
+            "success": "email is verified",
+            "fail": "email is not verified, or link is not valid"
+        },
         "shopping": {
             "search": {
                 "label": "search",
