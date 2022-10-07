@@ -68,8 +68,9 @@ const appSlice = createSlice({
         errorReset: (state, _) => {
             state.error = {...initialState.error};
         },
-        loaderToggled: (state, _) => {
+        loaderToggled: (state, action) => {
             state.loader.show = !state.loader.show;
+            state.loader.payload = action.payload;
         },
         searchStarted: (state, action) => {
             state.temp.searchStr = action.payload.searchStr;

@@ -26,7 +26,7 @@ const getUserInfo = (_1, _2, _3) => {
         url: `${baseUserUrl}/profile`,
         onSuccess: userAuthed.type,
         onFail: profileNotFound.type,
-        layoutIdle: false
+        layoutIdle: true
     }
 };
 

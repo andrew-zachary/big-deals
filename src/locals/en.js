@@ -169,7 +169,10 @@ const en = {
         },
         "app": {
             "loading": {
-                "please_wait": "please wait ..."
+                "please_wait": "please wait ...",
+                "note": {
+                    "onrender_wakeup": "server needs 1 min to wakeup ..."
+                }
             },
             "errors": {
                 "no_connection": "server connection error or check your internet",

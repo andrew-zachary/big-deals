@@ -169,7 +169,10 @@ const ar = {
         },
         "app": {
             "loading": {
-                "please_wait": "انتظر من فضلك ..."
+                "please_wait": "انتظر من فضلك ...",
+                "note": {
+                    "onrender_wakeup": "الخادم يحتاج دقيقة واحدة للتنشيط"
+                }
             },
             "errors": {
                 "no_connection": "خطاء في الاتصال بالخادم او تحقق من اتصال الانترنت",

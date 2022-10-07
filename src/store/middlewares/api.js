@@ -18,7 +18,7 @@ export default ({dispatch}) => (next) => async (action) => {
 
     //start loader
     if(layoutIdle) {
-        dispatch({type: loaderToggled.type});
+        dispatch({type: loaderToggled.type, payload: action.payload});
     }
 
     try {
@@ -52,7 +52,7 @@ export default ({dispatch}) => (next) => async (action) => {
 
     if(layoutIdle) {
         //end loader
-        dispatch({type: loaderToggled.type});
+        dispatch({type: loaderToggled.type, payload: action.payload});
     }
 
 }
