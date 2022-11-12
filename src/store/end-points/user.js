@@ -17,8 +17,6 @@ import {
 
 const baseUserUrl = '/bd/users';
 
-const app_key = "7c6dd89f29bb694039d8023db780597666e695c238a5b10ef30f4ed04b73ce35";
-
 //params, query, data
 const getUserInfo = (_1, _2, _3) => {
     return {
@@ -35,7 +33,7 @@ const login = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `/auth/signin`,
-        data: {...data, app_key},
+        data: {...data},
         onSuccess: userAuthed.type,
         onFail: errorReceived.type,
         layoutIdle: true
@@ -47,7 +45,7 @@ const register = (_1, _2, data) => {
     return {
         method: 'POST',
         url: `/auth/signup`,
-        data: {...data, app_key},
+        data: {...data},
         onSuccess: userAuthed.type,
         onFail: errorReceived.type,
         layoutIdle: true
