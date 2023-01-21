@@ -1,8 +1,8 @@
-import "regenerator-runtime/runtime";
+import './index.scss';
 import './utilities/i18n.js';
 
-import React, { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //app parts
@@ -32,7 +32,6 @@ import MainLayout from "./layout/main.jsx";
 
 //styles
 import './index.scss';
-import 'simplebar/dist/simplebar.min.css';
 
 //store
 import { store } from "./store/create-store.js";
@@ -70,4 +69,4 @@ const App = () => {
     </React.Suspense>
 }
 
-ReactDOM.render(<StrictMode><App /></StrictMode>, document.getElementById("bd-app"));
+ReactDOM.createRoot(document.getElementById("bd-app")).render(<React.StrictMode><App /></React.StrictMode>);
