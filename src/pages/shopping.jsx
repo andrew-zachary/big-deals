@@ -9,11 +9,8 @@ import { resetDealsSearch } from '../store/slices/deal.js';
 import { resetProductsSearch } from '../store/slices/product.js';
 import { searchStarted } from '../store/slices/app.js';
 
-import useClickInOut from '../hooks/clickInOut.js';
-
 const ShoppingPage = () => {
     const dispatch = useDispatch();
-    const [triggerClicked] = useClickInOut('pick-mode-trigger', document);
     const [pickedMode, setPickedMode] = useState('shopping.search.modes.products');
     const [newMount, setNewMount] = useState('');
     const [startSearch, setStartSearch] = useState({
@@ -40,9 +37,8 @@ const ShoppingPage = () => {
     }, []);
 
     return <div id="shopping-page" className='relative flex flex-col px-4 max-w-screen-sm mx-auto h-full'>
-        <SearchInput 
+        <SearchInput
             debouncedNewSearch={debouncedNewSearch} 
-            showModeList={triggerClicked} 
             pickedMode={pickedMode} 
             setPickedMode={setPickedMode}
             setStartSearch={setStartSearch}

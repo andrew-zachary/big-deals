@@ -1,13 +1,18 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
+import { useClickAway } from 'react-use';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { FaSearch, FaSortDown } from 'react-icons/fa';
 
-const SearchInput = ({debouncedNewSearch, showModeList, pickedMode, setPickedMode, setStartSearch}) => {
+const SearchInput = ({debouncedNewSearch, pickedMode, setPickedMode, setStartSearch}) => {
     const {t} = useTranslation();
     const {searchStr} = useSelector(state=>state.app.temp);
     const searchTxt = useRef('');
+    const [showModeList, setShowModeList] = useState(false);
+    
+    useClickAway(searchTxt, () => setShowModeList(false));
+
     const pickingModes = [
         {value: 'shopping.search.modes.deals', header: t('shopping.search.deals.header'), desc: t('shopping.search.deals.desc')},
         {value: 'shopping.search.modes.products', header: t('shopping.search.products.header'), desc: t('shopping.search.products.desc')}
@@ -23,7 +28,7 @@ const SearchInput = ({debouncedNewSearch, showModeList, pickedMode, setPickedMod
 
     return <div id="search-input" className='w-full flex flex-col'>
         <div id="search-input-ctrls" className='w-full flex'>
-            <button id="pick-mode-btn" type="button" className="pick-mode-trigger relative border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]">
+            <button onClick={() => setShowModeList(true)} id="pick-mode-btn" type="button" className="pick-mode-trigger relative border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]">
                 <div id="mode-picker" className="pick-mode-trigger absolute h-full w-full"></div>
                 <FaSortDown className='pick-mode-trigger cursor-pointer text-primary dark:text-primary-dark text-4xl mt-[-1rem]' />
             </button>
