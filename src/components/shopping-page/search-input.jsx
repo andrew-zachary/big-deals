@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useClickAway } from 'react-use';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +11,11 @@ const SearchInput = ({debouncedNewSearch, pickedMode, setPickedMode, setStartSea
     const searchTxt = useRef('');
     const [showModeList, setShowModeList] = useState(false);
     
-    useClickAway(searchTxt, () => setShowModeList(false));
+    useClickAway(searchTxt, (e) => {
+        if(e.target.id === 'mode-picker') return setShowModeList(!showModeList);
+        if(e.target.dataset.value) setPickedMode(e.target.dataset.value);
+        setShowModeList(false);
+    });
 
     const pickingModes = [
         {value: 'shopping.search.modes.deals', header: t('shopping.search.deals.header'), desc: t('shopping.search.deals.desc')},
@@ -28,8 +32,8 @@ const SearchInput = ({debouncedNewSearch, pickedMode, setPickedMode, setStartSea
 
     return <div id="search-input" className='w-full flex flex-col'>
         <div id="search-input-ctrls" className='w-full flex'>
-            <button onClick={() => setShowModeList(true)} id="pick-mode-btn" type="button" className="pick-mode-trigger relative border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]">
-                <div id="mode-picker" className="pick-mode-trigger absolute h-full w-full"></div>
+            <button id="pick-mode-btn" type="button" className="pick-mode-trigger relative border-y-2 border-primary dark:border-primary-dark dark:bg-[#1e293b]">
+                <div id="mode-picker" className="pick-mode-trigger absolute inset-0"></div>
                 <FaSortDown className='pick-mode-trigger cursor-pointer text-primary dark:text-primary-dark text-4xl mt-[-1rem]' />
             </button>
             <input 
@@ -49,7 +53,8 @@ const SearchInput = ({debouncedNewSearch, pickedMode, setPickedMode, setStartSea
             showModeList && <ul id='mode-pickup-list' className='w-full block border-primary dark:border-primary-dark border-x border-b-4'>
                 {
                     pickingModes.map(mode => {
-                        return <li key={mode.value} className="cursor-pointer mt-4 capitalize hover:bg-primary dark:hover:bg-primary-dark hover:text-white" onClick={()=>setPickedMode(mode.value)}>
+                        return <li key={mode.value} className="cursor-pointer relative mt-4 capitalize hover:bg-primary dark:hover:bg-primary-dark hover:text-white">
+                            <div className="absolute inset-0" data-value={mode.value}></div>
                             <h1 className="text-3xl bd-font-compo">{mode.header}</h1>
                             <h2 className="text-2xl bd-font-base">{mode.desc}</h2>
                         </li>

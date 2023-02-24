@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { apiStartCall } from '../../store/actions.js';
 
-const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent, collectionName}) => {
+const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, hasMore, lastPage, ItemComponent}) => {
     const {userType} = useSelector(state=>state.user)
     const dispatch = useDispatch();
     const {t} = useTranslation();
@@ -19,6 +19,7 @@ const InfiniteScrollList = ({params, query, pickedMode, endPointOptions, items, 
     //at the start load items if no items in the store (first load);
     useEffect(()=>{
         if(items.length === 0 && hasMore && userType !== undefined) {
+            console.log(items.length);
             dispatch( {type: apiStartCall.type, payload:endPointOptions(params, {lastPage, limit:5, ...query})} );
         }
         // return () => {

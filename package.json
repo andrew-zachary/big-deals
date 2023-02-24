@@ -27,7 +27,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.1",
+    "@reduxjs/toolkit": "^1.9.3",
     "axios": "^1.2.3",
     "date-fns": "^2.29.3",
     "formik": "^2.2.9",

@@ -69,4 +69,5 @@ const App = () => {
     </React.Suspense>
 }
 
-ReactDOM.createRoot(document.getElementById("bd-app")).render(<React.StrictMode><App /></React.StrictMode>);
+// ReactDOM.createRoot(document.getElementById("bd-app")).render(<React.StrictMode><App /></React.StrictMode>);
+ReactDOM.createRoot(document.getElementById("bd-app")).render(<App />);
