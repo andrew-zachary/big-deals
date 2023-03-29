@@ -1,9 +1,10 @@
 <script setup>
-  import HelloWorld from './components/HelloWorld.vue';
+import Nav from './layouts/Nav.vue';
 </script>
 
 <template>
-  <HelloWorld msg="test"></HelloWorld>
+  <Nav />
+  <router-view></router-view>
 </template>
 
 <style></style>
