@@ -6,5 +6,10 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: 4200
+  },
+  resolve: {
+    alias: {
+      'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
+    }
   }
 });
