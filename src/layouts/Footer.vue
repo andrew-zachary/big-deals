@@ -1,15 +1,15 @@
 <script setup>
-import {useI18n} from 'vue-i18n';
+import { useTranslate } from '../composables/useTranslate';
 
 import LangPicker from '../components/LangPicker.vue';
 
-const {t} = useI18n();
+const { doTranslate } = useTranslate();
 </script>
 
 <template>
 
 <footer>
-    <h1>{{ t('word') }}</h1>
+    <h1>{{ doTranslate('word') }}</h1>
     <LangPicker />
 </footer>
 

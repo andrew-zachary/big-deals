@@ -1,7 +1,7 @@
 <script setup>
-import i18n from '../includes/i18n';
+import { useTranslate } from '../composables/useTranslate';
 
-const changeLocales = (lang) => i18n.global.locale.value = lang;
+const { changeLocales } = useTranslate();
 </script>
 
 <template>
