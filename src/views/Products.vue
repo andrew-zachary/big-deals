@@ -1,12 +1,17 @@
 <script setup>
+import useProductsStore from "../stores/products";
 
-const title = "products";
+const productsStore = useProductsStore();
 
 </script>
 
 <template>
 
-<h1>{{ title }}</h1>
+<ul>
+    <li v-for="product of productsStore.listItems" :key="product.id">
+        {{ product.name }}
+    </li>
+</ul>
 
 </template>
 
