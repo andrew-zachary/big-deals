@@ -9,7 +9,7 @@ const { doTranslate } = useTranslate();
 <template>
 
 <footer>
-    <h1>{{ doTranslate('word') }}</h1>
+    <h1 class="text-4xl">{{ doTranslate('word') }}</h1>
     <LangPicker />
 </footer>
 

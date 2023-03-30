@@ -3,7 +3,7 @@
 <template>
 
 <nav>
-    <ul>
+    <ul class="text-4xl">
         <li>
             <router-link to="/">Home</router-link>
         </li>

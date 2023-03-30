@@ -8,7 +8,7 @@ const productsStore = useProductsStore();
 <template>
 
 <ul>
-    <li v-for="product of productsStore.listItems" :key="product.id">
+    <li class="text-4xl" v-for="product of productsStore.listItems" :key="product.id">
         {{ product.name }}
     </li>
 </ul>

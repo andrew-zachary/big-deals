@@ -6,10 +6,10 @@ const { changeLocales } = useTranslate();
 
 <template>
     <ul>
-        <li @click="changeLocales('en')">
+        <li class="text-4xl" @click="changeLocales('en')">
             en
         </li>
-        <li @click="changeLocales('ar')">
+        <li class="text-4xl" @click="changeLocales('ar')">
             ar
         </li>
     </ul>
