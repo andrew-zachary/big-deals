@@ -6,8 +6,8 @@ export function useTranslate() {
 
     const doTranslate = txt => t(txt.toLowerCase());
     const changeLocales = lang => {
-        locale.value = lang.value;
-        document.documentElement.dir = lang.value === 'en' ? 'ltr' : 'rtl';
+        locale.value = lang.name;
+        document.documentElement.dir = lang.name === 'en' ? 'ltr' : 'rtl';
     };
 
     return { doTranslate, changeLocales };
