@@ -7,6 +7,12 @@ import i18n from './includes/i18n';
 
 import './style.scss';
 
+// app-component
 import App from './App.vue';
 
-createApp(App).use(router).use(pinia).use(i18n).mount('#app');
+// z start
+createApp(App)
+    .use(router)
+    .use(pinia)
+    .use(i18n)
+    .use(primevue).mount('#app');

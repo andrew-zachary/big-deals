@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+
+import LangPicker from '../components/LangPicker.vue';
+
+</script>
 
 <template>
 
@@ -17,6 +21,7 @@
             <router-link to="/dashboard">Dashboard</router-link>
         </li>
     </ul>
+    <LangPicker />
 </nav>
 
 </template>

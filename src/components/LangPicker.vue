@@ -1,18 +1,19 @@
 <script setup>
+import { ref, computed } from 'vue';
 import { useTranslate } from '../composables/useTranslate';
+import useAppStore from '../stores/app';
 
 const { changeLocales } = useTranslate();
+const appStore = useAppStore();
+
+const selectedLang = ref( appStore.langs.default() );
+const langsCanBeSelected = computed( () => appStore.langs.available().filter( lang => lang.value !== selectedLang.value.value ) );
 </script>
 
 <template>
-    <ul>
-        <li class="text-4xl" @click="changeLocales('en')">
-            en
-        </li>
-        <li class="text-4xl" @click="changeLocales('ar')">
-            ar
-        </li>
-    </ul>
+
 </template>
 
-<style></style>
+<style lang="scss">
+
+</style>
