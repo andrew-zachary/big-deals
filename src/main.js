@@ -14,6 +14,7 @@ import './style.scss';
 // app-component
 import App from './App.vue';
 
+// z start
 createApp(App)
     .use(router)
     .use(pinia)

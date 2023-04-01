@@ -1,30 +1,28 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useTranslate } from '../composables/useTranslate';
 import useAppStore from '../stores/app';
 
 const { changeLocales } = useTranslate();
-const langs = ref([
-    {id: 1, name: 'en', target: 'en'},
-    {id: 2, name: 'ar', target: 'ar'},
-]);
-const selectedLang = ref(langs.value[0]);
+const appStore = useAppStore();
+
+const selectedLang = ref(appStore.langs.default());
+const langsCanBeSelected = computed( () =>  appStore.langs.available().filter( lang => lang.value !== selectedLang.value.value ) );
 </script>
 
 <template>
     <Dropdown 
         v-model="selectedLang" 
-        :options="langs" 
-        @update:modelValue="changeLocales" 
-        optionLabel="name" 
-        placeholder="lang" 
-        class="w-full" />
+        :options="langsCanBeSelected" 
+        @update:modelValue="changeLocales"
+        optionLabel="label" 
+        :placeholder="selectedLang.label"
+        class="w-full max-w-xs" />
 </template>
 
 <style lang="scss">
 .p-dropdown-items, .p-dropdown-label, .p-dropdown-trigger {
-    background-color: green;
-    font-size: 3rem;
-    padding: 2rem;
+    font-size: 2.2rem;
+    padding: 0.5rem;
 }
 </style>
