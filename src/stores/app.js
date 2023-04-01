@@ -18,4 +18,5 @@ export default defineStore('app', () => {
     return {
         langs
     }
+    
 });

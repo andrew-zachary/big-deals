@@ -16,13 +16,24 @@ const langsCanBeSelected = computed( () =>  appStore.langs.available().filter( l
         :options="langsCanBeSelected" 
         @update:modelValue="changeLocales"
         optionLabel="label" 
-        :placeholder="selectedLang.label"
-        class="w-full max-w-xs" />
+        :placeholder="selectedLang.label" />
 </template>
 
 <style lang="scss">
-.p-dropdown-items, .p-dropdown-label, .p-dropdown-trigger {
-    font-size: 2.2rem;
-    padding: 0.5rem;
+
+.p-dropdown, .p-dropdown-items, .p-dropdown-items-wrapper, .p-dropdown-item, .p-dropdown-label, .p-dropdown-trigger {
+    @apply bg-primary #{!important};
+    @apply shadow-none #{!important};
+    @apply border-0 #{!important};
+    @apply text-sm text-white #{!important};
 }
+
+.p-dropdown {
+    @apply shadow-secondary #{!important};
+}
+
+.p-dropdown-trigger {
+    @include withRtl(border-radius, 0 6px 6px 0, 6px 0 0 6px);
+}
+
 </style>

@@ -11,5 +11,12 @@ export default defineConfig({
     alias: {
       'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/styles/_mixins.scss";',
+      },
+    },
   }
 });
