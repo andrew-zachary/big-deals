@@ -26,6 +26,7 @@ const langsCanBeSelected = computed( () =>  appStore.langs.available().filter( l
     @apply shadow-none #{!important};
     @apply border-0 #{!important};
     @apply text-sm text-white #{!important};
+    @apply capitalize;
 }
 
 .p-dropdown {

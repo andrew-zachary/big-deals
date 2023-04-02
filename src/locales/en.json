@@ -1,3 +1,9 @@
 {
-    "word": "word-x"
+    "word": "word-x",
+    "nav": {
+        "home": "home",
+        "products": "products",
+        "about": "about",
+        "account": "account"
+    }
 }
