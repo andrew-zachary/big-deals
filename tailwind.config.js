@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         'primary': '#f68b1e',
         'primary-dim': '#f9ae62',
-        'primary-bg': 'white',
+        'primary-bg': '#ffffff',
         'secondary': '#00000033',
       },
       fontSize: {

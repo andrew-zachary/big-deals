@@ -15,8 +15,14 @@ export default defineStore('app', () => {
         }
     });
 
+    const currentLang = ref(langs.value.default());
+
+    const setCurrentLang = (cl) => currentLang.value = cl;
+
     return {
-        langs
+        langs,
+        currentLang,
+        setCurrentLang
     }
-    
+
 });
