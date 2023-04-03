@@ -24,11 +24,10 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
 
 <template>
 
-<div id="top-bar" class="flex">
+<div id="top-bar" class="flex justify-between p-4">
     <BtnIconRounded icon="pi pi-bars" @click="toggleSidebarAndNav" />
     <LangPicker />
 </div>
-
 
 <Sidebar v-model:visible="openSidebar" :position="sideBarPosition" :showCloseIcon="false">
     <template #header>

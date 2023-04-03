@@ -9,8 +9,8 @@ module.exports = {
       colors: {
         'primary': '#f68b1e',
         'primary-dim': '#f9ae62',
-        'primary-bg': '#ffffff',
-        'secondary': '#00000033',
+        'primary-bg': '#ffff72',
+        'secondary': '#0000006b',
       },
       fontSize: {
         'sm': '2.2rem'
