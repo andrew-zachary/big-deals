@@ -5,10 +5,22 @@ export default defineStore('products', () => {
 
     const products = ref({
         items: [],
-        currentPageNum: 1
+        currentPageNum: 0,
+        limitPerPage: 30,
+        hasMore: true
     });
 
+    const productsReceived = (items) => {
+
+        if(items.length === 0) return products.value.hasMore = false;
+
+        products.value.items = [...products.value.items, ...items];
+        products.value.currentPageNum += 1;
+
+    };
+
     return {
-        products
+        products,
+        productsReceived
     }
 });
