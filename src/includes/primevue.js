@@ -1,8 +1,9 @@
-import PrimeVue from 'primevue/config';
+import PrimeVue from "primevue/config";
 
-import Button from 'primevue/button';
-import Dropdown from 'primevue/dropdown';
-import Sidebar from 'primevue/sidebar';
+import Button from "primevue/button";
+import Dropdown from "primevue/dropdown";
+import Sidebar from "primevue/sidebar";
+import Progressspinner from "primevue/progressspinner";
 
 import "primevue/resources/themes/lara-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
@@ -15,5 +16,6 @@ export default {
         app.component('Sidebar', Sidebar);
         app.component('Button', Button);
         app.component('Dropdown', Dropdown);
+        app.component('Progressspinner', Progressspinner);
     }
 };
