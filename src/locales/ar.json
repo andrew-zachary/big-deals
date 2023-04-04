@@ -5,5 +5,9 @@
         "products": "منتجات",
         "about": "عنا",
         "account": "حسابي"
+    },
+    "searching": {
+        "placeholder": "البحث عن ...",
+        "no_results": "لا يوجد نتائج"
     }
 }

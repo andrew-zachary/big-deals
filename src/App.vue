@@ -2,7 +2,6 @@
 
 // layouts
 import Nav from './layouts/Nav.vue';
-import Footer from './layouts/Footer.vue';
 
 </script>
 
@@ -14,7 +13,6 @@ import Footer from './layouts/Footer.vue';
         <router-view></router-view>
       </div>
     </main>
-    <Footer />
   </div>
 </template>
 

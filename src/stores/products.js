@@ -19,8 +19,18 @@ export default defineStore('products', () => {
 
     };
 
+    const resetProducts = () => {
+        products.value = {
+            items: [],
+            currentPageNum: 0,
+            limitPerPage: 30,
+            hasMore: true
+        }
+    }
+
     return {
         products,
-        productsReceived
+        productsReceived,
+        resetProducts
     }
 });

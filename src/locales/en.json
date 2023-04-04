@@ -5,5 +5,9 @@
         "products": "products",
         "about": "about",
         "account": "account"
+    },
+    "searching": {
+        "placeholder": "searching for ...",
+        "no_results": "no results found"
     }
 }

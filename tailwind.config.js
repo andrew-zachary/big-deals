@@ -13,6 +13,7 @@ module.exports = {
         'secondary': '#0000006b',
       },
       fontSize: {
+        'xs': '1.6rem',
         'sm': '2.2rem'
       },
       maxWidth: {
@@ -22,7 +23,7 @@ module.exports = {
         'bd-lg': '99.2rem'
       },
       gridTemplateRows: {
-        'bd-base': 'min-content 1fr min-content'
+        'bd-base': 'auto 1fr'
       },
       boxShadow: {
         'secondary': '0 0.4rem 0.8rem 0 #00000033'
