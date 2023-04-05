@@ -7,6 +7,7 @@ import useBDaFetch from "../includes/bdFetch";
 import useProductsStore from "../stores/products";
 import { useTranslate } from "../composables/useTranslate";
 import SearchInput from "../components/SearchInput.vue";
+import ProductListItem from "../components/ProductListItem.vue";
 
 const productsStore = useProductsStore();
 const { doTranslate } = useTranslate();
@@ -58,13 +59,10 @@ onBeforeMount(() => {
         self-end"
         @searching="searching($event)" />
     <ul 
-        class="mt-8 
-        h-full w-full 
+        class="h-full w-full 
         flex flex-col justify-start items-center"
     >
-        <li class="w-full text-sm" v-for="product of productsStore.products.items" :key="product.id">
-            {{ product.title }}
-        </li>
+        <ProductListItem v-for="product of productsStore.products.items" :key="product.id" :product="product" />
         <li v-if="isFetching && productsStore.products.hasMore">
             <div id="spinner-box" class="overflow-hidden">
                 <Progressspinner />
