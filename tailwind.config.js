@@ -14,7 +14,11 @@ module.exports = {
       },
       fontSize: {
         'xs': '1.6rem',
-        'sm': '2.2rem'
+        'sm': '2.2rem',
+        'md': '3.2rem',
+        'lg': '4rem',
+        'xl': '5.8rem',
+        'xxl': '6rem'
       },
       maxWidth: {
         'bd-xs': '32rem',

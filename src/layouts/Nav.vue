@@ -25,14 +25,14 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
 <template>
 
 <div id="top-bar" class="flex items-center justify-between p-4">
-    <BtnIconRounded icon="pi pi-bars" @click="toggleSidebarAndNav" />
+    <BtnIconRounded class="sm" icon="pi pi-bars" @click="toggleSidebarAndNav" />
     <LangPicker />
 </div>
 
 <Sidebar v-model:visible="openSidebar" :position="sideBarPosition" :showCloseIcon="false">
     <template #header>
         <div class="position-layout-fix flex justify-end w-full" :style="{direction: appStore.currentLang.dir}">
-            <BtnIconRounded icon="pi pi-times" @click="toggleSidebarAndNav" />
+            <BtnIconRounded class="sm" icon="pi pi-times" @click="toggleSidebarAndNav" />
         </div>
     </template>
     <div class="position-layout-fix" :style="{direction: appStore.currentLang.dir}">

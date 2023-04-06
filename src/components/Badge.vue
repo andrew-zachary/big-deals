@@ -1,0 +1,33 @@
+<script setup>
+
+defineProps(['value']);
+
+</script>
+
+<template>
+    <i v-badge="value" class="cart-toggle-btn pi pi-shopping-cart p-overlay-badge" />
+</template>
+
+<style lang="scss">
+.cart-toggle-btn {
+    @apply text-lg text-white #{!important};
+    @apply bg-primary #{!important};
+    @apply border border-white;
+    @apply p-4 #{!important};
+    @apply rounded-full #{!important};
+    @apply shadow-secondary #{!important};
+    
+    .p-badge {
+        height: 3rem!important;
+        min-width: 3rem!important;
+        line-height: 3rem!important;
+        padding: 0rem 0.75rem;
+        
+        @apply text-sm #{!important};
+        @apply bg-primary #{!important};
+        @apply border border-white;
+
+        @include withRtl(right, 0, 100%);
+    }
+}
+</style>

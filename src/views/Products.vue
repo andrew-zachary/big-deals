@@ -8,6 +8,7 @@ import useProductsStore from "../stores/products";
 import { useTranslate } from "../composables/useTranslate";
 import SearchInput from "../components/SearchInput.vue";
 import ProductListItem from "../components/ProductListItem.vue";
+import Cart from "../components/Cart.vue";
 
 const productsStore = useProductsStore();
 const { doTranslate } = useTranslate();
@@ -44,7 +45,9 @@ onBeforeMount(() => {
 <template>
 
 <div 
-    class="py-2 px-4
+    class="max-w-bd-md mx-auto
+    relative
+    py-2 px-4
     h-full w-full
     grid items-center
     overflow-auto"
@@ -72,6 +75,7 @@ onBeforeMount(() => {
             {{ doTranslate('searching.no_results') }}
         </li>
     </ul>
+    <Cart />
 </div>
 
 </template>

@@ -22,7 +22,7 @@ const cartStore = useCartStore();
                 <span>$</span> <span>{{ product.price }}</span> 
             </div>
             <div class="flex justify-end">
-                <BtnIconRounded icon="pi pi-cart-plus" @click="cartStore.addItem(product)" />
+                <BtnIconRounded class="sm relative z-20" icon="pi pi-cart-plus" @click="cartStore.addItem(product)" />
             </div>
         </div>
     </li>
