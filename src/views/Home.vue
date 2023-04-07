@@ -1,12 +1,12 @@
 <script setup>
 
-const title = "home page";
+import Logo from "../assets/logo.vue";
 
 </script>
 
 <template>
 
-<h1 class="text-4xl">{{ title }}</h1>
+<Logo />
 
 </template>
 
