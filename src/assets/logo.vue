@@ -6,6 +6,6 @@
 </template>
 <style scoped lang="scss">
 svg {
-    @apply fill-primary;
+    @apply fill-primary w-full;
 }
 </style>
