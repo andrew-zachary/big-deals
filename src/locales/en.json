@@ -1,5 +1,10 @@
 {
-    "word": "word-x",
+    "home": {
+        "start_browsing": "start browsing"
+    },
+    "cart": {
+        "submit": "submit"
+    },
     "nav": {
         "home": "home",
         "products": "products",

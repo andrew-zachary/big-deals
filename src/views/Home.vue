@@ -1,7 +1,14 @@
 <script setup>
 
+import { useTranslate } from "../composables/useTranslate";
+import { useRouter } from "vue-router";
+
 import Logo from "../assets/logo.vue";
 import BtnIconRounded from "../components/BtnIconRounded.vue";
+import Btn from "../components/Btn.vue";
+
+const { doTranslate } = useTranslate();
+const router = useRouter();
 
 </script>
 
@@ -9,15 +16,11 @@ import BtnIconRounded from "../components/BtnIconRounded.vue";
 
 <div class="w-full h-full flex flex-col">
     <div class="grow">
-        <div class="h-full flex flex-col justify-center">
+        <div class="p-4 h-full flex flex-col justify-center">
             <div class="w-full">
                 <Logo />
             </div>
-            <p class="mt-4 
-                text-md text-center text-white 
-                font-bold capitalize 
-                bg-primary
-                border-2 border-black">best offers for everyone</p>
+            <Btn :label="doTranslate('home.start_browsing')" size="md" class="mt-8" @click="router.push('/products')" />
         </div>
     </div>
     <div id="home-footer" class="p-8 flex justify-end">

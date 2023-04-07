@@ -2,11 +2,13 @@
     import { ref } from "vue";
 
     import useCartStore from "../stores/cart";
+    import { useTranslate } from "../composables/useTranslate";
     import Badge from "../components/Badge.vue";
     import BtnIconRounded from "./BtnIconRounded.vue";
     import Btn from "./Btn.vue";
 
     const cartStore = useCartStore();
+    const { doTranslate } = useTranslate();
     const openCart = ref(false);
 </script>
 
@@ -14,7 +16,8 @@
     <div class="w-full max-w-bd-md
         fixed left-100 bottom-0
         z-10
-        p-4"
+        p-4
+        cursor-pointer"
         @click="openCart = true"
     >
         <Badge :value="cartStore.totalItems"/>
@@ -27,7 +30,7 @@
                     <BtnIconRounded icon="pi pi-times" @click="openCart = false" />
                 </div>
                 <div class="w-full max-w-bd-sm mx-auto">
-                    <Btn label="submit" icon="pi pi-shopping-cart" />
+                    <Btn :label="doTranslate('cart.submit')" icon="pi pi-shopping-cart" size="sm" />
                 </div>
             </div>
         </template>

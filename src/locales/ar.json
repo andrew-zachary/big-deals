@@ -1,5 +1,10 @@
 {
-    "word": "كلمة",
+    "home": {
+        "start_browsing": "ابدأ التصفح"
+    },
+    "cart": {
+        "submit": "ارسل الطلب"
+    },
     "nav": {
         "home": "ابدأ",
         "products": "منتجات",
