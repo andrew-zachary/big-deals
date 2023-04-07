@@ -37,17 +37,17 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
     </template>
     <div class="position-layout-fix" :style="{direction: appStore.currentLang.dir}">
         <nav>
-            <ul class="text-4xl">
-                <li>
+            <ul class="text-4xl text-white font-bold capitalize">
+                <li class="mt-4">
                     <BtnLink @click="toggleSidebarAndNav('/')">{{ doTranslate('nav.home') }}</BtnLink>
                 </li>
-                <li>
+                <li class="mt-4">
                     <BtnLink @click="toggleSidebarAndNav('/products')">{{ doTranslate('nav.products') }}</BtnLink>
                 </li>
-                <li>
+                <li class="mt-4">
                     <BtnLink @click="toggleSidebarAndNav('/about')">{{ doTranslate('nav.about') }}</BtnLink>
                 </li>
-                <li>
+                <li class="mt-4">
                     <BtnLink @click="toggleSidebarAndNav('/account')">{{ doTranslate('nav.account') }}</BtnLink>
                 </li>
             </ul>
@@ -60,6 +60,10 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
 <style lang="scss">
 .p-sidebar-right, .p-sidebar-left {
     direction: ltr;
+
+    .p-sidebar {
+        @apply bg-primary #{!important};
+    }
 }
 .p-sidebar-header-content {
     width: 100%;

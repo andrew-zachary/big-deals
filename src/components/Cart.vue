@@ -32,7 +32,7 @@
             </div>
         </template>
         <ul class="max-w-bd-sm mx-auto">
-            <li v-for="item of cartStore.items" :key="item.id" class="mt-8">
+            <li v-for="item of cartStore.items" :key="item.id" class="mt-8 text-white">
                 <div class="text-sm font-bold">{{ item.title }}</div>
                 <div class="text-xs">{{ item.count }} for <span class="font-bold">$ {{ item.price * item.count }}</span></div>
                 <div class="flex">

@@ -12,8 +12,8 @@ const cartStore = useCartStore();
     <li class="mt-8 p-8 
         w-full 
         text-sm 
-        border-2 border-primary rounded-lg
-        shadow-secondary"
+        border-b border-primary
+        text-white"
     >
         <h1 class="text-sm font-bold">{{ product.title }}</h1>
         <h2 class="text-xs">{{ product.description }}</h2>
