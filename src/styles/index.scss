@@ -14,10 +14,6 @@ html {
   }
 }
 
-body {
-  background-color: yellow;
-}
-
 .font-mont {
   @include withRtl('font-family', 'Montserrat', 'Tajawal');
 }
@@ -47,12 +43,12 @@ body {
 }
 div[data-simplebar=init] {
   .simplebar-track.simplebar-vertical {
-      @include withRtl(right, 0, unset);
-      @include withRtl(left, unset, 0);
+    @include withRtl(right, 0, unset);
+    @include withRtl(left, unset, 0);
   }
 }
 .simplebar-scrollbar::before {
-  @apply bg-primary #{!important};
+  @apply bg-primary dark:bg-white #{!important};
   opacity: 1!important;
   width: 0.4rem!important;
 }

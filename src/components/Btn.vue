@@ -5,7 +5,7 @@ defineProps(['label', 'icon', 'size']);
 </script>
 
 <template>
-    <Button :label="label" :icon="icon" class="flat bg-primary font-ssp" :class="[size]" />
+    <Button :label="label" :icon="icon" class="flat font-ssp" :class="[size]" />
 </template>
 
 <style lang="scss">
@@ -13,6 +13,7 @@ defineProps(['label', 'icon', 'size']);
         @apply hover:bg-primary-dim #{!important};
         @apply border-0 #{!important};
         @apply shadow-secondary #{!important};
+        @apply bg-primary dark:bg-primary-dark #{!important};
 
         &.sm span {
             @apply text-sm capitalize #{!important};

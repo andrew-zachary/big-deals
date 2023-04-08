@@ -61,9 +61,9 @@ useSimpleBar({elementRef: productsList});
     <SearchInput
         class="w-full 
         p-2 
-        border-2 border-primary rounded-xl 
+        border-2 border-primary dark:border-primary-dark rounded-xl 
         text-sm text-black placeholder:text-black
-        bg-primary-bg
+        bg-primary-bg dark:bg-primary-bg-dark
         self-end"
         @searching="searching($event)" />
     <ul 

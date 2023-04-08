@@ -5,6 +5,7 @@ import Dropdown from "primevue/dropdown";
 import Sidebar from "primevue/sidebar";
 import Progressspinner from "primevue/progressspinner";
 import Dialog from 'primevue/dialog';
+import InputSwitch from 'primevue/inputswitch';
 
 import BadgeDirective from 'primevue/badgedirective';
 
@@ -21,6 +22,7 @@ export default {
         app.component('Dropdown', Dropdown);
         app.component('Progressspinner', Progressspinner);
         app.component('Dialog', Dialog);
+        app.component('InputSwitch', InputSwitch);
         
         app.directive('badge', BadgeDirective);
     }

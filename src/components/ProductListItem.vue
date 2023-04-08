@@ -12,8 +12,8 @@ const cartStore = useCartStore();
     <li class="mt-8 p-8 
         w-full 
         text-sm 
-        border-b border-primary
-        text-secondary"
+        border-b border-primary dark:border-white
+        text-secondary dark:text-white"
     >
         <h1 class="text-sm capitalize font-mont font-bold">{{ product.title }}</h1>
         <h2 class="text-xs font-ssp mt-2">{{ product.description }}</h2>

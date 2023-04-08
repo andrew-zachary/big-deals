@@ -8,6 +8,7 @@ import { useTranslate } from '../composables/useTranslate';
 import LangPicker from '../components/LangPicker.vue';
 import BtnIconRounded from '../components/BtnIconRounded.vue';
 import BtnLink from '../components/BtnLink.vue';
+import DarkmodeToggler from '../components/DarkmodeToggler.vue';
 
 const appStore = useAppStore();
 const router = useRouter();
@@ -26,7 +27,10 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
 
 <div id="top-bar" class="flex items-center justify-between p-4">
     <BtnIconRounded class="sm" icon="pi pi-bars" @click="toggleSidebarAndNav" />
-    <LangPicker />
+    <div id="nav-right-ctrls" class="w-full flex justify-end items-center">
+        <DarkmodeToggler />
+        <LangPicker />
+    </div>
 </div>
 
 <Sidebar v-model:visible="openSidebar" :position="sideBarPosition" :showCloseIcon="false">
@@ -37,7 +41,7 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
     </template>
     <div class="position-layout-fix" :style="{direction: appStore.currentLang.dir}">
         <nav>
-            <ul class="text-4xl text-secondary font-bold capitalize">
+            <ul class="text-4xl text-secondary dark:text-white font-bold capitalize">
                 <li class="mt-4">
                     <BtnLink @click="toggleSidebarAndNav('/')">{{ doTranslate('nav.home') }}</BtnLink>
                 </li>
@@ -62,7 +66,7 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
     direction: ltr;
 
     .p-sidebar {
-        @apply bg-white #{!important};
+        @apply bg-primary-bg dark:bg-primary-bg-dark #{!important};
     }
 }
 .p-sidebar-header-content {

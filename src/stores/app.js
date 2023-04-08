@@ -16,13 +16,26 @@ export default defineStore('app', () => {
     });
 
     const currentLang = ref(langs.value.default());
+    const darkMode = ref(false);
 
     const setCurrentLang = (cl) => currentLang.value = cl;
+    const toggleDarkMode = () => {
+
+        darkMode.value = !darkMode.value;
+
+        if(darkMode.value) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    };
 
     return {
         langs,
         currentLang,
-        setCurrentLang
+        darkMode,
+        setCurrentLang,
+        toggleDarkMode
     }
 
 });

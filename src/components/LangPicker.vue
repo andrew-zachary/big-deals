@@ -22,7 +22,7 @@ const langsCanBeSelected = computed( () =>  appStore.langs.available().filter( l
 <style lang="scss">
 
 .p-dropdown, .p-dropdown-items, .p-dropdown-items-wrapper, .p-dropdown-item, .p-dropdown-label, .p-dropdown-trigger {
-    @apply bg-primary #{!important};
+    @apply bg-primary dark:bg-primary-dark #{!important};
     @apply shadow-none #{!important};
     @apply border-0 #{!important};
     @apply text-sm text-white #{!important};

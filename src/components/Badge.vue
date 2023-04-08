@@ -11,7 +11,7 @@ defineProps(['value']);
 <style lang="scss">
 .cart-toggle-btn {
     @apply text-lg text-white #{!important};
-    @apply bg-primary #{!important};
+    @apply bg-primary dark:bg-primary-dark #{!important};
     @apply border-2 border-secondary;
     @apply p-4 #{!important};
     @apply rounded-full #{!important};
@@ -24,7 +24,7 @@ defineProps(['value']);
         padding: 0rem 0.75rem;
         
         @apply text-sm #{!important};
-        @apply bg-primary #{!important};
+        @apply bg-primary dark:bg-primary-dark #{!important};
         @apply border-2 border-secondary;
 
         @include withRtl(right, 0, 100%);
