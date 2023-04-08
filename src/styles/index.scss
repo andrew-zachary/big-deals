@@ -18,6 +18,14 @@ body {
   background-color: yellow;
 }
 
+.font-mont {
+  @include withRtl('font-family', 'Montserrat', 'Tajawal');
+}
+
+.font-ssp {
+  @include withRtl('font-family', 'Source Sans Pro', 'Vazirmatn');
+}
+
 // scroller global style
 #section-scroller {
   overflow-y: auto;

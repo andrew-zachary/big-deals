@@ -25,7 +25,7 @@
         <template #header>
             <div class="w-full flex flex-col">
                 <div class="w-full max-w-bd-sm mx-auto flex items-center justify-between">
-                    <div class="text-md text-primary font-bold">$ {{ cartStore.totalCost }}</div>
+                    <div class="text-md text-primary font-ssp font-bold">$ {{ cartStore.totalCost }}</div>
                     <BtnIconRounded icon="pi pi-times" @click="openCart = false" />
                 </div>
                 <div class="w-full max-w-bd-sm mx-auto">
@@ -34,9 +34,9 @@
             </div>
         </template>
         <ul class="max-w-bd-sm mx-auto">
-            <li v-for="item of cartStore.items" :key="item.id" class="mt-8 text-white">
-                <div class="text-sm font-bold">{{ item.title }}</div>
-                <div class="text-xs">{{ item.count }} for <span class="font-bold">$ {{ item.price * item.count }}</span></div>
+            <li v-for="item of cartStore.items" :key="item.id" class="mt-8 text-secondary">
+                <div class="text-sm font-mont font-bold">{{ item.title }}</div>
+                <div class="text-xs font-ssp">{{ item.count }} for <span class="font-bold">$ {{ item.price * item.count }}</span></div>
                 <div class="flex">
                     <div class="p-4"><BtnIconRounded icon="pi pi-plus" @click="cartStore.addItem(item)" /></div>
                     <div class="p-4"><BtnIconRounded icon="pi pi-minus" @click="cartStore.removeItem(item)"/></div>

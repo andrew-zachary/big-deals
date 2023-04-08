@@ -5,7 +5,7 @@ defineProps(['label', 'icon', 'size']);
 </script>
 
 <template>
-    <Button :label="label" :icon="icon" class="flat bg-primary" :class="[size]" />
+    <Button :label="label" :icon="icon" class="flat bg-primary font-ssp" :class="[size]" />
 </template>
 
 <style lang="scss">
