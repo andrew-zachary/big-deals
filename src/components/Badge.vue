@@ -12,7 +12,7 @@ defineProps(['value']);
 .cart-toggle-btn {
     @apply text-lg text-white #{!important};
     @apply bg-primary #{!important};
-    @apply border border-white;
+    @apply border-2 border-secondary;
     @apply p-4 #{!important};
     @apply rounded-full #{!important};
     @apply shadow-secondary #{!important};
@@ -25,7 +25,7 @@ defineProps(['value']);
         
         @apply text-sm #{!important};
         @apply bg-primary #{!important};
-        @apply border border-white;
+        @apply border-2 border-secondary;
 
         @include withRtl(right, 0, 100%);
     }

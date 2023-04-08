@@ -37,7 +37,7 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
     </template>
     <div class="position-layout-fix" :style="{direction: appStore.currentLang.dir}">
         <nav>
-            <ul class="text-4xl text-bg-primary font-bold capitalize">
+            <ul class="text-4xl text-secondary font-bold capitalize">
                 <li class="mt-4">
                     <BtnLink @click="toggleSidebarAndNav('/')">{{ doTranslate('nav.home') }}</BtnLink>
                 </li>
@@ -62,7 +62,7 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
     direction: ltr;
 
     .p-sidebar {
-        @apply bg-primary #{!important};
+        @apply bg-white #{!important};
     }
 }
 .p-sidebar-header-content {

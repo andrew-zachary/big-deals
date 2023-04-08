@@ -11,8 +11,8 @@
 </script>
 
 <template>
-    <input class="p-8 text-white
-    placeholder:text-white"
+    <input class="p-8 text-secondary
+    placeholder:text-secondary"
     :placeholder="doTranslate('searching.placeholder')"
     @input="debouncedSearch($event.target.value)" />
 </template>

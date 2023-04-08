@@ -76,7 +76,7 @@ useSimpleBar({elementRef: productsList});
                 <Progressspinner />
             </div>
         </li>
-        <li class="text-xs text-white mt-4" v-else-if="!isFetching && productsStore.products.items.length === 0">
+        <li class="text-xs text-secondary mt-4" v-else-if="!isFetching && productsStore.products.items.length === 0">
             {{ doTranslate('searching.no_results') }}
         </li>
     </ul>

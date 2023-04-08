@@ -13,10 +13,9 @@
 </script>
 
 <template>
-    <div class="w-full max-w-bd-md
-        fixed left-100 bottom-0
+    <div class="sticky left-100 bottom-0
         z-10
-        p-4
+        p-4 pb-20
         cursor-pointer"
         @click="openCart = true"
     >

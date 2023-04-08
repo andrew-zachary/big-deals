@@ -13,10 +13,10 @@ const cartStore = useCartStore();
         w-full 
         text-sm 
         border-b border-primary
-        text-white"
+        text-secondary"
     >
         <h1 class="text-sm capitalize font-bold">{{ product.title }}</h1>
-        <h2 class="text-xs">{{ product.description }}</h2>
+        <h2 class="text-xs mt-2">{{ product.description }}</h2>
         <div class="text-lg font-bold">
             <div class="mt-4">
                 <span>$</span> <span>{{ product.price }}</span> 
