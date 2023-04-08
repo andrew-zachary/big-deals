@@ -15,9 +15,9 @@ const cartStore = useCartStore();
         border-b border-primary
         text-white"
     >
-        <h1 class="text-sm font-bold">{{ product.title }}</h1>
+        <h1 class="text-sm capitalize font-bold">{{ product.title }}</h1>
         <h2 class="text-xs">{{ product.description }}</h2>
-        <div class="text-sm font-bold">
+        <div class="text-lg font-bold">
             <div class="mt-4">
                 <span>$</span> <span>{{ product.price }}</span> 
             </div>

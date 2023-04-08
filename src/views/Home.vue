@@ -20,7 +20,9 @@ const router = useRouter();
             <div class="w-full">
                 <Logo />
             </div>
-            <Btn :label="doTranslate('home.start_browsing')" size="md" class="mt-8" @click="router.push('/products')" />
+            <div id="start-browsing" class="w-full flex justify-center">
+                <Btn :label="doTranslate('home.start_browsing')" class="mt-8" @click="router.push('/products')" />
+            </div>
         </div>
     </div>
     <div id="home-footer" class="p-8 flex justify-end">
@@ -41,6 +43,23 @@ const router = useRouter();
 </template>
 
 <style lang="scss">
+
+    #start-browsing {
+        
+        button {
+            @apply text-xs #{!important};
+            text-transform: uppercase;
+        }
+
+        @media screen and (min-width: 512px) {
+            
+            button {
+                @apply text-md #{!important};
+                width: 100%;
+            }
+        }
+    }
+
     #social-links {
         max-width: 15rem;
     }
