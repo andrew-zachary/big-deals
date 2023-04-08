@@ -7,11 +7,13 @@ import useBDaFetch from "../includes/bdFetch";
 import useProductsStore from "../stores/products";
 import { useTranslate } from "../composables/useTranslate";
 import SearchInput from "../components/SearchInput.vue";
+import { useSimpleBar } from "../composables/useSimpleScroll";
 import ProductListItem from "../components/ProductListItem.vue";
 import Cart from "../components/Cart.vue";
 
 const productsStore = useProductsStore();
 const { doTranslate } = useTranslate();
+const productsList = ref();
 const searchTxt = ref('');
 const url = ref(`products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`);
 
@@ -40,6 +42,8 @@ onBeforeMount(() => {
     if(productsStore.products.items.length === 0) execute();
 });
 
+useSimpleBar({elementRef: productsList});
+
 </script>
 
 <template>
@@ -47,10 +51,11 @@ onBeforeMount(() => {
 <div 
     class="max-w-bd-md mx-auto
     relative
-    py-2 px-4
+    py-2 px-6
     h-full w-full
     grid items-center
     overflow-auto"
+    ref="productsList"
     v-infinite-scroll="[onLoadMore, {distance: 150}]"
 >
     <SearchInput
@@ -67,7 +72,7 @@ onBeforeMount(() => {
     >
         <ProductListItem v-for="product of productsStore.products.items" :key="product.id" :product="product" />
         <li v-if="isFetching && productsStore.products.hasMore">
-            <div id="spinner-box" class="overflow-hidden">
+            <div id="spinner-box" class="overflow-hidden mt-4">
                 <Progressspinner />
             </div>
         </li>

@@ -17,3 +17,34 @@ html {
 body {
   background-color: yellow;
 }
+
+// scroller global style
+#section-scroller {
+  overflow-y: auto;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 8rem;
+
+  header {
+    h1 {
+      @include withRtl(padding, 0 0 0 0.4rem, 0 0.4rem 0 0);
+    }
+  }
+}
+.simplebar-content-wrapper {
+  width: 100vw;
+  display: grid;
+  align-items: center;
+}
+div[data-simplebar=init] {
+  .simplebar-track.simplebar-vertical {
+      @include withRtl(right, 0, unset);
+      @include withRtl(left, unset, 0);
+  }
+}
+.simplebar-scrollbar::before {
+  @apply bg-primary #{!important};
+  opacity: 1!important;
+  width: 0.4rem!important;
+}
