@@ -12,7 +12,7 @@ defineProps(['icon', 'fontSize']);
 
 .p-button-icon-only {
     @apply bg-primary dark:bg-primary-dark hover:bg-primary-dim #{!important};
-    @apply shadow-secondary #{!important};
+    @apply shadow-base dark:shadow-base-dark #{!important};
     @apply border-0 #{!important};
 
     &.sm {

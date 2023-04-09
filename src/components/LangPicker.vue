@@ -30,7 +30,7 @@ const langsCanBeSelected = computed( () =>  appStore.langs.available().filter( l
 }
 
 .p-dropdown {
-    @apply shadow-secondary #{!important};
+    @apply shadow-base dark:shadow-base-dark #{!important};
 }
 
 .p-dropdown-trigger {

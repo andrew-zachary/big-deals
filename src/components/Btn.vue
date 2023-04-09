@@ -12,7 +12,7 @@ defineProps(['label', 'icon', 'size']);
     .flat.p-button {
         @apply hover:bg-primary-dim #{!important};
         @apply border-0 #{!important};
-        @apply shadow-secondary #{!important};
+        @apply shadow-base dark:shadow-base-dark #{!important};
         @apply bg-primary dark:bg-primary-dark #{!important};
 
         &.sm span {

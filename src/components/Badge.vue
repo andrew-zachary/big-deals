@@ -15,7 +15,7 @@ defineProps(['value']);
     @apply border-2 border-secondary;
     @apply p-4 #{!important};
     @apply rounded-full #{!important};
-    @apply shadow-secondary #{!important};
+    @apply shadow-base dark:shadow-base-dark #{!important};
     
     .p-badge {
         height: 3rem!important;
