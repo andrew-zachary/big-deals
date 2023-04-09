@@ -1,7 +1,13 @@
 import { onMounted, onBeforeUnmount } from "vue";
 
-export function useSimpleBar({elementRef, onScrollEvent = null}) {
+export function useSimpleBar({elementRef, callback = null}) {
+
     let scrollerObj = null;
+    const onScrollEvent = (e) => {
+        if ((Math.floor(e.target.scrollTop) + Math.floor(e.target.clientHeight) + 150) > Math.floor(e.target.scrollHeight)) {
+            callback();
+        }
+    };
 
     onMounted(() => {
 

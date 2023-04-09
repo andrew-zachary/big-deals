@@ -2,7 +2,6 @@
 
 import { ref, onBeforeMount } from "vue";
 
-import { vInfiniteScroll } from "@vueuse/components";
 import useBDaFetch from "../includes/bdFetch";
 import useProductsStore from "../stores/products";
 import { useTranslate } from "../composables/useTranslate";
@@ -23,13 +22,6 @@ const { isFetching, execute } = useBDaFetch(url, { immediate: false }, {
     }
 });
 
-const onLoadMore = () => {
-    if(isFetching.value || !productsStore.products.hasMore) return;
-
-    url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`;
-    execute();
-};
-
 const searching = (txt) => {
     productsStore.resetProducts();
 
@@ -42,7 +34,12 @@ onBeforeMount(() => {
     if(productsStore.products.items.length === 0) execute();
 });
 
-useSimpleBar({elementRef: productsList});
+useSimpleBar({elementRef: productsList, callback: () => {
+    if(isFetching.value || !productsStore.products.hasMore) return;
+
+    url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`;
+    execute();
+}});
 
 </script>
 
@@ -56,7 +53,6 @@ useSimpleBar({elementRef: productsList});
     grid items-center
     overflow-auto"
     ref="productsList"
-    v-infinite-scroll="[onLoadMore, {distance: 150}]"
 >
     <SearchInput
         class="w-full 

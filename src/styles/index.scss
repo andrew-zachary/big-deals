@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+// as per tailwind schema
+:root {
+  --slider-bg: #f68b1e;
+
+  &.dark {
+    --slider-bg: #0ea5e9;
+  }
+}
+
 html, body, #app {
   height: 100%;
 }
@@ -23,19 +32,6 @@ html {
 }
 
 // scroller global style
-#section-scroller {
-  overflow-y: auto;
-  opacity: 1;
-  height: 100%;
-  width: 100%;
-  padding-bottom: 8rem;
-
-  header {
-    h1 {
-      @include withRtl(padding, 0 0 0 0.4rem, 0 0.4rem 0 0);
-    }
-  }
-}
 .simplebar-content-wrapper {
   width: 100vw;
   display: grid;
@@ -48,7 +44,7 @@ div[data-simplebar=init] {
   }
 }
 .simplebar-scrollbar::before {
-  @apply bg-primary dark:bg-white #{!important};
+  background-color: var(--slider-bg);
   opacity: 1!important;
   width: 0.4rem!important;
 }

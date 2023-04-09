@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vueuse/components": "^9.13.0",
     "@vueuse/core": "^9.13.0",
     "pinia": "^2.0.33",
     "primeicons": "^6.0.1",
