@@ -34,12 +34,12 @@ onBeforeMount(() => {
     if(productsStore.products.items.length === 0) execute();
 });
 
-useSimpleBar({elementRef: productsList, callback: () => {
-    if(isFetching.value || !productsStore.products.hasMore) return;
+// useSimpleBar({elementRef: productsList, callback: () => {
+//     if(isFetching.value || !productsStore.products.hasMore) return;
 
-    url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`;
-    execute();
-}});
+//     url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`;
+//     execute();
+// }});
 
 </script>
 
@@ -72,7 +72,7 @@ useSimpleBar({elementRef: productsList, callback: () => {
                 <Progressspinner />
             </div>
         </li>
-        <li class="text-xs text-secondary mt-4" v-else-if="!isFetching && productsStore.products.items.length === 0">
+        <li class="text-xs text-secondary dark:text-white font-ssp font-bold mt-4" v-else-if="!isFetching && productsStore.products.items.length === 0">
             {{ doTranslate('searching.no_results') }}
         </li>
     </ul>

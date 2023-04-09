@@ -11,7 +11,14 @@ const darkModeOn = ref(appStore.darkMode);
 
 </script>
 <template>
-    <div id="darkmode-toggler" class="px-4 flex justify-start items-center">
+    <div 
+        id="darkmode-toggler" 
+        class="px-4 mx-4 h-full 
+        border border-secondary dark:border-primary-dark 
+        flex justify-start items-center
+        shadow-base dark:shadow-base-dark
+        rounded-xl"
+    >
         <div class="px-2 flex items-center">
             <InputSwitch v-model="darkModeOn" @change="appStore.toggleDarkMode" />
         </div>

@@ -27,7 +27,7 @@ const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'ri
 
 <div id="top-bar" class="flex items-center justify-between p-4">
     <BtnIconRounded class="sm" icon="pi pi-bars" @click="toggleSidebarAndNav" />
-    <div id="nav-right-ctrls" class="w-full flex justify-end items-center">
+    <div id="nav-right-ctrls" class="w-full h-full flex justify-end items-center">
         <DarkmodeToggler />
         <LangPicker />
     </div>
