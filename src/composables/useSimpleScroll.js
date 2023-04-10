@@ -13,7 +13,7 @@ export function useSimpleBar({elementRef, callback = null}) {
 
         scrollerObj = new SimpleBar(elementRef.value);
 
-        if(onScrollEvent) {
+        if(callback) {
             scrollerObj.getScrollElement().addEventListener('scroll', onScrollEvent);
         }
 
@@ -23,7 +23,7 @@ export function useSimpleBar({elementRef, callback = null}) {
 
         scrollerObj.unMount();
 
-        if(onScrollEvent) {
+        if(callback) {
             scrollerObj.getScrollElement().removeEventListener('scroll', onScrollEvent);
         }
 

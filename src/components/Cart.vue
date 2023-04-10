@@ -4,6 +4,7 @@
     import useCartStore from "../stores/cart";
     import { useTranslate } from "../composables/useTranslate";
     import Badge from "../components/Badge.vue";
+    import CartList from "./CartList.vue";
     import BtnIconRounded from "./BtnIconRounded.vue";
     import Btn from "./Btn.vue";
 
@@ -40,26 +41,12 @@
                     <div class="text-md text-primary dark:text-primary-dark font-ssp font-bold">$ {{ cartStore.totalCost }}</div>
                     <BtnIconRounded icon="pi pi-times" @click="openCart = false" />
                 </div>
-                <div class="w-full max-w-bd-sm mx-auto">
+                <div class="w-full max-w-bd-sm mx-auto pb-8">
                     <Btn :label="doTranslate('cart.submit')" icon="pi pi-shopping-cart" size="sm" />
                 </div>
             </div>
         </template>
-        <ul class="max-w-bd-sm mx-auto">
-            <li v-for="item of cartStore.items" :key="item.id" class="mt-8 text-secondary">
-                <div class="text-sm text-secondary dark:text-white font-mont font-bold">{{ item.title }}</div>
-                <div class="text-xs text-secondary dark:text-white font-ssp flex">
-                    <span>{{ item.count }}</span>
-                    <span class="px-2">{{ doTranslate('cart.for') }}</span>
-                    <span class="px-2">$</span>
-                    <span class="font-bold">{{ item.price * item.count }}</span>
-                </div>
-                <div class="flex">
-                    <div class="p-4"><BtnIconRounded icon="pi pi-plus" @click="cartStore.addItem(item)" /></div>
-                    <div class="p-4"><BtnIconRounded icon="pi pi-minus" @click="cartStore.removeItem(item)"/></div>
-                </div>
-            </li>
-        </ul>
+        <CartList />
     </Dialog>
 </template>
 
@@ -81,6 +68,7 @@
   }
 
   .p-dialog-content, .p-dialog-header {
+    padding: 0!important;
     border-radius: 0!important;
     @apply bg-primary-bg dark:bg-primary-bg-dark #{!important};
   }
