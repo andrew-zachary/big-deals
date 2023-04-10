@@ -10,7 +10,7 @@ defineProps(['label', 'icon', 'size']);
 
 <style lang="scss">
     .flat.p-button {
-        @apply hover:bg-primary-dim #{!important};
+        @apply hover:bg-primary-dim dark:hover:bg-primary-dim-dark #{!important};
         @apply border-0 #{!important};
         @apply shadow-base dark:shadow-base-dark #{!important};
         @apply bg-primary dark:bg-primary-dark #{!important};

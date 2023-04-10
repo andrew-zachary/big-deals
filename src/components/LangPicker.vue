@@ -29,12 +29,9 @@ const langsCanBeSelected = computed( () =>  appStore.langs.available().filter( l
     @apply capitalize;
 }
 
-.p-dropdown {
-    @apply shadow-base dark:shadow-base-dark #{!important};
-}
-
 .p-dropdown-trigger {
     @include withRtl(border-radius, 0 6px 6px 0, 6px 0 0 6px);
+    @apply hover:bg-primary-dim dark:hover:bg-primary-dim-dark #{!important};
 }
 
 </style>

@@ -11,6 +11,7 @@ module.exports = {
         'primary': '#f68b1e',
         'primary-dark': '#0ea5e9',
         'primary-dim': '#f9ae62',
+        'primary-dim-dark': '#82d8ff',
         'secondary': '#810e0e',
         'primary-bg': 'white',
         'primary-bg-dark': '#0f172a',

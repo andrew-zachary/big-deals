@@ -11,7 +11,8 @@ defineProps(['icon', 'fontSize']);
 <style lang="scss">
 
 .p-button-icon-only {
-    @apply bg-primary dark:bg-primary-dark hover:bg-primary-dim #{!important};
+    @apply bg-primary dark:bg-primary-dark #{!important};
+    @apply hover:bg-primary-dim dark:hover:bg-primary-dim-dark #{!important};
     @apply shadow-base dark:shadow-base-dark #{!important};
     @apply border-0 #{!important};
 
