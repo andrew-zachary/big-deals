@@ -33,8 +33,8 @@ module.exports = {
         'bd-base': 'auto 1fr'
       },
       boxShadow: {
-        'base': '0 0.4rem 0.4rem 0 #810e0e',
-        'base-dark': '0 0.2rem 0.2rem 0 #0ea5e9',
+        'base': '0 0.4rem 0.4rem  #810e0e',
+        'base-dark': '0 0 0.6rem 0 white',
       }
     },
   },

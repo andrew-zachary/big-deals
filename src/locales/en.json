@@ -3,7 +3,8 @@
         "start_browsing": "start browsing"
     },
     "cart": {
-        "submit": "submit"
+        "submit": "submit",
+        "for": "for"
     },
     "nav": {
         "home": "home",

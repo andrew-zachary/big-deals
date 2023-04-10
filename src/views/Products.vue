@@ -34,12 +34,12 @@ onBeforeMount(() => {
     if(productsStore.products.items.length === 0) execute();
 });
 
-// useSimpleBar({elementRef: productsList, callback: () => {
-//     if(isFetching.value || !productsStore.products.hasMore) return;
+useSimpleBar({elementRef: productsList, callback: () => {
+    if(isFetching.value || !productsStore.products.hasMore) return;
 
-//     url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`;
-//     execute();
-// }});
+    url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage}&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage}`;
+    execute();
+}});
 
 </script>
 

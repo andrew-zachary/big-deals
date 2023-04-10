@@ -35,8 +35,13 @@
         </template>
         <ul class="max-w-bd-sm mx-auto">
             <li v-for="item of cartStore.items" :key="item.id" class="mt-8 text-secondary">
-                <div class="text-sm text-primary dark:text-white font-mont font-bold">{{ item.title }}</div>
-                <div class="text-xs text-primary dark:text-white font-ssp">{{ item.count }} for <span class="font-bold">$ {{ item.price * item.count }}</span></div>
+                <div class="text-sm text-secondary dark:text-white font-mont font-bold">{{ item.title }}</div>
+                <div class="text-xs text-secondary dark:text-white font-ssp flex">
+                    <span>{{ item.count }}</span>
+                    <span class="px-2">{{ doTranslate('cart.for') }}</span>
+                    <span class="px-2">$</span>
+                    <span class="font-bold">{{ item.price * item.count }}</span>
+                </div>
                 <div class="flex">
                     <div class="p-4"><BtnIconRounded icon="pi pi-plus" @click="cartStore.addItem(item)" /></div>
                     <div class="p-4"><BtnIconRounded icon="pi pi-minus" @click="cartStore.removeItem(item)"/></div>
@@ -55,14 +60,17 @@
   left: 0px !important;
   max-height: 100% !important;
 
+  .p-dialog-header {
+    @apply bg-primary-bg dark:bg-primary-bg-dark #{!important};
+  }
+
   .p-dialog-content {
     flex-grow: 1;
-
-    @apply bg-primary-bg dark:bg-primary-bg-dark #{!important};
   }
 
   .p-dialog-content, .p-dialog-header {
     border-radius: 0!important;
+    @apply bg-primary-bg dark:bg-primary-bg-dark #{!important};
   }
 }
     
