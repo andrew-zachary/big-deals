@@ -1,6 +1,6 @@
 <script setup>
 
-import { ref, onBeforeMount } from "vue";
+import { ref, onBeforeMount, onBeforeUnmount } from "vue";
 
 import useBDaFetch from "../includes/bdFetch";
 import useProductsStore from "../stores/products";
@@ -32,6 +32,10 @@ const searching = (txt) => {
 
 onBeforeMount(() => {
     if(productsStore.products.items.length === 0) execute();
+});
+
+onBeforeUnmount(() => {
+    if(productsStore.products.items.length === 0) productsStore.resetProducts();
 });
 
 useSimpleBar({elementRef: productsList, callback: () => {
