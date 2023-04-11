@@ -17,4 +17,8 @@
     @input="debouncedSearch($event.target.value)" />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+    input:focus {
+        outline: none!important;
+    }
+</style>

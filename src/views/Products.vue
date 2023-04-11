@@ -58,7 +58,8 @@ useSimpleBar({elementRef: productsList, callback: () => {
         class="w-full 
         p-2 
         border-2 border-primary dark:border-primary-dark rounded-xl 
-        text-sm text-black placeholder:text-black
+        text-sm text-secondary dark:text-white
+        placeholder:text-secondary dark:placeholder:text-white
         bg-primary-bg dark:bg-primary-bg-dark
         self-end"
         @searching="searching($event)" />

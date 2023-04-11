@@ -26,11 +26,10 @@
 <template>
     <div class="sticky left-100 bottom-0
         z-10
-        p-4 pb-20
-        cursor-pointer"
+        p-4 pb-20"
         @click="openCart = true"
     >
-        <div id="animation-box" class="inline-block animate__animated" @animationend="removeTadaClass" ref="cartRef">
+        <div id="animation-box" class="inline-block cursor-pointer animate__animated" @animationend="removeTadaClass" ref="cartRef">
             <Badge :value="cartStore.totalItems" />
         </div>
     </div>
