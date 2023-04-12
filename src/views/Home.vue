@@ -4,8 +4,8 @@ import { useTranslate } from "../composables/useTranslate";
 import { useRouter } from "vue-router";
 
 import Logo from "../assets/logo.vue";
-import BtnIconRounded from "../components/BtnIconRounded.vue";
-import Btn from "../components/Btn.vue";
+import BtnIconRounded from "../components/Common/BtnIconRounded.vue";
+import Btn from "../components/Common/Btn.vue";
 
 const { doTranslate } = useTranslate();
 const router = useRouter();

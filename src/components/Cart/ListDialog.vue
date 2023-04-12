@@ -3,8 +3,8 @@
     import { useTranslate } from "../../composables/useTranslate";
 
     import CartList from "./List.vue";
-    import BtnIconRounded from "../BtnIconRounded.vue";
-    import Btn from "../Btn.vue";
+    import BtnIconRounded from "../Common/BtnIconRounded.vue";
+    import Btn from "../Common/Btn.vue";
 
     defineProps(['toggleCart', 'totalCost']);
 

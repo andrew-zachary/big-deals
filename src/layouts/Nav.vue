@@ -6,8 +6,8 @@ import { useRouter } from 'vue-router';
 import { useTranslate } from '../composables/useTranslate';
 
 import LangPicker from '../components/LangPicker.vue';
-import BtnIconRounded from '../components/BtnIconRounded.vue';
-import BtnLink from '../components/BtnLink.vue';
+import BtnIconRounded from '../components/Common/BtnIconRounded.vue';
+import BtnLink from '../components/Common/BtnLink.vue';
 import DarkmodeToggler from '../components/DarkmodeToggler.vue';
 
 const appStore = useAppStore();

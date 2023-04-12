@@ -4,7 +4,7 @@ import { ref } from "vue";
 
 import useCartStore from "../../stores/cart";
 import { useTranslate } from "../../composables/useTranslate";
-import BtnIconRounded from "../BtnIconRounded.vue";
+import BtnIconRounded from "../Common/BtnIconRounded.vue";
 import { useSimpleBar } from "../../composables/useSimpleScroll";
 
 const cartStore = useCartStore();
