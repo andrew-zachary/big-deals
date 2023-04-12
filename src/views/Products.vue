@@ -8,7 +8,7 @@ import { useTranslate } from "../composables/useTranslate";
 import SearchInput from "../components/SearchInput.vue";
 import { useSimpleBar } from "../composables/useSimpleScroll";
 import ProductListItem from "../components/ProductListItem.vue";
-import Cart from "../components/Cart.vue";
+import Cart from "../components/Cart/Container.vue";
 
 const productsStore = useProductsStore();
 const { doTranslate } = useTranslate();

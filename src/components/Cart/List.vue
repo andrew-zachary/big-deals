@@ -2,10 +2,10 @@
 
 import { ref } from "vue";
 
-import useCartStore from "../stores/cart";
-import { useTranslate } from "../composables/useTranslate";
-import BtnIconRounded from "./BtnIconRounded.vue";
-import { useSimpleBar } from "../composables/useSimpleScroll";
+import useCartStore from "../../stores/cart";
+import { useTranslate } from "../../composables/useTranslate";
+import BtnIconRounded from "../BtnIconRounded.vue";
+import { useSimpleBar } from "../../composables/useSimpleScroll";
 
 const cartStore = useCartStore();
 const { doTranslate } = useTranslate();
