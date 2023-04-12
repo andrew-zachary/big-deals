@@ -7,7 +7,7 @@ import useProductsStore from "../stores/products";
 import { useTranslate } from "../composables/useTranslate";
 import SearchInput from "../components/SearchInput.vue";
 import { useSimpleBar } from "../composables/useSimpleScroll";
-import ProductListItem from "../components/ProductListItem.vue";
+import ListItem from "../components/Product/ListItem.vue";
 import Cart from "../components/Cart/Container.vue";
 
 const productsStore = useProductsStore();
@@ -71,7 +71,7 @@ useSimpleBar({elementRef: productsList, callback: () => {
         class="h-full w-full 
         flex flex-col justify-start items-center"
     >
-        <ProductListItem v-for="product of productsStore.products.items" :key="product.id" :product="product" />
+        <ListItem v-for="product of productsStore.products.items" :key="product.id" :product="product" />
         <li v-if="isFetching && productsStore.products.hasMore">
             <div id="spinner-box" class="overflow-hidden mt-4">
                 <Progressspinner />

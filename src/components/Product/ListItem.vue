@@ -1,6 +1,6 @@
 <script setup>
-import useCartStore from "../stores/cart";
-import BtnIconRounded from "./Common/BtnIconRounded.vue";
+import useCartStore from "../../stores/cart";
+import BtnIconRounded from "../Common/BtnIconRounded.vue";
 
 defineProps(['product']);
 
