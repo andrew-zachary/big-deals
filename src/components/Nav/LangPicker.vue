@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { useTranslate } from '../composables/useTranslate';
-import useAppStore from '../stores/app';
+import { useTranslate } from '../../composables/useTranslate';
+import useAppStore from '../../stores/app';
 
 const { changeLocales } = useTranslate();
 const appStore = useAppStore();

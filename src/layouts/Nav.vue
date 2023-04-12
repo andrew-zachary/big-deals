@@ -5,10 +5,10 @@ import useAppStore from '../stores/app';
 import { useRouter } from 'vue-router';
 import { useTranslate } from '../composables/useTranslate';
 
-import LangPicker from '../components/LangPicker.vue';
+import LangPicker from '../components/Nav/LangPicker.vue';
 import BtnIconRounded from '../components/Common/BtnIconRounded.vue';
 import BtnLink from '../components/Common/BtnLink.vue';
-import DarkmodeToggler from '../components/DarkmodeToggler.vue';
+import DarkmodeToggler from '../components/Nav/DarkmodeToggler.vue';
 
 const appStore = useAppStore();
 const router = useRouter();

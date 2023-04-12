@@ -2,9 +2,9 @@
 
 import { ref } from "vue";
 
-import useAppStore from "../stores/app";
+import useAppStore from "../../stores/app";
 
-import darkMode from "../assets/dark-mode.vue";
+import darkMode from "../../assets/dark-mode.vue";
 
 const appStore = useAppStore();
 const darkModeOn = ref(appStore.darkMode);
