@@ -20,8 +20,9 @@
         "login": {
             "email": "email",
             "password": "password",
-            "btn": "sing in",
+            "btn": "sign in",
             "forgot_password_btn": "forgot password",
+            "sign_up_btn": "sign up",
             "errors": {
                 "email": {
                     "required": "email is required",
@@ -29,6 +30,33 @@
                 },
                 "password": {
                     "required": "password is required"
+                }
+            }
+        },
+        "register": {
+            "first_name": "first name",
+            "last_name": "last name",
+            "email": "email",
+            "password": "password",
+            "confirm_password": "confirm password",
+            "btn": "sign up",
+            "errors": {
+                "first_name": {
+                    "required": "first name is required"
+                },
+                "last_name": {
+                    "required": "last name is required"
+                },
+                "email": {
+                    "required": "email is required",
+                    "email": "email is not valid"
+                },
+                "password": {
+                    "required": "password is required"
+                },
+                "confirm_password": {
+                    "required": "confirm password is required",
+                    "confirmed": "passwords do not match"
                 }
             }
         }

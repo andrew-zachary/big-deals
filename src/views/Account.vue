@@ -6,8 +6,7 @@
 </script>
 <template>
 
-    <Login />
-    <Regsiter />
+    <router-view></router-view>
 
 </template>
 <style lang="scss"></style>

@@ -1,4 +1,5 @@
 <script setup>
+
 import { RouterLink } from "vue-router";
 
 import Btn from "../Common/Btn.vue";
@@ -17,9 +18,10 @@ const preTranslate = (target) => {
 const submit = (values) => {
     console.log(values);
 };
+
 </script>
 <template>
-    <div class="flex flex-col">
+    <div class="w-full max-w-bd-xs flex flex-col px-4">
         <vee-form @submit="submit" :validationSchema="schema">
             <div class="mt-8 flex flex-col text-3xl capitalize font-mont">
                 <label for="email" class="text-secondary dark:text-primary-dark">
@@ -45,15 +47,24 @@ const submit = (values) => {
                     </div>
                 </vee-field>
             </div>
-            <div id="login-ctrl" class="w-full mt-8 flex justify-end">
-                <Btn :label="doTranslate( preTranslate('btn') )" class="sm" type="submit" />
+            <div id="login-ctrl" class="w-full mt-8 flex">
+                <Btn :label="doTranslate( preTranslate('btn') )" class="sm w-full" type="submit" />
             </div>
         </vee-form>
-        <div id="forgot-password-ctrl" class="text-3xl flex justify-center mt-12">
-            <RouterLink class="font-ssp font-regular text-secondary dark:text-primary-dark 
-            border-b border-primary dark:border-primary-dark
-            display-block" to="/forgot-password">
+        <div id="forgot-password-ctrl" class="font-ssp font-regular
+            text-3xl text-secondary dark:text-primary-dark
+            flex justify-center mt-12"
+        >
+            <RouterLink class="border-b border-primary dark:border-primary-dark
+                display-block" to="account/forgot-password"
+            >
                 {{ doTranslate( preTranslate("forgot_password_btn") ) }}
+            </RouterLink>
+            <span class="mx-8"> - </span>
+            <RouterLink class="border-b border-primary dark:border-primary-dark
+                display-block" to="account/register"
+            >
+                {{ doTranslate( preTranslate("sign_up_btn") ) }}
             </RouterLink>
         </div>
     </div>
