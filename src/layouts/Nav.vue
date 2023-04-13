@@ -15,11 +15,12 @@ const router = useRouter();
 const { doTranslate } = useTranslate();
 
 const openSidebar = ref(false);
+const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'right' : 'left' );
+
 const toggleSidebarAndNav = (destination) => {
     openSidebar.value = !openSidebar.value;
     router.push(destination);
 };
-const sideBarPosition = computed( () => appStore.currentLang.dir === 'rtl' ? 'right' : 'left' );
 
 </script>
 
