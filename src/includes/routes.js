@@ -6,6 +6,7 @@ import Products from '../views/Products.vue';
 import Account from '../views/Account.vue';
 import Login from '../components/Forms/Login.vue';
 import Register from '../components/Forms/Register.vue';
+import ForgotPassword from '../components/Forms/ForgotPassword.vue';
 
 const routes = [
     {path: '/', component: Home},
@@ -22,6 +23,10 @@ const routes = [
             {
                 path:'register',
                 component: Register
+            },
+            {
+                path: 'forgot-password',
+                component: ForgotPassword
             }
         ]
     }

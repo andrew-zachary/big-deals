@@ -59,6 +59,16 @@
                     "confirmed": "passwords do not match"
                 }
             }
+        },
+        "forgot_password": {
+            "email": "email",
+            "btn": "send recovery mail",
+            "errors": {
+                "email": {
+                    "required": "email is required",
+                    "email": "email is not valid"
+                }
+            }
         }
     }
 }
