@@ -15,5 +15,22 @@
     "searching": {
         "placeholder": "البحث عن ...",
         "no_results": "لا يوجد نتائج"
+    },
+    "forms": {
+        "login": {
+            "email": "البريد الالكتروني",
+            "password": "كلمة المرور",
+            "btn": "الدخول",
+            "forgot_password_btn": "نسيت كلمة المرور",
+            "errors": {
+                "password": {
+                    "required": "كلمة المرور مطلوبة"
+                },
+                "email": {
+                    "required": "البريد الالكتروني مطلوب",
+                    "email": "صيغة البريد الالكتروني غير صحيحة"
+                }
+            }
+        }
     }
 }

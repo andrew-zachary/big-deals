@@ -6,6 +6,7 @@ import Sidebar from "primevue/sidebar";
 import Progressspinner from "primevue/progressspinner";
 import Dialog from 'primevue/dialog';
 import InputSwitch from 'primevue/inputswitch';
+import InputText from 'primevue/inputtext';
 
 import BadgeDirective from 'primevue/badgedirective';
 
@@ -23,6 +24,7 @@ export default {
         app.component('Progressspinner', Progressspinner);
         app.component('Dialog', Dialog);
         app.component('InputSwitch', InputSwitch);
+        app.component('InputText', InputText);
         
         app.directive('badge', BadgeDirective);
     }

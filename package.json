@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vee-validate/rules": "^4.8.4",
     "@vueuse/core": "^9.13.0",
     "pinia": "^2.0.33",
     "primeicons": "^6.0.1",
     "primevue": "^3.26.1",
+    "vee-validate": "^4.8.4",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.6"

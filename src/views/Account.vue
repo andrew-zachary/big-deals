@@ -1,11 +1,13 @@
 <script setup>
 
-    const title = "account";
+    import Login from "../components/Forms/Login.vue";
+    import Regsiter from "../components/Forms/Register.vue";
 
 </script>
 <template>
 
-    <h1 class="text-4xl">{{ title }}</h1>
+    <Login />
+    <Regsiter />
 
 </template>
 <style lang="scss"></style>

@@ -15,5 +15,22 @@
     "searching": {
         "placeholder": "searching for ...",
         "no_results": "no results found"
+    },
+    "forms": {
+        "login": {
+            "email": "email",
+            "password": "password",
+            "btn": "sing in",
+            "forgot_password_btn": "forgot password",
+            "errors": {
+                "email": {
+                    "required": "email is required",
+                    "email": "email is not valid"
+                },
+                "password": {
+                    "required": "password is required"
+                }
+            }
+        }
     }
 }
