@@ -10,7 +10,8 @@
         "home": "home",
         "products": "products",
         "about": "about",
-        "account": "account"
+        "account": "account",
+        "dashboard": "dashboard"
     },
     "searching": {
         "placeholder": "searching for ...",

@@ -10,7 +10,8 @@
         "home": "ابدأ",
         "products": "منتجات",
         "about": "عنا",
-        "account": "حسابي"
+        "account": "حسابي",
+        "dashboard": "لوحة التحكم"
     },
     "searching": {
         "placeholder": "البحث عن ...",

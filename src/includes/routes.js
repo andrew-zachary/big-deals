@@ -4,6 +4,8 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Products from '../views/Products.vue';
 import Account from '../views/Account.vue';
+import Dashboard from '../views/admin/Home.vue';
+
 import Login from '../components/Forms/Login.vue';
 import Register from '../components/Forms/Register.vue';
 import ForgotPassword from '../components/Forms/ForgotPassword.vue';
@@ -29,7 +31,8 @@ const routes = [
                 component: ForgotPassword
             }
         ]
-    }
+    },
+    {path: '/dashboard', component: Dashboard}
 ];
 
 const router = createRouter({

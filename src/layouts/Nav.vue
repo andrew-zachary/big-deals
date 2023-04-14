@@ -1,16 +1,20 @@
 <script setup>
 
-import { ref, computed } from 'vue';
-import useAppStore from '../stores/app';
-import { useRouter } from 'vue-router';
-import { useTranslate } from '../composables/useTranslate';
+import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
 
-import LangPicker from '../components/Nav/LangPicker.vue';
-import BtnIconRounded from '../components/Common/BtnIconRounded.vue';
-import BtnLink from '../components/Common/BtnLink.vue';
-import DarkmodeToggler from '../components/Nav/DarkmodeToggler.vue';
+import { useTranslate } from "../composables/useTranslate";
+
+import useAppStore from "../stores/app";
+import useUserStore from "../stores/user";
+
+import LangPicker from "../components/Nav/LangPicker.vue";
+import BtnIconRounded from "../components/Common/BtnIconRounded.vue";
+import BtnLink from "../components/Common/BtnLink.vue";
+import DarkmodeToggler from "../components/Nav/DarkmodeToggler.vue";
 
 const appStore = useAppStore();
+const userStore = useUserStore();
 const router = useRouter();
 const { doTranslate } = useTranslate();
 
@@ -42,19 +46,29 @@ const toggleSidebarAndNav = (destination) => {
     </template>
     <div class="position-layout-fix" :style="{direction: appStore.currentLang.dir}">
         <nav>
-            <ul class="text-4xl text-secondary dark:text-white font-bold capitalize">
-                <li class="mt-4">
-                    <BtnLink @click="toggleSidebarAndNav('/')">{{ doTranslate('nav.home') }}</BtnLink>
-                </li>
-                <li class="mt-4">
-                    <BtnLink @click="toggleSidebarAndNav('/products')">{{ doTranslate('nav.products') }}</BtnLink>
-                </li>
-                <li class="mt-4">
-                    <BtnLink @click="toggleSidebarAndNav('/about')">{{ doTranslate('nav.about') }}</BtnLink>
-                </li>
-                <li class="mt-4">
-                    <BtnLink @click="toggleSidebarAndNav('/account')">{{ doTranslate('nav.account') }}</BtnLink>
-                </li>
+            <ul class="text-4xl text-secondary dark:text-white font-ssp font-bold capitalize">
+
+                <template v-if="userStore.user.authed">
+                    <li class="mt-4">
+                        <BtnLink @click="toggleSidebarAndNav('/dashboard')">{{ doTranslate('nav.dashboard') }}</BtnLink>
+                    </li>                    
+                </template>
+
+                <template v-else>
+                    <li class="mt-4">
+                        <BtnLink @click="toggleSidebarAndNav('/')">{{ doTranslate('nav.home') }}</BtnLink>
+                    </li>
+                    <li class="mt-4">
+                        <BtnLink @click="toggleSidebarAndNav('/products')">{{ doTranslate('nav.products') }}</BtnLink>
+                    </li>
+                    <li class="mt-4">
+                        <BtnLink @click="toggleSidebarAndNav('/about')">{{ doTranslate('nav.about') }}</BtnLink>
+                    </li>
+                    <li class="mt-4">
+                        <BtnLink @click="toggleSidebarAndNav('/account')">{{ doTranslate('nav.account') }}</BtnLink>
+                    </li>
+                </template>
+
             </ul>
         </nav>
     </div>
