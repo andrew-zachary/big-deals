@@ -46,12 +46,15 @@ const toggleSidebarAndNav = (destination) => {
     </template>
     <div class="position-layout-fix" :style="{direction: appStore.currentLang.dir}">
         <nav>
-            <ul class="text-4xl text-secondary dark:text-white font-ssp font-bold capitalize">
+            <ul class="text-sm text-secondary dark:text-white font-ssp font-bold capitalize">
 
                 <template v-if="userStore.user.authed">
                     <li class="mt-4">
                         <BtnLink @click="toggleSidebarAndNav('/dashboard')">{{ doTranslate('nav.dashboard') }}</BtnLink>
-                    </li>                    
+                    </li>
+                    <li class="mt-12 text-xs font-mont font-regular cursor-pointer" @click="userStore.loggingOut">
+                        logout
+                    </li>
                 </template>
 
                 <template v-else>

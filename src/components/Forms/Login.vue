@@ -1,5 +1,7 @@
 <script setup>
 
+import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 
 import Btn from "../Common/Btn.vue";
@@ -7,7 +9,19 @@ import FormInputText from "../Common/FormInputText.vue";
 
 import { useTranslate } from "../../composables/useTranslate";
 
+import useBDaFetch from "../../includes/bdFetch";
+
+import useUserStore from "../../stores/user";
+
+const loggingValues = ref({});
 const { doTranslate } = useTranslate();
+const userStore = useUserStore();
+const { execute, isFetching, onFetchResponse } = useBDaFetch('auth/login', {
+    immediate: false, 
+    onFetchError(ctx) { 
+        console.log(JSON.parse(ctx.data)) 
+    }
+}).post(loggingValues);
 const schema = {
     email: 'required|email',
     password: 'required'
@@ -16,8 +30,14 @@ const preTranslate = (target) => {
     return `forms.login.${target}`;
 }
 const submit = (values) => {
-    console.log(values);
+    // form values pass to loggingValues ref
+    loggingValues.value = {username: 'kminchelle',password: '0lelplR'};
+    execute();
 };
+
+onFetchResponse((res) => {
+    userStore.loggedIn();
+});
 
 </script>
 <template>
