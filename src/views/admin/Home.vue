@@ -1,12 +1,12 @@
 <script setup>
 
-const title = "dashboard";
+    const title = "dashboard";
 
 </script>
 
 <template>
 
-<h1 class="text-4xl">{{ title }}</h1>
+    <h1 class="text-4xl">{{ title }}</h1>
 
 </template>
 

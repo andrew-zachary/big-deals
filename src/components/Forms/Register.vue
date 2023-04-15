@@ -1,30 +1,56 @@
 <script setup>
-import { ref } from "vue";
 
-import Btn from "../Common/Btn.vue";
-import FormInputText from "../Common/FormInputText.vue";
+    import { ref } from "vue";
+    import Btn from "../Common/Btn.vue";
+    import FormInputText from "../Common/FormInputText.vue";
+    import { useTranslate } from "../../composables/useTranslate";
+    import { useSimpleBar } from "../../composables/useSimpleScroll";
+    import useBDaFetch from "../../includes/bdFetch";
+    import useUserStore from "../../stores/user";
 
-import { useTranslate } from "../../composables/useTranslate";
-import { useSimpleBar } from "../../composables/useSimpleScroll";
+    const registerForm = ref(null);
 
-const registerForm = ref(null);
-const { doTranslate } = useTranslate();
-const schema = {
-    first_name: 'required',
-    last_name: 'required',
-    email: 'required|email',
-    password: 'required',
-    confirm_password: 'confirmed:@password'
-};
+    const userStore = useUserStore();
+    const { doTranslate } = useTranslate();
 
-const preTranslate = (target) => {
-    return `forms.register.${target}`;
-};
-const submit = (values) => {
-    console.log(values);
-};
+    const schema = {
+        first_name: 'required',
+        last_name: 'required',
+        email: 'required|email',
+        password: 'required',
+        confirm_password: 'confirmed:@password'
+    };
 
-useSimpleBar({elementRef:registerForm});
+    const registerValues = ref({
+        first_name: '',
+        last_name: '',
+        email: ''
+    });
+    
+    const { execute, isFetching } = useBDaFetch('users/add', {
+        immediate: false, 
+        onFetchError(ctx) { 
+            console.log(JSON.parse(ctx.data)) 
+        },
+        afterFetch({data}) {
+            userStore.userCreated(data);
+        }
+    }).post(registerValues);
+
+    const preTranslate = (target) => {
+        return `forms.register.${target}`;
+    };
+
+    const submit = (values) => {
+        registerValues.value = {
+            'firstName': values.first_name, 
+            'lastName': values.last_name, 
+            'email': values.email
+        };
+        execute();
+    };
+
+    useSimpleBar({elementRef:registerForm});
 
 </script>
 <template>
