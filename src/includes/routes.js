@@ -49,6 +49,7 @@ const router = createRouter({
 router.beforeEach( (to, _) => {
 
     const userStore = useUserStore();
+    userStore.isUserAuthed();
 
     if(to.name !== 'dashboard' && userStore.user.authed) {
 

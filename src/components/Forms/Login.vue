@@ -14,10 +14,13 @@
     const { doTranslate } = useTranslate();
     const userStore = useUserStore();
 
-    const { execute, isFetching, onFetchResponse } = useBDaFetch('auth/login', {
+    const { execute, isFetching } = useBDaFetch('auth/login', {
         immediate: false, 
-        onFetchError(ctx) { 
-            console.log(JSON.parse(ctx.data)) 
+        onFetchError(ctx) {
+            console.log(ctx);
+        },
+        afterFetch({ data }) {
+            userStore.loggedIn(data);
         }
     }).post(loggingValues);
 
@@ -35,10 +38,6 @@
         loggingValues.value = {username: 'kminchelle',password: '0lelplR'};
         execute();
     };
-
-    onFetchResponse((res) => {
-        userStore.loggedIn();
-    });
 
 </script>
 <template>
