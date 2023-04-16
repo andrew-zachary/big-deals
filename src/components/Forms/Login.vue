@@ -4,6 +4,7 @@
     import { RouterLink } from "vue-router";
     import Btn from "../Common/Btn.vue";
     import FormInputText from "../Common/FormInputText.vue";
+    import Loading from "../../layouts/Loading.vue";
     import { useTranslate } from "../../composables/useTranslate";
     import useBDaFetch from "../../includes/bdFetch";
     import useUserStore from "../../stores/user";
@@ -42,6 +43,7 @@
 </script>
 <template>
     <div class="w-full max-w-bd-xs flex flex-col px-4">
+        <Loading v-if="isFetching"/>
         <vee-form @submit="submit" :validationSchema="schema">
             <div class="mt-8 flex flex-col text-3xl capitalize font-mont">
                 <label for="email" class="text-secondary dark:text-primary-dark">

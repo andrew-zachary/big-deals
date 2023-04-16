@@ -3,6 +3,7 @@
     import { ref } from "vue";
     import Btn from "../Common/Btn.vue";
     import FormInputText from "../Common/FormInputText.vue";
+    import Loading from "../../layouts/Loading.vue";
     import { useTranslate } from "../../composables/useTranslate";
     import { useSimpleBar } from "../../composables/useSimpleScroll";
     import useBDaFetch from "../../includes/bdFetch";
@@ -55,6 +56,7 @@
 </script>
 <template>
     <div class="w-full h-full overflow-auto max-w-bd-xs flex flex-col" ref="registerForm">
+        <Loading v-if="isFetching"/>
         <vee-form @submit="submit" :validationSchema="schema" class="p-6">
             <div class="mt-8 flex flex-col text-3xl capitalize font-mont">
                 <label for="first_name" class="text-secondary dark:text-primary-dark">
