@@ -1,17 +1,17 @@
 <script setup>
 
-import { ref } from "vue";
+    import { ref } from "vue";
 
-import useCartStore from "../../stores/cart";
-import { useTranslate } from "../../composables/useTranslate";
-import BtnIconRounded from "../Common/BtnIconRounded.vue";
-import { useSimpleBar } from "../../composables/useSimpleScroll";
+    import useCartStore from "../../stores/cart";
+    import { useTranslate } from "../../composables/useTranslate";
+    import BtnIconRounded from "../Common/BtnIconRounded.vue";
+    import { useSimpleBar } from "../../composables/useSimpleScroll";
 
-const cartStore = useCartStore();
-const { doTranslate } = useTranslate();
-const cartList = ref(null);
+    const cartStore = useCartStore();
+    const { doTranslate } = useTranslate();
+    const cartList = ref(null);
 
-useSimpleBar({elementRef: cartList});
+    useSimpleBar({elementRef: cartList});
 
 </script>
 <template>

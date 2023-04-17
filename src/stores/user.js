@@ -4,6 +4,8 @@ import { defineStore } from "pinia";
 import { useRouter } from "vue-router";
 import { useJwt } from "@vueuse/integrations/useJwt";
 
+import { fakeJwtToken } from "../includes/fake-jwt-token";
+
 export default defineStore('user', () => {
 
     const router = useRouter();
@@ -26,7 +28,11 @@ export default defineStore('user', () => {
     };
 
     const userCreated = (data) => {
-        localStorage.setItem('user-profile', JSON.stringify( data ));
+
+        // fake token
+        const token = fakeJwtToken();
+        localStorage.setItem('user-profile', JSON.stringify( {...data, token} ));
+        
         user.value.profile = data;
         user.value.authed = true;
         router.push({name: 'dashboard'});
