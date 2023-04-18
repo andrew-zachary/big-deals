@@ -1,15 +1,12 @@
 <script setup>
 
-    import { useTranslate } from "../../composables/useTranslate";
-
-    import CartList from "./List.vue";
     import BtnIconRounded from "../Common/BtnIconRounded.vue";
-    import Btn from "../Common/Btn.vue";
+
+    import Tabs from "./Tabs.vue";
 
     defineProps(['toggleCart', 'totalCost']);
 
     const emits = defineEmits(['closeCart']);
-    const { doTranslate } = useTranslate();
 
 </script>
 <template>
@@ -21,12 +18,9 @@
                     <div class="text-md text-primary dark:text-primary-dark font-ssp font-bold">$ {{ totalCost }}</div>
                     <BtnIconRounded icon="pi pi-times" @click="emits('closeCart')" />
                 </div>
-                <div class="w-full max-w-bd-sm mx-auto pb-8 px-4">
-                    <Btn :label="doTranslate('cart.submit')" icon="pi pi-shopping-cart" size="sm" />
-                </div>
             </div>
         </template>
-        <CartList />
+        <Tabs />
     </Dialog>
 
 </template>

@@ -4,7 +4,7 @@
 
     import useCartStore from "../../stores/cart";
     import ToggleBtn from "./ToggleBtn.vue";
-    import ListDialog from "./ListDialog.vue";
+    import MainDialog from "./MainDialog.vue";
 
     const cartStore = useCartStore();
     const toggleCart = ref(false);
@@ -19,7 +19,7 @@
         @click="toggleCart = true"
     >
         <ToggleBtn :total-items="cartStore.totalItems" />
-        <ListDialog :total-cost="cartStore.totalCost" :toggleCart="toggleCart" @closeCart="toggleCart = false" />
+        <MainDialog :total-cost="cartStore.totalCost" :toggleCart="toggleCart" @closeCart="toggleCart = false" />
     </div>
 
 
