@@ -11,7 +11,7 @@
     const cartStore = useCartStore();
     const { doTranslate } = useTranslate();
     const cartList = ref(null);
-    const emits = defineEmits(['changeTab', 'list']);
+    const emits = defineEmits(['changeTab']);
 
     useSimpleBar({elementRef: cartList});
 

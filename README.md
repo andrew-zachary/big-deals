@@ -1,7 +1,22 @@
-# Vue 3 + Vite
+# Big Deal
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## eCommerce SPA Built with Vuejs
 
-## Recommended IDE Setup
+Offers a shopping cart which is a vital component for any e-commerce website, allows customers to easily make a purchase of products while keeping track of the total price. Additionally, features such as infinite scroll and search functionality can greatly enhance the user experience, reducing the distance between customers and products and ultimately leading to increased sales and profits.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Technical Details
+<ul>
+<li>SPA with Vue3 and vue-router</li>
+<li>Pinia to manage app state.</li>
+<li>Localization with vue-i18n.</li>
+<li>Building forms with vee-validate.</li>
+</ul>
+
+## App Features
+<ul>
+<li>User login/register.</li>
+<li>Browse Products.</li>
+<li>Shopping Cart</li>
+<li>RTL and dark-mode theme support.</li>
+<li>UI Modals, Loading Spinners, Forms with validation</li>
+</ul>
