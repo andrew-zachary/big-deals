@@ -4,7 +4,9 @@
     },
     "cart": {
         "submit": "submit",
-        "for": "for"
+        "for": "for",
+        "back_to_cart_list": "back to list",
+        "order_details": "order details"
     },
     "nav": {
         "home": "home",

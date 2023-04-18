@@ -26,5 +26,9 @@ defineProps(['label', 'icon', 'size']);
         &.lg span {
             @apply text-lg capitalize #{!important};
         }
+
+        .p-button-icon {
+            @include withRtl(margin, 0 0.5rem 0 0, 0 0 0 0.5rem);
+        }
     }
 </style>
