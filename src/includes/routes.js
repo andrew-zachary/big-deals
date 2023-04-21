@@ -51,18 +51,9 @@ router.beforeEach( (to, _) => {
     const userStore = useUserStore();
     userStore.isUserAuthed();
 
-    if(to.name !== 'dashboard' && userStore.user.authed) {
+    if(to.href.includes('account') && userStore.user.authed) return {name: 'dashboard'};
 
-        return {name: 'dashboard'};
-
-    } else if(to.name === 'dashboard' && !userStore.user.authed) {
-
-        return {name: 'home'};
-
-    } else {
-
-        return true;
-    }
+    return true;
 
 });
 

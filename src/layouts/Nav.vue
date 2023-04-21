@@ -52,6 +52,9 @@ const toggleSidebarAndNav = (destination) => {
                     <li class="mt-4">
                         <BtnLink @click="toggleSidebarAndNav('/dashboard')">{{ doTranslate('nav.dashboard') }}</BtnLink>
                     </li>
+                    <li class="mt-4">
+                        <BtnLink @click="toggleSidebarAndNav('/products')">{{ doTranslate('nav.products') }}</BtnLink>
+                    </li>
                     <li class="mt-12 text-xs font-mont font-regular cursor-pointer" @click="userStore.loggingOut">
                         logout
                     </li>
