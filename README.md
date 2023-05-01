@@ -1,7 +1,7 @@
 # Big Deal
 
 ## eCommerce SPA Built with Vuejs - Demo at:
-big-deals.netlify.app/
+<a href="https://big-deals.netlify.app">big-deals.netlify.app</a>
 
 ## Technical Details
 <ul>

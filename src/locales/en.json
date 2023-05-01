@@ -13,7 +13,8 @@
         "products": "products",
         "about": "about",
         "account": "account",
-        "dashboard": "dashboard"
+        "dashboard": "dashboard",
+        "logout": "logout"
     },
     "searching": {
         "placeholder": "searching for ...",

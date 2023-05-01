@@ -13,7 +13,8 @@
         "products": "منتجات",
         "about": "عنا",
         "account": "حسابي",
-        "dashboard": "لوحة التحكم"
+        "dashboard": "لوحة التحكم",
+        "logout": "الخروج"
     },
     "searching": {
         "placeholder": "البحث عن ...",
